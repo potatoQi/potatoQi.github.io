@@ -1,2 +1,4 @@
+http://example.com/categories/index.html
+http://example.com/about/index.html
 http://example.com/2023/10/03/hello-world/
 http://example.com/
