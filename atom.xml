@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-03T04:44:48.354Z</updated>
+  <updated>2023-10-03T05:34:24.204Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,19 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>test</title>
-    <link href="http://example.com/2023/10/03/test/"/>
-    <id>http://example.com/2023/10/03/test/</id>
-    <published>2023-10-03T03:56:04.000Z</published>
-    <updated>2023-10-03T04:44:48.354Z</updated>
-    
-    <content type="html"><![CDATA[<p><a href="www.baidu.com">链接</a></p><p>123123</p><span id="more"></span><p><img src="/2023/10/03/test/MSI.png"></p>]]></content>
+    <title>在VS Code中配置C/C++</title>
+    <link href="http://example.com/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/"/>
+    <id>http://example.com/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/</id>
+    <published>2023-10-03T05:34:01.000Z</published>
+    <updated>2023-10-03T05:34:24.204Z</updated>
     
     
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;www.baidu.com&quot;&gt;链接&lt;/a&gt;&lt;/p&gt;
-&lt;p&gt;123123&lt;/p&gt;</summary>
     
     
+    <category term="生活" scheme="http://example.com/categories/%E7%94%9F%E6%B4%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客搭建说明</title>
+    <link href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/"/>
+    <id>http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</id>
+    <published>2023-10-03T05:32:44.000Z</published>
+    <updated>2023-10-03T05:33:28.745Z</updated>
+    
+    
+    
+    
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
