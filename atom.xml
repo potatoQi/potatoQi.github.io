@@ -41,9 +41,9 @@
     <link href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/"/>
     <id>http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</id>
     <published>2023-10-03T05:32:44.000Z</published>
-    <updated>2023-10-03T06:04:51.764Z</updated>
+    <updated>2023-10-03T06:06:54.658Z</updated>
     
-    <content type="html"><![CDATA[<p>使用GitHub + Hexo搭建的本博客。</p><p>教程参考<a href="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细） - 知乎 (zhihu.com)</a>。</p><p>上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。</p><span id="more"></span><p>我大致总结一下流程：</p><ol><li>注册GitHub</li><li>下载Git并将Git绑定到GitHub（使用token）</li><li>购买域名</li><li>安装node.js并配置环境变量（建议全程使用cmd管理员而不是git bash）</li><li>安装hexo</li><li>解析域名</li><li>设置并美化主题</li></ol><p>另外，博客首页的头像是用的GitHub的头像链接，另外我不打算采用图床，因为怕翻车。所以文章里的全部图片都是存储在本地并push到GitHub中，若加载不出或速度慢可以尝试挂个梯子。</p>]]></content>
+    <content type="html"><![CDATA[<p>使用GitHub + Hexo搭建的本博客。</p><p>教程参考<a href="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细） - 知乎 (zhihu.com)</a>。</p><p>上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。</p><span id="more"></span><p>我大致总结一下流程：</p><ol><li>注册GitHub</li><li>下载Git并将Git绑定到GitHub（使用token）</li><li>购买域名</li><li>安装node.js并配置环境变量（建议全程使用cmd管理员而不是git bash）</li><li>安装hexo</li><li>解析域名</li><li>设置并美化主题</li></ol><p>另外，博客首页的头像是用的GitHub的头像链接，另外我不打算采用图床，因为怕翻车。所以文章里的全部图片都是存储在本地并push到GitHub中，若加载不出或速度慢可以尝试挂个梯子。</p><p>域名第一年花了9块，之后续费好像是20多块一年。在阿里云买的。</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;使用GitHub + Hexo搭建的本博客。&lt;/p&gt;
