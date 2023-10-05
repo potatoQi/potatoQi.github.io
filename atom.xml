@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-03T05:41:30.024Z</updated>
+  <updated>2023-10-05T06:27:50.203Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test</title>
+    <link href="http://example.com/2023/10/05/test/"/>
+    <id>http://example.com/2023/10/05/test/</id>
+    <published>2023-10-05T06:27:13.000Z</published>
+    <updated>2023-10-05T06:27:50.203Z</updated>
+    
+    <content type="html"><![CDATA[<p><img src="/2023/10/05/test/1.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;&lt;img src=&quot;/2023/10/05/test/1.jpg&quot;&gt;&lt;/p&gt;
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>在VS Code中配置C/C++</title>
