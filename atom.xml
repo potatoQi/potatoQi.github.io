@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-05T06:39:15.664Z</updated>
+  <updated>2023-10-05T07:01:38.304Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,22 +21,18 @@
     <link href="http://example.com/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/"/>
     <id>http://example.com/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/</id>
     <published>2023-10-05T06:30:39.000Z</published>
-    <updated>2023-10-05T06:39:15.664Z</updated>
+    <updated>2023-10-05T07:01:38.304Z</updated>
     
-    <content type="html"><![CDATA[<!-- read more --><p><img src="/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/1.jpg"></p><p><img src="/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/2.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。</p><span id="more"></span><p><img src="/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/1.jpg"></p><p><img src="/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/2.jpg"></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;!-- read more --&gt;
-
-&lt;p&gt;&lt;img src=&quot;/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/1.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-      
+    <summary type="html">&lt;p&gt;介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。&lt;/p&gt;</summary>
     
     
     
     <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
@@ -46,22 +42,18 @@
     <link href="http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/"/>
     <id>http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/</id>
     <published>2023-10-05T06:30:21.000Z</published>
-    <updated>2023-10-05T06:39:09.565Z</updated>
+    <updated>2023-10-05T07:01:30.784Z</updated>
     
-    <content type="html"><![CDATA[<!-- read more --><p><img src="/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/1.jpg"></p><p><img src="/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/2.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>介绍了一个点、空集、超平面、半空间、球、椭球。</p><span id="more"></span><p><img src="/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/1.jpg"></p><p><img src="/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/2.jpg"></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;!-- read more --&gt;
-
-&lt;p&gt;&lt;img src=&quot;/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/1.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img</summary>
-      
+    <summary type="html">&lt;p&gt;介绍了一个点、空集、超平面、半空间、球、椭球。&lt;/p&gt;</summary>
     
     
     
     <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
@@ -71,22 +63,18 @@
     <link href="http://example.com/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/"/>
     <id>http://example.com/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/</id>
     <published>2023-10-05T06:30:01.000Z</published>
-    <updated>2023-10-05T06:39:05.198Z</updated>
+    <updated>2023-10-05T07:01:23.606Z</updated>
     
-    <content type="html"><![CDATA[<!-- read more --><p><img src="/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/1.jpg"></p><p><img src="/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/2.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>介绍了仿射集、凸集、凸锥的概念，以及三者之间的联系。</p><span id="more"></span><p><img src="/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/1.jpg"></p><p><img src="/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/2.jpg"></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;!-- read more --&gt;
-
-&lt;p&gt;&lt;img src=&quot;/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/1.jpg&quot;&gt;&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/2</summary>
-      
+    <summary type="html">&lt;p&gt;介绍了仿射集、凸集、凸锥的概念，以及三者之间的联系。&lt;/p&gt;</summary>
     
     
     
     <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
@@ -96,22 +84,20 @@
     <link href="http://example.com/2023/10/05/0-%E5%BC%95%E8%A8%80/"/>
     <id>http://example.com/2023/10/05/0-%E5%BC%95%E8%A8%80/</id>
     <published>2023-10-05T06:29:39.000Z</published>
-    <updated>2023-10-05T06:39:01.132Z</updated>
+    <updated>2023-10-05T07:01:08.954Z</updated>
     
-    <content type="html"><![CDATA[<!-- read more --><p><img src="/2023/10/05/0-%E5%BC%95%E8%A8%80/1.jpg"></p>]]></content>
+    <content type="html"><![CDATA[<p>凸优化系列是我在23年10月开启的一项计划。主要是读论文发现需要凸优化的知识，奈何我才刚上大二没有学到这门课程。</p><p>于是打算自学，参考的教程是<a href="https://www.bilibili.com/video/BV19M411T7S7?p=1&vd_source=2501060da9b4bef86e2b8ec8a8d880b5">中科大凌青老师的教学视频</a>。</p><p>文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改&#x3D;w&#x3D;</p><span id="more"></span><p><img src="/2023/10/05/0-%E5%BC%95%E8%A8%80/1.jpg"></p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;!-- read more --&gt;
-
-&lt;p&gt;&lt;img src=&quot;/2023/10/05/0-%E5%BC%95%E8%A8%80/1.jpg&quot;&gt;&lt;/p&gt;
-</summary>
-      
+    <summary type="html">&lt;p&gt;凸优化系列是我在23年10月开启的一项计划。主要是读论文发现需要凸优化的知识，奈何我才刚上大二没有学到这门课程。&lt;/p&gt;
+&lt;p&gt;于是打算自学，参考的教程是&lt;a href=&quot;https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5&quot;&gt;中科大凌青老师的教学视频&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改&amp;#x3D;w&amp;#x3D;&lt;/p&gt;</summary>
     
     
     
     <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
     
     
   </entry>
