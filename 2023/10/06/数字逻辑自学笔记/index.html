@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门">
+  <meta name="description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字逻辑自学笔记">
 <meta property="og:url" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门">
+<meta property="og:description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/2.png">
@@ -278,135 +278,205 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。</p>
+        <p>写于2023/10/6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。</p>
 <p>自学参考的内容为老师ppt、各种网上博客。</p>
-<p>学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1H54y1k7kM?p=1&vd_source=2501060da9b4bef86e2b8ec8a8d880b5">传送门</a></p>
+<p>学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5">传送门</a></p>
 <span id="more"></span>
-
 <p>先放一张各种门的符号图，后面忘了的话可以参考：</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png"></p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/2.png"></p>
-<h3 id="一-组合逻辑电路-1"><a href="#一-组合逻辑电路-1" class="headerlink" title="一. 组合逻辑电路(1)"></a>一. 组合逻辑电路(1)</h3><h4 id="1-概述"><a href="#1-概述" class="headerlink" title="1. 概述"></a>1. 概述</h4><p>电路分为组合逻辑电路和时序逻辑电路。差别就是组合逻辑电路无记忆功能，时序逻辑电路有。</p>
+<p><img src="1.png" /></p>
+<p><img src="2.png" /></p>
+<h3 id="一.-组合逻辑电路1">一. 组合逻辑电路(1)</h3>
+<h4 id="概述">1. 概述</h4>
+<p>电路分为组合逻辑电路和时序逻辑电路。差别就是组合逻辑电路无记忆功能，时序逻辑电路有。</p>
 <p>描述电路的逻辑功能有以下几种形式：</p>
-<ol>
+<ol type="1">
 <li>语言描述</li>
 <li>电路图</li>
-<li>逻辑表达式，即y &#x3D; f(a1, a2, a3, …, an)</li>
+<li>逻辑表达式，即y = f(a1, a2, a3, ..., an)</li>
 <li>真值表</li>
 <li>卡诺图</li>
 <li>波形图</li>
 </ol>
-<h4 id="2-组合逻辑电路的分析-和-逻辑函数的设计方法"><a href="#2-组合逻辑电路的分析-和-逻辑函数的设计方法" class="headerlink" title="2. 组合逻辑电路的分析 和 逻辑函数的设计方法"></a>2. 组合逻辑电路的分析 和 逻辑函数的设计方法</h4><ul>
+<h4 id="组合逻辑电路的分析-和-逻辑函数的设计方法">2. 组合逻辑电路的分析
+和 逻辑函数的设计方法</h4>
+<ul>
 <li><p><strong>分析</strong>：</p>
 <ul>
-<li><p>即给你一个电路，让你告诉我这个电路是干啥用的。</p>
-</li>
+<li><p>即给你一个电路，让你告诉我这个电路是干啥用的。</p></li>
 <li><p>分析一个组合逻辑电路的固定套路很简单：</p>
-<ol>
+<ol type="1">
 <li>一层一层写出逻辑表达式</li>
-<li>对最后得到的逻辑表达式进行化简<ul>
+<li>对最后得到的逻辑表达式进行化简
+<ul>
 <li>化简手段1：卡诺图</li>
-<li>化简手段2：$A + A \cdot B &#x3D; A 或 A \cdot (A + B) &#x3D; A$</li>
-<li>化简手段3：$A + \overline{A}B &#x3D; A + B 或 A \cdot (\overline{A} + B) &#x3D; A \cdot B$</li>
-<li>化简手段4：$\overline{A}\overline{C} + A\overline{B} + \overline{B}\overline{C} &#x3D; \overline{A}\overline{C} + A\overline{B}$（对于$\overline{B}\overline{C}$添项即可证明）</li>
-<li>化简手段5：$A \oplus B &#x3D; \overline{A}B + A\overline{B}$</li>
-<li>化简手段6（很少用到）：$A \odot B &#x3D; (\overline{A} + B)(A + \overline{B})$</li>
-</ul>
-</li>
+<li>化简手段2：<span class="math inline">\(A + A \cdot B = A 或 A \cdot
+(A + B) = A\)</span></li>
+<li>化简手段3：<span class="math inline">\(A + \overline{A}B = A + B 或
+A \cdot (\overline{A} + B) = A \cdot B\)</span></li>
+<li>化简手段4：<span class="math inline">\(\overline{A}\overline{C} +
+A\overline{B} + \overline{B}\overline{C} = \overline{A}\overline{C} +
+A\overline{B}\)</span>（对于<span
+class="math inline">\(\overline{B}\overline{C}\)</span>添项即可证明）</li>
+<li>化简手段5：<span class="math inline">\(A \oplus B = \overline{A}B +
+A\overline{B}\)</span></li>
+<li>化简手段6（很少用到）：<span class="math inline">\(A \odot B =
+(\overline{A} + B)(A + \overline{B})\)</span></li>
+</ul></li>
 <li>对化简后的逻辑表达式列真值表，观察真值表，观察出此电路的功能</li>
-</ol>
-</li>
+</ol></li>
 <li><p>例子：</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/3.png"></p>
+<p><img src="3.png" /></p>
 <ul>
 <li>T1是个与门，T2是个或门，第一层剩下都是与门，第二层一个或门，第三层一个非门，第四层一个与门，最后一层一个或门。最后通过真值表很容易看出ABC三个输入变量但有两个输出变量。不难想到是一个全加器。A、B是两个加数，C是上一位的进位，F1是当前位，F2是进位。</li>
-<li>还有许多功能电路啦… …比如半加器（2输入2输出）、投票表决器（多输入1输出）、奇校验电路（多输入1输出）、一致性电路（多输入1输出）</li>
-</ul>
-</li>
-</ul>
-</li>
+<li>还有许多功能电路啦...
+...比如半加器（2输入2输出）、投票表决器（多输入1输出）、奇校验电路（多输入1输出）、一致性电路（多输入1输出）</li>
+</ul></li>
+</ul></li>
 <li><p><strong>设计</strong>：</p>
 <ul>
-<li><p>告诉你一个功能，让你设计出一个电路来实现它。</p>
-</li>
+<li><p>告诉你一个功能，让你设计出一个电路来实现它。</p></li>
 <li><p>也是有固定套路的：</p>
-<ol>
+<ol type="1">
 <li><p>分析功能，确定输入输出变量</p>
 <ul>
 <li>确定输入输出变量还是有点讲究的，有时候设计的好了可以大大减少运算量和电路的复杂程度。比如下面两个功能，换做是你，你会怎样设计？</li>
 </ul>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/4.png"></p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/5.png"></p>
+<p><img src="4.png" /></p>
+<p><img src="5.png" /></p>
 <ul>
 <li>设计的关键其实是做到尽可能的<strong>复用</strong>，即对于不同对象的同一属性，尽量用一个变量表达出来。</li>
+</ul></li>
+<li><p>根据题意，直接构造出电路。或者写出真值表然后写出主析取范式然后再用卡诺图化简后得到最终逻辑表达式</p></li>
+<li><p>根据逻辑表达式，选取一种门电路，画出电路图</p></li>
+</ol></li>
+</ul></li>
 </ul>
-</li>
-<li><p>根据题意，直接构造出电路。或者写出真值表然后写出主析取范式然后再用卡诺图化简后得到最终逻辑表达式</p>
-</li>
-<li><p>根据逻辑表达式，选取一种门电路，画出电路图</p>
-</li>
-</ol>
-</li>
-</ul>
-</li>
-</ul>
-<hr>
-<h3 id="二-组合逻辑电路-2"><a href="#二-组合逻辑电路-2" class="headerlink" title="二. 组合逻辑电路(2)"></a>二. 组合逻辑电路(2)</h3><p>上一节我们已经可以设计出逻辑表达式。但是具体选用哪一种门电路呢？每一种门电路应该如何设计呢？这一节我们就来学习。</p>
-<h4 id="1-单输出电路设计"><a href="#1-单输出电路设计" class="headerlink" title="1. 单输出电路设计"></a>1. 单输出电路设计</h4><h5 id="1-用与非门设计电路"><a href="#1-用与非门设计电路" class="headerlink" title="1. 用与非门设计电路"></a>1. 用与非门设计电路</h5><p>对于逻辑表达式F &#x3D; …中的 + 全部换成 $\cdot$ 就好了，按照这个思路，只要在 + 的头上画两根取反号就行了，最上面那根保留，下面那根负责把 + 换成 $\cdot$ 。</p>
+<hr />
+<h3 id="二.-组合逻辑电路2">二. 组合逻辑电路(2)</h3>
+<p>上一节我们已经可以设计出逻辑表达式。但是具体选用哪一种门电路呢？每一种门电路应该如何设计呢？这一节我们就来学习。</p>
+<h4 id="单输出电路设计">1. 单输出电路设计</h4>
+<h5 id="用与非门设计电路">1. 用与非门设计电路</h5>
+<p>对于逻辑表达式F = ...中的 + 全部换成 <span
+class="math inline">\(\cdot\)</span> 就好了，按照这个思路，只要在 +
+的头上画两根取反号就行了，最上面那根保留，下面那根负责把 + 换成 <span
+class="math inline">\(\cdot\)</span> 。</p>
 <p>但这样得到的实际电路可能耗材过多，实际中有些式子通过观察还能发现可以化的更简，比如下面这个例子：</p>
-<p>$F &#x3D; A\overline{B} + B\overline{C} + C\overline{D} + D\overline{A} &#x3D; \overline{\overline{A\overline{B}} \cdot \overline{B\overline{C}} \cdot \overline{C\overline{D}} \cdot \overline{D\overline{A}}}$</p>
+<p><span class="math inline">\(F = A\overline{B} + B\overline{C} +
+C\overline{D} + D\overline{A} = \overline{\overline{A\overline{B}} \cdot
+\overline{B\overline{C}} \cdot \overline{C\overline{D}} \cdot
+\overline{D\overline{A}}}\)</span></p>
 <p>按理说这样就好了，但是还可以化简的。</p>
-<p>$\overline{A\overline{B}} \cdot \overline{B\overline{C}} \cdot \overline{C\overline{D}} \cdot \overline{D\overline{A}} &#x3D; (\overline{A} + B)(\overline{B} + C)(\overline{C} + D)(\overline{D} + A)$</p>
-<p>上面这个东西，学过二项式定理吗？假如我第一项如果挑B，则第二项不能挑$\overline{B}$，只能挑C，那么第三项也只能挑D，依次类推，第四项只能挑A，得到ABCD。同理，如果我第一项挑$\overline{A}$，那么我只能得到$\overline{A}\overline{B}\overline{C}\overline{D}$。</p>
-<p>即：$(\overline{A} + B)(\overline{B} + C)(\overline{C} + D)(\overline{D} + A) &#x3D; ABCD + \overline{A}\overline{B}\overline{C}\overline{D}$</p>
-<p>对上面那玩意再求两次反，得到$\overline{\overline{ABCD} \cdot \overline{\overline{A}\overline{B}\overline{C}\overline{D}}}$</p>
-<p>这样子，就得到$F &#x3D; \overline{\overline{\overline{ABCD} \cdot \overline{\overline{A}\overline{B}\overline{C}\overline{D}}}}$</p>
+<p><span class="math inline">\(\overline{A\overline{B}} \cdot
+\overline{B\overline{C}} \cdot \overline{C\overline{D}} \cdot
+\overline{D\overline{A}} = (\overline{A} + B)(\overline{B} +
+C)(\overline{C} + D)(\overline{D} + A)\)</span></p>
+<p>上面这个东西，学过二项式定理吗？假如我第一项如果挑B，则第二项不能挑<span
+class="math inline">\(\overline{B}\)</span>，只能挑C，那么第三项也只能挑D，依次类推，第四项只能挑A，得到ABCD。同理，如果我第一项挑<span
+class="math inline">\(\overline{A}\)</span>，那么我只能得到<span
+class="math inline">\(\overline{A}\overline{B}\overline{C}\overline{D}\)</span>。</p>
+<p>即：<span class="math inline">\((\overline{A} + B)(\overline{B} +
+C)(\overline{C} + D)(\overline{D} + A) = ABCD +
+\overline{A}\overline{B}\overline{C}\overline{D}\)</span></p>
+<p>对上面那玩意再求两次反，得到<span
+class="math inline">\(\overline{\overline{ABCD} \cdot
+\overline{\overline{A}\overline{B}\overline{C}\overline{D}}}\)</span></p>
+<p>这样子，就得到<span class="math inline">\(F =
+\overline{\overline{\overline{ABCD} \cdot
+\overline{\overline{A}\overline{B}\overline{C}\overline{D}}}}\)</span></p>
 <p>总结下来这个第二种方法就是在第一种方法的基础上把内部通过二项式定理进一步化简。</p>
-<h5 id="2-用或非门设计电路"><a href="#2-用或非门设计电路" class="headerlink" title="2. 用或非门设计电路"></a>2. 用或非门设计电路</h5><p>对于逻辑表达式F &#x3D; …中的 $\cdot$ 全部换成 + 就好了，按照这个思路，只要在 $\cdot$ 的头上画两根取反号就行了，最上面那根保留，下面那根负责把 $\cdot$ 换成 + 。</p>
-<p>还有第二种通用的方法，就是将F先求对偶，得到$F_d$，这样F就由(xxx) + (xxx) + (xxx)的形式变为(x + x)(x + x)(x + x)的形式了。学过二项式定理吗？同理将$F_d$化简，得到最简“与-或”式(yyy) + (yyy)。再在头上加两根取反，最顶上保留，下面那根为了把 + 变成 $\cdot$ ，最后再对偶回去即可。</p>
+<h5 id="用或非门设计电路">2. 用或非门设计电路</h5>
+<p>对于逻辑表达式F = ...中的 <span class="math inline">\(\cdot\)</span>
+全部换成 + 就好了，按照这个思路，只要在 <span
+class="math inline">\(\cdot\)</span>
+的头上画两根取反号就行了，最上面那根保留，下面那根负责把 <span
+class="math inline">\(\cdot\)</span> 换成 + 。</p>
+<p>还有第二种通用的方法，就是将F先求对偶，得到<span
+class="math inline">\(F_d\)</span>，这样F就由(xxx) + (xxx) +
+(xxx)的形式变为(x + x)(x + x)(x +
+x)的形式了。学过二项式定理吗？同理将<span
+class="math inline">\(F_d\)</span>化简，得到最简“与-或”式(yyy) +
+(yyy)。再在头上加两根取反，最顶上保留，下面那根为了把 + 变成 <span
+class="math inline">\(\cdot\)</span> ，最后再对偶回去即可。</p>
 <p>上面那段文字是具体过程，流程总结下来如下：</p>
-<ol>
-<li>对F求对偶$F_d$</li>
-<li>对$F_d$展开，利用二项式原理或者卡诺图，得到最简”与-或”式$F_d’$</li>
-<li>对$F_d’$取两次反，最上面保留，下面那根化开，得到$F_d’’$</li>
-<li>对$F_d’’$对偶回去</li>
+<ol type="1">
+<li>对F求对偶<span class="math inline">\(F_d\)</span></li>
+<li>对<span
+class="math inline">\(F_d\)</span>展开，利用二项式原理或者卡诺图，得到最简"与-或"式<span
+class="math inline">\(F_d&#39;\)</span></li>
+<li>对<span
+class="math inline">\(F_d&#39;\)</span>取两次反，最上面保留，下面那根化开，得到<span
+class="math inline">\(F_d&#39;&#39;\)</span></li>
+<li>对<span class="math inline">\(F_d&#39;&#39;\)</span>对偶回去</li>
 </ol>
-<h5 id="3-用与或非门设计电路"><a href="#3-用与或非门设计电路" class="headerlink" title="3. 用与或非门设计电路"></a>3. 用与或非门设计电路</h5><p>这个就更简单了，因为给出的函数表达式都是形如F &#x3D; xyz + xyz + xyz，所以只需要在F头上加两条杠就好了。</p>
-<p>第二种思路就是跟用与非门设计电路的第二种方法一样。加两条杠，最上面不动，下面那个把xyz + xyz + xyz变成()()()型，然后二项式定理展开即可。（如果是与非门第二种设计思路还要将展开的东西再取两次反）</p>
-<h4 id="2-多输出电路设计"><a href="#2-多输出电路设计" class="headerlink" title="2. 多输出电路设计"></a>2. 多输出电路设计</h4><p>啊，最直接的想法就是分别把每个输出对应的电路设计出来就好了。但是这样比较憨，当我们化简得到了每个输出对应的逻辑表达式的时候，我们应该能尽可能使每一项<strong>复用</strong>。看下面这个例子：</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/6.png"></p>
-<p>可以发现原$F_1$中的$A\overline{B}$可以变成$A\overline{B}\overline{C}$，这样就跟$F_2$中的$A\overline{B}\overline{C}$一样了，做到了复用。</p>
-<h4 id="3-包含无关项的电路设计"><a href="#3-包含无关项的电路设计" class="headerlink" title="3. 包含无关项的电路设计"></a>3. 包含无关项的电路设计</h4><p>其实很简单，看下面这个例子就懂了。</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/7.png"></p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/8.png"></p>
+<h5 id="用与或非门设计电路">3. 用与或非门设计电路</h5>
+<p>这个就更简单了，因为给出的函数表达式都是形如F = xyz + xyz +
+xyz，所以只需要在F头上加两条杠就好了。</p>
+<p>第二种思路就是跟用与非门设计电路的第二种方法一样。加两条杠，最上面不动，下面那个把xyz
++ xyz +
+xyz变成()()()型，然后二项式定理展开即可。（如果是与非门第二种设计思路还要将展开的东西再取两次反）</p>
+<h4 id="多输出电路设计">2. 多输出电路设计</h4>
+<p>啊，最直接的想法就是分别把每个输出对应的电路设计出来就好了。但是这样比较憨，当我们化简得到了每个输出对应的逻辑表达式的时候，我们应该能尽可能使每一项<strong>复用</strong>。看下面这个例子：</p>
+<p><img src="6.png" /></p>
+<p>可以发现原<span class="math inline">\(F_1\)</span>中的<span
+class="math inline">\(A\overline{B}\)</span>可以变成<span
+class="math inline">\(A\overline{B}\overline{C}\)</span>，这样就跟<span
+class="math inline">\(F_2\)</span>中的<span
+class="math inline">\(A\overline{B}\overline{C}\)</span>一样了，做到了复用。</p>
+<h4 id="包含无关项的电路设计">3. 包含无关项的电路设计</h4>
+<p>其实很简单，看下面这个例子就懂了。</p>
+<p><img src="7.png" /></p>
+<p><img src="8.png" /></p>
 <p>首先我们知道余3码是在8421码的基础上+3得到，因为8421码只有10位，所以余3码也只有10位。而且8421码最小是0000，所以余3码最小是0011（对应十进制数1）。所以这就在输出F中产生了许多无关项d。在画卡诺图时，若不考虑无关项，则把d全置为0；考虑无关项则把d全置为1。最后得到化简后的函数表达式。然后再将这个函数表达式用与非门设计。</p>
-<h4 id="4-考虑级数的电路设计"><a href="#4-考虑级数的电路设计" class="headerlink" title="4. 考虑级数的电路设计"></a>4. 考虑级数的电路设计</h4><p>也是看一道例题就可以理解了。</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/9.png"></p>
+<h4 id="考虑级数的电路设计">4. 考虑级数的电路设计</h4>
+<p>也是看一道例题就可以理解了。</p>
+<p><img src="9.png" /></p>
 <p>先用最直接的方法，与或非门直接加两条杠结束。与非门直接加两条杠，下面那条杠化开结束。</p>
 <p>但是这样设计级数会不会多呢？</p>
-<p>如果我们用”与或非门设计电路”中第二种化简方法，试一下：</p>
-<p>$F &#x3D; \overline{\overline{AB + \overline{A}C}} &#x3D; \overline{\overline{AB} \cdot \overline{\overline{A}C}} &#x3D; \overline{(\overline{A} + \overline{B})(A + \overline{C})} &#x3D; \overline{\overline{A}\overline{C} + A\overline{B} + \overline{B}\overline{C}} &#x3D; \overline{\overline{A}\overline{C} + A\overline{B}}$</p>
+<p>如果我们用"与或非门设计电路"中第二种化简方法，试一下：</p>
+<p><span class="math inline">\(F = \overline{\overline{AB +
+\overline{A}C}} = \overline{\overline{AB} \cdot
+\overline{\overline{A}C}} = \overline{(\overline{A} + \overline{B})(A +
+\overline{C})} = \overline{\overline{A}\overline{C} + A\overline{B} +
+\overline{B}\overline{C}} = \overline{\overline{A}\overline{C} +
+A\overline{B}}\)</span></p>
 <p>可以发现，这样设计只有3层。但是原来那样直接加两条杠是4层。所以当考虑电路的级数时，在用与或非门设计电路时，可以考虑进一步化简优化电路的级数。</p>
 <p>如果用与非门，就不需要考虑进一步化简了。因为在与非门进一步化简后，还需要再内部再添加两条杠。级数肯定比不继续化简多。</p>
-<h4 id="5-综合题"><a href="#5-综合题" class="headerlink" title="5. 综合题"></a>5. 综合题</h4><ul>
+<h4 id="综合题">5. 综合题</h4>
+<ul>
 <li>设计一个组合电路，将8421BCD码变换为余3码。</li>
 </ul>
 <p>先确定输入输出变量，因为8421BCD码是用四个二进制数表示十进制数0~9，所以有四个输入A、B、C、D代表四个二进制数。同理四个输出W、X、Y、Z代表变换后的余3码。</p>
 <p>然后列出真值表，因为BCD只能表示十进制0~9，所以注意表中有无关项d。</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/10.png"></p>
+<p><img src="10.png" /></p>
 <p>这里不考虑无关项，所以在后续画卡诺图时都将d置为0。</p>
-<p>因为是四个输出，所以属于多输出电路。所以先画四个卡诺图得到四个逻辑表达式（其实对于Z，发现其很有规律不用画卡诺图都可以知道它就是$\overline{D}$）</p>
-<p>画卡诺图过程省略，得到四个逻辑表达式：<br>$$<br>W &#x3D; A + BC + BD \<br>X &#x3D; \overline{B}C + \overline{B}D + B\overline{C}\overline{D} \<br>Y &#x3D; CD + \overline{C}\overline{D} \<br>Z &#x3D; \overline{D}<br>$$<br>此时我们需要思考，是否能做到项的<strong>复用</strong>呢？乍一看没发现能复用的，所以先不考虑复用，继续将式子进一步化简先。先从简单的开始画：</p>
-<p>$Z &#x3D; \overline{D}$</p>
-<p>$Y &#x3D; \overline{C} \oplus D$</p>
-<p>$X &#x3D; \overline{B}(C + D) + B\overline{(C + D)} &#x3D; B \oplus (C + D) &#x3D; B \oplus \overline{\overline{C}\overline{D}}$</p>
-<p>$W &#x3D; A + B(C + D) &#x3D; A + B\overline{\overline{C}\overline{D}}$</p>
-<p>化简后可以发现，$\overline{\overline{C}\overline{D}}$这个东西可以做到复用，真不错。</p>
-<p>接下来就是选择门电路来设计电路了。这里我选择最常用的与非门 + 异或门设计电路。根据上面的逻辑表达式直接设计即可（W还需化简一下：$W &#x3D; \overline{\overline{A} \cdot \overline{B\overline{\overline{C}\overline{D}}}}$）</p>
+<p>因为是四个输出，所以属于多输出电路。所以先画四个卡诺图得到四个逻辑表达式（其实对于Z，发现其很有规律不用画卡诺图都可以知道它就是<span
+class="math inline">\(\overline{D}\)</span>）</p>
+<p>画卡诺图过程省略，得到四个逻辑表达式： <span class="math display">\[
+W = A + BC + BD \\
+X = \overline{B}C + \overline{B}D + B\overline{C}\overline{D} \\
+Y = CD + \overline{C}\overline{D} \\
+Z = \overline{D}
+\]</span>
+此时我们需要思考，是否能做到项的<strong>复用</strong>呢？乍一看没发现能复用的，所以先不考虑复用，继续将式子进一步化简先。先从简单的开始画：</p>
+<p><span class="math inline">\(Z = \overline{D}\)</span></p>
+<p><span class="math inline">\(Y = \overline{C} \oplus D\)</span></p>
+<p><span class="math inline">\(X = \overline{B}(C + D) + B\overline{(C +
+D)} = B \oplus (C + D) = B \oplus
+\overline{\overline{C}\overline{D}}\)</span></p>
+<p><span class="math inline">\(W = A + B(C + D) = A +
+B\overline{\overline{C}\overline{D}}\)</span></p>
+<p>化简后可以发现，<span
+class="math inline">\(\overline{\overline{C}\overline{D}}\)</span>这个东西可以做到复用，真不错。</p>
+<p>接下来就是选择门电路来设计电路了。这里我选择最常用的与非门 +
+异或门设计电路。根据上面的逻辑表达式直接设计即可（W还需化简一下：<span
+class="math inline">\(W = \overline{\overline{A} \cdot
+\overline{B\overline{\overline{C}\overline{D}}}}\)</span>）</p>
 <p>最后画出电路：</p>
-<p><img src="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/11.png"></p>
-<hr>
-<h3 id="三-组合逻辑电路-3"><a href="#三-组合逻辑电路-3" class="headerlink" title="三. 组合逻辑电路(3)"></a>三. 组合逻辑电路(3)</h3>
+<p><img src="11.png" /></p>
+<hr />
+<h3 id="三.-组合逻辑电路3">三. 组合逻辑电路(3)</h3>
+
     </div>
 
     
@@ -488,7 +558,8 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF-1"><span class="nav-text">一. 组合逻辑电路(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E6%A6%82%E8%BF%B0"><span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90-%E5%92%8C-%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-text">2. 组合逻辑电路的分析 和 逻辑函数的设计方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF-2"><span class="nav-text">二. 组合逻辑电路(2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-%E5%8D%95%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">1. 单输出电路设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#1-%E7%94%A8%E4%B8%8E%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">1. 用与非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#2-%E7%94%A8%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2. 用或非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#3-%E7%94%A8%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">3. 用与或非门设计电路</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-%E5%A4%9A%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2. 多输出电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-%E5%8C%85%E5%90%AB%E6%97%A0%E5%85%B3%E9%A1%B9%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">3. 包含无关项的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4-%E8%80%83%E8%99%91%E7%BA%A7%E6%95%B0%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">4. 考虑级数的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-%E7%BB%BC%E5%90%88%E9%A2%98"><span class="nav-text">5. 综合题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF-3"><span class="nav-text">三. 组合逻辑电路(3)</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF1"><span class="nav-text">一. 组合逻辑电路(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">1. 概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90-%E5%92%8C-%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-text">2. 组合逻辑电路的分析
+和 逻辑函数的设计方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF2"><span class="nav-text">二. 组合逻辑电路(2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">1. 单输出电路设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">1. 用与非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2. 用或非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">3. 用与或非门设计电路</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2. 多输出电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E6%97%A0%E5%85%B3%E9%A1%B9%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">3. 包含无关项的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%83%E8%99%91%E7%BA%A7%E6%95%B0%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">4. 考虑级数的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E9%A2%98"><span class="nav-text">5. 综合题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF3"><span class="nav-text">三. 组合逻辑电路(3)</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -646,6 +717,59 @@ $(document).ready(function() {
   
 
   
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
 
   
 
