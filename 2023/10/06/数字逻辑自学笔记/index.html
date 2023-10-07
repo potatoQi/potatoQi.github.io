@@ -73,8 +73,16 @@
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/43.png">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/44.png">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/45.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/46.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/47.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/48.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/49.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/50.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/51.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/52.png">
+<meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/53.png">
 <meta property="article:published_time" content="2023-10-06T08:57:58.000Z">
-<meta property="article:modified_time" content="2023-10-07T13:17:05.795Z">
+<meta property="article:modified_time" content="2023-10-07T15:29:45.011Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
@@ -273,7 +281,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-07 21:17:05" itemprop="dateModified" datetime="2023-10-07T21:17:05+08:00">2023-10-07</time>
+                <time title="修改时间：2023-10-07 23:29:45" itemprop="dateModified" datetime="2023-10-07T23:29:45+08:00">2023-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -298,14 +306,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.3k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>8 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -757,6 +765,108 @@ class="math inline">\(w_3、\overline{w_3}、\overline{w_3}、w_3\)</span>，数
 </ol>
 <hr />
 <h3 id="五.-组合逻辑电路5">五. 组合逻辑电路(5)</h3>
+<p>这一节比较杂，主要是对第（4）内容的一个补充。具体来说，讲了如下内容：</p>
+<ol type="1">
+<li>用香农展开定理搭配多路选择器实现逻辑函数</li>
+<li>八选一数据选择器74151</li>
+<li>双四选一数据选择器74153</li>
+<li>数据选择器的更多运用</li>
+</ol>
+<h4 id="用香农展开定理搭配多路选择器实现逻辑函数">5.1
+用香农展开定理搭配多路选择器实现逻辑函数</h4>
+<ul>
+<li><p>香农展开定理：</p>
+<ul>
+<li><p><span class="math inline">\(f\left(w_{1}, w_{2}, \ldots . .
+w_{\mathrm{n}}\right)=\overline{w_{1}} f\left(0, w_{2}, \ldots . .
+w_{\mathrm{n}}\right)+w_{1} f\left(1, w_{2}, \ldots . .
+w_{\mathrm{n}}\right)\)</span></p>
+<ul>
+<li><p>↑展开一个变量</p></li>
+<li><p>在香农表达式中<span
+class="math inline">\(f\left(0,w_{2}....w_{\mathrm{n}}\right)\)</span>
+项称为对应于<span
+class="math inline">\(\bar{w}_{\mathrm{1}}\)</span>的<span
+class="math inline">\(f\)</span>的余因子式, 简写做<span
+class="math inline">\(f_{\overline{w}_1}\)</span>。 同样的,<span
+class="math inline">\(f(1,w_2.....w_n)\)</span> 项称为对应于<span
+class="math inline">\(w_{_1}\)</span>的<span
+class="math inline">\(f\)</span>的余因子式,简写做<span
+class="math inline">\(f_{_{w_1}}\)</span>。所以香农展开定理可以简写成：
+<span class="math display">\[
+f=\overline{w}_{1}f_{\overline{w}_{1}}+w_{1}f_{w_{1}}
+\]</span></p></li>
+</ul></li>
+<li><p><span class="math inline">\(f(w_1,w_2,....,w_n)=\\
+\overline{w_1}\overline{w_2}f(0,0,w_3....w_n)+\overline{w_1}w_2f(0,1,w_3,.....w_n)+w_1\overline{w_2}f(1,0,w_3,.....w_n)+w_1w_2f(1,1,w_3,.....w_n)\)</span></p>
+<ul>
+<li>↑展开多个变量</li>
+</ul></li>
+</ul></li>
+</ul>
+<p>那如何用香农展开定理实现逻辑函数呢？举个例子，比如<span
+class="math inline">\(f=\overline{w}_{1}\overline{w}_{3}+w_{1}w_{2}+w_{1}w_{3}\)</span></p>
+<p>将f以w1用香农展开定理展开，得到<span
+class="math inline">\(f=\overline{w}_1f_{\overline{w}_1}+w_1f_{w_1}=\overline{w}_1(\overline{w}_3)+w_1(w_2+w_3)\)</span></p>
+<p>然后选用二路选择器，w1是选择器，数据输入通道2个分别是<span
+class="math inline">\(\overline{w_3}\)</span>和<span
+class="math inline">\(w_2 +
+w_3\)</span>，数据输出通道一个为f。实现电路图如下：</p>
+<p><img src="46.png" /></p>
+<p>同理，如果用香农展开定理展开两个变量，则搭配一个四路选择器也可以实现上述函数f。</p>
+<h4 id="八选一数据选择器74151">5.2 八选一数据选择器74151</h4>
+<p>74151MUX的样子和真值表如下图</p>
+<p><img src="47.png" /></p>
+<h4 id="双四选一数据选择器74153">5.3 双四选一数据选择器74153</h4>
+<p>就是俩独立的四路选择器放一起，如图。（个人觉得左图很不直观，下面练习中的74153比较直观）</p>
+<p><img src="48.png" /></p>
+<blockquote>
+<p>练习：如何用74153构建一个74151？</p>
+</blockquote>
+<p>很简单，跟以前练习题一样的套路。只要保证两个四选一板子有且只能有一块板子在工作就行了。看答案吧，很简单。</p>
+<p><img src="49.png" /></p>
+<p>A2还有G1就是为了实现”只能有一个四选一“板子在工作我们自己加上去的电路。</p>
+<h4 id="小补充">5.4 小补充</h4>
+<p>感觉代号多了有点乱了。让我来梳理一下。</p>
+<p>74148是最常见的8线-3线优先编码器。</p>
+<p>74138是最常见的二进制译码器。（3个输入、8个输出）</p>
+<p>数据分配器DEMUX可用74138实现。</p>
+<p>数据选择器MUX有74151（八路）、74153（俩独立四路放一起）</p>
+<h4 id="数据选择器的更多运用">5.5 数据选择器的更多运用</h4>
+<ol type="1">
+<li><p>与DEMUX实现多路信号分时传送</p>
+<p><img src="50.png" /></p></li>
+<li><p>实现逻辑函数</p>
+<ul>
+<li><p>用MUX实现逻辑函数的方法有许多。</p>
+<ol type="1">
+<li>直接列真值表实现</li>
+<li>列完真值表，对真值表优化后实现</li>
+<li>用香农展开公式后实现</li>
+<li>列引入变量的卡诺图实现</li>
+</ol></li>
+<li><p>前三种方法前面都介绍过了，这里放一个用第四种方法的例题。</p>
+<p><img src="51.png" /></p></li>
+<li><p>因为74151是八位选择器，所以只能有3个选择变量。所以画卡诺图引入了一个变量。然后8个信号输入端口就输入0/1/D/<span
+class="math inline">\(\overline{D}\)</span>即可。</p></li>
+<li><blockquote>
+<p>练习：请用一片74151实现逻辑函数<span
+class="math inline">\(F(A,B,C,D,E)=A\overline{B}C\overline{D}E+AB\overline{C}\overline{D}\overline{E}+A\overline{B}C\overline{D}\overline{E}+\overline{A}\overline{B}\overline{C}DE+\overline{A}B\overline{C}\overline{D}\overline{E}\)</span></p>
+</blockquote></li>
+<li><p>74151是八路选择器，所以要有三个选择变量。但是这里F有5个，所以第一想法是用香农展开定理展开3个变量，但是这样太麻烦了。所以用第四种方法，引入两个变量进卡诺图即可。</p>
+<p><img src="52.png" /></p></li>
+</ul></li>
+<li><p>数据选择器的扩展</p>
+<ul>
+<li><p>很好理解，看图即可。</p>
+<p><img src="53.png" /></p></li>
+</ul></li>
+</ol>
+<hr />
+<h3 id="六.-组合逻辑电路6">六. 组合逻辑电路(6)</h3>
+<h4 id="数值比较器">6.1 数值比较器</h4>
+<h4 id="加法器">6.2 加法器</h4>
+<h4 id="竞争-冒险现象">6.3 竞争-冒险现象</h4>
 
     </div>
 
@@ -840,7 +950,8 @@ class="math inline">\(w_3、\overline{w_3}、\overline{w_3}、w_3\)</span>，数
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF1"><span class="nav-text">一. 组合逻辑电路(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">1.1. 概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90-%E5%92%8C-%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-text">1.2.
-组合逻辑电路的分析 和 逻辑函数的设计方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF2"><span class="nav-text">二. 组合逻辑电路(2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.1. 单输出电路设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.1. 用与非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.2. 用或非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.3. 用与或非门设计电路</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.2. 多输出电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E6%97%A0%E5%85%B3%E9%A1%B9%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.3. 包含无关项的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%83%E8%99%91%E7%BA%A7%E6%95%B0%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.4. 考虑级数的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E9%A2%98"><span class="nav-text">2.5. 综合题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF3"><span class="nav-text">三. 组合逻辑电路(3)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E5%99%A8"><span class="nav-text">3.1 编码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%91%E7%A0%81%E5%99%A8"><span class="nav-text">3.2 译码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%AF%91%E7%A0%81%E5%99%A8%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0"><span class="nav-text">3.3 用译码器实现逻辑函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF4"><span class="nav-text">四. 组合逻辑电路(4)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D%E5%99%A8"><span class="nav-text">4.1 数据分配器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4.2 数据选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E8%BF%90%E7%94%A8"><span class="nav-text">4.3 数据选择器的运用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF5"><span class="nav-text">五. 组合逻辑电路(5)</span></a></li></ol></div>
+组合逻辑电路的分析 和 逻辑函数的设计方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF2"><span class="nav-text">二. 组合逻辑电路(2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.1. 单输出电路设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.1. 用与非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.2. 用或非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.3. 用与或非门设计电路</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.2. 多输出电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E6%97%A0%E5%85%B3%E9%A1%B9%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.3. 包含无关项的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%83%E8%99%91%E7%BA%A7%E6%95%B0%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.4. 考虑级数的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E9%A2%98"><span class="nav-text">2.5. 综合题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF3"><span class="nav-text">三. 组合逻辑电路(3)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E5%99%A8"><span class="nav-text">3.1 编码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%91%E7%A0%81%E5%99%A8"><span class="nav-text">3.2 译码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%AF%91%E7%A0%81%E5%99%A8%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0"><span class="nav-text">3.3 用译码器实现逻辑函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF4"><span class="nav-text">四. 组合逻辑电路(4)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D%E5%99%A8"><span class="nav-text">4.1 数据分配器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4.2 数据选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E8%BF%90%E7%94%A8"><span class="nav-text">4.3 数据选择器的运用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF5"><span class="nav-text">五. 组合逻辑电路(5)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E9%A6%99%E5%86%9C%E5%B1%95%E5%BC%80%E5%AE%9A%E7%90%86%E6%90%AD%E9%85%8D%E5%A4%9A%E8%B7%AF%E9%80%89%E6%8B%A9%E5%99%A8%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0"><span class="nav-text">5.1
+用香农展开定理搭配多路选择器实现逻辑函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E9%80%89%E4%B8%80%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A874151"><span class="nav-text">5.2 八选一数据选择器74151</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E5%9B%9B%E9%80%89%E4%B8%80%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A874153"><span class="nav-text">5.3 双四选一数据选择器74153</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E8%A1%A5%E5%85%85"><span class="nav-text">5.4 小补充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%BF%90%E7%94%A8"><span class="nav-text">5.5 数据选择器的更多运用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF6"><span class="nav-text">六. 组合逻辑电路(6)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E6%AF%94%E8%BE%83%E5%99%A8"><span class="nav-text">6.1 数值比较器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="nav-text">6.2 加法器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%9E%E4%BA%89-%E5%86%92%E9%99%A9%E7%8E%B0%E8%B1%A1"><span class="nav-text">6.3 竞争-冒险现象</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
