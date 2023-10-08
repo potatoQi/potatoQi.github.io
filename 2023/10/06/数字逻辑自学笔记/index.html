@@ -22,12 +22,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门">
+  <meta name="description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门 最后，如果有朋友打算认真看这篇Blog进行学习的话，为了更好的阅">
 <meta property="og:type" content="article">
 <meta property="og:title" content="数字逻辑自学笔记">
 <meta property="og:url" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门">
+<meta property="og:description" content="写于2023&#x2F;10&#x2F;6，这门课其实还是有点意思的。但是上个月身体原因一直在关心我自己的身体，所以这门课我全翘掉了，一点没听。现在马上就要实验课了，于是打算在国庆的末尾把这门课学了。目的是能做出几个组合逻辑电路的实验项目。 自学参考的内容为老师ppt、各种网上博客。 学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：传送门 最后，如果有朋友打算认真看这篇Blog进行学习的话，为了更好的阅">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/2.png">
@@ -92,7 +92,7 @@
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/62.png">
 <meta property="og:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/63.png">
 <meta property="article:published_time" content="2023-10-06T08:57:58.000Z">
-<meta property="article:modified_time" content="2023-10-08T06:11:48.080Z">
+<meta property="article:modified_time" content="2023-10-08T14:37:38.631Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
@@ -291,7 +291,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-08 14:11:48" itemprop="dateModified" datetime="2023-10-08T14:11:48+08:00">2023-10-08</time>
+                <time title="修改时间：2023-10-08 22:37:38" itemprop="dateModified" datetime="2023-10-08T22:37:38+08:00">2023-10-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -316,14 +316,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>13k</span>
+              <span>15k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>12 分钟</span>
+              <span>13 分钟</span>
             </span>
 
         </div>
@@ -339,6 +339,7 @@
 <p>自学参考的内容为老师ppt、各种网上博客。</p>
 <p>学完后打算去刷题巩固一下，刷题打算在一个up主视频里刷：<a
 target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5">传送门</a></p>
+<p>最后，如果有朋友打算认真看这篇Blog进行学习的话，为了更好的阅读体验建议开梯子，因为本文有许多图片和一个视频。（存储在github中）</p>
 <span id="more"></span>
 <p>先放一张各种门的符号图，后面忘了的话可以参考：</p>
 <p><img src="1.png" /></p>
@@ -996,7 +997,56 @@ BC\)</span>，这样就不会出现0型冒险了。（为什么要这么修改�
 <p><img src="63.png" /></p></li>
 </ol>
 <hr />
-<h3 id="七.-verilog1">七. Verilog(1)</h3>
+<h3 id="七.-vivado的基本使用">七. Vivado的基本使用</h3>
+<p>先来了解一下EDA技术：即电子设计自动化，其依赖功能强大的计算机，在
+EDA工具软件平台上，对以硬件描述语言(HDL)为系统逻辑描述手段完成的设计文件，自动地完成逻辑编译、逻辑化简、逻辑分割、逻辑综合、布局布线，以及逻辑优化和仿真测试，直至物理实现既定的电子设计系统功能。</p>
+<p>以我浅薄的理解，EDA = IDE，Verilog =
+C++，hhhhh，FPGA是可编程逻辑器件。</p>
+<h4 id="用verilog-hdl设计电路">用Verilog HDL设计电路</h4>
+<p>写一个模块大致分为以下几步：</p>
+<ol type="1">
+<li>打开Vivado，创建一个项目（根据自己开发板选型号，我的是xc7a35tcpg236-1）</li>
+<li>新建一个design文件，在里头写程序</li>
+<li>新建一个sim文件，在里头写仿真程序（初始化 + 实例化 +
+仿真过程代码）</li>
+<li>运行仿真，观察仿真结果是否跟设想一样</li>
+<li>封装IP核，以便此模块以后可被其它项目使用</li>
+</ol>
+<h4 id="用block-design设计电路">用Block Design设计电路</h4>
+<ol type="1">
+<li>打开Vivado，创建一个项目</li>
+<li>左侧新建一个Block Design项目</li>
+<li>引入IP核，开始画图</li>
+<li>新建一个sim文件，写仿真程序</li>
+<li>运行仿真，观察仿真结果是否跟设想一样</li>
+</ol>
+<h4 id="用rtl看电路图">用RTL看电路图</h4>
+<p>点左侧RTL分析即可生成。</p>
+<h4 id="下板">下板</h4>
+<ol type="1">
+<li>写好constraint文件（我直接用的老师给的模板文件上修改）</li>
+<li>运行左侧Synthesis</li>
+<li>运行Implementation（记得勾选第二项产生二进制文件，然后选择Open
+Hardware Manager）</li>
+<li>通过USB连上FPGA</li>
+<li>点击Auto Connect，连接成功后选择Program
+Device下载刚才的二进制文件</li>
+<li>可以愉快的用板子观察程序结果啦~</li>
+</ol>
+<p>但是断电后程序就会丢失，为了解决这个问题，需要把程序烧录进ROM里：</p>
+<ol type="1">
+<li>生成bin文件，Tools -&gt; Settings -&gt; Bitstream -&gt;
+勾选-bin-file* -&gt; OK，左侧Generate
+Bitstream重新生成bit文件（此时就会生成bin文件）</li>
+<li>右键芯片选择Add Configuration Memory Device，选择合适的闪存型号</li>
+<li>我程序报错了，留个坑</li>
+</ol>
+<h4 id="总结">总结</h4>
+<p>Vivado这个软件其实蛮简单使用的。首先不考虑板子的话，只在电脑上设计电路有两种方法，第一种就是直接创建design文件写，第二种就是用Block
+Design。然后想看设计的对不对，就创建仿真文件来看。另外，用RTL可以看设计好的电路。</p>
+<p>下板的话就需要通过constraint文件指定管脚，然后左侧Synthesis +
+Implementation + 生成二进制文件 + 连板子 + Auto Connect + Program
+Device就可以在板子上观察了。</p>
 
     </div>
 
@@ -1081,7 +1131,7 @@ BC\)</span>，这样就不会出现0型冒险了。（为什么要这么修改�
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF1"><span class="nav-text">一. 组合逻辑电路(1)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A6%82%E8%BF%B0"><span class="nav-text">1.1. 概述</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF%E7%9A%84%E5%88%86%E6%9E%90-%E5%92%8C-%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0%E7%9A%84%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95"><span class="nav-text">1.2.
 组合逻辑电路的分析 和 逻辑函数的设计方法</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF2"><span class="nav-text">二. 组合逻辑电路(2)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%95%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.1. 单输出电路设计</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.1. 用与非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.2. 用或非门设计电路</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%94%A8%E4%B8%8E%E6%88%96%E9%9D%9E%E9%97%A8%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">2.1.3. 用与或非门设计电路</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E8%BE%93%E5%87%BA%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.2. 多输出电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8C%85%E5%90%AB%E6%97%A0%E5%85%B3%E9%A1%B9%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.3. 包含无关项的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%80%83%E8%99%91%E7%BA%A7%E6%95%B0%E7%9A%84%E7%94%B5%E8%B7%AF%E8%AE%BE%E8%AE%A1"><span class="nav-text">2.4. 考虑级数的电路设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BB%BC%E5%90%88%E9%A2%98"><span class="nav-text">2.5. 综合题</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF3"><span class="nav-text">三. 组合逻辑电路(3)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E7%A0%81%E5%99%A8"><span class="nav-text">3.1 编码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%AF%91%E7%A0%81%E5%99%A8"><span class="nav-text">3.2 译码器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E8%AF%91%E7%A0%81%E5%99%A8%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0"><span class="nav-text">3.3 用译码器实现逻辑函数</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF4"><span class="nav-text">四. 组合逻辑电路(4)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E5%88%86%E9%85%8D%E5%99%A8"><span class="nav-text">4.1 数据分配器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8"><span class="nav-text">4.2 数据选择器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E8%BF%90%E7%94%A8"><span class="nav-text">4.3 数据选择器的运用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF5"><span class="nav-text">五. 组合逻辑电路(5)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E9%A6%99%E5%86%9C%E5%B1%95%E5%BC%80%E5%AE%9A%E7%90%86%E6%90%AD%E9%85%8D%E5%A4%9A%E8%B7%AF%E9%80%89%E6%8B%A9%E5%99%A8%E5%AE%9E%E7%8E%B0%E9%80%BB%E8%BE%91%E5%87%BD%E6%95%B0"><span class="nav-text">5.1
-用香农展开定理搭配多路选择器实现逻辑函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E9%80%89%E4%B8%80%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A874151"><span class="nav-text">5.2 八选一数据选择器74151</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E5%9B%9B%E9%80%89%E4%B8%80%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A874153"><span class="nav-text">5.3 双四选一数据选择器74153</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E8%A1%A5%E5%85%85"><span class="nav-text">5.4 小补充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%BF%90%E7%94%A8"><span class="nav-text">5.5 数据选择器的更多运用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF6"><span class="nav-text">六. 组合逻辑电路(6)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E6%AF%94%E8%BE%83%E5%99%A8"><span class="nav-text">6.1 数值比较器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="nav-text">6.2 加法器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%9E%E4%BA%89-%E5%86%92%E9%99%A9%E7%8E%B0%E8%B1%A1"><span class="nav-text">6.3 竞争-冒险现象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83.-verilog1"><span class="nav-text">七. Verilog(1)</span></a></li></ol></div>
+用香农展开定理搭配多路选择器实现逻辑函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%AB%E9%80%89%E4%B8%80%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A874151"><span class="nav-text">5.2 八选一数据选择器74151</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%8C%E5%9B%9B%E9%80%89%E4%B8%80%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A874153"><span class="nav-text">5.3 双四选一数据选择器74153</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B0%8F%E8%A1%A5%E5%85%85"><span class="nav-text">5.4 小补充</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E9%80%89%E6%8B%A9%E5%99%A8%E7%9A%84%E6%9B%B4%E5%A4%9A%E8%BF%90%E7%94%A8"><span class="nav-text">5.5 数据选择器的更多运用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E7%BB%84%E5%90%88%E9%80%BB%E8%BE%91%E7%94%B5%E8%B7%AF6"><span class="nav-text">六. 组合逻辑电路(6)</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E5%80%BC%E6%AF%94%E8%BE%83%E5%99%A8"><span class="nav-text">6.1 数值比较器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E5%99%A8"><span class="nav-text">6.2 加法器</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AB%9E%E4%BA%89-%E5%86%92%E9%99%A9%E7%8E%B0%E8%B1%A1"><span class="nav-text">6.3 竞争-冒险现象</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83.-vivado%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8"><span class="nav-text">七. Vivado的基本使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8verilog-hdl%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">用Verilog HDL设计电路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8block-design%E8%AE%BE%E8%AE%A1%E7%94%B5%E8%B7%AF"><span class="nav-text">用Block Design设计电路</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8rtl%E7%9C%8B%E7%94%B5%E8%B7%AF%E5%9B%BE"><span class="nav-text">用RTL看电路图</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8B%E6%9D%BF"><span class="nav-text">下板</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
