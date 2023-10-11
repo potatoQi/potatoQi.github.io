@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-11T06:11:10.901Z</updated>
+  <updated>2023-10-11T07:21:38.848Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,20 +17,43 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>9, 压缩和解压</title>
+    <link href="http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"/>
+    <id>http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</id>
+    <published>2023-10-11T06:44:45.000Z</published>
+    <updated>2023-10-11T07:21:38.848Z</updated>
+    
+    <content type="html"><![CDATA[<p>压缩：tar -zcvf 生成的压缩包名 压缩材料（多个材料用空格分隔）</p><p>解压 ：tar -zxvf 压缩包名</p><span id="more"></span><p>Linux下使用rar解压缩也是可以的。但是要先apt install rar/unrar。</p><p>rar压缩：rar a -r 生成的压缩包名 压缩材料</p><p>rar解压：unrar x 压缩包名</p><p>Linux下也是可以使用zip解压缩的。但是要先apt install zip/unzip。</p><p>zip压缩：zip -r 生成的压缩包名 压缩材料</p><p>zip解压：unzip 解锁包名</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;压缩：tar -zcvf 生成的压缩包名 压缩材料（多个材料用空格分隔）&lt;/p&gt;
+&lt;p&gt;解压 ：tar -zxvf 压缩包名&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>8. 软件包安装</title>
     <link href="http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/"/>
     <id>http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/</id>
     <published>2023-10-11T06:10:57.000Z</published>
-    <updated>2023-10-11T06:11:10.901Z</updated>
+    <updated>2023-10-11T07:04:59.840Z</updated>
     
-    <content type="html"><![CDATA[<span id="more"></span>]]></content>
+    <content type="html"><![CDATA[<p>apt update是重新拉去目标源的资源列表。所以一般aptinstall找不到的话，先重新拉取一下列表先。</p><p>apt upgrade是根据本地资源列表更新所有软件包。</p><p>aptitude show软件包名：查看软件包是否安装，若安装，显示相关信息（需要先apt installaptitude）（aptitude ≈ apt ≈ apt-get）</p><span id="more"></span><p>apt install 软件名：安装</p><p>apt remove 软件名：卸载</p><p>离线安装也可以，先下载安装包，Ubantu的安装包后缀是.deb。</p><p>安装deb软件包命令：dpkg -i xxx.deb</p><p>卸载软件包：也用apt remove</p><p>还有一种方式是源码安装，也就是别人给你软件的代码，你需要自己在本机上编译。这种方式的一般流程是：</p><ol type="1"><li>解压源代码包</li><li>cd dir（源代码包）</li><li>运行./configure（这一步是检测文件是否缺失以及创建Makefile以及检测编译环境）</li><li>运行make（这一步是在编译源码、生成库和可执行程序）</li><li>运行make install（这一步是把库和可执行程序安装到系统路径下）</li><li>删除和卸载软件：运行make distclean</li></ol>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
-</summary>
-      
+    <summary type="html">&lt;p&gt;apt update是重新拉去目标源的资源列表。所以一般apt
+install找不到的话，先重新拉取一下列表先。&lt;/p&gt;
+&lt;p&gt;apt upgrade是根据本地资源列表更新所有软件包。&lt;/p&gt;
+&lt;p&gt;aptitude show
+软件包名：查看软件包是否安装，若安装，显示相关信息（需要先apt install
+aptitude）（aptitude ≈ apt ≈ apt-get）&lt;/p&gt;</summary>
     
     
     
@@ -151,9 +174,9 @@
     <link href="http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/"/>
     <id>http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/</id>
     <published>2023-10-11T03:34:13.000Z</published>
-    <updated>2023-10-11T05:05:27.206Z</updated>
+    <updated>2023-10-11T06:48:23.803Z</updated>
     
-    <content type="html"><![CDATA[<p>Linux系统类型：</p><ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软连接：l</li><li>管道文件：p</li><li>套接字：s</li></ol><span id="more"></span><p>mkdir：创建文件夹</p><p>rm：删除，-r删除文件夹</p><p>touch：创建文件</p><p>cp：拷贝（cp A B：把A拷贝到B中）（拷贝文件夹要加参数-r）</p><p>ls：-l详细细心，-h以human形式展现，可以看大小。（l：ls的简写，ll：ls-l的简写）</p>]]></content>
+    <content type="html"><![CDATA[<p>Linux系统类型：</p><ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软连接：l</li><li>管道文件：p</li><li>套接字：s</li></ol><span id="more"></span><p>mkdir：创建文件夹</p><p>rm：删除，-r删除文件夹</p><p>touch：创建文件</p><p>cp：拷贝（cp A B：把A拷贝到B中）（拷贝文件夹要加参数-r）</p><p>ls：-l详细细心，-h以human形式展现，可以看大小。（l：ls的简写，ll：ls-l的简写）</p><p>file 文件名：Linux文件名很不规范，没有后缀名这种说法。有时候ls-l看到的信息比较缺乏（比如文本文件和压缩包在ls-l下都显示为-），所以使用file 文件名就可以知道这个文件的真面目。</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;Linux系统类型：&lt;/p&gt;

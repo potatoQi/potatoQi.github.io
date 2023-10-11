@@ -1,7 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</loc>
+    <lastmod>2023-10-11</lastmod>
+  </url>
+  <url>
     <loc>http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/</loc>
+    <lastmod>2023-10-11</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/</loc>
     <lastmod>2023-10-11</lastmod>
   </url>
   <url>
@@ -14,10 +22,6 @@
   </url>
   <url>
     <loc>http://example.com/2023/10/11/1-shell/</loc>
-    <lastmod>2023-10-11</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/</loc>
     <lastmod>2023-10-11</lastmod>
   </url>
   <url>
