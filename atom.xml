@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-11T01:07:04.891Z</updated>
+  <updated>2023-10-11T04:47:44.510Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,24 +17,121 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>6. find命令</title>
+    <link href="http://example.com/2023/10/11/6-find%E5%91%BD%E4%BB%A4/"/>
+    <id>http://example.com/2023/10/11/6-find%E5%91%BD%E4%BB%A4/</id>
+    <published>2023-10-11T04:47:30.000Z</published>
+    <updated>2023-10-11T04:47:44.510Z</updated>
+    
+    <content type="html"><![CDATA[<span id="more"></span>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;span id=&quot;more&quot;&gt;&lt;/span&gt;
+</summary>
+      
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>5. 用户和用户组</title>
+    <link href="http://example.com/2023/10/11/5-%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84/"/>
+    <id>http://example.com/2023/10/11/5-%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84/</id>
+    <published>2023-10-11T04:27:10.000Z</published>
+    <updated>2023-10-11T04:47:15.845Z</updated>
+    
+    <content type="html"><![CDATA[<p>chmod：修改文件权限，chmod u/g/o/a +/- r/w/x 文件名，或者chmod 471文件名，471分别是3个3位二进制数的十进制</p><p>chown 新所有者 文件名：修改文件所有者</p><p>chgrp 新组 文件名：修改文件所属组</p><span id="more"></span><p>adduser 用户名：添加用户</p><p>deluser 用户名：删除用户</p><p>addgroup 组名：添加组名</p><p>delgroup 组名：删除组</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;chmod：修改文件权限，chmod u/g/o/a +/- r/w/x 文件名，或者chmod 471
+文件名，471分别是3个3位二进制数的十进制&lt;/p&gt;
+&lt;p&gt;chown 新所有者 文件名：修改文件所有者&lt;/p&gt;
+&lt;p&gt;chgrp 新组 文件名：修改文件所属组&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>4. 目录和文件操作2</title>
+    <link href="http://example.com/2023/10/11/4-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C2/"/>
+    <id>http://example.com/2023/10/11/4-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C2/</id>
+    <published>2023-10-11T03:49:43.000Z</published>
+    <updated>2023-10-11T04:26:51.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>cat：查看文件内容</p><p>tac：倒着查看文件内容</p><p>more：查看大文件，逐屏显示</p><p>head：显示前面内容</p><p>tail：显示后面内容</p><p>tree：以树的形式展示当前目录（需要snap install tree）</p><span id="more"></span><p>软链接：ln -s 原文件path链接名字（相当于win的快捷方式）（本质就是链接存储的是原文件的path，所以一般写绝对路径）（有效的软链接高亮是蓝色，无效的是红色的）</p><p>硬链接：ln 原文件path链接名字（本质是原文件与新文件同步，铁索连环的效果）</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;cat：查看文件内容&lt;/p&gt;
+&lt;p&gt;tac：倒着查看文件内容&lt;/p&gt;
+&lt;p&gt;more：查看大文件，逐屏显示&lt;/p&gt;
+&lt;p&gt;head：显示前面内容&lt;/p&gt;
+&lt;p&gt;tail：显示后面内容&lt;/p&gt;
+&lt;p&gt;tree：以树的形式展示当前目录（需要snap install tree）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>3. 目录和文件操作1</title>
+    <link href="http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/"/>
+    <id>http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/</id>
+    <published>2023-10-11T03:34:13.000Z</published>
+    <updated>2023-10-11T03:49:30.625Z</updated>
+    
+    <content type="html"><![CDATA[<p>Linux系统类型：</p><ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软连接：l</li><li>管道文件：p</li><li>套接字：s</li></ol><span id="more"></span><p>mkdir：创建文件夹</p><p>rm：删除，-r删除文件夹</p><p>touch：创建文件</p><p>cp：拷贝（cp A B：把A拷贝到B中）（拷贝文件夹要加参数-r）</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;Linux系统类型：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;普通文件：-&lt;/li&gt;
+&lt;li&gt;目录问价：d&lt;/li&gt;
+&lt;li&gt;字符设备文件：c&lt;/li&gt;
+&lt;li&gt;块设备文件：b&lt;/li&gt;
+&lt;li&gt;软连接：l&lt;/li&gt;
+&lt;li&gt;管道文件：p&lt;/li&gt;
+&lt;li&gt;套接字：s&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>2. 类Unix系统目录</title>
     <link href="http://example.com/2023/10/11/2-%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/"/>
     <id>http://example.com/2023/10/11/2-%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</id>
     <published>2023-10-10T17:24:45.000Z</published>
-    <updated>2023-10-11T01:07:04.891Z</updated>
+    <updated>2023-10-11T02:22:32.200Z</updated>
     
-    <content type="html"><![CDATA[<p>/dev：与本机设备（比如鼠标）有关的目录</p><p>/etc：配置文件信息</p><p>/hone：用户目录</p><p>/lib：库目录（比如C库、python库）</p><p>/media、/mnt：磁盘挂载目录</p><p>/opt、/proc：进程目录</p><p>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</p><p>/bin：存放二进制可执行文件</p><p>/boot：存放开机启动程序</p>]]></content>
+    <content type="html"><![CDATA[<p>/dev：与本机设备（比如鼠标）有关的目录</p><span id="more"></span><p>/etc：配置文件信息</p><p>/hone：用户目录</p><p>/lib：库目录（比如C库、python库）</p><p>/media、/mnt：磁盘挂载目录</p><p>/opt、/proc：进程目录</p><p>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</p><p>/bin：存放二进制可执行文件</p><p>/boot：存放开机启动程序</p>]]></content>
     
     
-      
-      
-    <summary type="html">&lt;p&gt;/dev：与本机设备（比如鼠标）有关的目录&lt;/p&gt;
-&lt;p&gt;/etc：配置文件信息&lt;/p&gt;
-&lt;p&gt;/hone：用户目录&lt;/p&gt;
-&lt;p&gt;/lib：库目录（比如C库、python库）&lt;/p&gt;
-&lt;p&gt;/media、/mnt：磁盘挂载目录&lt;/p&gt;
-&lt;p&gt;/opt、/proc</summary>
-      
+    <summary type="html">&lt;p&gt;/dev：与本机设备（比如鼠标）有关的目录&lt;/p&gt;</summary>
     
     
     
@@ -50,7 +147,7 @@
     <link href="http://example.com/2023/10/11/1-shell/"/>
     <id>http://example.com/2023/10/11/1-shell/</id>
     <published>2023-10-10T17:01:20.000Z</published>
-    <updated>2023-10-11T01:58:44.211Z</updated>
+    <updated>2023-10-11T03:33:40.125Z</updated>
     
     <content type="html"><![CDATA[<p>shell：命令解释器。</p><p>Linux系统里有很多种shell，cat /bin/shells查看本机中有哪些shell，echo$SHELL查看本机正在使用哪种shell。一般都是/bin/bash，即bash。</p><span id="more"></span><p>加快编程速度的tips：</p><ol type="1"><li>用tab补齐</li><li>ctrl + a, ctrl + e</li><li>Windows 下快捷键<ol type="1"><li>win + e：资源管理器</li><li>win + d(desktop)：回到桌面</li><li>wn + q(query)：打开win搜索栏</li><li>win + ←/→：分屏</li><li>win + 数字键：切换/打开到到不同程序</li><li>ctrl + shift + N：新建文件夹</li><li>在资源管理器中backspace：返回上一级目录</li><li>alt + tab：切换应用</li><li>alt（用右边的alt）+ enter：查看"属性"</li><li>alt（用右边的alt） + F4：关闭当前应用程序</li><li>win +/：将当前应用置于顶层（需安装PowerToys实现，且我修改了快捷键）</li></ol></li><li>Edge下快捷键<ol type="1"><li>ctrl + E：在地址栏打开搜索</li><li>ctrl + H：打开历史记录</li><li>ctrl + J：打开下载记录</li><li>ctrl + t：新建 标签页</li><li>ctrl+ 数字键：切换到不同标签页</li><li>alt + ←/→：前进/后退</li><li>Pgup/Pgdn：上下滚动屏幕</li><li>ctrl + Pgup/Pgdn：切换到 上/下一个标签页</li><li>home/end：回到页顶/页末</li><li>ctrl + F6将焦点移动到web内容上</li></ol></li></ol>]]></content>
     
