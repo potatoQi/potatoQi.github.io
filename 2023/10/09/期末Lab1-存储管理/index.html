@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/1.png">
 <meta property="article:published_time" content="2023-10-09T13:03:39.000Z">
-<meta property="article:modified_time" content="2023-10-09T15:36:03.782Z">
+<meta property="article:modified_time" content="2023-10-10T10:34:09.345Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/1.png">
@@ -222,10 +222,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-10-09 21:03:39 / 修改时间：23:36:03" itemprop="dateCreated datePublished" datetime="2023-10-09T21:03:39+08:00">2023-10-09</time>
+              <time title="创建时间：2023-10-09 21:03:39" itemprop="dateCreated datePublished" datetime="2023-10-09T21:03:39+08:00">2023-10-09</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-10 18:34:09" itemprop="dateModified" datetime="2023-10-10T18:34:09+08:00">2023-10-10</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -326,7 +332,8 @@ Enginel里改变源：</p>
 <h4 id="初次配置流程">1. 初次配置流程：</h4>
 <ol type="1">
 <li>下载助教发的base-env.img镜像文件到本地，cd到img所在文件夹，在终端里输入docker
-image load --input ./base-env.img拉取镜像到Docker中</li>
+image load --input ./base-env.img拉取镜像到Docker中。（或者直接docker
+pull cc0de/base-env:1.0）</li>
 <li>将助教上传到GitHub的项目文件夹clone到本地，我自己的路径是：D:/Projects/dbProjects/lab1/UniBase(UniBase是clone下来的文件夹)</li>
 <li>cd到lab1下，在终端里输入docker run -itd -v .\UniBase:/mnt/UniBase
 --name unibase-env
@@ -363,7 +370,10 @@ disk_manager_test，就会编译这个模块并在/build/bin里生成可执行�
     <a href="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="数字逻辑自学笔记">
       <i class="fa fa-chevron-left"></i> 数字逻辑自学笔记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/11/1-shell/" rel="next" title="1. shell">
+      1. shell <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -443,14 +453,14 @@ disk_manager_test，就会编译这个模块并在/build/bin里生成可执行�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">8</span>
+          <span class="site-state-item-count">10</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
