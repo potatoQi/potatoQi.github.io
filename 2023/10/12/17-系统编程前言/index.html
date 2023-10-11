@@ -22,19 +22,21 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="翻墙  AD钙奶 (adgn.top)  和Clash搭配用来翻墙用的  SMS-Activate是在线接受短信的虚拟号码服务  有时候注册国外软件账号时需要用到国外手机号接受验证码，可以使用此网站   数学  在线LaTeX公式编辑器-编辑器 (latexlive.com)  LaTex在线编辑器  公式识别 (simpletex.cn)  上面那个网站">
-<meta property="og:type" content="website">
-<meta property="og:title" content="工具">
-<meta property="og:url" content="http://example.com/tools/index.html">
+  <meta name="description" content="终于到了与我项目息息相关的地方了。 从此处开始，笔记将会记录的比较详细，方便我做项目时查阅。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="17. 系统编程前言">
+<meta property="og:url" content="http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="翻墙  AD钙奶 (adgn.top)  和Clash搭配用来翻墙用的  SMS-Activate是在线接受短信的虚拟号码服务  有时候注册国外软件账号时需要用到国外手机号接受验证码，可以使用此网站   数学  在线LaTeX公式编辑器-编辑器 (latexlive.com)  LaTex在线编辑器  公式识别 (simpletex.cn)  上面那个网站">
+<meta property="og:description" content="终于到了与我项目息息相关的地方了。 从此处开始，笔记将会记录的比较详细，方便我做项目时查阅。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-05T07:48:43.000Z">
-<meta property="article:modified_time" content="2023-10-07T13:42:54.244Z">
+<meta property="og:image" content="http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/1.png">
+<meta property="article:published_time" content="2023-10-11T16:38:04.000Z">
+<meta property="article:modified_time" content="2023-10-11T16:49:08.846Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/1.png">
 
-<link rel="canonical" href="http://example.com/tools/">
+<link rel="canonical" href="http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/">
 
 
 <script id="page-configurations">
@@ -42,13 +44,12 @@
   CONFIG.page = {
     sidebar: "",
     isHome : false,
-    isPost : false,
+    isPost : true,
     lang   : 'zh-CN'
   };
 </script>
 
-  <title>工具 | Error_666
-</title>
+  <title>17. 系统编程前言 | Error_666</title>
   
 
 
@@ -191,115 +192,129 @@
       <div class="main-inner">
         <div class="content-wrap">
           
-  
-  
 
-          <div class="content page posts-expand">
+          <div class="content post posts-expand">
             
 
     
-    
-    
-    <div class="post-block" lang="zh-CN">
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Error_666">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Error_666">
+    </span>
       <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          17. 系统编程前言
+        </h1>
 
-<h1 class="post-title" itemprop="name headline">工具
-</h1>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
 
-<div class="post-meta">
+              <time title="创建时间：2023-10-12 00:38:04 / 修改时间：00:49:08" itemprop="dateCreated datePublished" datetime="2023-10-12T00:38:04+08:00">2023-10-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">系统编程</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>225</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>1 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>终于到了与我项目息息相关的地方了。</p>
+<p>从此处开始，笔记将会记录的比较详细，方便我做项目时查阅。</p>
+<span id="more"></span>
+<p>先了解一下什么是内核？内核本质就是一堆程序，一堆能跟计算机硬件打交道的程序。而什么是系统编程？就是熟悉并运用内核提供的函数，也就是接口。</p>
+<p>通过学习系统编程，我们不需要了解最底层（即内核本身），就可以与计算机底层硬件打交道。</p>
+<p><img src="1.png" /></p>
+<p>这张图很形象，系统编程并不是站到了最底层，而是在用户层的最底层，中间隔了一个内核。系统编程就是用真正的底层人员——内核，给你的函数进行编程。</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2023/10/12/16-makefile/" rel="prev" title="16. makefile">
+      <i class="fa fa-chevron-left"></i> 16. makefile
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
   
 
-</div>
-
-</header>
-
-      
-      
-      
-      <div class="post-body">
-          <h3 id="翻墙">翻墙</h3>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://gainai.adgn.top/#/dashboard">AD钙奶 (adgn.top)</a>
-<ul>
-<li>和Clash搭配用来翻墙用的</li>
-</ul></li>
-<li><a
-target="_blank" rel="noopener" href="https://sms-activate.org/cn">SMS-Activate是在线接受短信的虚拟号码服务</a>
-<ul>
-<li>有时候注册国外软件账号时需要用到国外手机号接受验证码，可以使用此网站</li>
-</ul></li>
-</ol>
-<h3 id="数学">数学</h3>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://www.latexlive.com/home">在线LaTeX公式编辑器-编辑器
-(latexlive.com)</a>
-<ul>
-<li>LaTex在线编辑器</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://simpletex.cn/ai/latex_ocr">公式识别
-(simpletex.cn)</a>
-<ul>
-<li>上面那个网站每天只能图片识别2次太坑了，这个网站也可以图像识别</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://www.geogebra.org/?lang=zh-CN">GeoGebra - the
-world’s favorite, free math tools used by over 100 million students and
-teachers</a>
-<ul>
-<li>数学画图网站</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://www.geogebra.org/scientific?lang=zh_CN">Scientific
-Calculator - GeoGebra</a>
-<ul>
-<li>好用的在线计算器</li>
-</ul></li>
-</ol>
-<h3 id="个人常用">个人常用</h3>
-<ol type="1">
-<li><a target="_blank" rel="noopener" href="https://ai-panda.xyz/">GPTPANDA (ai-panda.xyz)</a>
-<ul>
-<li>一个由个人维护的ChatGpt接口，需要付费。网站随时会崩，崩了加微信群问新链接即可</li>
-</ul></li>
-<li><a
-target="_blank" rel="noopener" href="https://gitee.com/click33/chatgpt---mirror-station-summary">chatgpt
-镜像站汇总: 汇总所有 chatgpt 镜像站，持续更新中……
-个人能力有限，搜集到的不多，求大家多多贡献啊！众人拾柴火焰高！
-(gitee.com)</a>
-<ul>
-<li>如标题，一个ChatGpt资源汇总网站</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://www.superbed.cn/">聚合图床 - 免费无限图片上传
-(superbed.cn)</a>
-<ul>
-<li>图床。以前用路过图床被背刺过一次。所以我现在对免费图床的态度十分谨慎，不到万不得已的情况真的别用免费图床</li>
-</ul></li>
-<li><a
-target="_blank" rel="noopener" href="https://account.aliyun.com/login/login.htm?oauth_callback=http%3A%2F%2Fdc.console.aliyun.com%2Fnext%2Findex%3Fspm%3D5176.27097949.J_8038486320.3.5ccd3237k5PKUN#/domain-list/all">阿里云登录页
-(aliyun.com)</a>
-<ul>
-<li>我的域名error.top就是在这里买的。管理域名啥的进这里</li>
-</ul></li>
-<li><a target="_blank" rel="noopener" href="https://www.hereitis.cn/articleDetails/755">资源搜索站
-(hereitis.cn)</a>
-<ul>
-<li>磁力汇总站，以前用的最多的是<a href="btmovi.org">蜘蛛磁力</a>和<a
-href="%5Bclmclm.com%5D(https://clmclm.com/)">磁力猫</a>，记得开代理。</li>
-</ul></li>
-</ol>
-
-      </div>
-      
-      
-      
-    </div>
-    
-
-    
-    
-    
 
 
           </div>
           
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81OTA0Ny8zNTUwOQ=="></div>
+  </div>
+  
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -346,7 +361,6 @@ href="%5Bclmclm.com%5D(https://clmclm.com/)">磁力猫</a>，记得开代理。<
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%BF%BB%E5%A2%99"><span class="nav-text">翻墙</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E5%AD%A6"><span class="nav-text">数学</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AA%E4%BA%BA%E5%B8%B8%E7%94%A8"><span class="nav-text">个人常用</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -560,6 +574,25 @@ $(document).ready(function() {
 
   
 
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+setInterval(function () {
+    var box = document.querySelector(".trc_rbox_container");
+    if(box) box.outerHTML = "";
+}, 2000);
+</script>
 
 </body>
 </html>
