@@ -22,21 +22,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="今天突然就上强度了。实验课是让我们设计一个简单的RDBMS原型系统。（本质上就是参考的CMU15-445课程和StanfordCS346的课程）我觉得还是蛮有趣的，开一个系列来记录实验过程。 本篇是Lab 1，存储管理部分的内容。">
+  <meta name="description" content="gcc编译分为4步：  预处理：将hello.c展开宏、头文件，替换条件编译、删除注释&#x2F;空行&#x2F;空白，得到hello.i 编译：对hello.i检查语法规范，得到hello.s 汇编：将hello.s翻译成机器指令，得到hello.o 链接：数据段合并、地址回填">
 <meta property="og:type" content="article">
-<meta property="og:title" content="期末Lab1 存储管理">
-<meta property="og:url" content="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/index.html">
+<meta property="og:title" content="13. gcc编译">
+<meta property="og:url" content="http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="今天突然就上强度了。实验课是让我们设计一个简单的RDBMS原型系统。（本质上就是参考的CMU15-445课程和StanfordCS346的课程）我觉得还是蛮有趣的，开一个系列来记录实验过程。 本篇是Lab 1，存储管理部分的内容。">
+<meta property="og:description" content="gcc编译分为4步：  预处理：将hello.c展开宏、头文件，替换条件编译、删除注释&#x2F;空行&#x2F;空白，得到hello.i 编译：对hello.i检查语法规范，得到hello.s 汇编：将hello.s翻译成机器指令，得到hello.o 链接：数据段合并、地址回填">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/1.png">
-<meta property="article:published_time" content="2023-10-09T13:03:39.000Z">
-<meta property="article:modified_time" content="2023-10-11T13:32:14.592Z">
+<meta property="article:published_time" content="2023-10-11T14:19:35.000Z">
+<meta property="article:modified_time" content="2023-10-11T15:34:18.181Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/1.png">
 
-<link rel="canonical" href="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">
+<link rel="canonical" href="http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/">
 
 
 <script id="page-configurations">
@@ -49,7 +47,7 @@
   };
 </script>
 
-  <title>期末Lab1 存储管理 | Error_666</title>
+  <title>13. gcc编译 | Error_666</title>
   
 
 
@@ -200,7 +198,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -213,7 +211,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          期末Lab1 存储管理
+          13. gcc编译
         </h1>
 
         <div class="post-meta">
@@ -222,27 +220,21 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-10-09 21:03:39" itemprop="dateCreated datePublished" datetime="2023-10-09T21:03:39+08:00">2023-10-09</time>
+              <time title="创建时间：2023-10-11 22:19:35 / 修改时间：23:34:18" itemprop="dateCreated datePublished" datetime="2023-10-11T22:19:35+08:00">2023-10-11</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-11 21:32:14" itemprop="dateModified" datetime="2023-10-11T21:32:14+08:00">2023-10-11</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">大学</span></a>
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E5%A4%A7%E5%AD%A6/%E6%95%B0%E6%8D%AE%E5%BA%93/" itemprop="url" rel="index"><span itemprop="name">数据库</span></a>
+                  <a href="/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/" itemprop="url" rel="index"><span itemprop="name">系统编程</span></a>
                 </span>
             </span>
 
@@ -259,14 +251,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.1k</span>
+              <span>281</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>1 分钟</span>
             </span>
 
         </div>
@@ -278,79 +270,24 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>今天突然就上强度了。实验课是让我们设计一个简单的RDBMS原型系统。（本质上就是参考的CMU15-445课程和StanfordCS346的课程）我觉得还是蛮有趣的，开一个系列来记录实验过程。</p>
-<p>本篇是Lab 1，存储管理部分的内容。</p>
+        <p>gcc编译分为4步：</p>
+<ol type="1">
+<li>预处理：将hello.c展开宏、头文件，替换条件编译、删除注释/空行/空白，得到hello.i</li>
+<li>编译：对hello.i检查语法规范，得到hello.s</li>
+<li>汇编：将hello.s翻译成机器指令，得到hello.o</li>
+<li>链接：数据段合并、地址回填</li>
+</ol>
 <span id="more"></span>
-<p>课程目标：</p>
-<p><img src="1.png" /></p>
-<h3 id="一.-安装docker以及基本操作">一. 安装Docker以及基本操作</h3>
-<p>为了简化实验过程，尽可能的避免复杂的环境配置过程。助教推荐我们使用Docker，这样直接就能使用他配置好的环境。</p>
-<h4 id="docker是什么">1. Docker是什么</h4>
-<p>根据我浅薄的理解，Docker就是虚拟机。装一个Docker，下载网上的镜像，然后把实例化为一个容器。此时容器就是一台虚拟机了。</p>
-<h4 id="如何安装docker">2. 如何安装Docker</h4>
-<p>先安装wsl，wsl是在window下的linux子系统功能。本人Win11电脑，先在“启动或关闭Windows功能”里打开“虚拟机平台”和“适用于Linux的Windows子系统”，然后终端里输入wsl
-update，更新完后再输入wsl --install -d
-Ubuntu，设置好Ubuntu用户名和密码后退出即可。</p>
-<p>然后下载Docker
-Desktop，下载好后不要安装。因为默认路径是C盘，后续可能会很占空间。通过软链接的方法把Docker装到D盘，终端里输入（记得用管理员权限）：mklink
-/j "C:\Program Files\Docker"
-"D:\app\Docker"（如果报错没找到文件夹则在目标路径下自己新建文件夹后再执行）。</p>
-<p>点击安装包，一路Next。安装好后在Docker设置里的Docker
-Enginel里改变源：</p>
-<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;debug&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;experimental&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
-<p>至此，Docker就安装好了。</p>
-<h4 id="docker的基本操作">3. Docker的基本操作</h4>
-<p>Docker里有三种东西，镜像、容器、仓库。</p>
-<p>镜像(image)是类似模板的东西，是一个只读文件。可以用来创建容器。</p>
-<p>容器(container)就是我们操作的“虚拟机”，它需要根据镜像实例化出来。</p>
-<p>仓库(repository)就是存储镜像的地方，我们通常可以从三个地方获得镜像：官方仓库、第三方仓库、本地</p>
-<p>基本操作如下：</p>
+<p>如何编译一个.c/.c++程序？分为以下几步</p>
 <ol type="1">
-<li><p>列出本地的所有镜像</p>
+<li>apt install gcc, apt install g++</li>
+<li>写一个.c / .c++文件</li>
+<li>gcc filename -o outname / g++ filename -o outname
 <ul>
-<li>docker image ls</li>
+<li>-o：重命名输出文件，不然默认就是filename.out</li>
+<li>输出文件是一个可执行文件</li>
+<li>-g：加了后输出文件可调试</li>
 </ul></li>
-<li><p>拉取镜像到本地</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 拉取官方镜像</span><br><span class="line">docker pull 镜像名称</span><br><span class="line">例：docker pull ubuntu</span><br><span class="line"></span><br><span class="line"># 拉取个人镜像</span><br><span class="line">docker pull 仓库名称/镜像名称</span><br><span class="line">例：docker pull xunmi/django</span><br><span class="line"></span><br><span class="line"># 第三方仓库拉取</span><br><span class="line">docker pull 第三方仓库地址/仓库名称/镜像名称</span><br><span class="line">例：docker pull hub.c.163.com/library/mysql:latest</span><br></pre></td></tr></table></figure></li>
-<li><p>删除镜像</p>
-<ul>
-<li>docker rmi 镜像名</li>
-<li>注意删镜像时需保证此时没有容器以该镜像为模板进行实例化。</li>
-</ul></li>
-<li><p>删除容器</p>
-<ul>
-<li>docker rm 容器名</li>
-<li>注意删除容器时需保证该容器没有在运行。</li>
-</ul></li>
-<li><p>关于管理镜像 &amp; 容器</p>
-<ul>
-<li>可以在Docker Desktop的Dashboard里进行管理。</li>
-</ul></li>
-</ol>
-<h3 id="二.-docker在本实验中的运用">二. Docker在本实验中的运用</h3>
-<p>本实验要实现一个RDBMS，所以代码基本框架可以从助教发布的GitHub上clone到本地。但是当你完善了代码，如何知道自己对不对呢？肯定要测评嘛，以及编译这个RDBMS应该怎么办呢？比如代码用到了C++17的特性但是本地编译不了就很尴尬。所以需要Docker，助教发给我们一个镜像文件，我们把它实例化一个容器到本地。然后将刚刚clone下来的项目文件夹同步到容器中（也就是实现文件共享）。这样子我们就可以在本地编写程序，文件自动就会同步到容器中，编写完成后。通过Docker进入容器中，编译程序并进行测评，查看自己编写的程序是否正确。</p>
-<h4 id="初次配置流程">1. 初次配置流程：</h4>
-<ol type="1">
-<li>下载助教发的base-env.img镜像文件到本地，cd到img所在文件夹，在终端里输入docker
-image load --input ./base-env.img拉取镜像到Docker中。（或者直接docker
-pull cc0de/base-env:1.0）</li>
-<li>将助教上传到GitHub的项目文件夹clone到本地，我自己的路径是：D:/Projects/dbProjects/lab1/UniBase(UniBase是clone下来的文件夹)</li>
-<li>cd到lab1下，在终端里输入docker run -itd -v .\UniBase:/mnt/UniBase
---name unibase-env
-base-env。这句话的意思就是将名为base-env的镜像文件实例化为一个容器到本地，名字起为unibase-env。并且将当前目录下的UniBase文件夹同步到unibase-env容器中/mnt下的UniBase文件夹。（mnt文件夹是wsl子系统与宿主系统进行文件交互的文件夹）</li>
-<li>cd到UniBase下，输入git submodule init和git submodule
-update来拉取子模块(google test)</li>
-<li>如果需要进容器，输入docker exec -it unibase-env
-/bin/bash。如果退出，输入exit。</li>
-</ol>
-<h4 id="编写流程">2. 编写流程：</h4>
-<ol type="1">
-<li>先在本地，用vscode写好程序</li>
-<li>开docker desktop，然后进容器docker exec -it unibase-env
-/bin/bash，进UniBase里，新建一个build文件夹，在里面运行：cmake ..
--DCMAKE_BUILD_TYPE=Debug，就可以生成整个项目的编译文件，然后make
-某个module，比如make
-disk_manager_test，就会编译这个模块并在/build/bin里生成可执行文件，进入bin里运行它就可以看到评测信息。</li>
 </ol>
 
     </div>
@@ -367,13 +304,10 @@ disk_manager_test，就会编译这个模块并在/build/bin里生成可执行�
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="数字逻辑自学笔记">
-      <i class="fa fa-chevron-left"></i> 数字逻辑自学笔记
+    <a href="/2023/10/11/12-vim%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/" rel="prev" title="12. vim基础用法">
+      <i class="fa fa-chevron-left"></i> 12. vim基础用法
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/10/11/1-shell/" rel="next" title="1. shell">
-      1. shell <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -437,7 +371,6 @@ disk_manager_test，就会编译这个模块并在/build/bin里生成可执行�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%AE%89%E8%A3%85docker%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-text">一. 安装Docker以及基本操作</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#docker%E6%98%AF%E4%BB%80%E4%B9%88"><span class="nav-text">1. Docker是什么</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E5%AE%89%E8%A3%85docker"><span class="nav-text">2. 如何安装Docker</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#docker%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%93%8D%E4%BD%9C"><span class="nav-text">3. Docker的基本操作</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-docker%E5%9C%A8%E6%9C%AC%E5%AE%9E%E9%AA%8C%E4%B8%AD%E7%9A%84%E8%BF%90%E7%94%A8"><span class="nav-text">二. Docker在本实验中的运用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9D%E6%AC%A1%E9%85%8D%E7%BD%AE%E6%B5%81%E7%A8%8B"><span class="nav-text">1. 初次配置流程：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BC%96%E5%86%99%E6%B5%81%E7%A8%8B"><span class="nav-text">2. 编写流程：</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 

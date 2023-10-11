@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-11T10:54:17.175Z</updated>
+  <updated>2023-10-11T15:34:18.181Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,62 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>13. gcc编译</title>
+    <link href="http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/"/>
+    <id>http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/</id>
+    <published>2023-10-11T14:19:35.000Z</published>
+    <updated>2023-10-11T15:34:18.181Z</updated>
+    
+    <content type="html"><![CDATA[<p>gcc编译分为4步：</p><ol type="1"><li>预处理：将hello.c展开宏、头文件，替换条件编译、删除注释/空行/空白，得到hello.i</li><li>编译：对hello.i检查语法规范，得到hello.s</li><li>汇编：将hello.s翻译成机器指令，得到hello.o</li><li>链接：数据段合并、地址回填</li></ol><span id="more"></span><p>如何编译一个.c/.c++程序？分为以下几步</p><ol type="1"><li>apt install gcc, apt install g++</li><li>写一个.c / .c++文件</li><li>gcc filename -o outname / g++ filename -o outname<ul><li>-o：重命名输出文件，不然默认就是filename.out</li><li>输出文件是一个可执行文件</li><li>-g：加了后输出文件可调试</li></ul></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;gcc编译分为4步：&lt;/p&gt;
+&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;预处理：将hello.c展开宏、头文件，替换条件编译、删除注释/空行/空白，得到hello.i&lt;/li&gt;
+&lt;li&gt;编译：对hello.i检查语法规范，得到hello.s&lt;/li&gt;
+&lt;li&gt;汇编：将hello.s翻译成机器指令，得到hello.o&lt;/li&gt;
+&lt;li&gt;链接：数据段合并、地址回填&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>12. vim基础用法</title>
+    <link href="http://example.com/2023/10/11/12-vim%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/"/>
+    <id>http://example.com/2023/10/11/12-vim%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</id>
+    <published>2023-10-11T13:47:54.000Z</published>
+    <updated>2023-10-11T14:10:01.008Z</updated>
+    
+    <content type="html"><![CDATA[<p>这个系列的Blog的目的是为了能设计出数据库。所以我个人认为没必要花费很多时间在运用Vim上。固然Vim是一款很好的软件，但是它的学习成本太高了。而且处理文本与设计数据库两件事关系其实不是特别大。所以我在后续gedit来代替vim。（gedit退出快捷键：crtl+ Q）</p><span id="more"></span><p>虽然但是，至少还是要把Vim的一些基础命令学了：</p><ol type="1"><li>其它<ol type="1"><li>a：进入打字模式</li><li>:wq：保存&amp;退出</li></ol></li><li>移动<ol type="1"><li>hjkl：上下左右</li><li>0：移动到行首</li><li>$：移动到行尾</li><li>gg：移动到文件开头</li><li>G：移动到文件结尾</li><li>数字 + G：移动到指定行</li><li>%：移动到匹配的{}、()、[]</li></ol></li><li>删除<ol type="1"><li>x：删除单个字符</li><li>dd：删除当前行</li><li>d0：删除光标到行首</li><li>d$：删除光标到行尾</li><li>v + hjkl + d：删除选定内容</li></ol></li><li>复制 &amp; 粘贴<ol type="1"><li>v + hjkl + y：复制所选内容</li><li>p：粘贴</li></ol></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;这个系列的Blog的目的是为了能设计出数据库。所以我个人认为没必要花费很多时间在运用Vim上。固然Vim是一款很好的软件，但是它的学习成本太高了。而且处理文本与设计数据库两件事关系其实不是特别大。所以我在后续gedit来代替vim。（gedit退出快捷键：crtl
++ Q）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>11. 总结1</title>
     <link href="http://example.com/2023/10/11/11-%E6%80%BB%E7%BB%931/"/>
     <id>http://example.com/2023/10/11/11-%E6%80%BB%E7%BB%931/</id>
     <published>2023-10-11T10:26:41.000Z</published>
-    <updated>2023-10-11T10:54:17.175Z</updated>
+    <updated>2023-10-11T14:18:09.271Z</updated>
     
-    <content type="html"><![CDATA[<ol type="1"><li>多用tab键</li><li>多用快捷键：ctrl + a，ctrl + e，ctrl + u</li></ol><span id="more"></span><ol start="3" type="1"><li>熟悉Linux基本文件类型：<ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软链接：l（设置软链接记得用绝对路径）</li><li>管道文件：p</li><li>套接字：s</li></ol></li><li>Linux系统目录意义<ol type="1"><li>/etc：配置文件信息</li><li>/hone：用户目录</li><li>/lib：库目录（比如C库、python库）</li><li>/media、/mnt：磁盘挂载目录</li><li>/opt、/proc：进程目录</li><li>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</li><li>/bin：存放二进制可执行文件</li><li>/boot：存放开机启动程序</li></ol></li><li>基本操作<ol type="1"><li>mkdir name</li><li>touch name</li><li>rm name / rm -r name</li><li>cp 被移动path 目标path</li><li>mv 被移动path 目标path</li></ol></li><li>找文件<ol type="1"><li>基本的查找（看有or没有）<ol type="1"><li>find path -name 'xxx'</li><li>find path -type 'xxx'</li><li>find path -size +/-xxxk/M/G</li></ol></li><li>详细的查找（看要查找的文件的具体信息）<ol type="1"><li>find ...... | xargs ls -l</li></ol></li></ol></li><li>找内容<ol type="1"><li>在目录中找<ol type="1"><li>grep 'xxx' path -r -n</li></ol></li><li>在特定内容中找<ol type="1"><li>ls -l | grep 'xxx' -n</li><li>ps aux | grep 'xxx' -n</li><li>cat xxx.txt | grep 'xxx' -n</li></ol></li></ol></li></ol>]]></content>
+    <content type="html"><![CDATA[<ol type="1"><li>多用tab键</li><li>多用快捷键：ctrl + a，ctrl + e，ctrl + u</li></ol><span id="more"></span><ol start="3" type="1"><li>熟悉Linux基本文件类型：<ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软链接：l（设置软链接记得用绝对路径）</li><li>管道文件：p</li><li>套接字：s</li></ol></li><li>Linux系统目录意义<ol type="1"><li>/etc：配置文件信息</li><li>/hone：用户目录</li><li>/lib：库目录（比如C库、python库）</li><li>/media、/mnt：磁盘挂载目录</li><li>/opt、/proc：进程目录</li><li>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</li><li>/bin：存放二进制可执行文件</li><li>/boot：存放开机启动程序</li></ol></li><li>基本操作<ol type="1"><li>mkdir name</li><li>touch name</li><li>rm name / rm -r name</li><li>cp 被移动path 目标path / cp 被移动path 目标path - r</li><li>mv 被移动path 目标path</li></ol></li><li>找文件<ol type="1"><li>基本的查找（看有or没有）<ol type="1"><li>find path -name 'xxx'</li><li>find path -type 'xxx'</li><li>find path -size +/-xxxk/M/G</li></ol></li><li>详细的查找（看要查找的文件的具体信息）<ol type="1"><li>find ...... | xargs ls -l</li></ol></li></ol></li><li>找内容<ol type="1"><li>在目录中找<ol type="1"><li>grep 'xxx' path -r -n</li></ol></li><li>在特定内容中找<ol type="1"><li>ls -l | grep 'xxx' -n</li><li>ps aux | grep 'xxx' -n</li><li>cat xxx.txt | grep 'xxx' -n</li></ol></li></ol></li><li>批量修改文件<ol type="1"><li>find path -name/-type/-size 筛选条件 -exec rm {} ;</li></ol></li><li>压缩/解压<ol type="1"><li>压缩：tar -zcvf name 压缩材料</li><li>解压：tar -zxvf name</li></ol></li></ol><hr /><ol type="1"><li>Windows 下快捷键<ol type="1"><li>win + e：资源管理器</li><li>win + d(desktop)：回到桌面</li><li>wn + q(query)：打开win搜索栏</li><li>win + ←/→：分屏</li><li>win + 数字键：切换/打开到到不同程序</li><li>ctrl + shift + N：新建文件夹</li><li>在资源管理器中backspace：返回上一级目录</li><li>alt + tab：切换应用</li><li>alt（用右边的alt）+ enter：查看"属性"</li><li>alt（用右边的alt） + F4：关闭当前应用程序</li><li>win +/：将当前应用置于顶层（需安装PowerToys实现，且我修改了快捷键）</li><li>ctrl + shift + T：win下创建新的shell</li><li>ctrl + shift + w：删除一个shell标签</li><li>ctrl + shift + N：创建一个新shell</li></ol></li><li>Edge下快捷键<ol type="1"><li>ctrl + E：在地址栏打开搜索</li><li>ctrl + H：打开历史记录</li><li>ctrl + J：打开下载记录</li><li>ctrl + t：新建 标签页</li><li>ctrl+ 数字键：切换到不同标签页</li><li>alt + ←/→：前进/后退</li><li>Pgup/Pgdn：上下滚动屏幕</li><li>ctrl + Pgup/Pgdn：切换到 上/下一个标签页</li><li>home/end：回到页顶/页末</li><li>ctrl + F6将焦点移动到web内容上</li></ol></li></ol>]]></content>
     
     
     <summary type="html">&lt;ol type=&quot;1&quot;&gt;
@@ -45,12 +94,14 @@
     <link href="http://example.com/2023/10/11/10-%E5%85%B6%E5%AE%83%E6%8C%87%E4%BB%A4/"/>
     <id>http://example.com/2023/10/11/10-%E5%85%B6%E5%AE%83%E6%8C%87%E4%BB%A4/</id>
     <published>2023-10-11T10:22:03.000Z</published>
-    <updated>2023-10-11T10:26:20.890Z</updated>
+    <updated>2023-10-11T15:13:54.017Z</updated>
     
-    <content type="html"><![CDATA[<p>alias 别名 = '指令'：起别名（我设置了一个alias lh='ls -l -h'）</p><span id="more"></span><p>后续有什么常用的再加上去... ...待填坑</p>]]></content>
+    <content type="html"><![CDATA[<p>alias 别名 = '指令'：起别名（我设置了一个alias lh='ls -l -h'）</p><p>但是alias当你退出终端时就会失效，所以为了永久有效，可以把它写到~/.bashrc里，然后source~./bashrc刷新一下。</p><span id="more"></span><p>后续有什么常用的再加上去... ...待填坑</p>]]></content>
     
     
-    <summary type="html">&lt;p&gt;alias 别名 = &#39;指令&#39;：起别名（我设置了一个alias lh=&#39;ls -l -h&#39;）&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;alias 别名 = &#39;指令&#39;：起别名（我设置了一个alias lh=&#39;ls -l -h&#39;）&lt;/p&gt;
+&lt;p&gt;但是alias当你退出终端时就会失效，所以为了永久有效，可以把它写到~/.bashrc里，然后source
+~./bashrc刷新一下。&lt;/p&gt;</summary>
     
     
     
@@ -295,9 +346,9 @@ $SHELL查看本机正在使用哪种shell。一般都是/bin/bash，即bash。&l
     <link href="http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/"/>
     <id>http://example.com/2023/10/09/%E6%9C%9F%E6%9C%ABLab1-%E5%AD%98%E5%82%A8%E7%AE%A1%E7%90%86/</id>
     <published>2023-10-09T13:03:39.000Z</published>
-    <updated>2023-10-10T10:34:09.345Z</updated>
+    <updated>2023-10-11T13:32:14.592Z</updated>
     
-    <content type="html"><![CDATA[<p>今天突然就上强度了。实验课是让我们设计一个简单的RDBMS原型系统。（本质上就是参考的CMU15-445课程和StanfordCS346的课程）我觉得还是蛮有趣的，开一个系列来记录实验过程。</p><p>本篇是Lab 1，存储管理部分的内容。</p><span id="more"></span><p>课程目标：</p><p><img src="1.png" /></p><h3 id="一.-安装docker以及基本操作">一. 安装Docker以及基本操作</h3><p>为了简化实验过程，尽可能的避免复杂的环境配置过程。助教推荐我们使用Docker，这样直接就能使用他配置好的环境。</p><h4 id="docker是什么">1. Docker是什么</h4><p>根据我浅薄的理解，Docker就是虚拟机。装一个Docker，下载网上的镜像，然后把实例化为一个容器。此时容器就是一台虚拟机了。</p><h4 id="如何安装docker">2. 如何安装Docker</h4><p>先安装wsl，wsl是在window下的linux子系统功能。本人Win11电脑，先在“启动或关闭Windows功能”里打开“虚拟机平台”和“适用于Linux的Windows子系统”，然后终端里输入wslupdate，更新完后再输入wsl --install -dUbuntu，设置好Ubuntu用户名和密码后退出即可。</p><p>然后下载DockerDesktop，下载好后不要安装。因为默认路径是C盘，后续可能会很占空间。通过软链接的方法把Docker装到D盘，终端里输入（记得用管理员权限）：mklink/j "C:\Program Files\Docker""D:\app\Docker"（如果报错没找到文件夹则在目标路径下自己新建文件夹后再执行）。</p><p>点击安装包，一路Next。安装好后在Docker设置里的DockerEnginel里改变源：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;debug&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;experimental&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>至此，Docker就安装好了。</p><h4 id="docker的基本操作">3. Docker的基本操作</h4><p>Docker里有三种东西，镜像、容器、仓库。</p><p>镜像(image)是类似模板的东西，是一个只读文件。可以用来创建容器。</p><p>容器(container)就是我们操作的“虚拟机”，它需要根据镜像实例化出来。</p><p>仓库(repository)就是存储镜像的地方，我们通常可以从三个地方获得镜像：官方仓库、第三方仓库、本地</p><p>基本操作如下：</p><ol type="1"><li><p>列出本地的所有镜像</p><ul><li>docker image ls</li></ul></li><li><p>拉取镜像到本地</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 拉取官方镜像</span><br><span class="line">docker pull 镜像名称</span><br><span class="line">例：docker pull ubuntu</span><br><span class="line"></span><br><span class="line"># 拉取个人镜像</span><br><span class="line">docker pull 仓库名称/镜像名称</span><br><span class="line">例：docker pull xunmi/django</span><br><span class="line"></span><br><span class="line"># 第三方仓库拉取</span><br><span class="line">docker pull 第三方仓库地址/仓库名称/镜像名称</span><br><span class="line">例：docker pull hub.c.163.com/library/mysql:latest</span><br></pre></td></tr></table></figure></li><li><p>删除镜像</p><ul><li>docker rmi 镜像名</li><li>注意删镜像时需保证此时没有容器以该镜像为模板进行实例化。</li></ul></li><li><p>删除容器</p><ul><li>docker rm 容器名</li><li>注意删除容器时需保证该容器没有在运行。</li></ul></li><li><p>关于管理镜像 &amp; 容器</p><ul><li>可以在Docker Desktop的Dashboard里进行管理。</li></ul></li></ol><h3 id="二.-docker在本实验中的运用">二. Docker在本实验中的运用</h3><p>本实验要实现一个RDBMS，所以代码基本框架可以从助教发布的GitHub上clone到本地。但是当你完善了代码，如何知道自己对不对呢？肯定要测评嘛，以及编译这个RDBMS应该怎么办呢？比如代码用到了C++17的特性但是本地编译不了就很尴尬。所以需要Docker，助教发给我们一个镜像文件，我们把它实例化一个容器到本地。然后将刚刚clone下来的项目文件夹同步到容器中（也就是实现文件共享）。这样子我们就可以在本地编写程序，文件自动就会同步到容器中，编写完成后。通过Docker进入容器中，编译程序并进行测评，查看自己编写的程序是否正确。</p><h4 id="初次配置流程">1. 初次配置流程：</h4><ol type="1"><li>下载助教发的base-env.img镜像文件到本地，cd到img所在文件夹，在终端里输入dockerimage load --input ./base-env.img拉取镜像到Docker中。（或者直接dockerpull cc0de/base-env:1.0）</li><li>将助教上传到GitHub的项目文件夹clone到本地，我自己的路径是：D:/Projects/dbProjects/lab1/UniBase(UniBase是clone下来的文件夹)</li><li>cd到lab1下，在终端里输入docker run -itd -v .\UniBase:/mnt/UniBase--name unibase-envbase-env。这句话的意思就是将名为base-env的镜像文件实例化为一个容器到本地，名字起为unibase-env。并且将当前目录下的UniBase文件夹同步到unibase-env容器中/mnt下的UniBase文件夹。（mnt文件夹是wsl子系统与宿主系统进行文件交互的文件夹）</li><li>cd到UniBase下，输入git submodule init和git submoduleupdate来拉取子模块(google test)</li><li>如果需要进容器，输入docker exec -it unibase-env/bin/bash。如果退出，输入exit。</li></ol><h4 id="编写流程">2. 编写流程：</h4><ol type="1"><li>先在本地，用vscode写好程序</li><li>进容器docker exec -it unibase-env/bin/bash，进UniBase里，新建一个build文件夹，在里面运行：cmake ..-DCMAKE_BUILD_TYPE=Debug，就可以生成整个项目的编译文件，然后make某个module，比如makedisk_manager_test，就会编译这个模块并在/build/bin里生成可执行文件，进入bin里运行它就可以看到评测信息。</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>今天突然就上强度了。实验课是让我们设计一个简单的RDBMS原型系统。（本质上就是参考的CMU15-445课程和StanfordCS346的课程）我觉得还是蛮有趣的，开一个系列来记录实验过程。</p><p>本篇是Lab 1，存储管理部分的内容。</p><span id="more"></span><p>课程目标：</p><p><img src="1.png" /></p><h3 id="一.-安装docker以及基本操作">一. 安装Docker以及基本操作</h3><p>为了简化实验过程，尽可能的避免复杂的环境配置过程。助教推荐我们使用Docker，这样直接就能使用他配置好的环境。</p><h4 id="docker是什么">1. Docker是什么</h4><p>根据我浅薄的理解，Docker就是虚拟机。装一个Docker，下载网上的镜像，然后把实例化为一个容器。此时容器就是一台虚拟机了。</p><h4 id="如何安装docker">2. 如何安装Docker</h4><p>先安装wsl，wsl是在window下的linux子系统功能。本人Win11电脑，先在“启动或关闭Windows功能”里打开“虚拟机平台”和“适用于Linux的Windows子系统”，然后终端里输入wslupdate，更新完后再输入wsl --install -dUbuntu，设置好Ubuntu用户名和密码后退出即可。</p><p>然后下载DockerDesktop，下载好后不要安装。因为默认路径是C盘，后续可能会很占空间。通过软链接的方法把Docker装到D盘，终端里输入（记得用管理员权限）：mklink/j "C:\Program Files\Docker""D:\app\Docker"（如果报错没找到文件夹则在目标路径下自己新建文件夹后再执行）。</p><p>点击安装包，一路Next。安装好后在Docker设置里的DockerEnginel里改变源：</p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;registry-mirrors&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">    <span class="string">&quot;http://hub-mirror.c.163.com&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="string">&quot;https://docker.mirrors.ustc.edu.cn&quot;</span></span><br><span class="line">  <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;insecure-registries&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;debug&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;experimental&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure><p>至此，Docker就安装好了。</p><h4 id="docker的基本操作">3. Docker的基本操作</h4><p>Docker里有三种东西，镜像、容器、仓库。</p><p>镜像(image)是类似模板的东西，是一个只读文件。可以用来创建容器。</p><p>容器(container)就是我们操作的“虚拟机”，它需要根据镜像实例化出来。</p><p>仓库(repository)就是存储镜像的地方，我们通常可以从三个地方获得镜像：官方仓库、第三方仓库、本地</p><p>基本操作如下：</p><ol type="1"><li><p>列出本地的所有镜像</p><ul><li>docker image ls</li></ul></li><li><p>拉取镜像到本地</p><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"># 拉取官方镜像</span><br><span class="line">docker pull 镜像名称</span><br><span class="line">例：docker pull ubuntu</span><br><span class="line"></span><br><span class="line"># 拉取个人镜像</span><br><span class="line">docker pull 仓库名称/镜像名称</span><br><span class="line">例：docker pull xunmi/django</span><br><span class="line"></span><br><span class="line"># 第三方仓库拉取</span><br><span class="line">docker pull 第三方仓库地址/仓库名称/镜像名称</span><br><span class="line">例：docker pull hub.c.163.com/library/mysql:latest</span><br></pre></td></tr></table></figure></li><li><p>删除镜像</p><ul><li>docker rmi 镜像名</li><li>注意删镜像时需保证此时没有容器以该镜像为模板进行实例化。</li></ul></li><li><p>删除容器</p><ul><li>docker rm 容器名</li><li>注意删除容器时需保证该容器没有在运行。</li></ul></li><li><p>关于管理镜像 &amp; 容器</p><ul><li>可以在Docker Desktop的Dashboard里进行管理。</li></ul></li></ol><h3 id="二.-docker在本实验中的运用">二. Docker在本实验中的运用</h3><p>本实验要实现一个RDBMS，所以代码基本框架可以从助教发布的GitHub上clone到本地。但是当你完善了代码，如何知道自己对不对呢？肯定要测评嘛，以及编译这个RDBMS应该怎么办呢？比如代码用到了C++17的特性但是本地编译不了就很尴尬。所以需要Docker，助教发给我们一个镜像文件，我们把它实例化一个容器到本地。然后将刚刚clone下来的项目文件夹同步到容器中（也就是实现文件共享）。这样子我们就可以在本地编写程序，文件自动就会同步到容器中，编写完成后。通过Docker进入容器中，编译程序并进行测评，查看自己编写的程序是否正确。</p><h4 id="初次配置流程">1. 初次配置流程：</h4><ol type="1"><li>下载助教发的base-env.img镜像文件到本地，cd到img所在文件夹，在终端里输入dockerimage load --input ./base-env.img拉取镜像到Docker中。（或者直接dockerpull cc0de/base-env:1.0）</li><li>将助教上传到GitHub的项目文件夹clone到本地，我自己的路径是：D:/Projects/dbProjects/lab1/UniBase(UniBase是clone下来的文件夹)</li><li>cd到lab1下，在终端里输入docker run -itd -v .\UniBase:/mnt/UniBase--name unibase-envbase-env。这句话的意思就是将名为base-env的镜像文件实例化为一个容器到本地，名字起为unibase-env。并且将当前目录下的UniBase文件夹同步到unibase-env容器中/mnt下的UniBase文件夹。（mnt文件夹是wsl子系统与宿主系统进行文件交互的文件夹）</li><li>cd到UniBase下，输入git submodule init和git submoduleupdate来拉取子模块(google test)</li><li>如果需要进容器，输入docker exec -it unibase-env/bin/bash。如果退出，输入exit。</li></ol><h4 id="编写流程">2. 编写流程：</h4><ol type="1"><li>先在本地，用vscode写好程序</li><li>开docker desktop，然后进容器docker exec -it unibase-env/bin/bash，进UniBase里，新建一个build文件夹，在里面运行：cmake ..-DCMAKE_BUILD_TYPE=Debug，就可以生成整个项目的编译文件，然后make某个module，比如makedisk_manager_test，就会编译这个模块并在/build/bin里生成可执行文件，进入bin里运行它就可以看到评测信息。</li></ol>]]></content>
     
     
     <summary type="html">&lt;p&gt;今天突然就上强度了。实验课是让我们设计一个简单的RDBMS原型系统。（本质上就是参考的CMU15-445课程和StanfordCS346的课程）我觉得还是蛮有趣的，开一个系列来记录实验过程。&lt;/p&gt;
@@ -438,29 +489,6 @@ href=&quot;https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;amp;vd_source=250
 &lt;p&gt;今天要写C++的代码，以前都是用VS写的。但是突然想了一下既然都装了VS
 Code，为啥不配置一下。配置好了后以后写C/C++代码也不用打开繁重的VS了。而且VS
 Code还能加很多插件。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>个人博客搭建说明</title>
-    <link href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/"/>
-    <id>http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</id>
-    <published>2023-10-03T05:32:44.000Z</published>
-    <updated>2023-10-05T05:01:08.392Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用GitHub + Hexo搭建的本博客。</p><p>教程参考<ahref="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细）- 知乎 (zhihu.com)</a>。</p><p>上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。</p><span id="more"></span><p>我大致总结一下流程：</p><ol type="1"><li>注册GitHub</li><li>下载Git并将Git绑定到GitHub（使用token）</li><li>购买域名</li><li>安装node.js并配置环境变量（建议全程使用cmd管理员而不是gitbash）</li><li>安装hexo</li><li>解析域名</li><li>设置并美化主题</li></ol><p>另外，博客首页的头像是用的GitHub的头像链接，另外我不打算采用图床，因为怕翻车。所以文章里的全部图片都是存储在本地并push到GitHub中，若加载不出或速度慢可以尝试挂个梯子。</p><p>域名第一年花了9块，之后续费好像是20多块一年。在阿里云买的。</p><p>看板娘参考了两篇文章：<ahref="https://github.com/stevenjoezhang/live2d-widget">设置看板娘</a>,<ahref="https://www.cnblogs.com/c10udlnk/p/14727173.html">个性化配置看板娘</a>。</p><p>但是live2d的模型默认的这几个我不是很熟悉，以后有空了想换成我自己喜欢的人物角色。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;使用GitHub + Hexo搭建的本博客。&lt;/p&gt;
-&lt;p&gt;教程参考&lt;a
-href=&quot;https://zhuanlan.zhihu.com/p/102592286&quot;&gt;从零开始搭建个人博客（超详细）
-- 知乎 (zhihu.com)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。&lt;/p&gt;</summary>
     
     
     
