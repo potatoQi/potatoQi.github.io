@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-11T07:21:38.848Z</updated>
+  <updated>2023-10-11T10:54:17.175Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,11 +17,56 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>9, 压缩和解压</title>
+    <title>11. 总结1</title>
+    <link href="http://example.com/2023/10/11/11-%E6%80%BB%E7%BB%931/"/>
+    <id>http://example.com/2023/10/11/11-%E6%80%BB%E7%BB%931/</id>
+    <published>2023-10-11T10:26:41.000Z</published>
+    <updated>2023-10-11T10:54:17.175Z</updated>
+    
+    <content type="html"><![CDATA[<ol type="1"><li>多用tab键</li><li>多用快捷键：ctrl + a，ctrl + e，ctrl + u</li></ol><span id="more"></span><ol start="3" type="1"><li>熟悉Linux基本文件类型：<ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软链接：l（设置软链接记得用绝对路径）</li><li>管道文件：p</li><li>套接字：s</li></ol></li><li>Linux系统目录意义<ol type="1"><li>/etc：配置文件信息</li><li>/hone：用户目录</li><li>/lib：库目录（比如C库、python库）</li><li>/media、/mnt：磁盘挂载目录</li><li>/opt、/proc：进程目录</li><li>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</li><li>/bin：存放二进制可执行文件</li><li>/boot：存放开机启动程序</li></ol></li><li>基本操作<ol type="1"><li>mkdir name</li><li>touch name</li><li>rm name / rm -r name</li><li>cp 被移动path 目标path</li><li>mv 被移动path 目标path</li></ol></li><li>找文件<ol type="1"><li>基本的查找（看有or没有）<ol type="1"><li>find path -name 'xxx'</li><li>find path -type 'xxx'</li><li>find path -size +/-xxxk/M/G</li></ol></li><li>详细的查找（看要查找的文件的具体信息）<ol type="1"><li>find ...... | xargs ls -l</li></ol></li></ol></li><li>找内容<ol type="1"><li>在目录中找<ol type="1"><li>grep 'xxx' path -r -n</li></ol></li><li>在特定内容中找<ol type="1"><li>ls -l | grep 'xxx' -n</li><li>ps aux | grep 'xxx' -n</li><li>cat xxx.txt | grep 'xxx' -n</li></ol></li></ol></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;ol type=&quot;1&quot;&gt;
+&lt;li&gt;多用tab键&lt;/li&gt;
+&lt;li&gt;多用快捷键：ctrl + a，ctrl + e，ctrl + u&lt;/li&gt;
+&lt;/ol&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>10. 其它指令</title>
+    <link href="http://example.com/2023/10/11/10-%E5%85%B6%E5%AE%83%E6%8C%87%E4%BB%A4/"/>
+    <id>http://example.com/2023/10/11/10-%E5%85%B6%E5%AE%83%E6%8C%87%E4%BB%A4/</id>
+    <published>2023-10-11T10:22:03.000Z</published>
+    <updated>2023-10-11T10:26:20.890Z</updated>
+    
+    <content type="html"><![CDATA[<p>alias 别名 = '指令'：起别名（我设置了一个alias lh='ls -l -h'）</p><span id="more"></span><p>后续有什么常用的再加上去... ...待填坑</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;alias 别名 = &#39;指令&#39;：起别名（我设置了一个alias lh=&#39;ls -l -h&#39;）&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
+    
+    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>9. 压缩和解压</title>
     <link href="http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"/>
     <id>http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</id>
-    <published>2023-10-11T06:44:45.000Z</published>
-    <updated>2023-10-11T07:21:38.848Z</updated>
+    <published>2023-10-11T10:16:48.000Z</published>
+    <updated>2023-10-11T10:17:07.229Z</updated>
     
     <content type="html"><![CDATA[<p>压缩：tar -zcvf 生成的压缩包名 压缩材料（多个材料用空格分隔）</p><p>解压 ：tar -zxvf 压缩包名</p><span id="more"></span><p>Linux下使用rar解压缩也是可以的。但是要先apt install rar/unrar。</p><p>rar压缩：rar a -r 生成的压缩包名 压缩材料</p><p>rar解压：unrar x 压缩包名</p><p>Linux下也是可以使用zip解压缩的。但是要先apt install zip/unzip。</p><p>zip压缩：zip -r 生成的压缩包名 压缩材料</p><p>zip解压：unzip 解锁包名</p>]]></content>
     
@@ -43,9 +88,9 @@
     <link href="http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/"/>
     <id>http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/</id>
     <published>2023-10-11T06:10:57.000Z</published>
-    <updated>2023-10-11T07:04:59.840Z</updated>
+    <updated>2023-10-11T08:14:11.000Z</updated>
     
-    <content type="html"><![CDATA[<p>apt update是重新拉去目标源的资源列表。所以一般aptinstall找不到的话，先重新拉取一下列表先。</p><p>apt upgrade是根据本地资源列表更新所有软件包。</p><p>aptitude show软件包名：查看软件包是否安装，若安装，显示相关信息（需要先apt installaptitude）（aptitude ≈ apt ≈ apt-get）</p><span id="more"></span><p>apt install 软件名：安装</p><p>apt remove 软件名：卸载</p><p>离线安装也可以，先下载安装包，Ubantu的安装包后缀是.deb。</p><p>安装deb软件包命令：dpkg -i xxx.deb</p><p>卸载软件包：也用apt remove</p><p>还有一种方式是源码安装，也就是别人给你软件的代码，你需要自己在本机上编译。这种方式的一般流程是：</p><ol type="1"><li>解压源代码包</li><li>cd dir（源代码包）</li><li>运行./configure（这一步是检测文件是否缺失以及创建Makefile以及检测编译环境）</li><li>运行make（这一步是在编译源码、生成库和可执行程序）</li><li>运行make install（这一步是把库和可执行程序安装到系统路径下）</li><li>删除和卸载软件：运行make distclean</li></ol>]]></content>
+    <content type="html"><![CDATA[<p>apt update是重新拉去目标源的资源列表。所以一般aptinstall找不到的话，先重新拉取一下列表先。</p><p>apt upgrade是根据本地资源列表更新所有软件包。</p><p>aptitude show软件包名：查看软件包是否安装，若安装，显示相关信息（需要先apt installaptitude）（aptitude ≈ apt ≈ apt-get）</p><span id="more"></span><p>apt install 软件名：安装</p><p>apt remove 软件名：卸载</p><p>离线安装也可以，先下载安装包，Ubuntu的安装包后缀是.deb。</p><p>安装deb软件包命令：dpkg -i xxx.deb</p><p>卸载软件包：也用apt remove</p><p>还有一种方式是源码安装，也就是别人给你软件的代码，你需要自己在本机上编译。这种方式的一般流程是：</p><ol type="1"><li>解压源代码包</li><li>cd dir（源代码包）</li><li>运行./configure（这一步是检测文件是否缺失以及创建Makefile以及检测编译环境）</li><li>运行make（这一步是在编译源码、生成库和可执行程序）</li><li>运行make install（这一步是把库和可执行程序安装到系统路径下）</li><li>删除和卸载软件：运行make distclean</li></ol>]]></content>
     
     
     <summary type="html">&lt;p&gt;apt update是重新拉去目标源的资源列表。所以一般apt
@@ -174,9 +219,9 @@ aptitude）（aptitude ≈ apt ≈ apt-get）&lt;/p&gt;</summary>
     <link href="http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/"/>
     <id>http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/</id>
     <published>2023-10-11T03:34:13.000Z</published>
-    <updated>2023-10-11T06:48:23.803Z</updated>
+    <updated>2023-10-11T10:41:11.470Z</updated>
     
-    <content type="html"><![CDATA[<p>Linux系统类型：</p><ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软连接：l</li><li>管道文件：p</li><li>套接字：s</li></ol><span id="more"></span><p>mkdir：创建文件夹</p><p>rm：删除，-r删除文件夹</p><p>touch：创建文件</p><p>cp：拷贝（cp A B：把A拷贝到B中）（拷贝文件夹要加参数-r）</p><p>ls：-l详细细心，-h以human形式展现，可以看大小。（l：ls的简写，ll：ls-l的简写）</p><p>file 文件名：Linux文件名很不规范，没有后缀名这种说法。有时候ls-l看到的信息比较缺乏（比如文本文件和压缩包在ls-l下都显示为-），所以使用file 文件名就可以知道这个文件的真面目。</p>]]></content>
+    <content type="html"><![CDATA[<p>Linux系统类型：</p><ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软链接：l</li><li>管道文件：p</li><li>套接字：s</li></ol><span id="more"></span><p>mkdir：创建文件夹</p><p>rm：删除，-r删除文件夹</p><p>touch：创建文件</p><p>cp：拷贝（cp A B：把A拷贝到B中）（拷贝文件夹要加参数-r）</p><p>ls：-l详细细心，-h以human形式展现，可以看大小。（l：ls的简写，ll：ls-l的简写）</p><p>file 文件名：Linux文件名很不规范，没有后缀名这种说法。有时候ls-l看到的信息比较缺乏（比如文本文件和压缩包在ls-l下都显示为-），所以使用file 文件名就可以知道这个文件的真面目。</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;Linux系统类型：&lt;/p&gt;
@@ -185,7 +230,7 @@ aptitude）（aptitude ≈ apt ≈ apt-get）&lt;/p&gt;</summary>
 &lt;li&gt;目录问价：d&lt;/li&gt;
 &lt;li&gt;字符设备文件：c&lt;/li&gt;
 &lt;li&gt;块设备文件：b&lt;/li&gt;
-&lt;li&gt;软连接：l&lt;/li&gt;
+&lt;li&gt;软链接：l&lt;/li&gt;
 &lt;li&gt;管道文件：p&lt;/li&gt;
 &lt;li&gt;套接字：s&lt;/li&gt;
 &lt;/ol&gt;</summary>
@@ -225,9 +270,9 @@ aptitude）（aptitude ≈ apt ≈ apt-get）&lt;/p&gt;</summary>
     <link href="http://example.com/2023/10/11/1-shell/"/>
     <id>http://example.com/2023/10/11/1-shell/</id>
     <published>2023-10-10T17:01:20.000Z</published>
-    <updated>2023-10-11T05:22:55.603Z</updated>
+    <updated>2023-10-11T10:21:40.957Z</updated>
     
-    <content type="html"><![CDATA[<p>大二数据库期末Lab是设计一个在Linux环境下的数据库。然后涉及到许多底层关于文件读写啥的。助教给的代码里一堆需要掌握Linux系统编程基础知识才能理解的东西。所以就跑来自学了。</p><p>这个系列的blog比较水主要是给自己看的。所以挑自己薄弱的地方进行记录。</p><p>shell：命令解释器。</p><p>Linux系统里有很多种shell，cat /bin/shells查看本机中有哪些shell，echo$SHELL查看本机正在使用哪种shell。一般都是/bin/bash，即bash。</p><span id="more"></span><p>加快编程速度的tips：</p><ol type="1"><li>用tab补齐</li><li>ctrl + a, ctrl + e</li><li>Windows 下快捷键<ol type="1"><li>win + e：资源管理器</li><li>win + d(desktop)：回到桌面</li><li>wn + q(query)：打开win搜索栏</li><li>win + ←/→：分屏</li><li>win + 数字键：切换/打开到到不同程序</li><li>ctrl + shift + N：新建文件夹</li><li>在资源管理器中backspace：返回上一级目录</li><li>alt + tab：切换应用</li><li>alt（用右边的alt）+ enter：查看"属性"</li><li>alt（用右边的alt） + F4：关闭当前应用程序</li><li>win +/：将当前应用置于顶层（需安装PowerToys实现，且我修改了快捷键）</li></ol></li><li>Edge下快捷键<ol type="1"><li>ctrl + E：在地址栏打开搜索</li><li>ctrl + H：打开历史记录</li><li>ctrl + J：打开下载记录</li><li>ctrl + t：新建 标签页</li><li>ctrl+ 数字键：切换到不同标签页</li><li>alt + ←/→：前进/后退</li><li>Pgup/Pgdn：上下滚动屏幕</li><li>ctrl + Pgup/Pgdn：切换到 上/下一个标签页</li><li>home/end：回到页顶/页末</li><li>ctrl + F6将焦点移动到web内容上</li></ol></li></ol>]]></content>
+    <content type="html"><![CDATA[<p>大二数据库期末Lab是设计一个在Linux环境下的数据库。然后涉及到许多底层关于文件读写啥的。助教给的代码里一堆需要掌握Linux系统编程基础知识才能理解的东西。所以就跑来自学了。</p><p>这个系列的blog比较水主要是给自己看的。所以挑自己薄弱的地方进行记录。</p><p>shell：命令解释器。</p><p>Linux系统里有很多种shell，cat /bin/shells查看本机中有哪些shell，echo$SHELL查看本机正在使用哪种shell。一般都是/bin/bash，即bash。</p><span id="more"></span><p>加快编程速度的tips：</p><ol type="1"><li>用tab补齐</li><li>ctrl + a, ctrl + e, ctrl + u</li><li>Windows 下快捷键<ol type="1"><li>win + e：资源管理器</li><li>win + d(desktop)：回到桌面</li><li>wn + q(query)：打开win搜索栏</li><li>win + ←/→：分屏</li><li>win + 数字键：切换/打开到到不同程序</li><li>ctrl + shift + N：新建文件夹</li><li>在资源管理器中backspace：返回上一级目录</li><li>alt + tab：切换应用</li><li>alt（用右边的alt）+ enter：查看"属性"</li><li>alt（用右边的alt） + F4：关闭当前应用程序</li><li>win +/：将当前应用置于顶层（需安装PowerToys实现，且我修改了快捷键）</li><li>ctrl + shift + T：win下创建新的shell</li><li>ctrl + shift + w：删除一个shell标签</li><li>ctrl + shift + N：创建一个新shell</li></ol></li><li>Edge下快捷键<ol type="1"><li>ctrl + E：在地址栏打开搜索</li><li>ctrl + H：打开历史记录</li><li>ctrl + J：打开下载记录</li><li>ctrl + t：新建 标签页</li><li>ctrl+ 数字键：切换到不同标签页</li><li>alt + ←/→：前进/后退</li><li>Pgup/Pgdn：上下滚动屏幕</li><li>ctrl + Pgup/Pgdn：切换到 上/下一个标签页</li><li>home/end：回到页顶/页末</li><li>ctrl + F6将焦点移动到web内容上</li></ol></li></ol>]]></content>
     
     
     <summary type="html">&lt;p&gt;大二数据库期末Lab是设计一个在Linux环境下的数据库。然后涉及到许多底层关于文件读写啥的。助教给的代码里一堆需要掌握Linux系统编程基础知识才能理解的东西。所以就跑来自学了。&lt;/p&gt;
