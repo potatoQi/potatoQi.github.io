@@ -22,13 +22,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="article">
+  <meta name="description" content="grep 内容 查找path [-r]：找内容所在的path，如果path是文件夹就加-r">
+<meta property="og:type" content="article">
 <meta property="og:title" content="7. grep和xargs">
 <meta property="og:url" content="http://example.com/2023/10/11/7-grep%E5%92%8Cxargs/index.html">
 <meta property="og:site_name" content="Error_666">
+<meta property="og:description" content="grep 内容 查找path [-r]：找内容所在的path，如果path是文件夹就加-r">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-11T05:18:39.000Z">
-<meta property="article:modified_time" content="2023-10-11T05:18:55.908Z">
+<meta property="article:modified_time" content="2023-10-11T06:04:11.638Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -220,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-11 13:18:39 / 修改时间：13:18:55" itemprop="dateCreated datePublished" datetime="2023-10-11T13:18:39+08:00">2023-10-11</time>
+              <time title="创建时间：2023-10-11 13:18:39 / 修改时间：14:04:11" itemprop="dateCreated datePublished" datetime="2023-10-11T13:18:39+08:00">2023-10-11</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,7 +251,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>290</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -268,7 +270,22 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <span id="more"></span>
+        <p>grep 内容 查找path [-r]：找内容所在的path，如果path是文件夹就加-r</p>
+<span id="more"></span>
+<p>ps：查看所有进程（一般使用ps aux查看所有进程，a=all, u=user,
+x=没有控制终端的进程）</p>
+<ul>
+<li><div class="line-block">+ grep组合技</div>
+<ul>
+<li>例：ps aux | grep 'copy'：查看进程中有copy内容的进程</li>
+<li>例：cat tmp.txt | grep 'copy'
+-n：查看tmp.txt有copy的那一行并显示行号</li>
+<li>例：ls -l /usr/bin | grep 'mkdir' -n：查看 ls -l
+/usr/bin中带有mkdir的那一行并显示行号</li>
+</ul></li>
+<li>xargs：可以和find ...... + | + xargs +
+ls组合组合技，具体看上一篇blog</li>
+</ul>
 
     </div>
 
@@ -287,7 +304,10 @@
     <a href="/2023/10/11/6-find%E5%91%BD%E4%BB%A4/" rel="prev" title="6. find命令">
       <i class="fa fa-chevron-left"></i> 6. find命令
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/" rel="next" title="8. 软件包安装">
+      8. 软件包安装 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -366,7 +386,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">15</span>
+          <span class="site-state-item-count">16</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
