@@ -22,17 +22,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta property="og:type" content="article">
-<meta property="og:title" content="1. 深度强化学习导论">
-<meta property="og:url" content="http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/index.html">
+  <meta name="description" content="什么是多智能体强化学习？比如快递工厂里的一个个快递机器，或者王者荣耀人机模式里的每个小兵，异或是现在自动驾驶中的每一辆车，都可以定义为智能体。让智能体进行强化学习是为了他们做出更好的决策。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="0. 从博弈论到多智能体强化学习">
+<meta property="og:url" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Error_666">
+<meta property="og:description" content="什么是多智能体强化学习？比如快递工厂里的一个个快递机器，或者王者荣耀人机模式里的每个小兵，异或是现在自动驾驶中的每一辆车，都可以定义为智能体。让智能体进行强化学习是为了他们做出更好的决策。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-14T17:44:37.000Z">
-<meta property="article:modified_time" content="2023-10-14T17:48:39.538Z">
+<meta property="og:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/1.png">
+<meta property="og:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/2.png">
+<meta property="article:published_time" content="2023-10-14T17:53:28.000Z">
+<meta property="article:modified_time" content="2023-10-14T18:34:23.433Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/1.png">
 
-<link rel="canonical" href="http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/">
+<link rel="canonical" href="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
@@ -45,7 +50,7 @@
   };
 </script>
 
-  <title>1. 深度强化学习导论 | Error_666</title>
+  <title>0. 从博弈论到多智能体强化学习 | Error_666</title>
   
 
 
@@ -196,7 +201,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -209,7 +214,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          1. 深度强化学习导论
+          0. 从博弈论到多智能体强化学习
         </h1>
 
         <div class="post-meta">
@@ -220,7 +225,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-15 01:44:37 / 修改时间：01:48:39" itemprop="dateCreated datePublished" datetime="2023-10-15T01:44:37+08:00">2023-10-15</time>
+              <time title="创建时间：2023-10-15 01:53:28 / 修改时间：02:34:23" itemprop="dateCreated datePublished" datetime="2023-10-15T01:53:28+08:00">2023-10-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -229,6 +234,10 @@
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
                   <a href="/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">多智能体强化学习</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E4%B8%BB%E7%BA%BF/" itemprop="url" rel="index"><span itemprop="name">主线</span></a>
                 </span>
             </span>
 
@@ -245,7 +254,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>0</span>
+              <span>1.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -264,7 +273,68 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        
+        <p>什么是多智能体强化学习？比如快递工厂里的一个个快递机器，或者王者荣耀人机模式里的每个小兵，异或是现在自动驾驶中的每一辆车，都可以定义为智能体。让智能体进行强化学习是为了他们做出更好的决策。</p>
+<span id="more"></span>
+<h3 id="博弈论基本概念">博弈论基本概念</h3>
+<ul>
+<li>玩家集合：
+<ul>
+<li><span class="math inline">\(N = {1, 2, ..., n}\)</span></li>
+</ul></li>
+<li>策略集合
+<ul>
+<li><span class="math inline">\(A_1, A_2, A_3, ..., A_n\)</span></li>
+</ul></li>
+<li>收益函数
+<ul>
+<li><span class="math inline">\(r_1=f_1(A_1, A_2, ...,
+A_n)\)</span></li>
+<li><span class="math inline">\(r_2=f_2(A_1, A_2, ...,
+A_n)\)</span></li>
+<li>... ...</li>
+<li><span class="math inline">\(r_n=f_n(A_1, A_2, ...,
+A_n)\)</span></li>
+</ul></li>
+</ul>
+<p>用“囚徒困境”这个例子来进一步理解：</p>
+<p><img src="1.png" /></p>
+<p>如图是两个玩家，玩家一是绿色的，玩家二是红色的。每个人选择坦白 /
+抵赖所获得的分数如图。</p>
+<p>若玩家1选择坦白
+，则玩家2必然选择坦白，因为比起0分1，1分显然更好。</p>
+<p>若玩家1选择抵赖，则玩家2也是选择坦白。</p>
+<p>所以不管玩家1选什么，玩家2都会选择坦白，坦白是玩家2的<strong>占优策略</strong>。</p>
+<p>同样的，不管玩家2选什么，玩家1也都会选择坦白
+，坦白也是玩家1的<strong>占优策略</strong>。</p>
+<p>所以博弈结果必然就是俩人都选择坦白。</p>
+<p>假如修改一下游戏规则呢？</p>
+<p><img src="2.png" /></p>
+<p>此时若玩家2的占优策略仍然是坦白。</p>
+<p>但是若玩家2选择坦白，则玩家1会选择坦白。若玩家2选择坦白，则玩家1会选择抵赖。此时坦白就不是玩家1的占优策略了。</p>
+<p>那么玩家1应该如何做决策呢？</p>
+<p>因为俩玩家都是绝顶聪明，所以玩家1肯定知道玩家2做出了它的占优策略——坦白。所以玩家1既然知道玩家2选坦白，他也就只能选坦白。此时坦白是玩家1的<strong>最佳应对</strong>。</p>
+<p>通过这个例子，我们感受了一下博弈论，还学到俩新名词，<strong>占优策略</strong>和<strong>最佳应对</strong>。</p>
+<p>下面我们来看博弈论的解：</p>
+<p>正如同上面的囚徒困境，一些博弈问题是存在解的：解 =
+即任何玩家都不能通过独自改变策略而获益时的策略组合，换句话说，解 =
+所有玩家处于最佳应对时的策略组合。</p>
+<p>数学定义如下：</p>
+<ul>
+<li><p>给定一个策略组合 <span
+class="math inline">\(a=(a_1,a_2,...,a_n)\in A_1\times
+A_2\times...\times A_n,\)</span></p></li>
+<li><p>若 <span class="math display">\[
+r_1(a_1,a_2,...,a_n)\geq r_1(a_1^{\prime},a_2,...,a_n), \forall
+a_1^{\prime}\in A_1 \\
+r_2(a_1,a_2,...,a_n)\geq r_{1}(a_{1},a_{2}^{\prime},...,a_{n}),\forall
+a_{2}^{\prime}\in A_{2} \\
+... ... \\
+r_n(a_1,a_2,...,a_n)\geq r_n(a_1,a_2,...,a_n^{\prime}),\forall
+a_n^{\prime}\in A_n
+\]</span></p></li>
+<li><p>那么策略组合<span
+class="math inline">\(a\)</span>是一个纳什均衡。</p></li>
+</ul>
 
     </div>
 
@@ -347,6 +417,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">博弈论基本概念</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -369,7 +440,7 @@
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">7</span>
+        <span class="site-state-item-count">8</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
