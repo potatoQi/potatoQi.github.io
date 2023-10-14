@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-11T17:37:15.044Z</updated>
+  <updated>2023-10-14T10:10:29.663Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,412 +17,20 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>17. 系统编程前言</title>
-    <link href="http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/"/>
-    <id>http://example.com/2023/10/12/17-%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B%E5%89%8D%E8%A8%80/</id>
-    <published>2023-10-11T16:38:04.000Z</published>
-    <updated>2023-10-11T17:37:15.044Z</updated>
+    <title>Linux基础</title>
+    <link href="http://example.com/2023/10/14/Linux%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2023/10/14/Linux%E5%9F%BA%E7%A1%80/</id>
+    <published>2023-10-14T10:08:55.000Z</published>
+    <updated>2023-10-14T10:10:29.663Z</updated>
     
-    <content type="html"><![CDATA[<p>终于到了与我项目息息相关的地方了。</p><p>从此处开始，笔记将会记录的比较详细，方便我做项目时查阅。</p><span id="more"></span><p>先了解一下什么是内核？内核本质就是一堆程序，一堆能跟计算机硬件打交道的程序。而什么是系统编程？就是熟悉并运用内核提供的函数，也就是接口。</p><p>通过学习系统编程，我们不需要了解最底层（即内核本身），就可以与计算机底层硬件打交道。</p><p><img src="1.png" /></p><p>这张图很形象，系统编程并不是站到了最底层，而是在用户层的最底层，中间隔了一个内核。系统编程就是用真正的底层人员——内核，给你的函数进行编程。</p><p>所以系统编程学习的重点就是熟练的掌握内核提供的函数。最好的老师是man手册。下面是一些关于man手册的命令：</p><ol type="1"><li>查看手册帮助<ul><li>man man</li></ul></li><li>查看指定函数的文档<ul><li>man 函数名 所在章节</li></ul></li><li>查看指定函数所在章节<ul><li>man -k 函数名</li></ul></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;终于到了与我项目息息相关的地方了。&lt;/p&gt;
-&lt;p&gt;从此处开始，笔记将会记录的比较详细，方便我做项目时查阅。&lt;/p&gt;</summary>
+    <content type="html"><![CDATA[<p>Linux基础</p><span id="more"></span><h3 id="前言">前言</h3><p>在Windows上想使用Linux系统可以用虚拟机（VM /Hyper-V）或者wsl或者docker。如果使用虚拟机的话建议装一个Finalshell，这样就不用频繁的在虚拟机和win界面里切换了。</p><h3 id="linux系统目录">Linux系统目录</h3><p>Linux下一切皆文件，所以了解Linux的一些系统目录是干啥的就很重要：</p><p>/dev：与本机设备（比如鼠标）有关的目录</p><p>/etc：配置文件信息</p><p>/home：用户目录</p><p>/lib：库目录（比如C库、python库）</p><p>/media、/mnt：磁盘挂载目录</p><p>/opt、/proc：进程目录</p><p>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</p><p>/bin：存放二进制可执行文件</p><p>/boot：存放开机启动程序</p><p>一般/etc和/home是经常用的，如果你是用wsl的话/mnt也比较常用。</p><p>前面提到Linux下一切皆文件，但是Linux里对文件的命名比较不规范。文件名可以随便自己起，所以你可以起一个名为test.mp3的文件，然后在里面只写一点文本。</p><p>所以使用file 文件名 命令可以知道这个文件到底是属于啥文件。</p><p>在Linux下的文件类型如下：</p><ol type="1"><li>普通文件：-</li><li>目录文件：d</li><li>软链接：l</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>管道文件：p</li><li>套接字：s</li></ol><p>一般前三种我比较常见。</p><h3 id="linux基础命令">Linux基础命令</h3><h4 id="快捷键相关">快捷键相关</h4><p>ctrl + c：强制中断当前进程</p><p>ctrl + l：清屏</p><p>ctrl + a：跳转到行首</p><p>ctrl + e：跳转到行尾</p><p>ctrl + ←：往左跳一个单词</p><p>ctrl + →：往右跳一个单词</p><p>ctrl + r：进入命令搜索模式</p><h4 id="用户相关">用户相关</h4><p>sudo - username：切换用户</p><p>sudo 命令：以root用户的权限执行这条命令</p><p>chmod 777 filename：修改文件的权限（三个数字分别对应user, group,others）</p><h4 id="查看文件相关">查看文件相关</h4><p>cat filename：查看文件</p><p>more filename：分屏查看文件</p><p>head filename：查看文件开头几行</p><p>tail filename：查看文件后面几行</p><p>tree：以树目录形式展现当前目录（需apt install tree）</p><p>ls -l / -h /-a：查看文件详细信息，以列表/以人类形式(可以看文件占多少M)/显示隐藏文件</p><h4 id="文件操作相关">文件操作相关</h4><p>mkdir dirname：创建文件夹</p><p>touch filename：创建文件</p><p>cp path1 path2 [-r]：将path1的东西复制到path2那</p><p>mv path1 path2：将path1的东西移动到path2那</p><p>rm [-r] path：删除path处的东西</p><p>ln -s path链接：将path处的东西创建软链接（path处要写绝对路径，因为本质就是每次访问链接的时候都是去访问path）</p><p>ln path 链接：将path处的东西创建硬链接，形成铁索连环的效果</p><p>find path -name/-type/-size 条件 -exec rm {} ; ：批量删除文件</p><h4 id="查找相关">查找相关</h4><ul><li>文件—基本查找（看文件路径在哪）</li></ul><p>find path -name 'xxx'：按文件名字来找</p><p>find path -type 'xxx'：按文件类型来找</p><p>find path -size +/-(num)k/M/G：按文件大小来找</p><ul><li>文件—详细查找</li></ul><p>find ... ... | xargs ls -l -h</p><ul><li>内容查找</li></ul><p>grep 'xxx' path [-r][-n]：-n是显示行号，如果path为文件夹则需要加-r</p><p>ls -l | grep 'xxx' -n 或 cat filename | grep 'xxx' -n 或 ps aux |grep 'xxx' -n 或 lsof -u username | grep 'xxx'-n：在某些输出内容中找特定内容</p><h4 id="软件包解压缩相关">软件包，解压缩相关</h4><p>apt install xxx：安装软件包</p><p>apt remove xxx：删除软件包</p><p>dpkg -i xxx.deb：安装.deb软件包</p><p>源码安装（具体方法看每个源码中的README.md）：</p><ol type="1"><li>解压源代码包</li><li>cd dir（源代码包）</li><li>运行./configure（这一步是检测文件是否缺失以及创建Makefile以及检测编译环境）</li><li>运行make（这一步是在编译源码、生成库和可执行程序）</li><li>运行make install（这一步是把库和可执行程序安装到系统路径下）</li></ol><p>tar -zcvf 压缩包名 压缩材料：压缩</p><p>tar -zxvf 压缩包名：解压</p><h4 id="其它常用指令">其它常用指令</h4><p>alias别名='指令'：给指令起别名，只能临时生效（永久生效将alias语句写入~/.bashrc，然后source~/.bashrc）</p><p>ps aux：查看进程</p><p>lsof -u username：查看user打开的文件</p><p>gcc filename -o 输出名字：编译c程序（需apt install gcc）</p><p>g++ filename -o 输出名字：编译c++程序（需apt install g++）</p><p>man -k 函数名：查看Linux函数在man手册中的章节</p><p>man 章节 函数：查看Linux函数在man手册中的讲解</p><h4 id="vim相关">vim相关</h4><p>适应不了vim可以用nano。</p><p>ESC：返回命令模式</p><p>a/i：进入编辑模式</p><p>冒号：进行底栏模式</p><p>:wq：保存并退出</p><p>:set nu：显示行号</p><p>hjkl：上下左右</p><p>0：移动到行首</p><p>$：移动到行尾</p><p>gg：移动到文件开头</p><p>G：移动到文件结尾</p><p>数字 + G：移动到指定行</p><p>x：删除单个字符</p><p>dd：删除当前行</p><p>d0：删除光标到行首</p><p>d$：删除光标到行尾</p><p>v + hjkl + d：删除选定内容</p><p>v + hjkl + y：复制选定内容</p><p>p：粘贴</p><p>u：撤销</p><p>ctrl + u：反向撤销</p>]]></content>
     
     
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>16. makefile</title>
-    <link href="http://example.com/2023/10/12/16-makefile/"/>
-    <id>http://example.com/2023/10/12/16-makefile/</id>
-    <published>2023-10-11T16:35:21.000Z</published>
-    <updated>2023-10-11T16:35:51.131Z</updated>
-    
-    <content type="html"><![CDATA[<p>makefile感觉没项目没太大关系，为了节约时间，先不学了。</p><span id="more"></span><p>待填坑... ...</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;makefile感觉没项目没太大关系，为了节约时间，先不学了。&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;Linux基础&lt;/p&gt;</summary>
     
     
     
     <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>15. gdb调试</title>
-    <link href="http://example.com/2023/10/12/15-gdb%E8%B0%83%E8%AF%95/"/>
-    <id>http://example.com/2023/10/12/15-gdb%E8%B0%83%E8%AF%95/</id>
-    <published>2023-10-11T16:29:43.000Z</published>
-    <updated>2023-10-11T16:35:05.914Z</updated>
-    
-    <content type="html"><![CDATA[<p>gdb感觉没项目没太大关系，为了节约时间，先不学了。</p><span id="more"></span><p>待填坑... ...</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;gdb感觉没项目没太大关系，为了节约时间，先不学了。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>14. 静态库与共享库</title>
-    <link href="http://example.com/2023/10/11/14-%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%85%B1%E4%BA%AB%E5%BA%93/"/>
-    <id>http://example.com/2023/10/11/14-%E9%9D%99%E6%80%81%E5%BA%93%E4%B8%8E%E5%85%B1%E4%BA%AB%E5%BA%93/</id>
-    <published>2023-10-11T15:39:30.000Z</published>
-    <updated>2023-10-11T16:27:07.897Z</updated>
-    
-    <content type="html"><![CDATA[<p>静态库就是一旦调用，就被封装在可执行文件里。所以有多少个可执行文件，就有多少个静态库，很耗空间。不过速度比较快（但是现在静态库与动态库的速度区别已经不打了）</p><p>动态库就是想调用就去找，不用封装在自己的可执行文件里。</p><span id="more"></span><h3 id="一.-静态库制作和使用">一. 静态库制作和使用</h3><p>静态库没main函数，就直接写你要实现的功能的函数</p><ol type="1"><li>将code1.c用gcc -c生成code1.o。</li><li>使用ar rcs lib库名.a .o材料 制作静态库。<ul><li>静态库后缀名为了规范要是.a，而且前缀要带lib</li></ul></li><li>gcc code2.c lib库名.a -o outname，即一起编译。<ul><li>源码在前，库在后</li></ul></li></ol><p>但是这样会有一个问题，就是在code2.c中，你用到了code1.c生成的静态库对吧。但是在code2.c中是没有code1.c的函数声明的，所以就会发生隐式转换，在某些情况下会发生意想不到的错误。</p><p>所以为了解决这个问题，需要在code2.c中加头文件.h，比如加一个"code1.h"，然后在code2.c的同目录下新写一个文件code1.h，里面就写code1.c函数的定义就行。</p><p>个人感觉这样子不就跟用类的感觉很类似了吗？类就是写一个定义文件.h，再写一个实现文件.cpp，然后别人调用直接引入头文件就好。</p><p>静态库跟类相比，多了一个lib库名.a，库名.h它也有，库名.cpp它也有。</p><h3 id="二.-动态库">二. 动态库</h3><p>感觉跟我们做的项目关系不大，节约时间，先不学了。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;静态库就是一旦调用，就被封装在可执行文件里。所以有多少个可执行文件，就有多少个静态库，很耗空间。不过速度比较快（但是现在静态库与动态库的速度区别已经不打了）&lt;/p&gt;
-&lt;p&gt;动态库就是想调用就去找，不用封装在自己的可执行文件里。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>13. gcc编译</title>
-    <link href="http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/"/>
-    <id>http://example.com/2023/10/11/13-gcc%E7%BC%96%E8%AF%91/</id>
-    <published>2023-10-11T14:19:35.000Z</published>
-    <updated>2023-10-11T15:55:25.821Z</updated>
-    
-    <content type="html"><![CDATA[<p>gcc编译分为4步：</p><ol type="1"><li>预处理：将hello.c展开宏、头文件，替换条件编译、删除注释/空行/空白，得到hello.i</li><li>编译：对hello.i检查语法规范，得到hello.s</li><li>汇编：将hello.s翻译成机器指令，得到hello.o</li><li>链接：数据段合并、地址回填</li></ol><span id="more"></span><p>如何编译一个.c/.c++程序？分为以下几步</p><ol type="1"><li>apt install gcc, apt install g++</li><li>写一个.c / .c++文件</li><li>gcc filename -o outname / g++ filename -o outname<ul><li>-o：重命名输出文件，不然默认就是filename.out</li><li>-c：执行到汇编阶段，不执行链接</li><li>输出文件是一个可执行文件</li><li>-g：加了后输出文件可调试</li></ul></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;gcc编译分为4步：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;预处理：将hello.c展开宏、头文件，替换条件编译、删除注释/空行/空白，得到hello.i&lt;/li&gt;
-&lt;li&gt;编译：对hello.i检查语法规范，得到hello.s&lt;/li&gt;
-&lt;li&gt;汇编：将hello.s翻译成机器指令，得到hello.o&lt;/li&gt;
-&lt;li&gt;链接：数据段合并、地址回填&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>12. vim基础用法</title>
-    <link href="http://example.com/2023/10/11/12-vim%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/"/>
-    <id>http://example.com/2023/10/11/12-vim%E5%9F%BA%E7%A1%80%E7%94%A8%E6%B3%95/</id>
-    <published>2023-10-11T13:47:54.000Z</published>
-    <updated>2023-10-11T14:10:01.008Z</updated>
-    
-    <content type="html"><![CDATA[<p>这个系列的Blog的目的是为了能设计出数据库。所以我个人认为没必要花费很多时间在运用Vim上。固然Vim是一款很好的软件，但是它的学习成本太高了。而且处理文本与设计数据库两件事关系其实不是特别大。所以我在后续gedit来代替vim。（gedit退出快捷键：crtl+ Q）</p><span id="more"></span><p>虽然但是，至少还是要把Vim的一些基础命令学了：</p><ol type="1"><li>其它<ol type="1"><li>a：进入打字模式</li><li>:wq：保存&amp;退出</li></ol></li><li>移动<ol type="1"><li>hjkl：上下左右</li><li>0：移动到行首</li><li>$：移动到行尾</li><li>gg：移动到文件开头</li><li>G：移动到文件结尾</li><li>数字 + G：移动到指定行</li><li>%：移动到匹配的{}、()、[]</li></ol></li><li>删除<ol type="1"><li>x：删除单个字符</li><li>dd：删除当前行</li><li>d0：删除光标到行首</li><li>d$：删除光标到行尾</li><li>v + hjkl + d：删除选定内容</li></ol></li><li>复制 &amp; 粘贴<ol type="1"><li>v + hjkl + y：复制所选内容</li><li>p：粘贴</li></ol></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;这个系列的Blog的目的是为了能设计出数据库。所以我个人认为没必要花费很多时间在运用Vim上。固然Vim是一款很好的软件，但是它的学习成本太高了。而且处理文本与设计数据库两件事关系其实不是特别大。所以我在后续gedit来代替vim。（gedit退出快捷键：crtl
-+ Q）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>11. 总结1</title>
-    <link href="http://example.com/2023/10/11/11-%E6%80%BB%E7%BB%931/"/>
-    <id>http://example.com/2023/10/11/11-%E6%80%BB%E7%BB%931/</id>
-    <published>2023-10-11T10:26:41.000Z</published>
-    <updated>2023-10-11T14:18:09.271Z</updated>
-    
-    <content type="html"><![CDATA[<ol type="1"><li>多用tab键</li><li>多用快捷键：ctrl + a，ctrl + e，ctrl + u</li></ol><span id="more"></span><ol start="3" type="1"><li>熟悉Linux基本文件类型：<ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软链接：l（设置软链接记得用绝对路径）</li><li>管道文件：p</li><li>套接字：s</li></ol></li><li>Linux系统目录意义<ol type="1"><li>/etc：配置文件信息</li><li>/hone：用户目录</li><li>/lib：库目录（比如C库、python库）</li><li>/media、/mnt：磁盘挂载目录</li><li>/opt、/proc：进程目录</li><li>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</li><li>/bin：存放二进制可执行文件</li><li>/boot：存放开机启动程序</li></ol></li><li>基本操作<ol type="1"><li>mkdir name</li><li>touch name</li><li>rm name / rm -r name</li><li>cp 被移动path 目标path / cp 被移动path 目标path - r</li><li>mv 被移动path 目标path</li></ol></li><li>找文件<ol type="1"><li>基本的查找（看有or没有）<ol type="1"><li>find path -name 'xxx'</li><li>find path -type 'xxx'</li><li>find path -size +/-xxxk/M/G</li></ol></li><li>详细的查找（看要查找的文件的具体信息）<ol type="1"><li>find ...... | xargs ls -l</li></ol></li></ol></li><li>找内容<ol type="1"><li>在目录中找<ol type="1"><li>grep 'xxx' path -r -n</li></ol></li><li>在特定内容中找<ol type="1"><li>ls -l | grep 'xxx' -n</li><li>ps aux | grep 'xxx' -n</li><li>cat xxx.txt | grep 'xxx' -n</li></ol></li></ol></li><li>批量修改文件<ol type="1"><li>find path -name/-type/-size 筛选条件 -exec rm {} ;</li></ol></li><li>压缩/解压<ol type="1"><li>压缩：tar -zcvf name 压缩材料</li><li>解压：tar -zxvf name</li></ol></li></ol><hr /><ol type="1"><li>Windows 下快捷键<ol type="1"><li>win + e：资源管理器</li><li>win + d(desktop)：回到桌面</li><li>wn + q(query)：打开win搜索栏</li><li>win + ←/→：分屏</li><li>win + 数字键：切换/打开到到不同程序</li><li>ctrl + shift + N：新建文件夹</li><li>在资源管理器中backspace：返回上一级目录</li><li>alt + tab：切换应用</li><li>alt（用右边的alt）+ enter：查看"属性"</li><li>alt（用右边的alt） + F4：关闭当前应用程序</li><li>win +/：将当前应用置于顶层（需安装PowerToys实现，且我修改了快捷键）</li><li>ctrl + shift + T：win下创建新的shell</li><li>ctrl + shift + w：删除一个shell标签</li><li>ctrl + shift + N：创建一个新shell</li></ol></li><li>Edge下快捷键<ol type="1"><li>ctrl + E：在地址栏打开搜索</li><li>ctrl + H：打开历史记录</li><li>ctrl + J：打开下载记录</li><li>ctrl + t：新建 标签页</li><li>ctrl+ 数字键：切换到不同标签页</li><li>alt + ←/→：前进/后退</li><li>Pgup/Pgdn：上下滚动屏幕</li><li>ctrl + Pgup/Pgdn：切换到 上/下一个标签页</li><li>home/end：回到页顶/页末</li><li>ctrl + F6将焦点移动到web内容上</li></ol></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;多用tab键&lt;/li&gt;
-&lt;li&gt;多用快捷键：ctrl + a，ctrl + e，ctrl + u&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>10. 其它指令</title>
-    <link href="http://example.com/2023/10/11/10-%E5%85%B6%E5%AE%83%E6%8C%87%E4%BB%A4/"/>
-    <id>http://example.com/2023/10/11/10-%E5%85%B6%E5%AE%83%E6%8C%87%E4%BB%A4/</id>
-    <published>2023-10-11T10:22:03.000Z</published>
-    <updated>2023-10-11T15:13:54.017Z</updated>
-    
-    <content type="html"><![CDATA[<p>alias 别名 = '指令'：起别名（我设置了一个alias lh='ls -l -h'）</p><p>但是alias当你退出终端时就会失效，所以为了永久有效，可以把它写到~/.bashrc里，然后source~./bashrc刷新一下。</p><span id="more"></span><p>后续有什么常用的再加上去... ...待填坑</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;alias 别名 = &#39;指令&#39;：起别名（我设置了一个alias lh=&#39;ls -l -h&#39;）&lt;/p&gt;
-&lt;p&gt;但是alias当你退出终端时就会失效，所以为了永久有效，可以把它写到~/.bashrc里，然后source
-~./bashrc刷新一下。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>9. 压缩和解压</title>
-    <link href="http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/"/>
-    <id>http://example.com/2023/10/11/9-%E5%8E%8B%E7%BC%A9%E5%92%8C%E8%A7%A3%E5%8E%8B/</id>
-    <published>2023-10-11T10:16:48.000Z</published>
-    <updated>2023-10-11T10:17:07.229Z</updated>
-    
-    <content type="html"><![CDATA[<p>压缩：tar -zcvf 生成的压缩包名 压缩材料（多个材料用空格分隔）</p><p>解压 ：tar -zxvf 压缩包名</p><span id="more"></span><p>Linux下使用rar解压缩也是可以的。但是要先apt install rar/unrar。</p><p>rar压缩：rar a -r 生成的压缩包名 压缩材料</p><p>rar解压：unrar x 压缩包名</p><p>Linux下也是可以使用zip解压缩的。但是要先apt install zip/unzip。</p><p>zip压缩：zip -r 生成的压缩包名 压缩材料</p><p>zip解压：unzip 解锁包名</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;压缩：tar -zcvf 生成的压缩包名 压缩材料（多个材料用空格分隔）&lt;/p&gt;
-&lt;p&gt;解压 ：tar -zxvf 压缩包名&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>8. 软件包安装</title>
-    <link href="http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/"/>
-    <id>http://example.com/2023/10/11/8-%E8%BD%AF%E4%BB%B6%E5%8C%85%E5%AE%89%E8%A3%85/</id>
-    <published>2023-10-11T06:10:57.000Z</published>
-    <updated>2023-10-11T08:14:11.000Z</updated>
-    
-    <content type="html"><![CDATA[<p>apt update是重新拉去目标源的资源列表。所以一般aptinstall找不到的话，先重新拉取一下列表先。</p><p>apt upgrade是根据本地资源列表更新所有软件包。</p><p>aptitude show软件包名：查看软件包是否安装，若安装，显示相关信息（需要先apt installaptitude）（aptitude ≈ apt ≈ apt-get）</p><span id="more"></span><p>apt install 软件名：安装</p><p>apt remove 软件名：卸载</p><p>离线安装也可以，先下载安装包，Ubuntu的安装包后缀是.deb。</p><p>安装deb软件包命令：dpkg -i xxx.deb</p><p>卸载软件包：也用apt remove</p><p>还有一种方式是源码安装，也就是别人给你软件的代码，你需要自己在本机上编译。这种方式的一般流程是：</p><ol type="1"><li>解压源代码包</li><li>cd dir（源代码包）</li><li>运行./configure（这一步是检测文件是否缺失以及创建Makefile以及检测编译环境）</li><li>运行make（这一步是在编译源码、生成库和可执行程序）</li><li>运行make install（这一步是把库和可执行程序安装到系统路径下）</li><li>删除和卸载软件：运行make distclean</li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;apt update是重新拉去目标源的资源列表。所以一般apt
-install找不到的话，先重新拉取一下列表先。&lt;/p&gt;
-&lt;p&gt;apt upgrade是根据本地资源列表更新所有软件包。&lt;/p&gt;
-&lt;p&gt;aptitude show
-软件包名：查看软件包是否安装，若安装，显示相关信息（需要先apt install
-aptitude）（aptitude ≈ apt ≈ apt-get）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>7. grep和xargs</title>
-    <link href="http://example.com/2023/10/11/7-grep%E5%92%8Cxargs/"/>
-    <id>http://example.com/2023/10/11/7-grep%E5%92%8Cxargs/</id>
-    <published>2023-10-11T05:18:39.000Z</published>
-    <updated>2023-10-11T06:04:11.638Z</updated>
-    
-    <content type="html"><![CDATA[<p>grep 内容 查找path [-r]：找内容所在的path，如果path是文件夹就加-r</p><span id="more"></span><p>ps：查看所有进程（一般使用ps aux查看所有进程，a=all, u=user,x=没有控制终端的进程）</p><ul><li><div class="line-block">+ grep组合技</div><ul><li>例：ps aux | grep 'copy'：查看进程中有copy内容的进程</li><li>例：cat tmp.txt | grep 'copy'-n：查看tmp.txt有copy的那一行并显示行号</li><li>例：ls -l /usr/bin | grep 'mkdir' -n：查看 ls -l/usr/bin中带有mkdir的那一行并显示行号</li></ul></li><li>xargs：可以和find ...... + | + xargs +ls组合组合技，具体看上一篇blog</li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;grep 内容 查找path [-r]：找内容所在的path，如果path是文件夹就加-r&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>6. find命令</title>
-    <link href="http://example.com/2023/10/11/6-find%E5%91%BD%E4%BB%A4/"/>
-    <id>http://example.com/2023/10/11/6-find%E5%91%BD%E4%BB%A4/</id>
-    <published>2023-10-11T04:47:30.000Z</published>
-    <updated>2023-10-11T06:08:26.665Z</updated>
-    
-    <content type="html"><![CDATA[<ul><li>按文件名搜索：<ul><li>find -name '名字'（可加参数-maxdepth num来限定深度）</li></ul></li><li>按文件类型搜索：<ul><li>find -type 类型（可加参数-maxdepth num来限定深度）</li></ul></li><li>按文件大小搜索<ul><li>find -size +/-数字M（可加-maxdepth）</li></ul></li></ul><span id="more"></span><ul><li>find + -exec组合技：<ul><li>例如find ...... -exec ls -l {} ;</li><li>{}里就代表着find ......，意思就是说把find到的东西用ls-l执行，;是固定搭配</li><li>或者find ...... -exec rm -r {} ;</li></ul></li><li>find + | + xargs组合技：<ul><li>例如find ... ... | xargs ls -l（但是这种方式缺点就是文件名有空格时会出错，在|前加-print0可避免这个错误）</li><li>xrags就是把|管道接收到的东西切割成一块块的给后面</li></ul></li></ul>]]></content>
-    
-    
-    <summary type="html">&lt;ul&gt;
-&lt;li&gt;按文件名搜索：
-&lt;ul&gt;
-&lt;li&gt;find -name &#39;名字&#39;（可加参数-maxdepth num来限定深度）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;按文件类型搜索：
-&lt;ul&gt;
-&lt;li&gt;find -type 类型（可加参数-maxdepth num来限定深度）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;li&gt;按文件大小搜索
-&lt;ul&gt;
-&lt;li&gt;find -size +/-数字M（可加-maxdepth）&lt;/li&gt;
-&lt;/ul&gt;&lt;/li&gt;
-&lt;/ul&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>5. 用户和用户组</title>
-    <link href="http://example.com/2023/10/11/5-%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84/"/>
-    <id>http://example.com/2023/10/11/5-%E7%94%A8%E6%88%B7%E5%92%8C%E7%94%A8%E6%88%B7%E7%BB%84/</id>
-    <published>2023-10-11T04:27:10.000Z</published>
-    <updated>2023-10-11T04:47:15.845Z</updated>
-    
-    <content type="html"><![CDATA[<p>chmod：修改文件权限，chmod u/g/o/a +/- r/w/x 文件名，或者chmod 471文件名，471分别是3个3位二进制数的十进制</p><p>chown 新所有者 文件名：修改文件所有者</p><p>chgrp 新组 文件名：修改文件所属组</p><span id="more"></span><p>adduser 用户名：添加用户</p><p>deluser 用户名：删除用户</p><p>addgroup 组名：添加组名</p><p>delgroup 组名：删除组</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;chmod：修改文件权限，chmod u/g/o/a +/- r/w/x 文件名，或者chmod 471
-文件名，471分别是3个3位二进制数的十进制&lt;/p&gt;
-&lt;p&gt;chown 新所有者 文件名：修改文件所有者&lt;/p&gt;
-&lt;p&gt;chgrp 新组 文件名：修改文件所属组&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>4. 目录和文件操作2</title>
-    <link href="http://example.com/2023/10/11/4-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C2/"/>
-    <id>http://example.com/2023/10/11/4-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C2/</id>
-    <published>2023-10-11T03:49:43.000Z</published>
-    <updated>2023-10-11T04:26:51.625Z</updated>
-    
-    <content type="html"><![CDATA[<p>cat：查看文件内容</p><p>tac：倒着查看文件内容</p><p>more：查看大文件，逐屏显示</p><p>head：显示前面内容</p><p>tail：显示后面内容</p><p>tree：以树的形式展示当前目录（需要snap install tree）</p><span id="more"></span><p>软链接：ln -s 原文件path链接名字（相当于win的快捷方式）（本质就是链接存储的是原文件的path，所以一般写绝对路径）（有效的软链接高亮是蓝色，无效的是红色的）</p><p>硬链接：ln 原文件path链接名字（本质是原文件与新文件同步，铁索连环的效果）</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;cat：查看文件内容&lt;/p&gt;
-&lt;p&gt;tac：倒着查看文件内容&lt;/p&gt;
-&lt;p&gt;more：查看大文件，逐屏显示&lt;/p&gt;
-&lt;p&gt;head：显示前面内容&lt;/p&gt;
-&lt;p&gt;tail：显示后面内容&lt;/p&gt;
-&lt;p&gt;tree：以树的形式展示当前目录（需要snap install tree）&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>3. 目录和文件操作1</title>
-    <link href="http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/"/>
-    <id>http://example.com/2023/10/11/3-%E7%9B%AE%E5%BD%95%E5%92%8C%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C1/</id>
-    <published>2023-10-11T03:34:13.000Z</published>
-    <updated>2023-10-11T10:41:11.470Z</updated>
-    
-    <content type="html"><![CDATA[<p>Linux系统类型：</p><ol type="1"><li>普通文件：-</li><li>目录问价：d</li><li>字符设备文件：c</li><li>块设备文件：b</li><li>软链接：l</li><li>管道文件：p</li><li>套接字：s</li></ol><span id="more"></span><p>mkdir：创建文件夹</p><p>rm：删除，-r删除文件夹</p><p>touch：创建文件</p><p>cp：拷贝（cp A B：把A拷贝到B中）（拷贝文件夹要加参数-r）</p><p>ls：-l详细细心，-h以human形式展现，可以看大小。（l：ls的简写，ll：ls-l的简写）</p><p>file 文件名：Linux文件名很不规范，没有后缀名这种说法。有时候ls-l看到的信息比较缺乏（比如文本文件和压缩包在ls-l下都显示为-），所以使用file 文件名就可以知道这个文件的真面目。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;Linux系统类型：&lt;/p&gt;
-&lt;ol type=&quot;1&quot;&gt;
-&lt;li&gt;普通文件：-&lt;/li&gt;
-&lt;li&gt;目录问价：d&lt;/li&gt;
-&lt;li&gt;字符设备文件：c&lt;/li&gt;
-&lt;li&gt;块设备文件：b&lt;/li&gt;
-&lt;li&gt;软链接：l&lt;/li&gt;
-&lt;li&gt;管道文件：p&lt;/li&gt;
-&lt;li&gt;套接字：s&lt;/li&gt;
-&lt;/ol&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2. 类Unix系统目录</title>
-    <link href="http://example.com/2023/10/11/2-%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/"/>
-    <id>http://example.com/2023/10/11/2-%E7%B1%BBUnix%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95/</id>
-    <published>2023-10-10T17:24:45.000Z</published>
-    <updated>2023-10-11T02:22:32.200Z</updated>
-    
-    <content type="html"><![CDATA[<p>/dev：与本机设备（比如鼠标）有关的目录</p><span id="more"></span><p>/etc：配置文件信息</p><p>/hone：用户目录</p><p>/lib：库目录（比如C库、python库）</p><p>/media、/mnt：磁盘挂载目录</p><p>/opt、/proc：进程目录</p><p>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</p><p>/bin：存放二进制可执行文件</p><p>/boot：存放开机启动程序</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;/dev：与本机设备（比如鼠标）有关的目录&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>1. shell</title>
-    <link href="http://example.com/2023/10/11/1-shell/"/>
-    <id>http://example.com/2023/10/11/1-shell/</id>
-    <published>2023-10-10T17:01:20.000Z</published>
-    <updated>2023-10-11T10:21:40.957Z</updated>
-    
-    <content type="html"><![CDATA[<p>大二数据库期末Lab是设计一个在Linux环境下的数据库。然后涉及到许多底层关于文件读写啥的。助教给的代码里一堆需要掌握Linux系统编程基础知识才能理解的东西。所以就跑来自学了。</p><p>这个系列的blog比较水主要是给自己看的。所以挑自己薄弱的地方进行记录。</p><p>shell：命令解释器。</p><p>Linux系统里有很多种shell，cat /bin/shells查看本机中有哪些shell，echo$SHELL查看本机正在使用哪种shell。一般都是/bin/bash，即bash。</p><span id="more"></span><p>加快编程速度的tips：</p><ol type="1"><li>用tab补齐</li><li>ctrl + a, ctrl + e, ctrl + u</li><li>Windows 下快捷键<ol type="1"><li>win + e：资源管理器</li><li>win + d(desktop)：回到桌面</li><li>wn + q(query)：打开win搜索栏</li><li>win + ←/→：分屏</li><li>win + 数字键：切换/打开到到不同程序</li><li>ctrl + shift + N：新建文件夹</li><li>在资源管理器中backspace：返回上一级目录</li><li>alt + tab：切换应用</li><li>alt（用右边的alt）+ enter：查看"属性"</li><li>alt（用右边的alt） + F4：关闭当前应用程序</li><li>win +/：将当前应用置于顶层（需安装PowerToys实现，且我修改了快捷键）</li><li>ctrl + shift + T：win下创建新的shell</li><li>ctrl + shift + w：删除一个shell标签</li><li>ctrl + shift + N：创建一个新shell</li></ol></li><li>Edge下快捷键<ol type="1"><li>ctrl + E：在地址栏打开搜索</li><li>ctrl + H：打开历史记录</li><li>ctrl + J：打开下载记录</li><li>ctrl + t：新建 标签页</li><li>ctrl+ 数字键：切换到不同标签页</li><li>alt + ←/→：前进/后退</li><li>Pgup/Pgdn：上下滚动屏幕</li><li>ctrl + Pgup/Pgdn：切换到 上/下一个标签页</li><li>home/end：回到页顶/页末</li><li>ctrl + F6将焦点移动到web内容上</li></ol></li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;大二数据库期末Lab是设计一个在Linux环境下的数据库。然后涉及到许多底层关于文件读写啥的。助教给的代码里一堆需要掌握Linux系统编程基础知识才能理解的东西。所以就跑来自学了。&lt;/p&gt;
-&lt;p&gt;这个系列的blog比较水主要是给自己看的。所以挑自己薄弱的地方进行记录。&lt;/p&gt;
-&lt;p&gt;shell：命令解释器。&lt;/p&gt;
-&lt;p&gt;Linux系统里有很多种shell，cat /bin/shells查看本机中有哪些shell，echo
-$SHELL查看本机正在使用哪种shell。一般都是/bin/bash，即bash。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="Linux" scheme="http://example.com/categories/Linux/"/>
-    
-    <category term="系统编程" scheme="http://example.com/categories/Linux/%E7%B3%BB%E7%BB%9F%E7%BC%96%E7%A8%8B/"/>
     
     
   </entry>
@@ -491,6 +99,117 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     
     <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>2. 几种重要的凸集-上</title>
+    <link href="http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/"/>
+    <id>http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/</id>
+    <published>2023-10-05T06:30:21.000Z</published>
+    <updated>2023-10-05T07:01:30.784Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍了一个点、空集、超平面、半空间、球、椭球。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;介绍了一个点、空集、超平面、半空间、球、椭球。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>1. 仿射集/凸集/凸锥</title>
+    <link href="http://example.com/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/"/>
+    <id>http://example.com/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/</id>
+    <published>2023-10-05T06:30:01.000Z</published>
+    <updated>2023-10-11T17:03:46.882Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍了仿射集、凸集、凸锥的概念，以及三者之间的联系。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;介绍了仿射集、凸集、凸锥的概念，以及三者之间的联系。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>0. 引言</title>
+    <link href="http://example.com/2023/10/05/0-%E5%BC%95%E8%A8%80/"/>
+    <id>http://example.com/2023/10/05/0-%E5%BC%95%E8%A8%80/</id>
+    <published>2023-10-05T06:29:39.000Z</published>
+    <updated>2023-10-11T16:57:51.695Z</updated>
+    
+    <content type="html"><![CDATA[<p>凸优化系列是我在23年10月开启的一项计划。主要是读论文发现需要凸优化的知识，奈何我才刚上大二没有学到这门课程。</p><p>于是打算自学，参考的教程是<ahref="https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5">中科大凌青老师的教学视频</a>。</p><p>文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改=w=</p><span id="more"></span><p><img src="1.jpg" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;凸优化系列是我在23年10月开启的一项计划。主要是读论文发现需要凸优化的知识，奈何我才刚上大二没有学到这门课程。&lt;/p&gt;
+&lt;p&gt;于是打算自学，参考的教程是&lt;a
+href=&quot;https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5&quot;&gt;中科大凌青老师的教学视频&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改=w=&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>在VS Code中配置C/C++</title>
+    <link href="http://example.com/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/"/>
+    <id>http://example.com/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/</id>
+    <published>2023-10-03T05:34:01.000Z</published>
+    <updated>2023-10-09T16:48:51.785Z</updated>
+    
+    <content type="html"><![CDATA[<p>之前因为学了一点html，所以下了一个VS Code来写html代码。</p><p>今天要写C++的代码，以前都是用VS写的。但是突然想了一下既然都装了VSCode，为啥不配置一下。配置好了后以后写C/C++代码也不用打开繁重的VS了。而且VSCode还能加很多插件。</p><span id="more"></span><p>说干就干，上网找了资料，终于配置好了。还是有蛮多坑的，主要是因为网上的教程大部分版本比较老了。所以我来写个教程，方便别人和以后自己在别的电脑上配置。我总结出以下几步：</p><h3 id="下载mingw-w64并配置系统变量">1. 下载MinGW-w64并配置系统变量</h3><ul><li><p>MinGW是是将经典的开源 C语言 编译器 GCC 移植到了 Windows平台下，并且包含了 Win32API ，因此可以将源代码编译为可在 Windows中运行的可执行程序。</p></li><li><p>但是MinGW的很早就停止维护了，版本很老了。</p></li><li><p>MinGW-w64相当于升级版的MinGW，是一个开源项目，不断在更新维护着。</p></li><li><p><ahref="https://sourceforge.net/projects/mingw-w64/files/mingw-w64/mingw-w64-release/">下载链接</a>，划到最下面，选择“MinGW-W64GCC-8.1.0”下的“x86_64-win32-seh”进行下载。</p></li><li><p>下载好后，解压到自己想要的位置。然后将其中的bin路径配置到系统变量中。</p></li><li><p>打开cmd，输入gcc --version和gdb--version，弹出版本信息就说明这一步完成了。</p></li></ul><h3 id="下载插件cccode-runner">2. 下载插件C/C++，Code Runner</h3><ul><li>在VS Code中下载即可。</li></ul><h3 id="配置文件">3. 配置文件</h3><ul><li><p>新建一个项目文件夹，在下面建立一个.vscode文件夹，下面建立三个文件，launch.json，tasks.json，c_cpp_properties.json，然后依次把我的代码复制进去。注意代码中的“（改为自己的路径）”</p></li><li><p>lauch.json</p></li></ul><p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"> <span class="punctuation">&#123;</span></span><br><span class="line"><span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;0.2.0&quot;</span><span class="punctuation">,</span></span><br><span class="line"><span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line"><span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C++ Launch (GDB)&quot;</span><span class="punctuation">,</span>                </span><br><span class="line"><span class="attr">&quot;type&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cppdbg&quot;</span><span class="punctuation">,</span>                         </span><br><span class="line"><span class="attr">&quot;request&quot;</span><span class="punctuation">:</span> <span class="string">&quot;launch&quot;</span><span class="punctuation">,</span>                        </span><br><span class="line"><span class="attr">&quot;targetArchitecture&quot;</span><span class="punctuation">:</span> <span class="string">&quot;x86&quot;</span><span class="punctuation">,</span>                </span><br><span class="line"><span class="attr">&quot;program&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceRoot&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">,</span>                 </span><br><span class="line"><span class="attr">&quot;miDebuggerPath&quot;</span><span class="punctuation">:</span><span class="string">&quot;D:\\app\\mingw64\\bin\\gdb.exe&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line"><span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span>     </span><br><span class="line"><span class="attr">&quot;stopAtEntry&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span>                  </span><br><span class="line"><span class="attr">&quot;cwd&quot;</span><span class="punctuation">:</span> <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span><span class="punctuation">,</span>                  </span><br><span class="line"><span class="attr">&quot;externalConsole&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span>                  </span><br><span class="line"><span class="attr">&quot;preLaunchTask&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/app/mingw64/bin/g++.exe&quot;</span>  （改为自己的路径）          </span><br><span class="line"><span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></p><ul><li>tasks.json</li></ul><p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2.0.0&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/app/mingw64/bin/g++.exe&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">    <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;-g&quot;</span><span class="punctuation">,</span><span class="string">&quot;-std=c++11&quot;</span><span class="punctuation">,</span><span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span><span class="string">&quot;-o&quot;</span><span class="punctuation">,</span><span class="string">&quot;$&#123;workspaceRoot&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;owner&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cpp&quot;</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;fileLocation&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="string">&quot;relative&quot;</span><span class="punctuation">,</span> <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">        <span class="attr">&quot;pattern&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;regexp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;file&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;line&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;column&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;severity&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;tasks&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;label&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/app/mingw64/bin/g++.exe&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">            <span class="attr">&quot;command&quot;</span><span class="punctuation">:</span> <span class="string">&quot;D:/app/mingw64/bin/g++.exe&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">            <span class="attr">&quot;args&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;-g&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-std=c++11&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;$&#123;file&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;-o&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceRoot&#125;\\$&#123;fileBasenameNoExtension&#125;.exe&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;problemMatcher&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;owner&quot;</span><span class="punctuation">:</span> <span class="string">&quot;cpp&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;fileLocation&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;relative&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span></span><br><span class="line">                <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;pattern&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                    <span class="attr">&quot;regexp&quot;</span><span class="punctuation">:</span> <span class="string">&quot;^(.*):(\\d+):(\\d+):\\s+(warning|error):\\s+(.*)$&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;file&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;line&quot;</span><span class="punctuation">:</span> <span class="number">2</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;column&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;severity&quot;</span><span class="punctuation">:</span> <span class="number">4</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="attr">&quot;message&quot;</span><span class="punctuation">:</span> <span class="number">5</span></span><br><span class="line">                <span class="punctuation">&#125;</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;group&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;_id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;build&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="attr">&quot;isDefault&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">            <span class="punctuation">&#125;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></p><ul><li>c_cpp_properties.json</li></ul><p><figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;configurations&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;name&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Win32&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;includePath&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include//c++/tr1&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                <span class="string">&quot;D:/app/mingw64/x86_64-w64-mingw32/include&quot;</span>（改为自己的路径）</span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;defines&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                <span class="string">&quot;_DEBUG&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;UNICODE&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;__GNUC__=6&quot;</span><span class="punctuation">,</span></span><br><span class="line">                <span class="string">&quot;__cdecl=__attribute__((__cdecl__))&quot;</span></span><br><span class="line">            <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;intelliSenseMode&quot;</span><span class="punctuation">:</span> <span class="string">&quot;msvc-x64&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;browse&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">                <span class="attr">&quot;path&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">                    <span class="string">&quot;$&#123;workspaceRoot&#125;&quot;</span><span class="punctuation">,</span></span><br><span class="line">                    <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                    <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                    <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                    <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                    <span class="string">&quot;D:/app/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include//c++/tr1&quot;</span><span class="punctuation">,</span>  （改为自己的路径）</span><br><span class="line">                    <span class="string">&quot;D:/app/mingw64/x86_64-w64-mingw32/include&quot;</span>  （改为自己的路径）</span><br><span class="line">                <span class="punctuation">]</span></span><br><span class="line">            <span class="punctuation">&#125;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;compilerPath&quot;</span><span class="punctuation">:</span> <span class="string">&quot;C:\\Program Files\\Microsoft Visual Studio\\2022\\Professional\\VC\\Tools\\MSVC\\14.36.32532\\bin\\Hostx64\\x64\\cl.exe&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c17&quot;</span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;cppStandard&quot;</span><span class="punctuation">:</span> <span class="string">&quot;c++17&quot;</span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;version&quot;</span><span class="punctuation">:</span> <span class="number">4</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure></p><ul><li><p>在项目文件夹中新建cpp文件，随便写一个程序。然后F5调试。</p></li><li><p>如果能输出正确结果就没问题。如果不能，比如std或者cout报错的话，就打开设置，在"C/C++"中找到C_Cpp:intelliSense Engine，将默认的“Default”改为“Tag Parser”。</p></li><li><p>此时按F5就可以正常实现调试功能了。</p></li><li><p>其实如果你不用调试的话，直接Ctrl + F5用CodeRunner跑代码就行了。</p></li></ul>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;之前因为学了一点html，所以下了一个VS Code来写html代码。&lt;/p&gt;
+&lt;p&gt;今天要写C++的代码，以前都是用VS写的。但是突然想了一下既然都装了VS
+Code，为啥不配置一下。配置好了后以后写C/C++代码也不用打开繁重的VS了。而且VS
+Code还能加很多插件。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>个人博客搭建说明</title>
+    <link href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/"/>
+    <id>http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</id>
+    <published>2023-10-03T05:32:44.000Z</published>
+    <updated>2023-10-05T05:01:08.392Z</updated>
+    
+    <content type="html"><![CDATA[<p>使用GitHub + Hexo搭建的本博客。</p><p>教程参考<ahref="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细）- 知乎 (zhihu.com)</a>。</p><p>上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。</p><span id="more"></span><p>我大致总结一下流程：</p><ol type="1"><li>注册GitHub</li><li>下载Git并将Git绑定到GitHub（使用token）</li><li>购买域名</li><li>安装node.js并配置环境变量（建议全程使用cmd管理员而不是gitbash）</li><li>安装hexo</li><li>解析域名</li><li>设置并美化主题</li></ol><p>另外，博客首页的头像是用的GitHub的头像链接，另外我不打算采用图床，因为怕翻车。所以文章里的全部图片都是存储在本地并push到GitHub中，若加载不出或速度慢可以尝试挂个梯子。</p><p>域名第一年花了9块，之后续费好像是20多块一年。在阿里云买的。</p><p>看板娘参考了两篇文章：<ahref="https://github.com/stevenjoezhang/live2d-widget">设置看板娘</a>,<ahref="https://www.cnblogs.com/c10udlnk/p/14727173.html">个性化配置看板娘</a>。</p><p>但是live2d的模型默认的这几个我不是很熟悉，以后有空了想换成我自己喜欢的人物角色。</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;使用GitHub + Hexo搭建的本博客。&lt;/p&gt;
+&lt;p&gt;教程参考&lt;a
+href=&quot;https://zhuanlan.zhihu.com/p/102592286&quot;&gt;从零开始搭建个人博客（超详细）
+- 知乎 (zhihu.com)&lt;/a&gt;。&lt;/p&gt;
+&lt;p&gt;上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
