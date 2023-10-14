@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-14T10:14:20.306Z</updated>
+  <updated>2023-10-14T17:48:39.538Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>1. 深度强化学习导论</title>
+    <link href="http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/"/>
+    <id>http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</id>
+    <published>2023-10-14T17:44:37.000Z</published>
+    <updated>2023-10-14T17:48:39.538Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    <category term="多智能体强化学习" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>Linux基础</title>
@@ -87,7 +110,7 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     <link href="http://example.com/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/"/>
     <id>http://example.com/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/</id>
     <published>2023-10-05T06:30:39.000Z</published>
-    <updated>2023-10-05T07:01:38.304Z</updated>
+    <updated>2023-10-14T17:48:36.655Z</updated>
     
     <content type="html"><![CDATA[<p>介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
     
@@ -96,9 +119,9 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     
     
     
-    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    <category term="多智能体强化学习" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="凸优化" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     
     
   </entry>
@@ -108,7 +131,7 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     <link href="http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/"/>
     <id>http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/</id>
     <published>2023-10-05T06:30:21.000Z</published>
-    <updated>2023-10-05T07:01:30.784Z</updated>
+    <updated>2023-10-14T17:48:32.331Z</updated>
     
     <content type="html"><![CDATA[<p>介绍了一个点、空集、超平面、半空间、球、椭球。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
     
@@ -117,9 +140,9 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     
     
     
-    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    <category term="多智能体强化学习" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="凸优化" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     
     
   </entry>
@@ -129,7 +152,7 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     <link href="http://example.com/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/"/>
     <id>http://example.com/2023/10/05/1-%E4%BB%BF%E5%B0%84%E9%9B%86-%E5%87%B8%E9%9B%86-%E5%87%B8%E9%94%A5/</id>
     <published>2023-10-05T06:30:01.000Z</published>
-    <updated>2023-10-11T17:03:46.882Z</updated>
+    <updated>2023-10-14T17:48:27.188Z</updated>
     
     <content type="html"><![CDATA[<p>介绍了仿射集、凸集、凸锥的概念，以及三者之间的联系。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
     
@@ -138,9 +161,9 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     
     
     
-    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    <category term="多智能体强化学习" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="凸优化" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     
     
   </entry>
@@ -150,21 +173,20 @@ href=&quot;https://www.bilibili.com/video/BV1H54y1k7kM?p=1&amp;amp;vd_source=250
     <link href="http://example.com/2023/10/05/0-%E5%BC%95%E8%A8%80/"/>
     <id>http://example.com/2023/10/05/0-%E5%BC%95%E8%A8%80/</id>
     <published>2023-10-05T06:29:39.000Z</published>
-    <updated>2023-10-11T16:57:51.695Z</updated>
+    <updated>2023-10-14T17:48:21.982Z</updated>
     
-    <content type="html"><![CDATA[<p>凸优化系列是我在23年10月开启的一项计划。主要是读论文发现需要凸优化的知识，奈何我才刚上大二没有学到这门课程。</p><p>于是打算自学，参考的教程是<ahref="https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5">中科大凌青老师的教学视频</a>。</p><p>文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改=w=</p><span id="more"></span><p><img src="1.jpg" /></p>]]></content>
+    <content type="html"><![CDATA[<p>在阅读一篇关于多智能体强化学习的论文时，发现涉及到凸优化的知识我不会。于是打算自学，参考的教程是<ahref="https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5">中科大凌青老师的教学视频</a>。</p><p>文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改=w=</p><span id="more"></span><p><img src="1.jpg" /></p>]]></content>
     
     
-    <summary type="html">&lt;p&gt;凸优化系列是我在23年10月开启的一项计划。主要是读论文发现需要凸优化的知识，奈何我才刚上大二没有学到这门课程。&lt;/p&gt;
-&lt;p&gt;于是打算自学，参考的教程是&lt;a
+    <summary type="html">&lt;p&gt;在阅读一篇关于多智能体强化学习的论文时，发现涉及到凸优化的知识我不会。于是打算自学，参考的教程是&lt;a
 href=&quot;https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;amp;vd_source=2501060da9b4bef86e2b8ec8a8d880b5&quot;&gt;中科大凌青老师的教学视频&lt;/a&gt;。&lt;/p&gt;
 &lt;p&gt;文中的笔记是我看完课程后的思考与总结，可能有错误还请指出！我速速修改=w=&lt;/p&gt;</summary>
     
     
     
-    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    <category term="多智能体强化学习" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
-    <category term="学习笔记" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/"/>
+    <category term="凸优化" scheme="http://example.com/categories/%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     
     
   </entry>
