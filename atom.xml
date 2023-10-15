@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-15T17:52:04.938Z</updated>
+  <updated>2023-10-15T17:56:40.124Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,13 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>3. python急救包</title>
-    <link href="http://example.com/2023/10/16/3-python%E6%80%A5%E6%95%91%E5%8C%85/"/>
-    <id>http://example.com/2023/10/16/3-python%E6%80%A5%E6%95%91%E5%8C%85/</id>
-    <published>2023-10-15T16:49:08.000Z</published>
-    <updated>2023-10-15T17:52:04.938Z</updated>
+    <title>2. python急救包</title>
+    <link href="http://example.com/2023/10/16/2-python%E6%80%A5%E6%95%91%E5%8C%85/"/>
+    <id>http://example.com/2023/10/16/2-python%E6%80%A5%E6%95%91%E5%8C%85/</id>
+    <published>2023-10-15T17:56:11.000Z</published>
+    <updated>2023-10-15T17:56:40.124Z</updated>
     
-    <content type="html"><![CDATA[<p>许多代码都是用python实现的，我的python基础一般，所以在实践中学咯。下面记录一些python常用的基础语法。</p><span id="more"></span><h3 id="numpy相关">numpy相关</h3><h4 id="随机数">随机数</h4><p>np.random.random()：生成一个[0, 1)的随机数</p><p>np.random.uniform(low=, high=, size=)：生成size个[low,high)的随机数</p><p>np.random.randint(x, y)：生成一个[x, y]的整数</p><p>np.random.seed(可填数字)：不填就是随机数。填不同的数字就代表不同的世界线。处于同一个世界线的随机数们都是固定的</p><h4 id="创建数组">创建数组</h4><p>np.zeros(k)：生成一个有k个元素，初始值为0的数组</p><p>np.array(val * num)：生成一个有num个元素，初始值为val的数组</p><h4 id="数组操作">数组操作</h4><p>np.argmax(数组)：返回数组中最大值的下标</p><h3 id="python基本语法相关">python基本语法相关</h3><ul><li><p>a.append()：列表追加元素</p></li><li><p>for idx, x inenumerate(solvers)：使用enumerate方法可以下标和元素本身表示出来很方便</p></li><li><p>a = range(num)：产生一个[0, 1, 2, ..., num]的数组</p></li><li><p>epsilons = [1, 2, 3, 4], a = [fun(e) for e inepsilons]：很方便的定义一个列表，列表里的元素就是拿每个epsilons的元素丢进fun里返回来的东西</p></li><li><p>print ("啦啦啦%d，噜噜噜%s，嘻嘻嘻%.4lf" % (a, b,c))：格式化输出</p></li><li><p>‘啦啦啦{0}噜噜噜{1}’.format(a, b)：也是格式化输出，可以这样使用a= ['abc is {}'.format(e) for e in epsilons]</p></li><li><p>Python写一个类记得要写构造函数def __init__(self):若需参数自己加</p></li><li><p>Python也可以写类，继承很简单，比如类A继承B，就写class A(B):即可</p></li><li><p>class A继承B的话，记得在A的构造函数里第一句加一个super(A,self).__init__(B的构造函数的参数)。这一步就是在填父类的构造函数</p></li></ul><h3 id="matplotlib.pyplot相关">matplotlib.pyplot相关</h3><p>plt.plot(x, y,label=)：x是一个列表，代表x轴的数据；y是一个列表，代表y轴的数据；label也是一个列表，代表不同线的名字（绘制多条线时使用）</p><p>plt.xlabel('xxx')：给x轴起名字</p><p>plt.ylabel('xxx')：给y轴起名字</p><p>plt.title('xxx')：起标题</p><p>plt.legend()：显示图例，要配合plt.plot中的label使用</p><p>plt.show()：把图画出来</p>]]></content>
+    <content type="html"><![CDATA[<p>许多代码都是用python实现的，我的python基础一般，所以在实践中学咯。下面记录一些python常用的基础语法。</p><span id="more"></span><h3 id="numpy相关">numpy相关</h3><h4 id="随机数">随机数</h4><p>np.random.random()：生成一个[0, 1)的随机数</p><p>np.random.uniform(low=, high=, size=)：生成size个[low,high)的随机数</p><p>np.random.randint(x, y)：生成一个[x, y]的整数</p><p>np.random.seed(可填数字)：不填就是随机数。填不同的数字就代表不同的世界线。处于同一个世界线的随机数们都是固定的</p><h4 id="创建数组">创建数组</h4><p>np.zeros(k)：生成一个有k个元素，初始值为0的数组</p><p>np.array(val * num)：生成一个有num个元素，初始值为val的数组</p><h4 id="数组操作">数组操作</h4><p>np.argmax(数组)：返回数组中最大值的下标</p><h3 id="python基本语法相关">python基本语法相关</h3><ul><li>a.append()：列表追加元素</li><li>for idx, x inenumerate(solvers)：使用enumerate方法可以下标和元素本身表示出来很方便</li><li>a = range(num)：产生一个[0, 1, 2, ..., num]的数组</li><li>epsilons = [1, 2, 3, 4], a = [fun(e) for e inepsilons]：很方便的定义一个列表，列表里的元素就是拿每个epsilons的元素丢进fun里返回来的东西</li><li>print ("啦啦啦%d，噜噜噜%s，嘻嘻嘻%.4lf" % (a, b,c))：格式化输出</li><li>‘啦啦啦{0}噜噜噜{1}’.format(a, b)：也是格式化输出，可以这样使用a =['abc is {}'.format(e) for e in epsilons]</li><li>Python写一个类记得要写构造函数def __init__(self):若需参数自己加</li><li>Python也可以写类，继承很简单，比如类A继承B，就写class A(B):即可</li><li>class A继承B的话，记得在A的构造函数里第一句加一个super(A,self).__init__(B的构造函数的参数)。这一步就是在填父类的构造函数</li></ul><h3 id="matplotlib.pyplot相关">matplotlib.pyplot相关</h3><p>plt.plot(x, y,label=)：x是一个列表，代表x轴的数据；y是一个列表，代表y轴的数据；label也是一个列表，代表不同线的名字（绘制多条线时使用）</p><p>plt.xlabel('xxx')：给x轴起名字</p><p>plt.ylabel('xxx')：给y轴起名字</p><p>plt.title('xxx')：起标题</p><p>plt.legend()：显示图例，要配合plt.plot中的label使用</p><p>plt.show()：把图画出来</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;许多代码都是用python实现的，我的python基础一般，所以在实践中学咯。下面记录一些
