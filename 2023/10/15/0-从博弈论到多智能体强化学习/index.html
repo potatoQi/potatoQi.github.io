@@ -31,8 +31,9 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/1.png">
 <meta property="og:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/2.png">
+<meta property="og:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/3.png">
 <meta property="article:published_time" content="2023-10-14T17:53:28.000Z">
-<meta property="article:modified_time" content="2023-10-14T18:34:23.433Z">
+<meta property="article:modified_time" content="2023-10-15T03:01:58.579Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/15/0-%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/1.png">
@@ -225,7 +226,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-15 01:53:28 / 修改时间：02:34:23" itemprop="dateCreated datePublished" datetime="2023-10-15T01:53:28+08:00">2023-10-15</time>
+              <time title="创建时间：2023-10-15 01:53:28 / 修改时间：11:01:58" itemprop="dateCreated datePublished" datetime="2023-10-15T01:53:28+08:00">2023-10-15</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,14 +255,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>2.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -279,7 +280,7 @@
 <ul>
 <li>玩家集合：
 <ul>
-<li><span class="math inline">\(N = {1, 2, ..., n}\)</span></li>
+<li><span class="math inline">\(N = \{1, 2, ..., n\}\)</span></li>
 </ul></li>
 <li>策略集合
 <ul>
@@ -334,7 +335,66 @@ a_n^{\prime}\in A_n
 \]</span></p></li>
 <li><p>那么策略组合<span
 class="math inline">\(a\)</span>是一个纳什均衡。</p></li>
+<li><p>下面介绍另一种博弈情况（混合策略）下的解——混合纳什均衡。</p>
+<ul>
+<li>混合策略：每个玩家都有一个概率分布<span class="math inline">\((p_1,
+p_2, ..., p_n), p_i\)</span>为玩家选择动作i的概率。</li>
+<li>混合纳什均衡：等于一个混合策略组合。s.t.
+任何玩家都不能通过独自改变自身混合策略来提高自己的期望收益。</li>
+<li>定理：任意一个博弈，必然存在一个混合策略纳什均衡。</li>
+</ul></li>
+<li><p>例如下面这个例子，此博弈的混合策略纳什均衡就是每个人的混合策略都为<span
+class="math inline">\(\frac{1}{3}, \frac{1}{3},
+\frac{1}{3}\)</span>。</p></li>
 </ul>
+<p><img src="3.png" /></p>
+<ul>
+<li>当然博弈还有许多种均衡，上面只是介绍了最基础的纳什均衡和混合策略纳什均衡。博弈也有很多种博弈（只要加上不同的限定条件），比如所有人收益都是一样的就叫合作博弈，所有人收益之和是一个定值就叫竞争博弈。</li>
+</ul>
+<h3 id="从博弈论走到多智能体强化学习">从博弈论走到多智能体强化学习</h3>
+<p>现实中，博弈玩家、玩家策略的数量都很大很大，而且玩家自身的收益函数可能并不知道，需要一点一点与环境交互才知道。所以用简单的博弈论模型去描述现实问题会比较困难。</p>
+<p>所以下面引入一个新的博弈模型——马尔科夫博弈</p>
+<ul>
+<li><p>玩家集合</p>
+<ul>
+<li><span class="math inline">\(N = \{1, 2, ..., n\}\)</span></li>
+</ul></li>
+<li><p>策略集合</p>
+<ul>
+<li><span class="math inline">\(A_1, A_2, A_3, ..., A_n \\ A = A_1
+\times A_2 \times ... \times A_n\)</span></li>
+</ul></li>
+<li><p>状态集合</p>
+<ul>
+<li><span class="math inline">\(S = \{s_1, s_2, ..., s_n\}\)</span></li>
+</ul></li>
+<li><p>转移函数</p>
+<ul>
+<li>如果已知当前状态<span class="math inline">\(s_i\)</span>,
+和当前策略<span class="math inline">\(a_i\)</span>,
+有概率得到下一个状态<span class="math inline">\(s_i&#39;\)</span>。</li>
+<li>概率函数就是描述上面这个过程的概率是多少。</li>
+<li><span class="math inline">\(f(s_i, a_i, s_i&#39;)\)</span></li>
+</ul></li>
+<li><p>收益函数</p>
+<ul>
+<li><span class="math inline">\(r_i\)</span>由S和A确定</li>
+</ul></li>
+</ul>
+<p>上面这个博弈模型就可以描述现实生活中绝大多数博弈模型。</p>
+<p>那强化学习跟博弈论又有什么学习呢？</p>
+<p>强化学习也分好几种，第一种叫状态价值学习，即有一个状态价值函数<span
+class="math inline">\(Q(s,
+a)\)</span>，表示在s状态下采取a动作所能获得的期望累积收益。通过神经网络拟合Q函数，不断学习来使得它收敛。这是状态价值学习。</p>
+<p>那放到多智能体中，在当前状态S下，每个玩家都可以通过强化学习得出自己的<span
+class="math inline">\(Q_{max}(s_i, a_i), a_i∈A_i\)</span>
+，拿前面囚徒困境去类比的话，就是<span
+class="math inline">\(a_1\)</span>为坦白，<span
+class="math inline">\(a_2\)</span>为抵赖。也就是此时就可以建模出一个简单的博弈论模型。</p>
+<p>当多智能体们通过博弈后，又得到了下一个状态S'。于是再用强化学习算出在状态S'下，每个玩家的<span
+class="math inline">\(Q_{max}\)</span>，循环往复以此类推。最后就可以收敛于最优解。</p>
+<h3 id="总结">总结</h3>
+<p>上面所讲的知识的目的皆在引入博弈论和多智能体强化学习两个概念。所以许多地方为了方便理解没有很严谨，有许多漏洞之处。但作为一个刚入门的小白（比如我），已经可以给我一个大概的理解和感受了，这就是此篇blog的目的。</p>
 
     </div>
 
@@ -417,7 +477,7 @@ class="math inline">\(a\)</span>是一个纳什均衡。</p></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">博弈论基本概念</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%9A%E5%BC%88%E8%AE%BA%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">博弈论基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%8E%E5%8D%9A%E5%BC%88%E8%AE%BA%E8%B5%B0%E5%88%B0%E5%A4%9A%E6%99%BA%E8%83%BD%E4%BD%93%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0"><span class="nav-text">从博弈论走到多智能体强化学习</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
