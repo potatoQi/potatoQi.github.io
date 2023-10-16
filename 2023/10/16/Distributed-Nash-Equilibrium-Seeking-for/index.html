@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-16T15:18:30.304Z">
+<meta property="article:modified_time" content="2023-10-16T15:28:41.548Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-16 14:45:10 / 修改时间：23:18:30" itemprop="dateCreated datePublished" datetime="2023-10-16T14:45:10+08:00">2023-10-16</time>
+              <time title="创建时间：2023-10-16 14:45:10 / 修改时间：23:28:41" itemprop="dateCreated datePublished" datetime="2023-10-16T14:45:10+08:00">2023-10-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -351,14 +351,13 @@ class="math inline">\(x_i\)</span>。每个玩家的花费函数定义为<span
 class="math inline">\(J_i(x), x = [x_1, x_2, ...,
 x_n]^T\)</span>，通过这个表达式可以看出来，每个玩家的花费函数跟所有玩家的动作相关。</p>
 <p><span class="math inline">\(J_i(x)\)</span>还有几种等价的定义：</p>
-<p>定义1：<span class="math inline">\(J_i(x) = f_i(x_i, \sigma(x)), \\
-\sigma(x)=\sum_{j=1}^{N}\phi_{j}(x_j) \qquad
-\textcolor{red}{(1)}\)</span></p>
+<p>定义1：<span class="math display">\[J_i(x) = f_i(x_i, \sigma(x)), \\
+\sigma(x)=\sum_{j=1}^{N}\phi_{j}(x_j) \qquad (1)\]</span></p>
 <p>定义2：<span class="math inline">\(J_i(x)=J_i(x_i, x_{-i}),
 x_{-i}=[x_1, ..., x_{i-1}, x_{i+1}, ..., x_n]\)</span></p>
 <p>要解决的问题是最小化每一个玩家的花费函数，即：</p>
 <p><span class="math inline">\(min \, f_i(x_i, \sigma(x)), \forall{i}
-\in \mathcal{N} \qquad \textcolor{red}{(2)}\)</span></p>
+\in \mathcal{N} \qquad (2)\)</span></p>
 <p>实际上就是求一个纳什均衡问题，因为纳什均衡就是任何一个玩家改变它的动作都不能使得它的花费函数更小。如果纳什均衡的观点表达上面的式子，就是：</p>
 <p>假如<span class="math inline">\(x^*\)</span>是NE，当且仅当<span
 class="math inline">\(J_i(x_i^*, x_{-i}^*) \le J_i(x_i, x_{-i}^*),
@@ -397,21 +396,22 @@ class="math inline">\(\phi_i(x_i)\)</span>对<span
 class="math inline">\(x_i\)</span>连续可微。</p>
 <ul>
 <li>定义<span class="math inline">\(\nabla_z{f(z,
-y)}为对z求一阶偏导\)</span></li>
+y)}\)</span>为对z求一阶偏导</li>
 <li>按照此定义，将<span class="math inline">\(J_i(x_i,
 x_{-i})\)</span>对<span
 class="math inline">\(x_i\)</span>求导，将得到<span
 class="math inline">\(\nabla_{x_i}J_i(x_i, x_{-i}) =\nabla_{x_i}f_i(x_i,
 \sigma(x)) + \nabla_{\sigma}f_i(x_i, \sigma(x)) \,
 \nabla_{x_i}\phi_i(x_i)\)</span>。这里实际上是有点歧义的，作者想表达的意思就是关注玩家i的动作对其花费函数的影响。</li>
-<li>定义<span class="math inline">\(\Gamma(x)=[\nabla_{x1}J_1(x1,
-x_{-1}), ..., \nabla_{x_N}J_1(xN,
+<li>定义<span class="math inline">\(\Gamma(x)=[\nabla_{x_1}J_1(x_1,
+x_{-1}), ..., \nabla_{x_N}J_1(x_N,
 x_{-N})]^T\)</span>，即每个玩家花费函数对自身动作求导组成的一个列向量</li>
 <li>定义<span class="math inline">\(G_i(x_i, \tilde{\sigma_i}) =
 \nabla_{x_i}f_i(x_i, \sigma(x))|_{\sigma(x)=\tilde{\sigma_i}} +
 \nabla_{\sigma}f_i(x_i, \sigma(x)) \,
 \nabla_{x_i}\phi_i(x_i)|_{\sigma(x)=\tilde{\sigma_i}}\)</span>。不是把每个花费函数对动作求导嘛，这里就是把求导结果里的<span
-class="math inline">\(\sigma(x)赋值为\tilde{\sigma_i}\)</span>了。</li>
+class="math inline">\(\sigma(x)\)</span>赋值为<span
+class="math inline">\(\tilde{\sigma_i}\)</span>了。</li>
 </ul></li>
 </ul></li>
 <li><p>Assumption 3</p>
