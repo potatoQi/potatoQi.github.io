@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-16T06:49:50.393Z">
+<meta property="article:modified_time" content="2023-10-16T15:18:30.304Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -222,7 +222,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2023-10-16 14:45:10 / 修改时间：14:49:50" itemprop="dateCreated datePublished" datetime="2023-10-16T14:45:10+08:00">2023-10-16</time>
+              <time title="创建时间：2023-10-16 14:45:10 / 修改时间：23:18:30" itemprop="dateCreated datePublished" datetime="2023-10-16T14:45:10+08:00">2023-10-16</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -247,14 +247,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>4.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -277,7 +277,8 @@ Games With Directed Communication Graphs</p>
 <p>如果解决的是当图结构采取“固定有向图”或者“时变有向图”时的分布式NE寻找问题。</p>
 <p>使用了两种算法来分别解决上面所提到的两种图结构时的分布式NE寻找问题。</p>
 <p>创新点是受凸优化中重球法的启发，向玩家策略的更新规范中引入了“动量项”，使得加速了算法寻找NE的收敛速度。</p>
-<p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的网元上。</p>
+<p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的网元上。<span
+class="math inline">\(\red\)</span>啥意思</p>
 <p>本文最后将该算法运用于插电式混合动力汽车的能耗控制，检验了算法的正确性。</p>
 <h3 id="引入">引入</h3>
 <p>Section 2：图论的基础结论、问题建模、算法引入</p>
@@ -297,11 +298,11 @@ n}}\)</span>：加权范数（weighed norm）（结果为一个常数），定�
 class="math inline">\(\|x\|_H = \sqrt{x^THx}\)</span></li>
 <li><span class="math inline">\(\Omega \in
 \mathbb{R^n}\)</span>：n维的非空闭凸集，里面每个元素都是n维列向量</li>
-<li><span class="math inline">\(P_{\Omega}[x]\)</span>： x（<span
-class="math inline">\(\Omega\)</span>外一点）在<span
-class="math inline">\(\Omega\)</span>上的投影点（结果为一个n维列向量），定义为：<span
-class="math inline">\(P_{\Omega}[x] = argmin_{y \in \Omega}\|x - y\| =
-y^*, y^* \in \Omega\)</span>
+<li><span class="math inline">\(P_{\Omega}[x]\)</span>: x(<span
+class="math inline">\(\Omega\)</span>外一点)在<span
+class="math inline">\(\Omega\)</span>上的投影点(结果为一个n维列向量),
+定义为: <span class="math inline">\(P_{\Omega}[x] = argmin_{y \in
+\Omega}\|x - y\| = y^*, y^* \in \Omega\)</span>
 <ul>
 <li>具有非扩张性，即：<span
 class="math inline">\(\|P_{\Omega}[x]-P_{\Omega}[z]\| \le
@@ -314,7 +315,138 @@ class="math inline">\(H_{ij}\)</span>：矩阵H的i行j列那个元素</li>
 </ul>
 <h3 id="section-2">Section 2</h3>
 <h4 id="图理论">图理论</h4>
+<p><span class="math inline">\(\mathcal{N}=\{1, 2, ...,
+N\}\)</span>：玩家集合</p>
+<p><span class="math inline">\(\varepsilon(k) \subseteq \{(i, j), i, j
+\in \mathcal{N}\}\)</span>：时刻为k时的边集 <span
+class="math inline">\((i, j) \in \varepsilon(k)\)</span> means that
+player i can receive information from player j at time j.</p>
+<p><span class="math inline">\(\mathcal{G}(k) = \{\mathcal{N},
+\varepsilon(k)\}\)</span>：时刻为k时的图</p>
+<p><span class="math inline">\(N^{in}_{i}(k) = \{i\} \cup \{j | (j, i)
+\in \varepsilon(k)\}\)</span>：时刻为k时，点i的入点集合</p>
+<p><span class="math inline">\(N^{out}_{i}(k) = \{i\} \cup \{j | (i, j)
+\in \varepsilon(k)\}\)</span>：时刻为k时，点i的出点集合</p>
+<p>strongly connected fixed digraph：强连通有向图。即任意俩点可通</p>
+<p>For the time-varying digraph <span
+class="math inline">\(\mathcal{G}(k), \{\mathcal{G}(k)\}\)</span> is
+said to be B-strongly connected if there exists a <span
+class="math inline">\(B \in \mathbb{N_+}\)</span> such that the union
+digraph <span
+class="math inline">\(\cup_{t=kB}^{(k+1)B-1}\mathcal{G}(t)\)</span> is
+strongly connected for any <span class="math inline">\(k \in
+\mathbb{N_+}\)</span>
+换句话说，如果一定时间段内的所有时变图都为强连通，则这些时变图的集合是B-连通的。</p>
+<p>假设B=1，则t = k ~
+k，也就是所有时刻的时变图都要是强连通，这个集合才能被称为B-连通。</p>
+<p>假设B=2，则t = 2k ~
+(k+1)，解2k&lt;=k+1,得k=1，也就是t=1时刻的时变图是强连通，则它可称为B-连通。</p>
+<p>假设B=3，则t = 3k ~
+2(k+1)，解3k&lt;=2(k+1),得k=1,2，也就是t=1,2时刻的时变图是强连通，则它们可称为B-连通。</p>
+<p>后面依次类推。</p>
 <h4 id="问题建模">问题建模</h4>
+<p>每个玩家的动作集合定义为<span
+class="math inline">\(\Omega_i\)</span>，动作定义为<span
+class="math inline">\(x_i\)</span>。每个玩家的花费函数定义为<span
+class="math inline">\(J_i(x), x = [x_1, x_2, ...,
+x_n]^T\)</span>，通过这个表达式可以看出来，每个玩家的花费函数跟所有玩家的动作相关。</p>
+<p><span class="math inline">\(J_i(x)\)</span>还有几种等价的定义：</p>
+<p>定义1：<span class="math inline">\(J_i(x) = f_i(x_i, \sigma(x)), \\
+\sigma(x)=\sum_{j=1}^{N}\phi_{j}(x_j) \qquad
+\textcolor{red}{(1)}\)</span></p>
+<p>定义2：<span class="math inline">\(J_i(x)=J_i(x_i, x_{-i}),
+x_{-i}=[x_1, ..., x_{i-1}, x_{i+1}, ..., x_n]\)</span></p>
+<p>要解决的问题是最小化每一个玩家的花费函数，即：</p>
+<p><span class="math inline">\(min \, f_i(x_i, \sigma(x)), \forall{i}
+\in \mathcal{N} \qquad \textcolor{red}{(2)}\)</span></p>
+<p>实际上就是求一个纳什均衡问题，因为纳什均衡就是任何一个玩家改变它的动作都不能使得它的花费函数更小。如果纳什均衡的观点表达上面的式子，就是：</p>
+<p>假如<span class="math inline">\(x^*\)</span>是NE，当且仅当<span
+class="math inline">\(J_i(x_i^*, x_{-i}^*) \le J_i(x_i, x_{-i}^*),
+\forall{x_i} \in \Omega_i, \forall{i} \in \mathcal{N}\)</span></p>
+<blockquote>
+<p>Note that the players in the considered game have no knowledge of the
+aggregation <span class="math inline">\(\sigma(x)\)</span> due to the
+privacy of <span class="math inline">\(\phi_j(x_j), j \in
+\mathcal{N}\)</span>。</p>
+<p>也就是说，<span
+class="math inline">\(\phi_i(x_i)\)</span>函数是每个人特有的，只有自己知道，别人不知道。但是可以通过有向图与邻居交换信息。</p>
+</blockquote>
+<p>下面是论文的几个假设，论文解决的问题都是基于这几个假设作为前提的。</p>
+<ul>
+<li><p>Assumption 1</p>
+<ul>
+<li>论文讨论的图不是一般有向图，而是两类。分别是固定有向图（fixed
+digraph）和时变有向图（time-varying digraph）。</li>
+<li>而且fixed digraph一定满足强连通，time-varying
+digraph一定满足B-强连通。</li>
+</ul></li>
+<li><p>Assumption 2</p>
+<ul>
+<li><p>对于所有玩家的动作集合<span
+class="math inline">\(\Omega_{i}\)</span>，都是非空、紧致、凸的。</p></li>
+<li><p>定义<span class="math inline">\(\Omega_{-i}=\Omega_{1} \times
+\Omega_{2} \times ... \times \Omega_{i-1} \times \Omega_{i+1} \times ...
+\times \Omega_{N}\)</span>。More over, for given <span
+class="math inline">\(x_{-i} \in \Omega_{-i}, J_i(x_i, x_{-i})\)</span>
+is convex about <span class="math inline">\(x_i\)</span> on <span
+class="math inline">\(\Omega_{i}\)</span>（<span
+class="math inline">\(\red\)</span>啥意思）</p></li>
+<li><p><span class="math inline">\(J_i(x_i, x_{-i})\)</span>对<span
+class="math inline">\(x\)</span>连续可微，<span
+class="math inline">\(\phi_i(x_i)\)</span>对<span
+class="math inline">\(x_i\)</span>连续可微。</p>
+<ul>
+<li>定义<span class="math inline">\(\nabla_z{f(z,
+y)}为对z求一阶偏导\)</span></li>
+<li>按照此定义，将<span class="math inline">\(J_i(x_i,
+x_{-i})\)</span>对<span
+class="math inline">\(x_i\)</span>求导，将得到<span
+class="math inline">\(\nabla_{x_i}J_i(x_i, x_{-i}) =\nabla_{x_i}f_i(x_i,
+\sigma(x)) + \nabla_{\sigma}f_i(x_i, \sigma(x)) \,
+\nabla_{x_i}\phi_i(x_i)\)</span>。这里实际上是有点歧义的，作者想表达的意思就是关注玩家i的动作对其花费函数的影响。</li>
+<li>定义<span class="math inline">\(\Gamma(x)=[\nabla_{x1}J_1(x1,
+x_{-1}), ..., \nabla_{x_N}J_1(xN,
+x_{-N})]^T\)</span>，即每个玩家花费函数对自身动作求导组成的一个列向量</li>
+<li>定义<span class="math inline">\(G_i(x_i, \tilde{\sigma_i}) =
+\nabla_{x_i}f_i(x_i, \sigma(x))|_{\sigma(x)=\tilde{\sigma_i}} +
+\nabla_{\sigma}f_i(x_i, \sigma(x)) \,
+\nabla_{x_i}\phi_i(x_i)|_{\sigma(x)=\tilde{\sigma_i}}\)</span>。不是把每个花费函数对动作求导嘛，这里就是把求导结果里的<span
+class="math inline">\(\sigma(x)赋值为\tilde{\sigma_i}\)</span>了。</li>
+</ul></li>
+</ul></li>
+<li><p>Assumption 3</p>
+<ul>
+<li><span
+class="math inline">\(\Gamma(x)\)</span>满足下列俩条件之一：</li>
+<li><span class="math inline">\(\Gamma(x)\)</span>在<span
+class="math inline">\(\Omega\)</span>上是严格单调的，也就是说，<span
+class="math inline">\((\Gamma(x)-\Gamma(x&#39;))^T(x-x&#39;) &gt; 0,
+\forall{x, x&#39;} \in \Omega, x \ne x&#39;\)</span></li>
+<li><span class="math inline">\(\Gamma(x)\)</span>在<span
+class="math inline">\(\Omega\)</span>上是强单调的，也就是说，存在一个常数<span
+class="math inline">\(\mu &gt; 0\)</span>使得<span
+class="math inline">\((\Gamma(x)-\Gamma(x&#39;))^T(x-x&#39;) \ge
+\mu\|x-x&#39;\|^2, \forall{x, x&#39;} \in \Omega, x \ne
+x&#39;\)</span></li>
+</ul></li>
+<li><p>Assumption 4（<span
+class="math inline">\(\red\)</span>啥意思）</p>
+<ul>
+<li><p>The mapping <span class="math inline">\(G_i(x_i, \sigma) is
+L_1-Lipschitz\)</span> continuous with repect to <span
+class="math inline">\(\sigma \in \mathbb{R}\)</span> and <span
+class="math inline">\(\phi_i(x_i)\)</span> is <span
+class="math inline">\(L_2-Lipschitz\)</span> continuous with repect to
+<span class="math inline">\(x_i \in \Omega_i\)</span> for all <span
+class="math inline">\(i \in \mathcal{N}\)</span>, i.e.,</p></li>
+<li><p>(<span class="math inline">\(L_1, L_2\)</span> are two positive
+constants) <span class="math display">\[
+\begin{aligned}\|G_i(x_i,\sigma_1)-G_i(x_i,\sigma_2)\|_2&amp;\le
+L_1\left\|\sigma_1-\sigma_2\right\|,&amp;\forall\sigma_1,\sigma_2\in\mathbb{R},\\\|\phi_i(z_1)-\phi_i(z_2)\|&amp;\le
+L_2\left\|z_1-z_2\right\|,&amp;\forall z_1,z_2\in\Omega_i,\end{aligned}
+\]</span></p></li>
+</ul></li>
+</ul>
 <h4 id="算法引入">算法引入</h4>
 
     </div>
