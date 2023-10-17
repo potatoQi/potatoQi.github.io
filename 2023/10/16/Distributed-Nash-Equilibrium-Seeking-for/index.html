@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-16T15:28:41.548Z">
+<meta property="article:modified_time" content="2023-10-17T06:34:50.439Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -220,10 +220,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-10-16 14:45:10 / 修改时间：23:28:41" itemprop="dateCreated datePublished" datetime="2023-10-16T14:45:10+08:00">2023-10-16</time>
+              <time title="创建时间：2023-10-16 14:45:10" itemprop="dateCreated datePublished" datetime="2023-10-16T14:45:10+08:00">2023-10-16</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-10-17 14:34:50" itemprop="dateModified" datetime="2023-10-17T14:34:50+08:00">2023-10-17</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -247,14 +253,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.6k</span>
+              <span>7.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -277,8 +283,7 @@ Games With Directed Communication Graphs</p>
 <p>如果解决的是当图结构采取“固定有向图”或者“时变有向图”时的分布式NE寻找问题。</p>
 <p>使用了两种算法来分别解决上面所提到的两种图结构时的分布式NE寻找问题。</p>
 <p>创新点是受凸优化中重球法的启发，向玩家策略的更新规范中引入了“动量项”，使得加速了算法寻找NE的收敛速度。</p>
-<p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的网元上。<span
-class="math inline">\(\red\)</span>啥意思</p>
+<p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的网元上。<strong><u>啥意思</u></strong></p>
 <p>本文最后将该算法运用于插电式混合动力汽车的能耗控制，检验了算法的正确性。</p>
 <h3 id="引入">引入</h3>
 <p>Section 2：图论的基础结论、问题建模、算法引入</p>
@@ -327,6 +332,8 @@ player i can receive information from player j at time j.</p>
 \in \varepsilon(k)\}\)</span>：时刻为k时，点i的入点集合</p>
 <p><span class="math inline">\(N^{out}_{i}(k) = \{i\} \cup \{j | (i, j)
 \in \varepsilon(k)\}\)</span>：时刻为k时，点i的出点集合</p>
+<p><span
+class="math inline">\(d_i^k=|N^{out}_{i}(k)|\)</span>：时刻为k时，点i的出度</p>
 <p>strongly connected fixed digraph：强连通有向图。即任意俩点可通</p>
 <p>For the time-varying digraph <span
 class="math inline">\(\mathcal{G}(k), \{\mathcal{G}(k)\}\)</span> is
@@ -388,8 +395,8 @@ class="math inline">\(\Omega_{i}\)</span>，都是非空、紧致、凸的。</p
 \times \Omega_{N}\)</span>。More over, for given <span
 class="math inline">\(x_{-i} \in \Omega_{-i}, J_i(x_i, x_{-i})\)</span>
 is convex about <span class="math inline">\(x_i\)</span> on <span
-class="math inline">\(\Omega_{i}\)</span>（<span
-class="math inline">\(\red\)</span>啥意思）</p></li>
+class="math inline">\(\Omega_{i}\)</span>
+<strong><u>啥意思</u></strong></p></li>
 <li><p><span class="math inline">\(J_i(x_i, x_{-i})\)</span>对<span
 class="math inline">\(x\)</span>连续可微，<span
 class="math inline">\(\phi_i(x_i)\)</span>对<span
@@ -429,8 +436,7 @@ class="math inline">\((\Gamma(x)-\Gamma(x&#39;))^T(x-x&#39;) \ge
 \mu\|x-x&#39;\|^2, \forall{x, x&#39;} \in \Omega, x \ne
 x&#39;\)</span></li>
 </ul></li>
-<li><p>Assumption 4（<span
-class="math inline">\(\red\)</span>啥意思）</p>
+<li><p>Assumption 4 <strong><u>啥意思</u></strong></p>
 <ul>
 <li><p>The mapping <span class="math inline">\(G_i(x_i, \sigma) is
 L_1-Lipschitz\)</span> continuous with repect to <span
@@ -448,6 +454,115 @@ L_2\left\|z_1-z_2\right\|,&amp;\forall z_1,z_2\in\Omega_i,\end{aligned}
 </ul></li>
 </ul>
 <h4 id="算法引入">算法引入</h4>
+<h5
+id="algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix">Algorithm
+1 NE Seeking With Row-Stochastic Adjacency Matrix</h5>
+<ul>
+<li>Initialization: <span class="math inline">\(x_i^0=x_i^1 \in
+\Omega_i, v_i^1=e_i, \tilde\sigma_i^1=\phi_i(x_i^1)\)</span></li>
+<li>for <span class="math inline">\(k \in \mathbb{N}_+\)</span> do
+<ul>
+<li>for each player <span class="math inline">\(i \in
+\mathcal{N}\)</span> do
+<ul>
+<li><span class="math inline">\(x_i^{k+1}=P_{\Omega_i}[x_i^k -
+\alpha_i^kG_i(x_i^k, \tilde\sigma_i^k) + \lambda_i(x_i^k-x_i^{k-1})]
+\qquad (3a)\)</span></li>
+<li><span class="math inline">\(v_i^{k+1}=\sum_{j=1}^Na_{ij}v_j^k \qquad
+(3b)\)</span></li>
+<li><span
+class="math inline">\(\tilde{\sigma}_{i}^{k+1}=\sum_{j=1}^{N}a_{ij}\tilde{\sigma}_{j}^{k}+\frac{\phi_{i}\left(x_{i}^{k+1}\right)}{\left[v_{i}^{k+1}\right]_{i}}-\frac{\phi_{i}\left(x_{i}^{k}\right)}{\left[v_{i}^{k}\right]_{i}}
+\qquad (3c)\)</span></li>
+</ul></li>
+<li>end for</li>
+</ul></li>
+<li>end for</li>
+</ul>
+<p>行随机邻接矩阵记为<span
+class="math inline">\(A=[a_{ij}]\)</span>，其中<span
+class="math inline">\(a_{ii}&gt;0\)</span>，且若<span
+class="math inline">\((j, i) \in \varepsilon\)</span>则<span
+class="math inline">\(a_{ij}&gt;0\)</span>, 否则<span
+class="math inline">\(a_{ij}=0\)</span>。</p>
+<p><span
+class="math inline">\(x_i^k\)</span>表示第i个玩家在时刻k的动作</p>
+<p><span class="math inline">\(v_i^k \in
+\mathbb{R}^N\)</span>用来estimate the left eigenvector <span
+class="math inline">\(v\)</span> associated with eigenvalue <span
+class="math inline">\(1\)</span> of the matrix A.
+<strong><u>啥意思</u></strong></p>
+<p><span class="math inline">\(\tilde\sigma_i^k\)</span> be the player
+i's estimate on the aggregation <span
+class="math inline">\(\sigma(x_k)\)</span> at iteration <span
+class="math inline">\(k\)</span></p>
+<p><span
+class="math inline">\(\alpha_i^k\)</span>表示步长，它遵循下面三个限制：</p>
+<ol type="1">
+<li>每个玩家在任意时刻的步长都是大于0的，且对于每个玩家，其<span
+class="math inline">\(\{\alpha_i^k\}\)</span>单调不增加</li>
+<li><span
+class="math inline">\(\sum_{k=1}^{\infty}\alpha_{i}^{k}=\infty,\sum_{k=1}^{\infty}(\alpha_{i}^{k})^{2}&lt;\infty\)</span></li>
+<li><span
+class="math inline">\(\sum\limits_{k=1}^{\infty}(\overline{\alpha}_{k}-\underline{\alpha}_{k})&lt;\infty,\text{
+where
+}\overline{\alpha}_{k}=\max\limits_{j\in\mathcal{N}}\{\alpha_{j}^{k}\}\text{
+and
+}\underline{\alpha}_{k}=\min\limits_{j\in\mathcal{N}}\{\alpha_{j}^{k}\}.\)</span></li>
+</ol>
+<p>在algorithm 1中，玩家使用非精确梯度<span
+class="math inline">\(G_i(x_i^k,
+\tilde\sigma_i^k)\)</span>来更新自身动作。为了消除不精确梯度带来的误差，引入递减的步长而不是固定的步长，从而保证精确收敛到NE。另外，动量项<span
+class="math inline">\(\lambda_i(x_i^k-x_i^{k-1})]\)</span>可以加速算法的收敛，<span
+class="math inline">\(0&lt;\lambda_i&lt;1\)</span>是动量参数。以上就是对于(3a)的解释。</p>
+<p>在(3c)中的第二项和第三项，其存在的目的是为了解决矩阵<span
+class="math inline">\(A\)</span>可能不是列随机的问题。
+<strong><u>啥意思</u></strong></p>
+<p>可以看出，(3b)和(3c)都用到了<span
+class="math inline">\(a_{ij}\)</span>，所以必须algorithm 1只适用于fixed
+digraph。</p>
+<h5
+id="algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix">Algorithm
+2 NE Seeking With Column-Stochastic Adjacency Matrix</h5>
+<p>这个算法是针对time-varying
+digraph的。在算法2中，每个玩家需要知道自己在每次交流中的出度，因为不同时刻每个点的出度会变化。</p>
+<ul>
+<li>Initialization: <span
+class="math inline">\(x_{i}^{0}=x_{i}^{1}\in\Omega_{i},y_{i}^{1}=1,\tilde{\sigma}_{i}^{1}=\phi_{i}(x_{i}^{1})\)</span></li>
+<li>for <span class="math inline">\(k \in \mathbb{N}_+\)</span> do
+<ul>
+<li>for each player <span class="math inline">\(i \in
+\mathcal{N}\)</span> do
+<ul>
+<li><span class="math inline">\(w_i^{k+1}=\sum_{j\in
+N_i^{in}(k)}\frac{\tilde{\sigma}_j^k}{d_j^k} \qquad (4a)\)</span></li>
+<li><span class="math inline">\(y_i^{k+1}=\sum_{j\in
+N_i^{in}(k)}\frac{y_j^k}{d_j^k} \qquad (4b)\)</span></li>
+<li><span class="math inline">\(z_i^{k+1}=\frac{w_i^{k+1}}{y_i^{k+1}}
+\qquad (4c)\)</span></li>
+<li><span
+class="math inline">\(x_i^{k+1}=P_{\Omega_i}\left[x_i^k-\alpha_i^kG_i(x_i^k,Nz_i^{k+1})+\lambda_i(x_i^k-x_i^{k-1})\right]
+\qquad (4d)\)</span></li>
+<li><span
+class="math inline">\(\tilde{\sigma}_i^{k+1}=w_i^{k+1}+\phi_i\left(x_i^{k+1}\right)-\phi_i\left(x_i^k\right)
+\qquad (4e)\)</span></li>
+</ul></li>
+<li>end for</li>
+</ul></li>
+<li>end for</li>
+</ul>
+<p>可以发现，这里求<span
+class="math inline">\(x_i^{k+1}\)</span>第二项<span
+class="math inline">\(G_i\)</span>中并没用<span
+class="math inline">\(\tilde\sigma_i^k\)</span>，而是用的<span
+class="math inline">\(Nz_i^{k+1}\)</span>。z是w跟y的比值，w与y又与点的入点和(入点的出度)有关。</p>
+<blockquote>
+<p>Note: 在algorithm 1中，若把"若<span class="math inline">\((j, i) \in
+\varepsilon\)</span>则<span
+class="math inline">\(a_{ij}&gt;0\)</span>"改为“若<span
+class="math inline">\((j, i) \in \varepsilon\)</span>则<span
+class="math inline">\(a_{ij}=\frac{1}{d_j^k}\)</span>”，则(3c)与(4e)等价</p>
+</blockquote>
+<h3 id="algorithm-1的收敛性分析">Algorithm 1的收敛性分析</h3>
 
     </div>
 
@@ -530,7 +645,9 @@ L_2\left\|z_1-z_2\right\|,&amp;\forall z_1,z_2\in\Omega_i,\end{aligned}
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2"><span class="nav-text">Section 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">问题建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">算法引入</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2"><span class="nav-text">Section 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">问题建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
+1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
+2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#algorithm-1%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7%E5%88%86%E6%9E%90"><span class="nav-text">Algorithm 1的收敛性分析</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
