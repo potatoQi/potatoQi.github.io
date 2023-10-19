@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-17T06:38:15.194Z">
+<meta property="article:modified_time" content="2023-10-19T16:38:22.121Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-17 14:38:15" itemprop="dateModified" datetime="2023-10-17T14:38:15+08:00">2023-10-17</time>
+                <time title="修改时间：2023-10-20 00:38:22" itemprop="dateModified" datetime="2023-10-20T00:38:22+08:00">2023-10-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,14 +253,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.2k</span>
+              <span>9.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>9 分钟</span>
             </span>
 
         </div>
@@ -276,7 +276,7 @@
 Games With Directed Communication Graphs</p>
 <p>中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡</p>
 <span id="more"></span>
-<h3 id="摘要">摘要</h3>
+<h3 id="abstract">Abstract</h3>
 <p>在聚合博弈中寻找分布式纳什均衡的关键点就是聚合博弈采取什么样的图结构。</p>
 <p>若采取无向图或者权衡平衡图结构，则这个问题已经被前人解决。</p>
 <p>如果采取有向图，则这仍然是个无人解决的问题。</p>
@@ -285,7 +285,7 @@ Games With Directed Communication Graphs</p>
 <p>创新点是受凸优化中重球法的启发，向玩家策略的更新规范中引入了“动量项”，使得加速了算法寻找NE的收敛速度。</p>
 <p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的网元上。<strong><u>啥意思</u></strong></p>
 <p>本文最后将该算法运用于插电式混合动力汽车的能耗控制，检验了算法的正确性。</p>
-<h3 id="引入">引入</h3>
+<h3 id="section-1-introduction">Section 1: Introduction</h3>
 <p>Section 2：图论的基础结论、问题建模、算法引入</p>
 <p>Section 3、4：算法的收敛性证明</p>
 <p>Section 5：验证算法在插电式混合动力汽车能耗控制的正确性</p>
@@ -318,8 +318,9 @@ class="math inline">\([x]_i\)</span>：x这个n维向量中的第i项</li>
 <li><span
 class="math inline">\(H_{ij}\)</span>：矩阵H的i行j列那个元素</li>
 </ul>
-<h3 id="section-2">Section 2</h3>
-<h4 id="图理论">图理论</h4>
+<h3 id="section-2-preliminary-knowledge">Section 2: Preliminary
+knowledge</h3>
+<h4 id="图理论">2-1: 图理论</h4>
 <p><span class="math inline">\(\mathcal{N}=\{1, 2, ...,
 N\}\)</span>：玩家集合</p>
 <p><span class="math inline">\(\varepsilon(k) \subseteq \{(i, j), i, j
@@ -351,7 +352,7 @@ k，也就是所有时刻的时变图都要是强连通，这个集合才能被�
 <p>假设B=3，则t = 3k ~
 2(k+1)，解3k&lt;=2(k+1),得k=1,2，也就是t=1,2时刻的时变图是强连通，则它们可称为B-连通。</p>
 <p>后面依次类推。</p>
-<h4 id="问题建模">问题建模</h4>
+<h4 id="问题建模">2-2: 问题建模</h4>
 <p>每个玩家的动作集合定义为<span
 class="math inline">\(\Omega_i\)</span>，动作定义为<span
 class="math inline">\(x_i\)</span>。每个玩家的花费函数定义为<span
@@ -411,7 +412,7 @@ class="math inline">\(\nabla_{x_i}J_i(x_i, x_{-i}) =\nabla_{x_i}f_i(x_i,
 \sigma(x)) + \nabla_{\sigma}f_i(x_i, \sigma(x)) \,
 \nabla_{x_i}\phi_i(x_i)\)</span>。这里实际上是有点歧义的，作者想表达的意思就是关注玩家i的动作对其花费函数的影响。</li>
 <li>定义<span class="math inline">\(\Gamma(x)=[\nabla_{x_1}J_1(x_1,
-x_{-1}), ..., \nabla_{x_N}J_1(x_N,
+x_{-1}), ..., \nabla_{x_N}J_N(x_N,
 x_{-N})]^T\)</span>，即每个玩家花费函数对自身动作求导组成的一个列向量</li>
 <li>定义<span class="math inline">\(G_i(x_i, \tilde{\sigma_i}) =
 \nabla_{x_i}f_i(x_i, \sigma(x))|_{\sigma(x)=\tilde{\sigma_i}} +
@@ -453,7 +454,7 @@ L_2\left\|z_1-z_2\right\|,&amp;\forall z_1,z_2\in\Omega_i,\end{aligned}
 \]</span></p></li>
 </ul></li>
 </ul>
-<h4 id="算法引入">算法引入</h4>
+<h4 id="算法引入">2-3: 算法引入</h4>
 <h5
 id="algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix">Algorithm
 1 NE Seeking With Row-Stochastic Adjacency Matrix</h5>
@@ -563,7 +564,79 @@ class="math inline">\(a_{ij}&gt;0\)</span>"改为“若<span
 class="math inline">\((j, i) \in \varepsilon\)</span>则<span
 class="math inline">\(a_{ij}=\frac{1}{d_j^k}\)</span>”，则(3c)与(4e)等价</p>
 </blockquote>
-<h3 id="algorithm-1的收敛性分析">Algorithm 1的收敛性分析</h3>
+<h3 id="section-3-convergence-analysis-of-algorithm-1">Section 3:
+Convergence analysis of algorithm 1</h3>
+<h4 id="theorem-1">3-0: Theorem 1</h4>
+<p>条件：</p>
+<ol type="1">
+<li><p>采用固定有向图结构</p></li>
+<li><p><span class="math inline">\(\nabla_{x_i}J_i(x_i, x_{-i})
+=\nabla_{x_i}f_i(x_i, \sigma(x)) + \nabla_{\sigma}f_i(x_i, \sigma(x)) \,
+\nabla_{x_i}\phi_i(x_i)\)</span></p>
+<p><span class="math inline">\(\Gamma(x)=[\nabla_{x_1}J_1(x_1, x_{-1}),
+..., \nabla_{x_N}J_N(x_N, x_{-N})]^T\)</span></p>
+<p><span class="math inline">\(G_i(x_i, \tilde{\sigma_i}) =
+\nabla_{x_i}f_i(x_i, \sigma(x))|_{\sigma(x)=\tilde{\sigma_i}} +
+\nabla_{\sigma}f_i(x_i, \sigma(x)) \,
+\nabla_{x_i}\phi_i(x_i)|_{\sigma(x)=\tilde{\sigma_i}}\)</span></p></li>
+<li><p><span
+class="math inline">\((\Gamma(x)-\Gamma(x&#39;))^T(x-x&#39;) &gt; 0,
+\forall{x, x&#39;} \in \Omega, x \ne x&#39;\)</span></p></li>
+<li><p><span class="math display">\[
+\begin{aligned}\|G_i(x_i,\sigma_1)-G_i(x_i,\sigma_2)\|_2&amp;\le
+L_1\left\|\sigma_1-\sigma_2\right\|,&amp;\forall\sigma_1,\sigma_2\in\mathbb{R},\\\|\phi_i(z_1)-\phi_i(z_2)\|&amp;\le
+L_2\left\|z_1-z_2\right\|,&amp;\forall z_1,z_2\in\Omega_i,\end{aligned}
+\]</span></p></li>
+<li><p>对于<span
+class="math inline">\(\alpha\)</span>步长，满足下面三条性质</p>
+<ol type="1">
+<li><span
+class="math inline">\(\{\alpha_i^k\}\)</span>不严格递减，且<span
+class="math inline">\(\alpha_i^k&gt;0\)</span></li>
+<li><span
+class="math inline">\(\sum_{k=1}^{\infty}\alpha_{i}^{k}=\infty,\sum_{k=1}^{\infty}(\alpha_{i}^{k})^{2}&lt;\infty\)</span></li>
+<li><span
+class="math inline">\(\sum\limits_{k=1}^{\infty}(\overline{\alpha}_{k}-\underline{\alpha}_{k})&lt;\infty,\text{
+where
+}\overline{\alpha}_{k}=\max\limits_{j\in\mathcal{N}}\{\alpha_{j}^{k}\}\text{
+and
+}\underline{\alpha}_{k}=\min\limits_{j\in\mathcal{N}}\{\alpha_{j}^{k}\}.\)</span></li>
+</ol></li>
+</ol>
+<p>结论：all players' actions converge to the unique NE <span
+class="math inline">\(x^*\)</span> under algorithm 1.</p>
+<h4 id="preliminary-analysis-about-algorithm-1">3-1: Preliminary
+analysis about algorithm 1</h4>
+<h4 id="lemmas">3-2: Lemmas</h4>
+<h4 id="proof-of-theorem-1">3-3: Proof of theorem 1</h4>
+<h4 id="convergence-rate-analysis-of-algorithm-1">3-4: Convergence rate
+analysis of algorithm 1</h4>
+<hr />
+<h3 id="formulas">Formulas</h3>
+<p><span class="math inline">\(\sigma(x)=\sum_{j=1}^{N}\phi_{j}(x_j)
+\qquad (1)\)</span></p>
+<p><span class="math inline">\(min \, f_i(x_i, \sigma(x)), \forall{i}
+\in \mathcal{N} \qquad (2)\)</span></p>
+<p><span class="math inline">\(x_i^{k+1}=P_{\Omega_i}[x_i^k -
+\alpha_i^kG_i(x_i^k, \tilde\sigma_i^k) + \lambda_i(x_i^k-x_i^{k-1})]
+\qquad (3a)\)</span></p>
+<p><span class="math inline">\(v_i^{k+1}=\sum_{j=1}^Na_{ij}v_j^k \qquad
+(3b)\)</span></p>
+<p><span
+class="math inline">\(\tilde{\sigma}_{i}^{k+1}=\sum_{j=1}^{N}a_{ij}\tilde{\sigma}_{j}^{k}+\frac{\phi_{i}\left(x_{i}^{k+1}\right)}{\left[v_{i}^{k+1}\right]_{i}}-\frac{\phi_{i}\left(x_{i}^{k}\right)}{\left[v_{i}^{k}\right]_{i}}
+\qquad (3c)\)</span></p>
+<p><span class="math inline">\(w_i^{k+1}=\sum_{j\in
+N_i^{in}(k)}\frac{\tilde{\sigma}_j^k}{d_j^k} \qquad (4a)\)</span></p>
+<p><span class="math inline">\(y_i^{k+1}=\sum_{j\in
+N_i^{in}(k)}\frac{y_j^k}{d_j^k} \qquad (4b)\)</span></p>
+<p><span class="math inline">\(z_i^{k+1}=\frac{w_i^{k+1}}{y_i^{k+1}}
+\qquad (4c)\)</span></p>
+<p><span
+class="math inline">\(x_i^{k+1}=P_{\Omega_i}\left[x_i^k-\alpha_i^kG_i(x_i^k,Nz_i^{k+1})+\lambda_i(x_i^k-x_i^{k-1})\right]
+\qquad (4d)\)</span></p>
+<p><span
+class="math inline">\(\tilde{\sigma}_i^{k+1}=w_i^{k+1}+\phi_i\left(x_i^{k+1}\right)-\phi_i\left(x_i^k\right)
+\qquad (4e)\)</span></p>
 
     </div>
 
@@ -649,9 +722,13 @@ class="math inline">\(a_{ij}=\frac{1}{d_j^k}\)</span>”，则(3c)与(4e)等价<
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%91%98%E8%A6%81"><span class="nav-text">摘要</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2"><span class="nav-text">Section 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">问题建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1-introduction"><span class="nav-text">Section 1: Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2-preliminary-knowledge"><span class="nav-text">Section 2: Preliminary
+knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">2-1: 图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">2-2: 问题建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">2-3: 算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
-2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#algorithm-1%E7%9A%84%E6%94%B6%E6%95%9B%E6%80%A7%E5%88%86%E6%9E%90"><span class="nav-text">Algorithm 1的收敛性分析</span></a></li></ol></div>
+2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
+Convergence analysis of algorithm 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-1"><span class="nav-text">3-0: Theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#preliminary-analysis-about-algorithm-1"><span class="nav-text">3-1: Preliminary
+analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
+analysis of algorithm 1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formulas"><span class="nav-text">Formulas</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
