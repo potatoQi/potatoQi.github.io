@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-10-19T14:21:26.148Z</updated>
+  <updated>2023-10-23T14:56:59.902Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>数字逻辑实验笔记</title>
+    <link href="http://example.com/2023/10/23/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2023/10/23/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
+    <published>2023-10-23T04:40:07.000Z</published>
+    <updated>2023-10-23T14:56:59.902Z</updated>
+    
+    <content type="html"><![CDATA[<p>这一部分主要是verilog语法，比较简单。</p><span id="more"></span><h3 id="两种声明方式">两种声明方式</h3><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> AND4(a, b, out);</span><br><span class="line">    <span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>] a, b;</span><br><span class="line">    <span class="keyword">output</span> [<span class="number">3</span>:<span class="number">0</span>] out;</span><br><span class="line">    <span class="keyword">assign</span> out = a &amp; b;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> AND4(<span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>] a, <span class="keyword">input</span> [<span class="number">3</span>:<span class="number">0</span>] b, <span class="keyword">output</span> [<span class="number">3</span>:<span class="number">0</span>] out);</span><br><span class="line">    <span class="keyword">assign</span> out = a &amp; b;</span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure><h3 id="数据类型">数据类型</h3><p>掌握wire和reg即可。</p><p>wire就是对应着电路里的线。reg就是对应着电路里的寄存器。</p><p>常量用parameter定义，例如parameter width = 3;但是常量也可以重定义，例如下面这个例子：</p><figure class="highlight verilog"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span> adder(a, b, sum);</span><br><span class="line">    <span class="keyword">parameter</span> time_delay = <span class="number">5</span>, time_count = <span class="number">10</span>;</span><br><span class="line">    ...</span><br><span class="line"><span class="keyword">endmodule</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">module</span> top;</span><br><span class="line">    <span class="keyword">wire</span> [<span class="number">2</span>:<span class="number">0</span>] a1, b1;</span><br><span class="line">    <span class="keyword">wire</span> [<span class="number">3</span>:<span class="number">0</span>] sum1;</span><br><span class="line">    <span class="keyword">wire</span> [<span class="number">3</span>:<span class="number">0</span>] a2, b2;</span><br><span class="line">    <span class="keyword">wire</span> [<span class="number">3</span>:<span class="number">0</span>] sum2;</span><br><span class="line">    adder <span class="variable">#(4, 8) AD1(a1, b1, sum1)</span>;<span class="comment">//time_delay=4, time_count=8</span></span><br><span class="line">    adder <span class="variable">#(12) AD2(a2, b2, sum2)</span>;<span class="comment">//time_delay=12, time_count=10</span></span><br><span class="line"><span class="keyword">endmodule</span></span><br></pre></td></tr></table></figure><h3 id="数据的表达方式">数据的表达方式</h3><p><位宽>'<进制><数字>：4'b0101 / 4‘h5</p><p><进制><数字>：位宽一般默认是32位。h5</p><p><数字>：位宽默认32位，进制默认为十进制。5</p><h3 id="拼接运算符">拼接运算符</h3><p>{a, b[3:0], w, 3'b101} 等价于 {a, b[3], b[2], b[1], b[0], w, 1'b1,1'b0, 1'b1}</p><p>{4{w}} 等价于 {w, w, w, w}</p><p>{b, 3{a, b}} 等价于 {b, a, b, a, b, a, b}</p><h3 id="赋值语句">赋值语句</h3><p>assign只能对wire类型赋值。assign的作用通常就是把reg的结果用一个wire接收。</p><p>initial里对reg变量赋初值。</p><p>always里的=(阻塞赋值)/&lt;=(非阻塞赋值)对always块里的reg类型赋值。</p><p>always语句</p><p>always @ (clk) //只要clk发生变化就触发 always @ (posedge clk)//clk上升沿触发（从0-&gt;1触发）</p><p>always @ (negedge clk) //clk下降沿触发（从1-&gt;0触发）</p><p>always @ (*) //always块内任何输入信号变化了就触发</p><h3 id="条件语句">条件语句</h3><p>条件语句只能用于always或initial内部。只需要掌握if-else和case语句即可。</p><p>if-else语句：跟C++一样，只不过多条语句时将{}换成begin-end</p><p>case语句：有case/casex/casez可以选择。casex就是分支表达式中可以有?作为通配符。</p><h3 id="循环语句">循环语句</h3><p>一般循环语句都是用来写仿真文件的。因为循环次数不确定的循环语句是不能被综合的！</p><p>所以一般用循环语句来写源代码都是用for循环</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;这一部分主要是verilog语法，比较简单。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="大学" scheme="http://example.com/categories/%E5%A4%A7%E5%AD%A6/"/>
+    
+    <category term="数字逻辑" scheme="http://example.com/categories/%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>数据库自学笔记</title>
