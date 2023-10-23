@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-19T16:38:22.121Z">
+<meta property="article:modified_time" content="2023-10-23T15:51:48.783Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-20 00:38:22" itemprop="dateModified" datetime="2023-10-20T00:38:22+08:00">2023-10-20</time>
+                <time title="修改时间：2023-10-23 23:51:48" itemprop="dateModified" datetime="2023-10-23T23:51:48+08:00">2023-10-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,14 +253,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>9.5k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>9 分钟</span>
+              <span>10 分钟</span>
             </span>
 
         </div>
@@ -283,7 +283,7 @@ Games With Directed Communication Graphs</p>
 <p>如果解决的是当图结构采取“固定有向图”或者“时变有向图”时的分布式NE寻找问题。</p>
 <p>使用了两种算法来分别解决上面所提到的两种图结构时的分布式NE寻找问题。</p>
 <p>创新点是受凸优化中重球法的启发，向玩家策略的更新规范中引入了“动量项”，使得加速了算法寻找NE的收敛速度。</p>
-<p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的网元上。<strong><u>啥意思</u></strong></p>
+<p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的NE上。</p>
 <p>本文最后将该算法运用于插电式混合动力汽车的能耗控制，检验了算法的正确性。</p>
 <h3 id="section-1-introduction">Section 1: Introduction</h3>
 <p>Section 2：图论的基础结论、问题建模、算法引入</p>
@@ -396,8 +396,7 @@ class="math inline">\(\Omega_{i}\)</span>，都是非空、紧致、凸的。</p
 \times \Omega_{N}\)</span>。More over, for given <span
 class="math inline">\(x_{-i} \in \Omega_{-i}, J_i(x_i, x_{-i})\)</span>
 is convex about <span class="math inline">\(x_i\)</span> on <span
-class="math inline">\(\Omega_{i}\)</span>
-<strong><u>啥意思</u></strong></p></li>
+class="math inline">\(\Omega_{i}\)</span></p></li>
 <li><p><span class="math inline">\(J_i(x_i, x_{-i})\)</span>对<span
 class="math inline">\(x\)</span>连续可微，<span
 class="math inline">\(\phi_i(x_i)\)</span>对<span
@@ -437,7 +436,7 @@ class="math inline">\((\Gamma(x)-\Gamma(x&#39;))^T(x-x&#39;) \ge
 \mu\|x-x&#39;\|^2, \forall{x, x&#39;} \in \Omega, x \ne
 x&#39;\)</span></li>
 </ul></li>
-<li><p>Assumption 4 <strong><u>啥意思</u></strong></p>
+<li><p>Assumption 4</p>
 <ul>
 <li><p>The mapping <span class="math inline">\(G_i(x_i, \sigma) is
 L_1-Lipschitz\)</span> continuous with repect to <span
@@ -484,14 +483,13 @@ class="math inline">\(A=[a_{ij}]\)</span>，其中<span
 class="math inline">\(a_{ii}&gt;0\)</span>，且若<span
 class="math inline">\((j, i) \in \varepsilon\)</span>则<span
 class="math inline">\(a_{ij}&gt;0\)</span>, 否则<span
-class="math inline">\(a_{ij}=0\)</span>。</p>
+class="math inline">\(a_{ij}=0\)</span>。另外，行随机矩阵的特征就是每一行元素和为1。</p>
 <p><span
 class="math inline">\(x_i^k\)</span>表示第i个玩家在时刻k的动作</p>
 <p><span class="math inline">\(v_i^k \in
 \mathbb{R}^N\)</span>用来estimate the left eigenvector <span
 class="math inline">\(v\)</span> associated with eigenvalue <span
-class="math inline">\(1\)</span> of the matrix A.
-<strong><u>啥意思</u></strong></p>
+class="math inline">\(1\)</span> of the matrix A.</p>
 <p><span class="math inline">\(\tilde\sigma_i^k\)</span> be the player
 i's estimate on the aggregation <span
 class="math inline">\(\sigma(x_k)\)</span> at iteration <span
@@ -517,8 +515,7 @@ class="math inline">\(G_i(x_i^k,
 class="math inline">\(\lambda_i(x_i^k-x_i^{k-1})]\)</span>可以加速算法的收敛，<span
 class="math inline">\(0&lt;\lambda_i&lt;1\)</span>是动量参数。以上就是对于(3a)的解释。</p>
 <p>在(3c)中的第二项和第三项，其存在的目的是为了解决矩阵<span
-class="math inline">\(A\)</span>可能不是列随机的问题。
-<strong><u>啥意思</u></strong></p>
+class="math inline">\(A\)</span>可能不是列随机的问题。</p>
 <p>可以看出，(3b)和(3c)都用到了<span
 class="math inline">\(a_{ij}\)</span>，所以algorithm 1只适用于fixed
 digraph。</p>
@@ -607,7 +604,66 @@ and
 class="math inline">\(x^*\)</span> under algorithm 1.</p>
 <h4 id="preliminary-analysis-about-algorithm-1">3-1: Preliminary
 analysis about algorithm 1</h4>
+<p>先来求一下algorithm 1里的<span
+class="math inline">\(v_i^k\)</span></p>
+<p>定义：<span
+class="math inline">\(\left.V_{k}=\left[\begin{array}{ccc}{v_{1}^{k},v_{2}^{k},\ldots,v_{N}^{k}}\end{array}\right.\right]^{T}\)</span></p>
+<p>所以<span class="math inline">\(v_i^{k+1}=\sum_{j=1}^Na_{ij}v_j^k
+\qquad (3b)\)</span>等价于<span
+class="math inline">\(V_{k+1}=AV_{k}\qquad (5)\)</span></p>
+<p>因为<span class="math inline">\(V_1 = [v_1, v_2, ..., v_N]^T =
+I_N\)</span>，即<span class="math inline">\(v_i =
+e_i\)</span>（条件）</p>
+<p>所以<span
+class="math inline">\(\lim_{k\to\infty}V_k=\operatorname*{lim}_{k\to\infty}A^{k-1}V_1=\operatorname*{lim}_{k\to\infty}A^{k}\)</span></p>
+<p>因为A是行随机矩阵，所以显然<span
+class="math inline">\(1_n\)</span>是特征值为1时的一个特征向量。</p>
+<p>所以得出<span
+class="math inline">\(\operatorname*{lim}_{k\to\infty}A^{k}=1_Nv^T\)</span>,
+where <span class="math inline">\(v\)</span>
+是A关于特征值1的左特征向量且<span
+class="math inline">\(v\)</span>每一项大于0，且<span
+class="math inline">\(v^T1_N=1\)</span>。<strong><u>这一步是如何得到的</u></strong></p>
+<p>所以<span
+class="math inline">\(\lim_{k\to\infty}\left.V_{k}=\left[\begin{array}{ccc}{v_{1}^{k},v_{2}^{k},\ldots,v_{N}^{k}}\end{array}\right.\right]^{T}
+= 1_Nv^T\)</span>。又<span class="math inline">\(1_Nv^T=[v, v, ...,
+v]^T\)</span>。</p>
+<p>也就是说，当k趋近于无穷大时，每个玩家的<span
+class="math inline">\(v_i\)</span>都收敛于<span
+class="math inline">\(v\)</span>。</p>
+<hr />
+<p>再来求一下algorithm 1里的<span
+class="math inline">\(\tilde{\sigma}_{i}^{k}\)</span></p>
+<p>首先<span
+class="math inline">\(V_k\)</span>对角线上的元素都是正的，通过<span
+class="math inline">\(V_{k+1}=AV_{k}\)</span>可看出。首先<span
+class="math inline">\(V_1\)</span>是单位阵肯定对角线为正，然后A的对角线元素都是正的（这是algorithm
+1引入时提到的条件）。所以他俩乘出来的对角线也是正的。不断递推，对角线上都是正的。</p>
+<p>所以现在我定义一个<span
+class="math inline">\(\left.\hat{V}_k=\operatorname{diag}\left(\begin{bmatrix}v_1^k\end{bmatrix}\right._1,\begin{bmatrix}v_2^k\end{bmatrix}_2,\ldots,\begin{bmatrix}v_N^k\end{bmatrix}_N\right)\)</span></p>
+<p>上面这个<span
+class="math inline">\(\hat{V}_k\)</span>其实就是取了<span
+class="math inline">\(V_k\)</span>的对角线，其余地方都是0。</p>
+<p>因为前面说了对角线都是正的嘛，所以<span
+class="math inline">\(\hat{V_k}\)</span>是满秩可逆的。而且我们知道最终<span
+class="math inline">\(V_k\)</span>是收敛的，所以<span
+class="math inline">\(\hat{V_k}\)</span>最终也是收敛的。</p>
+<p>最后我再定义<span
+class="math inline">\(\tilde{\sigma}_{k}=\left[\tilde{\sigma}_{1}^{k},\tilde{\sigma}_{2}^{k},\ldots,\tilde{\sigma}_{N}^{k}\right]^{T}\)</span>和<span
+class="math inline">\(\phi_k =
+\left[\phi_{1}(x_{1}^{k}),\phi_{2}(x_{2}^{k}),\ldots,\phi_{N}(x_{N}^{k})\right]^{T}\)</span></p>
+<p>则<span
+class="math inline">\(\tilde{\sigma}_{i}^{k+1}=\sum_{j=1}^{N}a_{ij}\tilde{\sigma}_{j}^{k}+\frac{\phi_{i}\left(x_{i}^{k+1}\right)}{\left[v_{i}^{k+1}\right]_{i}}-\frac{\phi_{i}\left(x_{i}^{k}\right)}{\left[v_{i}^{k}\right]_{i}}
+\qquad (3c)\)</span>可改写为：</p>
+<p><span
+class="math inline">\(\tilde{\sigma}_{k+1}=A\tilde{\sigma}_k+\hat{V}_{k+1}^{-1}\Phi_{k+1}-\hat{V}_k^{-1}\Phi_k
+\qquad (6)\)</span>
+<strong><u>逆矩阵那里可以感性理解但是不知道为啥用一个逆矩阵就可以代表除法</u></strong></p>
 <h4 id="lemmas">3-2: Lemmas</h4>
+<p>为了接下来的叙述方便，定义<span
+class="math inline">\(V_{\infty}=\lim\limits_{k\to\infty}V_{k}=1_{N}v^{T}\)</span>和<span
+class="math inline">\(\hat{V}_{\infty}=\operatorname{diag}([v]_1,\ldots,[v]_N)\)</span></p>
+<h5 id="lemma-1">Lemma 1</h5>
 <h4 id="proof-of-theorem-1">3-3: Proof of theorem 1</h4>
 <h4 id="convergence-rate-analysis-of-algorithm-1">3-4: Convergence rate
 analysis of algorithm 1</h4>
@@ -727,7 +783,7 @@ knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a cl
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
 Convergence analysis of algorithm 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-1"><span class="nav-text">3-0: Theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#preliminary-analysis-about-algorithm-1"><span class="nav-text">3-1: Preliminary
-analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
+analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
 analysis of algorithm 1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formulas"><span class="nav-text">Formulas</span></a></li></ol></div>
       </div>
       <!--/noindex-->
