@@ -31,7 +31,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-24T14:56:12.266Z">
+<meta property="article:modified_time" content="2023-10-24T15:59:59.966Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
@@ -230,7 +230,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-24 22:56:12" itemprop="dateModified" datetime="2023-10-24T22:56:12+08:00">2023-10-24</time>
+                <time title="修改时间：2023-10-24 23:59:59" itemprop="dateModified" datetime="2023-10-24T23:59:59+08:00">2023-10-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -255,14 +255,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>12k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>11 分钟</span>
+              <span>12 分钟</span>
             </span>
 
         </div>
@@ -381,15 +381,14 @@ privacy of <span class="math inline">\(\phi_j(x_j), j \in
 class="math inline">\(\phi_i(x_i)\)</span>函数是每个人特有的，只有自己知道，别人不知道。但是可以通过有向图与邻居交换信息。</p>
 </blockquote>
 <p>下面是论文的几个假设，论文解决的问题都是基于这几个假设作为前提的。</p>
-<ul>
-<li><p>Assumption 1</p>
+<h5 id="assumption-1">Assumption 1</h5>
 <ul>
 <li>论文讨论的图不是一般有向图，而是两类。分别是固定有向图（fixed
 digraph）和时变有向图（time-varying digraph）。</li>
 <li>而且fixed digraph一定满足强连通，time-varying
 digraph一定满足B-强连通。</li>
-</ul></li>
-<li><p>Assumption 2</p>
+</ul>
+<h5 id="assumption-2">Assumption 2</h5>
 <ul>
 <li><p>对于所有玩家的动作集合<span
 class="math inline">\(\Omega_{i}\)</span>，都是非空、紧致、凸的。</p></li>
@@ -422,8 +421,8 @@ x_{-N})]^T\)</span>，即每个玩家花费函数对自身动作求导组成的�
 class="math inline">\(\sigma(x)\)</span>赋值为<span
 class="math inline">\(\tilde{\sigma_i}\)</span>了。</li>
 </ul></li>
-</ul></li>
-<li><p>Assumption 3</p>
+</ul>
+<h5 id="assumption-3">Assumption 3</h5>
 <ul>
 <li><span
 class="math inline">\(\Gamma(x)\)</span>满足下列俩条件之一：</li>
@@ -437,8 +436,8 @@ class="math inline">\(\mu &gt; 0\)</span>使得<span
 class="math inline">\((\Gamma(x)-\Gamma(x&#39;))^T(x-x&#39;) \ge
 \mu\|x-x&#39;\|^2, \forall{x, x&#39;} \in \Omega, x \ne
 x&#39;\)</span></li>
-</ul></li>
-<li><p>Assumption 4</p>
+</ul>
+<h5 id="assumption-4">Assumption 4</h5>
 <ul>
 <li><p>The mapping <span class="math inline">\(G_i(x_i, \sigma) is
 L_1-Lipschitz\)</span> continuous with repect to <span
@@ -453,7 +452,6 @@ constants) <span class="math display">\[
 L_1\left\|\sigma_1-\sigma_2\right\|,&amp;\forall\sigma_1,\sigma_2\in\mathbb{R},\\\|\phi_i(z_1)-\phi_i(z_2)\|&amp;\le
 L_2\left\|z_1-z_2\right\|,&amp;\forall z_1,z_2\in\Omega_i,\end{aligned}
 \]</span></p></li>
-</ul></li>
 </ul>
 <h4 id="算法引入">2-3: 算法引入</h4>
 <h5
@@ -670,17 +668,54 @@ class="math inline">\(\hat{V}_{\infty}=\operatorname{diag}([v]_1,\ldots,[v]_N)\)
 class="math inline">\(\hat{V}_{k}\)</span>是收敛的，所以会有<span
 class="math inline">\(\|\hat{V}_{k}^{-1}\|\leq \varrho, \varrho &gt;
 0\)</span> <strong><u>矩阵如何取范式</u></strong></p>
-<p>引理1为：<span
+<p>引理1：<span
 class="math inline">\(\|\hat{V}_{k}^{-1}-\hat{V}_{\infty}^{-1}\|\leq\varrho^{2}\gamma\theta^{k},
 k \in \mathbb{N_+}, \gamma &gt; 0, 0 &lt; \theta &lt; 1, \varrho &gt;
-0\)</span> <strong><u>去另一篇文章里找证明没找到先略过</u></strong></p>
+0\)</span>
+<strong><u>去另一篇文章[18]里找证明没找到先略过</u></strong></p>
 <h5 id="lemma-2">Lemma 2</h5>
-<p><span
+<p>引理2：<span
 class="math inline">\(V_{\infty}\tilde{\sigma}_{k}=V_{\infty}\hat{V}_{k}^{-1}\Phi_{k},
 k \in \mathbb{N_+}\)</span></p>
 <p>证明如下：</p>
 <p><img src="1.png" /></p>
 <h5 id="lemma-3">Lemma 3</h5>
+<p>先来点前置知识</p>
+<p>According to the definition of <span class="math inline">\(v\)</span>
+and the fact that <span
+class="math inline">\(\operatorname*{lim}_{k\to\infty}A^{k}=1_{N}v^{T}\)</span>
+under Assumption 1(a), one can verify that <span
+class="math inline">\(\operatorname*{lim}_{k\to\infty}\left(A-1_{N}v^{T}\right)^{k}=\operatorname*{lim}_{k\to\infty}A^{k}-1_{N}v^{T}=0\)</span>
+, which is equivalent to <span
+class="math inline">\(\rho(A-1_Nv^T)~&lt;~1\)</span> [30]. It is known
+that for small enough <span class="math inline">\(\epsilon &gt;
+0\)</span>, there is at least one matrix norm denoted by <span
+class="math inline">\(\|\cdot\|_\epsilon\)</span> such that <span
+class="math inline">\(\rho(A-1_{N}v^{T})\leq\|A-1_{N}v^{T}\|_{\epsilon}\leq
+\rho(A-1_{N}v^{T})+\epsilon&lt;1\)</span> [30]. Moreover, there exist
+positive constants <span class="math inline">\(c\)</span> and <span
+class="math inline">\(d\)</span> such that <span
+class="math inline">\(\|\cdot\|_{\epsilon}\leq c\|\cdot\|\)</span> and
+<span class="math inline">\(\|\cdot\|\leq
+d\|\cdot\|_{\epsilon}\)</span></p>
+<p><strong><u>上面这一段极限推导那没搞懂以及矩阵范数那不是很懂它在说啥</u></strong></p>
+<p>再定义两个东西</p>
+<p><span class="math inline">\(\rho_1=\left\|A-1_Nv^T\right\|_\epsilon,
+\rho_1 &lt; 1 \qquad (7)\)</span></p>
+<p><span class="math inline">\(\rho_2=\left\|I_N-1_Nv^T\right\| \qquad
+(8)\)</span></p>
+<p>引理3：Under Assumption 1(a), 2 and 4, <span
+class="math inline">\(\|\tilde{\sigma}_i^k-v^T\tilde{\sigma}_k\|\)</span>
+is bounded, i.e., there exists a constant <span
+class="math inline">\(\hat{C} &gt; 0\)</span> such that <span
+class="math inline">\(\|\tilde{\sigma}_{i}^{k}-v^{T}\tilde{\sigma}_{k}\|\leq\tilde{C}\)</span></p>
+<p>证明如下：</p>
+<p><strong><u>涉及到矩阵范数的运算，先略过</u></strong></p>
+<h5 id="lemma-4">Lemma 4</h5>
+<p>引理4：<span
+class="math inline">\(\|G_i\left(x_i^k,\sigma(x_k)\right)\|\le M, M &gt;
+0\)</span></p>
+<p>证明如下：</p>
 <h4 id="proof-of-theorem-1">3-3: Proof of theorem 1</h4>
 <h4 id="convergence-rate-analysis-of-algorithm-1">3-4: Convergence rate
 analysis of algorithm 1</h4>
@@ -714,6 +749,10 @@ class="math inline">\(\tilde{\sigma}_i^{k+1}=w_i^{k+1}+\phi_i\left(x_i^{k+1}\rig
 <p><span
 class="math inline">\(\tilde{\sigma}_{k+1}=A\tilde{\sigma}_k+\hat{V}_{k+1}^{-1}\Phi_{k+1}-\hat{V}_k^{-1}\Phi_k
 \qquad (6)\)</span></p>
+<p><span class="math inline">\(\rho_1=\left\|A-1_Nv^T\right\|_\epsilon,
+\rho_1 &lt; 1 \qquad (7)\)</span></p>
+<p><span class="math inline">\(\rho_2=\left\|I_N-1_Nv^T\right\| \qquad
+(8)\)</span></p>
 
     </div>
 
@@ -800,11 +839,11 @@ class="math inline">\(\tilde{\sigma}_{k+1}=A\tilde{\sigma}_k+\hat{V}_{k+1}^{-1}\
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1-introduction"><span class="nav-text">Section 1: Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2-preliminary-knowledge"><span class="nav-text">Section 2: Preliminary
-knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">2-1: 图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">2-2: 问题建模</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">2-3: 算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
+knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">2-1: 图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">2-2: 问题建模</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-1"><span class="nav-text">Assumption 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-2"><span class="nav-text">Assumption 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-3"><span class="nav-text">Assumption 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-4"><span class="nav-text">Assumption 4</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">2-3: 算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
 Convergence analysis of algorithm 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-1"><span class="nav-text">3-0: Theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#preliminary-analysis-about-algorithm-1"><span class="nav-text">3-1: Preliminary
-analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
+analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-4"><span class="nav-text">Lemma 4</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
 analysis of algorithm 1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formulas"><span class="nav-text">Formulas</span></a></li></ol></div>
       </div>
       <!--/noindex-->
