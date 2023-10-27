@@ -31,8 +31,10 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/2.png">
+<meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/3.png">
+<meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/4.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-26T14:42:25.637Z">
+<meta property="article:modified_time" content="2023-10-27T08:34:47.573Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
@@ -231,7 +233,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-26 22:42:25" itemprop="dateModified" datetime="2023-10-26T22:42:25+08:00">2023-10-26</time>
+                <time title="修改时间：2023-10-27 16:34:47" itemprop="dateModified" datetime="2023-10-27T16:34:47+08:00">2023-10-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -256,14 +258,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>13k</span>
+              <span>14k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>12 分钟</span>
+              <span>13 分钟</span>
             </span>
 
         </div>
@@ -720,6 +722,32 @@ class="math inline">\(\|G_i\left(x_i^k,\sigma(x_k)\right)\|\le M, M &gt;
 0\)</span></p>
 <p>证明如下：</p>
 <p><img src="2.png" /></p>
+<h5 id="lemma-5">Lemma 5</h5>
+<p>定义<span
+class="math inline">\(\overline{\lambda}=\max_{j\in\mathcal{N}}\{\lambda_j\}\)</span>，若<span
+class="math inline">\(0&lt;\overline{\lambda}&lt;\frac{\sqrt{2}}2\)</span>，则下面三条性质将会满足：</p>
+<ol type="a">
+<li><p><span
+class="math inline">\(\left\|x_{i}^{k+1}-x_{i}^{k}\right\|\leq
+M\sum_{s=1}^{k}\overline{\lambda}^{k-s}\overline{\alpha}_{s},\forall
+k\in\mathbb{N}_{+}\)</span></p></li>
+<li><p><span
+class="math inline">\(\lim\limits_{k\to\infty}\left\|x_{i}^{k+1}-x_{i}^{k}\right\|=0\)</span></p></li>
+<li><p><span
+class="math inline">\(\sum_{k=1}^{\infty}\|x_{i}^{k+1}-x_{i}^{k}\|^{2}&lt;\infty\)</span></p></li>
+</ol>
+<p>where <span class="math inline">\(M\)</span> is given in Lemma 4, and
+<span
+class="math inline">\(\mid\overline{\alpha}_{k}=\max_{j\in\mathcal{N}}\{\alpha_{j}^{k}\}\)</span></p>
+<p>证明如下：</p>
+<p><img src="3.png" /></p>
+<p><img src="4.png" /></p>
+<p>补充：因为所有动作<span
+class="math inline">\(x_i^k\)</span>都属于compact的<span
+class="math inline">\(\Omega_i\)</span>，所以<span
+class="math inline">\(\{x_k\}\)</span>是有界的，又由Lemma
+5(b)，可以知道<span class="math inline">\(\{x_k\}\)</span>是收敛的。</p>
+<h5 id="lemma-6">Lemma 6</h5>
 <h4 id="proof-of-theorem-1">3-3: Proof of theorem 1</h4>
 <h4 id="convergence-rate-analysis-of-algorithm-1">3-4: Convergence rate
 analysis of algorithm 1</h4>
@@ -757,6 +785,13 @@ class="math inline">\(\tilde{\sigma}_{k+1}=A\tilde{\sigma}_k+\hat{V}_{k+1}^{-1}\
 \rho_1 &lt; 1 \qquad (7)\)</span></p>
 <p><span class="math inline">\(\rho_2=\left\|I_N-1_Nv^T\right\| \qquad
 (8)\)</span></p>
+<p><span
+class="math inline">\(\begin{Vmatrix}x_i^{k+1}-x_i^k\end{Vmatrix} \le
+M\sum_{s=1}^{\kappa}\overline{\lambda}^{k-s}\overline{\alpha}_{s} \qquad
+(41)\)</span></p>
+<p><span class="math inline">\(\left\|x_i^{k+1}-x_i^k\right\|^2 \le
+2M^{2}\sum_{s=1}^{k}\left(2\overline{\lambda}^{2}\right)^{k-s}\overline{\alpha}_{s}{}^{2}
+\qquad (42)\)</span></p>
 
     </div>
 
@@ -847,7 +882,7 @@ knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a cl
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
 Convergence analysis of algorithm 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-1"><span class="nav-text">3-0: Theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#preliminary-analysis-about-algorithm-1"><span class="nav-text">3-1: Preliminary
-analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-4"><span class="nav-text">Lemma 4</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
+analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-2: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-4"><span class="nav-text">Lemma 4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-5"><span class="nav-text">Lemma 5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-6"><span class="nav-text">Lemma 6</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-3: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-4: Convergence rate
 analysis of algorithm 1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formulas"><span class="nav-text">Formulas</span></a></li></ol></div>
       </div>
       <!--/noindex-->
