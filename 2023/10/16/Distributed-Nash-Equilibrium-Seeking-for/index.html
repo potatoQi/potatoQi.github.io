@@ -29,15 +29,16 @@
 <meta property="og:site_name" content="Error_666">
 <meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/5.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/2.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/3.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/4.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-10-27T09:00:29.929Z">
+<meta property="article:modified_time" content="2023-10-30T13:52:35.531Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
+<meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/5.png">
 
 <link rel="canonical" href="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/">
 
@@ -233,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-27 17:00:29" itemprop="dateModified" datetime="2023-10-27T17:00:29+08:00">2023-10-27</time>
+                <time title="修改时间：2023-10-30 21:52:35" itemprop="dateModified" datetime="2023-10-30T21:52:35+08:00">2023-10-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +259,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>15k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -291,6 +292,31 @@ Games With Directed Communication Graphs</p>
 <p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的NE上。</p>
 <p>本文最后将该算法运用于插电式混合动力汽车的能耗控制，检验了算法的正确性。</p>
 <h3 id="section-1-introduction">Section 1: Introduction</h3>
+<h4 id="研究背景">1-1: 研究背景</h4>
+<p>本文研究的是聚合游戏，也就是每个玩家的花费除了依赖自身动作还依赖所有玩家的聚合行为。在聚合游戏中寻找NE是个有挑战性的问题，因为每个玩家只能与自己的邻居通信。</p>
+<p>在分布式通信计算领域，一些解决聚合游戏中NE寻找问题的分布式算法已经被提出。具体分为“分布式离散时间算法”[6],
+[7]和“分布式连续时间算法”[8]-[15]</p>
+<p>[6]：在这篇文章中，作者专注于研究有向图中的两种特殊的聚合游戏，分别叫做“network
+aggregative games” 和 "average aggregative games"。使用"optimal response
+strategy"方法去研究的。而且，在图的加权邻接矩阵为双随机矩阵的条件下，<span
+class="math inline">\(\varepsilon-NE\)</span>在average aggregative
+games的寻找得以被解决。</p>
+<p>[7]：在这篇文章中，作者专注于研究无向图中的聚合游戏。并相应提出了几种分布式同步和异步算法。</p>
+<p>[8]：在这篇文章中，作者专注于研究权重平衡有向图中的聚合游戏，其中玩家的dynamics
+were described by disturbed first-order systems.
+为了寻找寻找外部干扰下具有coupled equality
+constraint的聚合游戏的NE，作者在文中提出了一种利用内部模型排斥外部干扰来找NE的分布式算法。同时利用dynamic
+average consensus来估计所有玩家的总和。</p>
+<p>[9]：在这篇文章中，研究了玩家成本函数非光滑，同时玩家动作受到局部可行性约束和线性耦合约束时的情况。具体来说，作者利用微分包含和微分投影算子，提出了一种基于连续时间分布投影的算法来找权重平衡有向图上的非光滑聚合游戏的NE。</p>
+<p>[10]：在这篇文章中，作者研究了无向连通图上具有耦合约束的聚合游戏。</p>
+<p>[11]：结合projected gradient dynamics 和 consensus tracking
+dynamics，本文讨论了无向连通图上的聚合游戏。</p>
+<p>[12]：结合projected gradient dynamics 和 consensus tracking
+dynamics，本文讨论了权重平衡有向图上的聚合游戏。</p>
+<p>[13]：研究了存在对通信链路持续攻击的网络上的聚合游戏。其中玩家的动态是受未知时变干扰和未建模项影响的双积分器。</p>
+<p>[14]：研究了聚合游戏在智能电网能耗控制中的运用。其中玩家采用平均共识协议来估计总能耗，并且表明玩家的行为以指数形式收敛于NE。</p>
+<p>[15]：将PHEVs建模成一个无向连通图上的聚合游戏，并对NE的稳定性进行了分析。</p>
+<h4 id="大致目录-基础公式">1-2: 大致目录 &amp; 基础公式</h4>
 <p>Section 2：图论的基础结论、问题建模、算法引入</p>
 <p>Section 3、4：算法的收敛性证明</p>
 <p>Section 5：验证算法在插电式混合动力汽车能耗控制的正确性</p>
@@ -346,16 +372,10 @@ class="math inline">\(\mathcal{G}(k), \{\mathcal{G}(k)\}\)</span> is
 said to be B-strongly connected if there exists a <span
 class="math inline">\(B \in \mathbb{N_+}\)</span> such that the union
 digraph <span
-class="math inline">\(\cup_{t=kB}^{(k+1)B-1}\mathcal{G}(t)\)</span> is
+class="math inline">\(\cup_{t=kB}^{(k+1)B}\mathcal{G}(t)\)</span> is
 strongly connected for any <span class="math inline">\(k \in
 \mathbb{N_+}\)</span>
-换句话说，如果一定时间段内的所有时变图都为强连通，则这些时变图的集合是B-连通的。</p>
-<p>假设B=1，则t = k ~
-k，也就是所有时刻的时变图都要是强连通，这个集合才能被称为B-连通。</p>
-<p>假设B=2，则t = 2k ~
-(k+1)，解2k&lt;=k+1,得k=1，也就是t=1时刻的时变图是强连通，则它可称为B-连通。</p>
-<p>假设B=3，则t = 3k ~
-2(k+1)，解3k&lt;=2(k+1),得k=1,2，也就是t=1,2时刻的时变图是强连通，则它们可称为B-连通。</p>
+换句话说，如果一定时间段内的所有时变图的并（边并起来，边权不相加）为强连通，则这些时变图的集合是B-连通的。</p>
 <p>后面依次类推。</p>
 <h4 id="问题建模">2-2: 问题建模</h4>
 <p>每个玩家的动作集合定义为<span
@@ -628,7 +648,8 @@ class="math inline">\(\operatorname*{lim}_{k\to\infty}A^{k}=1_Nv^T\)</span>,
 where <span class="math inline">\(v\)</span>
 是A关于特征值1的左特征向量且<span
 class="math inline">\(v\)</span>每一项大于0，且<span
-class="math inline">\(v^T1_N=1\)</span>。<strong><u>这一步是如何得到的</u></strong></p>
+class="math inline">\(v^T1_N=1\)</span>。</p>
+<p><img src="5.png" /></p>
 <p>所以<span
 class="math inline">\(\lim_{k\to\infty}\left.V_{k}=\left[\begin{array}{ccc}{v_{1}^{k},v_{2}^{k},\ldots,v_{N}^{k}}\end{array}\right.\right]^{T}
 = 1_Nv^T\)</span>。又<span class="math inline">\(1_Nv^T=[v, v, ...,
@@ -661,8 +682,7 @@ class="math inline">\(\tilde{\sigma}_{i}^{k+1}=\sum_{j=1}^{N}a_{ij}\tilde{\sigma
 \qquad (3c)\)</span>可改写为：</p>
 <p><span
 class="math inline">\(\tilde{\sigma}_{k+1}=A\tilde{\sigma}_k+\hat{V}_{k+1}^{-1}\Phi_{k+1}-\hat{V}_k^{-1}\Phi_k
-\qquad (6)\)</span>
-<strong><u>逆矩阵那里可以感性理解但是不知道为啥用一个逆矩阵就可以代表除法</u></strong></p>
+\qquad (6)\)</span></p>
 <h4 id="lemmas">3-2: Lemmas</h4>
 <p>为了接下来的叙述方便，定义<span
 class="math inline">\(V_{\infty}=\lim\limits_{k\to\infty}V_{k}=1_{N}v^{T}\)</span>和<span
@@ -671,7 +691,13 @@ class="math inline">\(\hat{V}_{\infty}=\operatorname{diag}([v]_1,\ldots,[v]_N)\)
 <p>因为<span
 class="math inline">\(\hat{V}_{k}\)</span>是收敛的，所以会有<span
 class="math inline">\(\|\hat{V}_{k}^{-1}\|\leq \varrho, \varrho &gt;
-0\)</span> <strong><u>矩阵如何取范式</u></strong></p>
+0\)</span></p>
+<blockquote>
+<p>矩阵的二范式从几何意义上来说就是单位圆在经过矩阵变换后离原点最远的距离。假设要求<span
+class="math inline">\(\|A\|\)</span>，则先求<span
+class="math inline">\(A^TA\)</span>，然后再求<span
+class="math inline">\(A^TA\)</span>的特征值，取最大的特征值开方就是矩阵A的二范数</p>
+</blockquote>
 <p>引理1：<span
 class="math inline">\(\|\hat{V}_{k}^{-1}-\hat{V}_{\infty}^{-1}\|\leq\varrho^{2}\gamma\theta^{k},
 k \in \mathbb{N_+}, \gamma &gt; 0, 0 &lt; \theta &lt; 1, \varrho &gt;
@@ -901,7 +927,7 @@ M\sum_{s=1}^{\kappa}\overline{\lambda}^{k-s}\overline{\alpha}_{s} \qquad
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1-introduction"><span class="nav-text">Section 1: Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2-preliminary-knowledge"><span class="nav-text">Section 2: Preliminary
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1-introduction"><span class="nav-text">Section 1: Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="nav-text">1-1: 研究背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E8%87%B4%E7%9B%AE%E5%BD%95-%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F"><span class="nav-text">1-2: 大致目录 &amp; 基础公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2-preliminary-knowledge"><span class="nav-text">Section 2: Preliminary
 knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">2-1: 图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">2-2: 问题建模</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-1"><span class="nav-text">Assumption 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-2"><span class="nav-text">Assumption 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-3"><span class="nav-text">Assumption 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-4"><span class="nav-text">Assumption 4</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">2-3: 算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
