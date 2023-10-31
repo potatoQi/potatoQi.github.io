@@ -40,9 +40,9 @@
     <link href="http://example.com/2023/10/31/Linear-convergence-in-optimization-over-directed-graphs-with-row-stochastic-matrices/"/>
     <id>http://example.com/2023/10/31/Linear-convergence-in-optimization-over-directed-graphs-with-row-stochastic-matrices/</id>
     <published>2023-10-31T15:26:13.000Z</published>
-    <updated>2023-10-31T15:50:55.624Z</updated>
+    <updated>2023-10-31T17:01:48.338Z</updated>
     
-    <content type="html"><![CDATA[<p>标题：Linear convergence in optimization over directed graphs withrow-stochastic matrices</p><p>中文翻译：行随机矩阵有向图优化的线性收敛性</p><span id="more"></span><h3 id="abstract">Abstract</h3><p>本文研究的是一个多智能体网络（有向图）上的分布式优化问题，其中目标函数是每个玩家成本函数的总和。</p><p>现存的在有向图上的分布式优化算法都至少需要每个玩家知道其邻居的出度。但本文不需要。而且最佳收敛速度为<spanclass="math inline">\(O(\mu^{k}), 0 &lt; \mu &lt; 1, k\)</span> is thenumber of 迭代。</p><p>前提是目标函数为强凸函数，且具有Lipschitz连续梯度。</p><h3 id="introduction">1. Introduction</h3>]]></content>
+    <content type="html"><![CDATA[<p>标题：Linear convergence in optimization over directed graphs withrow-stochastic matrices</p><p>中文翻译：行随机矩阵有向图优化的线性收敛性</p><span id="more"></span><h3 id="abstract">Abstract</h3><p>本文研究的是一个多智能体网络（有向图）上的分布式优化问题，其中目标函数是每个玩家成本函数的总和。</p><p>现存的在有向图上的分布式优化算法都至少需要每个玩家知道其邻居的出度。但本文不需要。而且最佳收敛速度为<spanclass="math inline">\(O(\mu^{k}), 0 &lt; \mu &lt; 1, k\)</span> is thenumber of 迭代。</p><p>前提是目标函数为强凸函数，且具有Lipschitz连续梯度。</p><h3 id="introduction">1. Introduction</h3><p>近年来出现了许多分布式优化方法，最初的方法是基于梯度下降，这种方法直观且计算简单，但由于算法使用的步长逐渐减小，通常速度较慢。证明了任意凸函数的收敛速度为<spanclass="math inline">\(O(\frac{\lnk}{\sqrt{k}})\)</span>，强凸函数的收敛速度为<spanclass="math inline">\(O(\frac{\ln k}k)​\)</span>。</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;标题：Linear convergence in optimization over directed graphs with
