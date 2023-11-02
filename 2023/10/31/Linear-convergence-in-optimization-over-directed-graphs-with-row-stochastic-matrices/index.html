@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题：Linear convergence in optimization over directed graphs with row-stochastic matrices 中文翻译：行随机矩阵有向图优化的线性收敛性">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-31T15:26:13.000Z">
-<meta property="article:modified_time" content="2023-11-01T15:11:27.298Z">
+<meta property="article:modified_time" content="2023-11-02T16:43:14.726Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-01 23:11:27" itemprop="dateModified" datetime="2023-11-01T23:11:27+08:00">2023-11-01</time>
+                <time title="修改时间：2023-11-03 00:43:14" itemprop="dateModified" datetime="2023-11-03T00:43:14+08:00">2023-11-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,14 +253,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>7.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -407,6 +407,107 @@ Y_{k}^{-1}\nabla\mathbf{f}_{k}, \text{(2c)}
 \end{gathered}
 \]</span></p>
 <h3 id="main-results">3. Main results</h3>
+<p>定义：<span
+class="math inline">\(Y_\infty=\lim_{k\to\infty}Y_k\)</span></p>
+<p>因为<span class="math inline">\(Y_k = AY_{k-1} = A^2Y_{k-2} =
+...\)</span></p>
+<p>所以<span
+class="math inline">\(\operatorname*{lim}_{k\to\infty}Y_{k}=\operatorname*{lim}_{k\to\infty}A^{k}\)</span>（<span
+class="math inline">\(Y_1=I_n\)</span>）</p>
+<p>又由[38]中的Perron-Frobenius定理，<span
+class="math inline">\(Y_k\)</span>将收敛到<span
+class="math inline">\(1_n\pi ^ T\)</span></p>
+<p>即<span
+class="math inline">\(Y_\infty=\lim\limits_{k\to\infty}Y_k=\operatorname*{lim}\limits_{k\to\infty}A^k=1_n\pi^T\)</span>
+继续定义： <span class="math display">\[
+\begin{aligned}
+\mathbf{x}^{*}&amp; =x^{*}\mathbf{1}_{n},  \\
+\widehat{\mathbf{x}}_{k}&amp; =Y_{\infty}\mathbf{x}_{k},  \\
+\widehat{z}_{k}&amp; =Y_{\infty}\mathbf{z}_{k},  \\
+\nabla\mathbf{f}^{*}&amp; =[\nabla f_{1}(x^{*}),\cdots,\nabla
+f_{n}(x^{*})]^{\top},  \\
+\nabla\widehat{\mathbf{f}}_{k}&amp;
+=\frac{1}{n}\mathbf{1}_{n}\mathbf{1}_{n}^{\top}\left[\nabla
+f_{1}(\widehat{x}_{k}),...,\nabla f_{n}(\widehat{x}_{k})\right]^{\top},
+\end{aligned}
+\]</span></p>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\tau=\left\|A-I_{n}\right\|_{2}, \\
+&amp;\epsilon=\left\|I_{n}-Y_{\infty}\right\|_{2}, \\
+&amp;\eta=\operatorname*{max}\left(\left|1-\alpha
+nl\right|,\left|1-\alpha ns\right|\right)
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(l, s\)</span>出自这： $$
+f_i(_1)-f_i(_2)f_i(_1)^(_1-_2)-|_1-_2|_2^2$，s是正整数 \</p>
+|f_i(_1)-f_i(_2)|_2l|_1-_2|_2$，l是正整数 <span class="math display">\[
+继续定义：
+\]</span>
+<span class="math display">\[\begin{aligned}
+&amp;y=\operatorname*{sup}_{k}\left\|Y_{k}\right\|_{2}, \\
+&amp;\widetilde{y}=\operatorname*{sup}_{k}\left\|\widetilde{Y}_{k}^{-1}\right\|_{2}.
+\end{aligned}\]</span>
+<p>$$</p>
+<h4 id="lemma-1">Lemma 1</h4>
+<p><span class="math inline">\(\left\|Y_k-Y_\infty\right\|_2\leq
+T\gamma_1^k,\quad\forall k.\quad(3) \\ 0 &lt; \gamma &lt; 1 \, and \, 0
+&lt; T &lt; \infty\)</span></p>
+<p>推导参考[22]</p>
+<h4 id="lemma-2">Lemma 2</h4>
+<p>For any <span class="math inline">\(a \in \mathbb{R^n}\)</span>,
+define <span
+class="math inline">\(\widehat{\mathbf{a}}=Y_{\infty}\mathbf{a}\)</span>.
+Then there exists <span class="math inline">\(0&lt;\sigma&lt;1\)</span>
+such that <span class="math display">\[
+\left\|A\mathbf{a}-\widehat{\mathbf{a}}\right\|\leq\sigma\left\|\mathbf{a}-\widehat{\mathbf{a}}\right\|
+\qquad (4)
+\]</span> Proof:</p>
+<p>由[38]中的Perron-Frobenius定理，得<span
+class="math inline">\(\rho(A)=1\)</span> and every eigenvalue of A other
+than 1 is strictly less than <span
+class="math inline">\(\rho(A)\)</span>。</p>
+<p>We now have： <span class="math display">\[
+\begin{array}{rcl}AY_\infty&amp;=&amp;A\mathbf{1}_n\pi^\top&amp;=&amp;\mathbf{1}_n\pi^\top&amp;=&amp;Y_\infty,\\Y_\infty
+Y_\infty&amp;=&amp;\mathbf{1}_n\pi^\top\mathbf{1}_n\pi^\top&amp;=&amp;\mathbf{1}_n\pi^\top&amp;=&amp;Y_\infty,\end{array}
+\]</span> and thus <span
+class="math inline">\(AY_{\infty}-Y_{\infty}Y_{\infty}\)</span> is a
+zero matrix. Therefore, <span class="math display">\[
+A\mathbf{a}-Y_\infty\mathbf{a}\quad=\quad(A-Y_\infty)(\mathbf{a}-Y_\infty\mathbf{a}).
+\]</span></p>
+<blockquote>
+<p>右边打开：Aa - AYa - Ya + Y^2a = Aa - AYa - Ya + Ya = Aa - AYa = Aa -
+Ya = 左边</p>
+</blockquote>
+<p>因为<span
+class="math inline">\(\left\|A-Y_{\infty}\right\|&lt;1\)</span>
+<strong><u>（不会证）</u></strong></p>
+<p>所以 <span class="math display">\[
+\left\|A\mathbf{a}-Y_\infty\mathbf{a}\right\|\quad\leq\quad\left\|A-Y_\infty\right\|\left\|\mathbf{a}-Y_\infty\mathbf{a}\right\|,\quad\left(5\right)
+\]</span> 所以</p>
+<p><span
+class="math inline">\(\left\|A\mathbf{a}-\widehat{\mathbf{a}}\right\|\leq\sigma\left\|\mathbf{a}-\widehat{\mathbf{a}}\right\|\)</span>，<span
+class="math inline">\(\sigma=\left\|A-Y_{\infty}\right\|\)</span>，且<span
+class="math inline">\(0 &lt; \sigma &lt; 1\)</span></p>
+<h4 id="lemma-3">Lemma 3</h4>
+<p>There exists some constant <span
+class="math inline">\(\widetilde{T}\)</span> such that the following
+inequalities hold for all k &gt;= 1 <span class="math display">\[
+(a)\left\|\widetilde{Y}_k^{-1}-\widetilde{Y}_\infty^{-1}\right\|_2\leq\widetilde{y}^2\widetilde{T}\gamma_1^k
+\\
+(b)\left\|\widetilde{Y}_{k+1}^{-1}-\widetilde{Y}_{k}^{-1}\right\|_{2}\leq2\widetilde{y}^{2}\widetilde{T}\gamma_{1}^{k}
+\]</span> Proof:</p>
+<p>先推(a) <span class="math display">\[
+\begin{aligned}
+\left\|\tilde{Y}_{k}^{-1}-\tilde{Y}_{\infty}^{-1}\right\|_{2}&amp;
+\leq\left\|\tilde{Y}_{k}^{-1}\right\|_{2}\left\|\tilde{Y}_{k}-\tilde{Y}_{\infty}\right\|_{2}\left\|\tilde{Y}_{\infty}^{-1}\right\|_{2},  \\
+&amp;\leq\tilde{y}^{2}\widetilde{T}\gamma_{1}^{k},
+\end{aligned}
+\]</span> <strong><u>第一个不等号咋推的</u></strong></p>
+<p>第二个不等号用了<span
+class="math inline">\(\widetilde{y}\)</span>的定义和Lemma 1</p>
+<p>再推(b)</p>
+<p><strong><u>不会，感觉我要去学点矩阵论的东西了</u></strong></p>
 
     </div>
 
@@ -493,7 +594,7 @@ Y_{k}^{-1}\nabla\mathbf{f}_{k}, \text{(2c)}
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#problem-assumptions-algorithm"><span class="nav-text">2. Problem, Assumptions,
-Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-results"><span class="nav-text">3. Main results</span></a></li></ol></div>
+Algorithm</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#main-results"><span class="nav-text">3. Main results</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
