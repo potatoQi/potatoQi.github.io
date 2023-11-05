@@ -30,7 +30,7 @@
 <meta property="og:description" content="标题：Linear convergence in optimization over directed graphs with row-stochastic matrices 中文翻译：行随机矩阵有向图优化的线性收敛性">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-31T15:26:13.000Z">
-<meta property="article:modified_time" content="2023-11-02T16:43:14.726Z">
+<meta property="article:modified_time" content="2023-11-05T14:53:41.379Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -228,7 +228,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-03 00:43:14" itemprop="dateModified" datetime="2023-11-03T00:43:14+08:00">2023-11-03</time>
+                <time title="修改时间：2023-11-05 22:53:41" itemprop="dateModified" datetime="2023-11-05T22:53:41+08:00">2023-11-05</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -253,14 +253,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.1k</span>
+              <span>7.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>6 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -381,8 +381,7 @@ class="math inline">\(\mathbf{y}_{0,i}=\mathbf{e}_i, \quad
 \mathbf{z}_{0,i}=\nabla f_i(\mathbf{x}_{0,i})\)</span></p>
 <p>上面的算法中</p>
 <p>根据[38]中的Perron-Frobenius定理，(1b)将收敛到矩阵A的左特征向量<span
-class="math inline">\(\pi
-^T\)</span>。<strong><u>（有空拿计算机验证一下）</u></strong></p>
+class="math inline">\(\pi ^T\)</span>。</p>
 <p>(1c)使用(1b)来缩放梯度，从而消除了行随机矩阵引起的不平衡。</p>
 <p>而且，为了简化证明，其实可以把<span class="math inline">\(x_{k, i},
 z_{k, i}, \nabla
@@ -479,12 +478,11 @@ A\mathbf{a}-Y_\infty\mathbf{a}\quad=\quad(A-Y_\infty)(\mathbf{a}-Y_\infty\mathbf
 <p>右边打开：Aa - AYa - Ya + Y^2a = Aa - AYa - Ya + Ya = Aa - AYa = Aa -
 Ya = 左边</p>
 </blockquote>
-<p>因为<span
-class="math inline">\(\left\|A-Y_{\infty}\right\|&lt;1\)</span>
-<strong><u>（不会证）</u></strong></p>
 <p>所以 <span class="math display">\[
 \left\|A\mathbf{a}-Y_\infty\mathbf{a}\right\|\quad\leq\quad\left\|A-Y_\infty\right\|\left\|\mathbf{a}-Y_\infty\mathbf{a}\right\|,\quad\left(5\right)
-\]</span> 所以</p>
+\]</span> 又<span class="math inline">\(\|A - Y_\infty\| &lt; 1\)</span>
+<strong><u>为啥</u></strong></p>
+<p>所以</p>
 <p><span
 class="math inline">\(\left\|A\mathbf{a}-\widehat{\mathbf{a}}\right\|\leq\sigma\left\|\mathbf{a}-\widehat{\mathbf{a}}\right\|\)</span>，<span
 class="math inline">\(\sigma=\left\|A-Y_{\infty}\right\|\)</span>，且<span
@@ -503,11 +501,25 @@ inequalities hold for all k &gt;= 1 <span class="math display">\[
 \leq\left\|\tilde{Y}_{k}^{-1}\right\|_{2}\left\|\tilde{Y}_{k}-\tilde{Y}_{\infty}\right\|_{2}\left\|\tilde{Y}_{\infty}^{-1}\right\|_{2},  \\
 &amp;\leq\tilde{y}^{2}\widetilde{T}\gamma_{1}^{k},
 \end{aligned}
-\]</span> <strong><u>第一个不等号咋推的</u></strong></p>
+\]</span> 第一个不等号推导见“Distributed Nash Equilibrium Seeking
+for...”的Lemma 1证明</p>
 <p>第二个不等号用了<span
 class="math inline">\(\widetilde{y}\)</span>的定义和Lemma 1</p>
-<p>再推(b)</p>
-<p><strong><u>不会，感觉我要去学点矩阵论的东西了</u></strong></p>
+<p>再推(b)，用推(a)一样的方法，先推出：</p>
+<p><span
+class="math inline">\(\left\|\widetilde{Y}_{k+1}^{-1}-\widetilde{Y}_{k}^{-1}\right\|_2
+\le \|\widetilde{Y}_{k+1}\| \cdot \|\widetilde{Y}_{k}^{-1}\| \cdot
+\|\widetilde{Y}_{k+1} - \widetilde{Y}_k\| \le \widetilde{y}^2 \cdot
+\|\widetilde{Y}_{k+1} - \widetilde{Y}_k\|\)</span></p>
+<p>又<span class="math inline">\(\|\widetilde{Y}_{k+1} -
+\widetilde{Y}_k\| = \|\widetilde{Y}_{k+1} - \widetilde{Y}_{\infty}\ -
+(\widetilde{Y}_{k} - \widetilde{Y}_{\infty})\| \le \|\widetilde{Y}_{k+1}
+- \widetilde{Y}_{\infty}\| + \|\widetilde{Y}_{k} -
+\widetilde{Y}_{\infty}\| \le 2\widetilde{T}\gamma_{1}^{k}\)</span></p>
+<p>所以</p>
+<p><span
+class="math inline">\(\left\|\widetilde{Y}_{k+1}^{-1}-\widetilde{Y}_{k}^{-1}\right\|_2
+\le 2\widetilde{y}^2\widetilde{T}\gamma_{1}^{k}\)</span>，得证。</p>
 
     </div>
 
