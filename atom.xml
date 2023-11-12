@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-07T06:13:34.442Z</updated>
+  <updated>2023-11-12T09:54:42.453Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>ChatGPT4使用</title>
+    <link href="http://example.com/2023/11/12/ChatGPT4%E4%BD%BF%E7%94%A8/"/>
+    <id>http://example.com/2023/11/12/ChatGPT4%E4%BD%BF%E7%94%A8/</id>
+    <published>2023-11-12T09:03:14.000Z</published>
+    <updated>2023-11-12T09:54:42.453Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近OpenAI开了发布会，ChatGPT4更新为GPT-4Turbo，还推出了一个GPTs功能，这使得人们可以自己定制化GPT，还可以使用人家的GPTs。</p><p>我猜未来GPTs应该跟国内小程序一样，将一定程度上改变app/网站的生态。</p><p>所以为了体验一下GPT-4Turbo，我去官网注册了OpenAI的账号并且购买了GPT4（一个月）。这篇博客内容是订阅方法以及基本使用GPT4的方法。</p><span id="more"></span><h3 id="如何订阅gpt4-plus">如何订阅GPT4 PLUS？</h3><ol type="1"><li>去<a href="https://chat.openai.com/">官网链接(openai.com)</a>注册一个OpenAI账号并登录（建议通过Google邮箱注册）</li><li>注册过程中，需要用到手机号验证，使用<ahref="https://sms-activate.org/cn">SMS-Activate</a>解决</li><li>1、2步完成后，就可以使用ChatGPT服务了，但是只能使用3.5而且有次数限制。点击升级，会看到一个支付界面，界面里要填银行卡相关信息。银行卡只能使用美国的。所以在<ahref="https://www.fomepay.com/">FOMEPay</a>上购买一张虚拟美国银行卡，往里充钱。然后将卡号信息填到刚才的界面中即可。</li><li>充值成功，可正常使用ChatGPT4</li></ol><p>（注意，充值过程一定要全程使用美国IP的梯子！）</p><h3 id="如何使用">如何使用？</h3><p>想怎么用怎么用，推荐几个插件：</p><ol type="1"><li>WebPilot：帮助ChatGPT联网搜索信息</li><li>Wolfram：科学计算，图标绘制</li><li>Tutory：可以帮你制定任意领域的学习路线</li><li>Ai Tool Hunt：找插件的插件</li><li>MixerBox Scholar：可以访问一些学术资源</li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;最近OpenAI开了发布会，ChatGPT4更新为GPT-4
+Turbo，还推出了一个GPTs功能，这使得人们可以自己定制化GPT，还可以使用人家的GPTs。&lt;/p&gt;
+&lt;p&gt;我猜未来GPTs应该跟国内小程序一样，将一定程度上改变app/网站的生态。&lt;/p&gt;
+&lt;p&gt;所以为了体验一下GPT-4
+Turbo，我去官网注册了OpenAI的账号并且购买了GPT4（一个月）。这篇博客内容是订阅方法以及基本使用GPT4的方法。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>数学知识补充</title>
