@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-11-12T09:54:42.453Z</updated>
+  <updated>2023-11-19T10:10:43.164Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,45 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>5. 凸函数的定义</title>
+    <link href="http://example.com/2023/11/19/5-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89/"/>
+    <id>http://example.com/2023/11/19/5-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89/</id>
+    <published>2023-11-19T10:03:32.000Z</published>
+    <updated>2023-11-19T10:10:43.164Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍了凸函数的四种定义：直接定义、降维定义、一阶可微下的定义、二阶可微下的定义。以及补充了若A为对称矩阵条件下，<spanclass="math inline">\(x^TAx \ge 0 \iff A \succeq 0\)</span>的证明。</p><span id="more"></span><p><img src="1.png" /></p><p><img src="2.png" /></p><p><img src="3.png" /></p><p><img src="4.png" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;介绍了凸函数的四种定义：直接定义、降维定义、一阶可微下的定义、二阶可微下的定义。以及补充了若A为对称矩阵条件下，&lt;span
+class=&quot;math inline&quot;&gt;&#92;(x^TAx &#92;ge 0 &#92;iff A &#92;succeq 0&#92;)&lt;/span&gt;的证明。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>4. 保凸运算</title>
+    <link href="http://example.com/2023/11/19/4-%E4%BF%9D%E5%87%B8%E8%BF%90%E7%AE%97/"/>
+    <id>http://example.com/2023/11/19/4-%E4%BF%9D%E5%87%B8%E8%BF%90%E7%AE%97/</id>
+    <published>2023-11-19T10:03:11.000Z</published>
+    <updated>2023-11-19T10:06:34.102Z</updated>
+    
+    <content type="html"><![CDATA[<p>介绍了4种不改变集合凸性的运算：集合交、仿射函数、透视函数、线性分数函数。</p><span id="more"></span><p><img src="1.png" /></p><p><img src="2.png" /></p><p><img src="3.png" /></p><p><img src="4.png" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;介绍了4种不改变集合凸性的运算：集合交、仿射函数、透视函数、线性分数函数。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="凸优化" scheme="http://example.com/categories/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>ChatGPT4使用</title>
