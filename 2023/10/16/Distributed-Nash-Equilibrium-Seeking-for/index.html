@@ -23,12 +23,12 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡  本周成果：  学习了矩阵范数的一些相关知识（谱范数 + 谱半径 + 矩阵阶乘极限收敛判定 + 矩阵阶乘数列之和收敛 + 矩阵">
+  <meta name="description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡  本周成果：    本周问题：  Linear那篇文章中的Lemma2那为啥\(\|A - Y_\infty\| &amp;l">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Distributed Nash Equilibrium Seeking for...">
 <meta property="og:url" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡  本周成果：  学习了矩阵范数的一些相关知识（谱范数 + 谱半径 + 矩阵阶乘极限收敛判定 + 矩阵阶乘数列之和收敛 + 矩阵">
+<meta property="og:description" content="标题全称为：Distributed Nash Equilibrium Seeking for Aggregative Games With Directed Communication Graphs 中文翻译为：在使用有向图结构的聚合博弈中寻找离散式纳什均衡  本周成果：    本周问题：  Linear那篇文章中的Lemma2那为啥\(\|A - Y_\infty\| &amp;l">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/5.png">
@@ -41,7 +41,7 @@
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/9.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/10.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-11-16T15:53:07.076Z">
+<meta property="article:modified_time" content="2023-11-26T09:35:17.980Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
@@ -240,7 +240,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-16 23:53:07" itemprop="dateModified" datetime="2023-11-16T23:53:07+08:00">2023-11-16</time>
+                <time title="修改时间：2023-11-26 17:35:17" itemprop="dateModified" datetime="2023-11-26T17:35:17+08:00">2023-11-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -290,11 +290,7 @@ Games With Directed Communication Graphs</p>
 <hr />
 <p>本周成果：</p>
 <ol type="1">
-<li>学习了矩阵范数的一些相关知识（谱范数 + 谱半径 + 矩阵阶乘极限收敛判定
-+ 矩阵阶乘数列之和收敛 + 矩阵范数等价定义）</li>
-<li>解决了Linear那篇文章中的Lemma 3</li>
-<li>解决了Lemma 1 ~ 6</li>
-<li>推了一点theorem 1</li>
+<li></li>
 </ol>
 <p>本周问题：</p>
 <ol type="1">
@@ -787,9 +783,8 @@ k \in \mathbb{N_+}\)</span></p>
 <h5 id="lemma-3">Lemma 3</h5>
 <p>先来点前置知识</p>
 <p>因为<span
-class="math inline">\(\operatorname*{lim}_{k\to\infty}\left(A-1_{N}v^{T}\right)^{k}=\operatorname*{lim}_{k\to\infty}A^{k}-1_{N}v^{T}=0\)</span>，所以根据谱半径的知识，可以知道<span
+class="math inline">\(\operatorname*{lim}_{k\to\infty}\left(A-1_{N}v^{T}\right)^{k}=\operatorname*{lim}_{k\to\infty}A^{k}-1_{N}v^{T}=0\)</span>（这个极限推导可以先放着不管），所以根据谱半径的知识，可以知道<span
 class="math inline">\(\rho(A-1_Nv^T)~&lt;~1\)</span></p>
-<p><strong><u>上面的极限推导是如何得到的？</u></strong></p>
 <p>又因为<span class="math inline">\(\rho(A-1_Nv^T) \le \|A -
 1_Nv^T\|\)</span></p>
 <p>所以必然存在一个矩阵范数<span
@@ -1082,7 +1077,7 @@ analysis of algorithm 1</span></a></li></ol></li><li class="nav-item nav-level-3
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">20</span>
+          <span class="site-state-item-count">19</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
