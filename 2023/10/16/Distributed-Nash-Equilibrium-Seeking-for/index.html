@@ -48,7 +48,7 @@
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/16.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/17.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-11-28T16:42:21.836Z">
+<meta property="article:modified_time" content="2023-11-29T12:15:56.610Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-29 00:42:21" itemprop="dateModified" datetime="2023-11-29T00:42:21+08:00">2023-11-29</time>
+                <time title="修改时间：2023-11-29 20:15:56" itemprop="dateModified" datetime="2023-11-29T20:15:56+08:00">2023-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,14 +272,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>23k</span>
+              <span>25k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>21 分钟</span>
+              <span>22 分钟</span>
             </span>
 
         </div>
@@ -875,7 +875,16 @@ class="math inline">\(\sum_{k=1}^{\infty}\overline{\alpha}_{k}\left\|\tilde{\sig
 <p><img src="14.png" /></p>
 <p><img src="15.png" /></p>
 <p><img src="16.png" /></p>
-<h4 id="convergence-rate-analysis-of-algorithm-1">3-5: Convergence rate
+<h4 id="theorem-2">3-5: Theorem 2</h4>
+<p>在满足Assumption 1(a), 2, 3(b) and 4的前提下。令<span
+class="math inline">\(\alpha_{i}^{k}=\frac{1}{\sqrt{k}}=\alpha_{k}\)</span>。且<span
+class="math inline">\(0&lt;\lambda_i&lt;\frac{\sqrt{2}}{2}\)</span>，则<span
+class="math inline">\(\{q_t\}\)</span>收敛到0的速率为<span
+class="math inline">\(O(\frac{\ln t}{\sqrt{t}})\)</span>。 <span
+class="math display">\[
+q_t=\frac{\sum\limits_{k=1}^t\alpha_k\|x_k-x^*\|^2}{\sum\limits_{k=1}^t\alpha_k}
+\]</span> 证明：暂略</p>
+<h4 id="convergence-rate-analysis-of-algorithm-1">3-6: Convergence rate
 analysis of algorithm 1</h4>
 <p>如果<span
 class="math inline">\(\Gamma(x)\)</span>是强单调，且步长满足<span
@@ -885,15 +894,6 @@ class="math inline">\(\alpha_{i}^{k}=\frac{1}{\sqrt{k}}\)</span>。则可以分�
 class="math inline">\(x^*\)</span>的速率与<span
 class="math inline">\(q_t\)</span>收敛到0的速率相同。证明如下：</p>
 <p><img src="17.png" /></p>
-<h5 id="theorem-2">Theorem 2</h5>
-<p>在满足Assumption 1(a), 2, 3(b) and 4的前提下。令<span
-class="math inline">\(\alpha_{i}^{k}=\frac{1}{\sqrt{k}}=\alpha_{k}\)</span>。且<span
-class="math inline">\(0&lt;\lambda_i&lt;\frac{\sqrt{2}}{2}\)</span>，则<span
-class="math inline">\(\{q_t\}\)</span>收敛到0的速率为<span
-class="math inline">\(O(\frac{\ln t}{\sqrt{t}})\)</span>。 <span
-class="math display">\[
-q_t=\frac{\sum\limits_{k=1}^t\alpha_k\|x_k-x^*\|^2}{\sum\limits_{k=1}^t\alpha_k}
-\]</span> 证明：暂略</p>
 <h3 id="section-4-convergence-analysis-of-algorithm-2">Section 4:
 Convergence analysis of algorithm 2</h3>
 <p>对于之前的algorithm 2中的公式(4a) - (4c)，用矩阵表示如下： <span
@@ -975,6 +975,58 @@ C1-C3。则<span
 class="math inline">\(\lim_{k\rightarrow\infty}\epsilon_{i}^{k}=0\)</span>，且
 $_{k=1}<sup>{}<em>{k}||</em>{i}</sup>{k}||&lt;$</p>
 <p>证明：</p>
+<p>由于上面的Note存在，所以Lemma 5的结论可以直接用于Lemma 8的证明。</p>
+<p>先证第一个：</p>
+<p>因为<span class="math inline">\(\phi_i(x_i)\)</span>是L2-Lipschitz
+continuous，所以<span class="math inline">\(\|\epsilon_{i}^{k}\|\le
+L_{2}\|x_{i}^{k+1}-x_{i}^{k}\|\)</span></p>
+<p>而且由Lemma 5(b)知：<span
+class="math inline">\(\lim_{k\to\infty}\|x_{i}^{k+1}-x_{i}^{k}\|=0\)</span></p>
+<p>所以<span
+class="math inline">\(\lim_{k\to\infty}\epsilon_{i}^{k}=0\)</span></p>
+<p>再证第二个：</p>
+<p>由Lemma 5(a)知：<span
+class="math inline">\(\left\|x_i^{k+1}-x_i^k\right\|\leq
+M\sum_{s=1}^k\overline{\lambda}^{k-s}\overline{\alpha}_s\)</span></p>
+<p>所以：<span class="math inline">\(\overline{\alpha}_k||\epsilon_i^k||
+\le
+\overline{\alpha}_{k}L_{2}\tilde{M}\sum_{s=1}^{k}\overline{\lambda}^{k-s}\overline{\alpha}_{s}
+\le
+L_{2}\tilde{M}\sum_{s=1}^{k}\overline{\lambda}^{k-s}\overline{\alpha}_{s}^{2}\)</span></p>
+<p>又根据[31 Lemma 3.1(b)]，可得到：<span
+class="math inline">\(\sum_{k=1}^{\infty}\overline{\alpha}_{k}||\epsilon_{i}^{k}||\leq
+L_{2}\tilde{M}\sum_{k=1}^{\infty}\sum_{s=1}^{k}\overline{\lambda}^{k-s}\overline{\alpha}_{s}^{2}&lt;\infty\)</span></p>
+<blockquote>
+<p>Note：通过Lemma 8证明的这两个结论，通过[17 Lemma
+1]，可以进一步证明出：</p>
+<p>$<em>{k}|z_i^{k+1}-|=0,</em>{k=1}^{}_k|z_i^{k+1}-|&lt;$</p>
+<p>因为<span
+class="math inline">\(1_{N}^{T}\tilde{\sigma}_{k}\)</span>就是<span
+class="math inline">\(\sigma\left(x_{k}\right)\)</span></p>
+<p>所以<span
+class="math inline">\(\sum_{k=1}^{\infty}\overline{\alpha}_{k}\left\Vert
+Nz_{i}^{k+1}-\sigma(x_{k})\right\Vert &lt; \infty\)</span></p>
+<p>上面这个公式在algorithm 2的收敛分析中有作用。</p>
+</blockquote>
+<h4 id="theorem-3">4-2: Theorem 3</h4>
+<h4 id="theorem-4">4-3: Theorem 4</h4>
+<p>定理：在Assumptions 1(b), 2, 3(b), 4 are satisfied 的前提下，令<span
+class="math inline">\(\alpha_{i}^{k}=\frac{1}{\sqrt{k}}=\alpha_{k}\)</span>，且<span
+class="math inline">\(0 &lt; \lambda_i &lt;
+\frac{\sqrt{2}}{2}\)</span>。则<span
+class="math inline">\(\{q_t\}\)</span>收敛到0的速率为<span
+class="math inline">\(O(\frac{\ln t}{\sqrt{t}})\)</span> <span
+class="math display">\[
+q_t=\frac{\sum\limits_{k=1}^t\alpha_k\|x_k-x^*\|^2}{\sum\limits_{k=1}^t\alpha_k}
+\]</span> 证明：需要参考[17 Corollary 3]和Theorem 2的证明。</p>
+<blockquote>
+<p>Note：如果<span
+class="math inline">\(\Gamma(x)\)</span>是强单调且步长满足<span
+class="math inline">\(\alpha_i^k=\frac1{\sqrt{k}}\)</span>，则可分析algorithm
+2的收敛速度。结论也是<span class="math inline">\(x_k\)</span>收敛到<span
+class="math inline">\(x^*\)</span>的速率与<span
+class="math inline">\(\{q_t\}\)</span>收敛到0的速率相同。</p>
+</blockquote>
 <hr />
 <h3 id="formulas">Formulas</h3>
 <p><span class="math inline">\(\sigma(x)=\sum_{j=1}^{N}\phi_{j}(x_j)
@@ -1168,9 +1220,9 @@ knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a cl
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
 Convergence analysis of algorithm 1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-1"><span class="nav-text">3-1: Theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#preliminary-analysis-about-algorithm-1"><span class="nav-text">3-2: Preliminary
-analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-3: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-4"><span class="nav-text">Lemma 4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-5"><span class="nav-text">Lemma 5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-6"><span class="nav-text">Lemma 6</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-4: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-5: Convergence rate
-analysis of algorithm 1</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#theorem-2"><span class="nav-text">Theorem 2</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-4-convergence-analysis-of-algorithm-2"><span class="nav-text">Section 4:
-Convergence analysis of algorithm 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas-1"><span class="nav-text">4-1: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-7"><span class="nav-text">Lemma 7</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-8"><span class="nav-text">Lemma 8</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formulas"><span class="nav-text">Formulas</span></a></li></ol></div>
+analysis about algorithm 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas"><span class="nav-text">3-3: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-1"><span class="nav-text">Lemma 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-2"><span class="nav-text">Lemma 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-3"><span class="nav-text">Lemma 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-4"><span class="nav-text">Lemma 4</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-5"><span class="nav-text">Lemma 5</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-6"><span class="nav-text">Lemma 6</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#proof-of-theorem-1"><span class="nav-text">3-4: Proof of theorem 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-2"><span class="nav-text">3-5: Theorem 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#convergence-rate-analysis-of-algorithm-1"><span class="nav-text">3-6: Convergence rate
+analysis of algorithm 1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-4-convergence-analysis-of-algorithm-2"><span class="nav-text">Section 4:
+Convergence analysis of algorithm 2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#lemmas-1"><span class="nav-text">4-1: Lemmas</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-7"><span class="nav-text">Lemma 7</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#lemma-8"><span class="nav-text">Lemma 8</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-3"><span class="nav-text">4-2: Theorem 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#theorem-4"><span class="nav-text">4-3: Theorem 4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#formulas"><span class="nav-text">Formulas</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
