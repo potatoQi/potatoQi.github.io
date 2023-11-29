@@ -48,7 +48,7 @@
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/16.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/17.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-11-29T12:15:56.610Z">
+<meta property="article:modified_time" content="2023-11-29T12:22:51.212Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
@@ -247,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-29 20:15:56" itemprop="dateModified" datetime="2023-11-29T20:15:56+08:00">2023-11-29</time>
+                <time title="修改时间：2023-11-29 20:22:51" itemprop="dateModified" datetime="2023-11-29T20:22:51+08:00">2023-11-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,7 +279,7 @@
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>22 分钟</span>
+              <span>23 分钟</span>
             </span>
 
         </div>
@@ -932,14 +932,11 @@ class="math inline">\(\|G_{i}(x_{i}^{k},Nz_{i}^{k+1})\|\leq\tilde{M}\)</span></p
 class="math inline">\(\left\|G_i\left(x_i^k,\sigma(x_k)\right)\right\|\leq
 M_1\)</span>，所以<span
 class="math inline">\(\|G_{i}(x_{i}^{k},\sigma(x_{k}))\|\leq\tilde{M}\)</span>就不用证了。主要证后面那个。</p>
-$
-<span
-class="math display">\[\begin{Vmatrix}G_i(x_i^k,Nz_i^{k+1})\end{Vmatrix}\]</span>
-
-<span
-class="math display">\[\begin{Vmatrix}G_i(x_i^k,Nz_i^{k+1})-G_i(x_i^k,1_N^T\tilde{\sigma}_k)\end{Vmatrix}\]</span>
-<p>+|G_{i}(x_{i}<sup>{k},1_{N}</sup>{T}<em>{k})| \
-L</em>{1}Nz_{i}<sup>{k+1}-1_{N}</sup>{T}<em>{k}+G</em>{i}(x_{i}<sup>{k},1_{N}</sup>{T}_{k})$</p>
+<p><span
+class="math display">\[\begin{Vmatrix}G_i(x_i^k,Nz_i^{k+1})\end{Vmatrix}\le\begin{Vmatrix}G_i(x_i^k,Nz_i^{k+1})-G_i(x_i^k,1_N^T\tilde{\sigma}_k)\end{Vmatrix}+\left\|G_{i}(x_{i}^{k},1_{N}^{T}\tilde{\sigma}_{k})\right\|
+\\ \qquad \le L_{1}\left\Vert
+Nz_{i}^{k+1}-1_{N}^{T}\tilde{\sigma}_{k}\right\Vert+\left\Vert
+G_{i}(x_{i}^{k},1_{N}^{T}\tilde{\sigma}_{k})\right\Vert \]</span></p>
 <p>显然，<span
 class="math inline">\(\|G_{i}(x_{i}^{k},1_{N}^{T}\tilde{\sigma}_{k})\|\)</span>就是<span
 class="math inline">\(\|G_i(x_i^k,\sigma(x_k))\|\)</span>，所以其有界。</p>
@@ -953,8 +950,10 @@ class="math inline">\(\left|z_{i}^{k+1}-\frac{1_{N}^{T}\tilde{\sigma}_{k}}{N}\ri
 N\|\epsilon_{s}\|=N\|\Phi_{s+1}-\Phi_{s}\|\leq2NC\)</span></p>
 <p>所以不难证出：<span
 class="math inline">\(L_{1}\left\|Nz_{i}^{k+1}-1_{N}^{T}\tilde{\sigma}_{k}\right\|\)</span>有界</p>
-<p>所以$G_i(x_i<sup>k,Nz_i</sup>{k+1})<span
-class="math inline">\(有界，即\)</span>G_i(x_i<sup>k,Nz_i</sup>{k+1})_2$</p>
+<p>所以<span class="math inline">\(\|
+G_i(x_i^k,Nz_i^{k+1})\|\)</span>有界，即<span
+class="math inline">\(\parallel G_i(x_i^k,Nz_i^{k+1})\parallel \le
+\tilde{M}_2\)</span></p>
 <p>令<span class="math inline">\(\tilde{M} = max (M_1,
 \tilde{M}_2)\)</span>，得证。</p>
 <blockquote>
@@ -973,7 +972,8 @@ satisfies <span class="math inline">\(0 &lt; \overline{\lambda} &lt;
 class="math inline">\(\alpha_i^k\)</span> satisfies conditions
 C1-C3。则<span
 class="math inline">\(\lim_{k\rightarrow\infty}\epsilon_{i}^{k}=0\)</span>，且
-$_{k=1}<sup>{}<em>{k}||</em>{i}</sup>{k}||&lt;$</p>
+<span
+class="math inline">\(\sum_{k=1}^\infty\overline{\alpha}_k\|\epsilon_i^k\|&lt;\infty\)</span></p>
 <p>证明：</p>
 <p>由于上面的Note存在，所以Lemma 5的结论可以直接用于Lemma 8的证明。</p>
 <p>先证第一个：</p>
@@ -999,7 +999,8 @@ L_{2}\tilde{M}\sum_{k=1}^{\infty}\sum_{s=1}^{k}\overline{\lambda}^{k-s}\overline
 <blockquote>
 <p>Note：通过Lemma 8证明的这两个结论，通过[17 Lemma
 1]，可以进一步证明出：</p>
-<p>$<em>{k}|z_i^{k+1}-|=0,</em>{k=1}^{}_k|z_i^{k+1}-|&lt;$</p>
+<p><span
+class="math inline">\(\lim\limits_{k\to\infty}\left\|z_i^{k+1}-\frac{1_N^T\tilde{\sigma}_k}{N}\right\|=0,\sum\limits_{k=1}^{\infty}\overline{\alpha}_k\left\|z_i^{k+1}-\frac{1_N^T\tilde{\sigma}_k}{N}\right\|&lt;\infty\)</span></p>
 <p>因为<span
 class="math inline">\(1_{N}^{T}\tilde{\sigma}_{k}\)</span>就是<span
 class="math inline">\(\sigma\left(x_{k}\right)\)</span></p>
