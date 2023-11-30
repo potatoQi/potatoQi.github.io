@@ -50,7 +50,7 @@
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/18.png">
 <meta property="og:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/19.png">
 <meta property="article:published_time" content="2023-10-16T06:45:10.000Z">
-<meta property="article:modified_time" content="2023-11-29T14:55:09.507Z">
+<meta property="article:modified_time" content="2023-11-30T16:37:58.442Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2023/10/16/Distributed-Nash-Equilibrium-Seeking-for/1.png">
@@ -249,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-11-29 22:55:09" itemprop="dateModified" datetime="2023-11-29T22:55:09+08:00">2023-11-29</time>
+                <time title="修改时间：2023-12-01 00:37:58" itemprop="dateModified" datetime="2023-12-01T00:37:58+08:00">2023-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,14 +274,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>25k</span>
+              <span>27k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>23 分钟</span>
+              <span>25 分钟</span>
             </span>
 
         </div>
@@ -304,11 +304,17 @@ Games With Directed Communication Graphs</p>
 <p>本周问题：</p>
 <ol type="1">
 <li>Theorem 1推导倒数第二页问号处</li>
-<li>Algorithm 收敛分析图片中反例</li>
-<li>Theorem 2证明没看</li>
+<li>Algorithm
+收敛分析图片中反例（也就是收敛速度跟{q_t}一样是如何证明的？）</li>
+<li>Algorithm 2是如何体现在时变图上有效的？我觉得跟Algorithm
+1一样，它同样用到了全局信息A</li>
+<li>为什么Algorithm 1、2要这么设计？</li>
 </ol>
 <span id="more"></span>
+<h3 id="personal-summary">Personal summary</h3>
+<h4 id="分布式发展历史">0-1: 分布式发展历史</h4>
 <p>这篇文章是我在分布式领域看的第一篇文章，所以在这里写点关于分布式算法优化领域的发展过程：</p>
+<blockquote>
 <p>1960s，Everett Dantzig, Wolfe and Benders
 思考了关于严格凸问题的拉格朗日松弛和线性规范的分解方法。（分解方法是为了将大型优化问题分解为小问题）</p>
 <p>后来，拉格朗日松弛和Hestenes, Powell and
@@ -316,6 +322,100 @@ Miele发展的增广拉格朗日技术相结合，解决了一些凸但非严格
 <p>2000年初，出现了为了适应大规模数据的分布式算法，例如SGD（分布式随机梯度下降）。</p>
 <p>2010年初，为了解决大规模机器学习问题，出现了ADMM（交替方向乘子法）等算法。</p>
 <p>至今，分布式优化算法在算法效率、鲁棒性、以及适应动态和不确定环境方面取得了显著进展。出现了更加高效的分布式在线优化方法，以及能够适应网络拓扑变化和通信不确定性的算法。</p>
+</blockquote>
+<h4 id="文章总结">0-2: 文章总结</h4>
+<p>本文就是研究了一种特殊的博弈——聚合博弈。</p>
+<p>每个玩家的花费不仅跟自身动作有关，还跟其他人的动作有关。</p>
+<p>本论文设计了两种算法，在作者规定的特定条件下，可以使得每个人的花费尽可能低。分别用于固定有向图和时变有向图。</p>
+<p>文章内容为：算法介绍、算法的正确性证明、收敛速度分析、在PHEVs上的应用。</p>
+<h5 id="算法介绍">算法介绍</h5>
+<p><strong>Algorithm 1</strong> <span class="math display">\[
+\begin{gathered}
+x_i^0=x_i^1\in\Omega_i,v_i^1=e_i,\tilde{\sigma}_i^1=\phi_i(x_i^1) \\
+x_{k+1}=P_{\Omega_{i}}[x_{k}-\alpha_{k}G_{i}(x_{k},\tilde{\sigma}_{k})+\lambda_{i}(x_{k}-x_{k-1})]
+\\
+V_{k+1}=AV_k \\
+\tilde{\sigma}_{k+1}=A\tilde{\sigma}_k+\hat{V}_{k+1}^{-1}\Phi_{k+1}-\hat{V}_{k}^{-1}\Phi_{k}
+\end{gathered}
+\]</span></p>
+<p>目的就是为了把<span class="math inline">\(x_k\)</span>收敛到<span
+class="math inline">\(x^*\)</span>。使得玩家动作为<span
+class="math inline">\(x^*\)</span>时，每个玩家的花费最少。</p>
+<p>因为动作<span class="math inline">\(x_i\)</span>会对花费<span
+class="math inline">\(J_i\)</span>产生影响，故定义<span
+class="math inline">\(G_i\)</span>为<span
+class="math inline">\(J_i\)</span>对<span
+class="math inline">\(x_i\)</span>求导，用来评估<span
+class="math inline">\(x_i\)</span>对<span
+class="math inline">\(J_i\)</span>产生的影响。</p>
+<p>那么<span class="math inline">\(x_i^{k+1}\)</span>就可以通过<span
+class="math inline">\(x_i^k\)</span>和<span
+class="math inline">\(G_i(x_i^k,
+\tilde{\sigma}_i^k)\)</span>来更新。</p>
+<p><span class="math inline">\(\tilde{\sigma}_i^k\)</span>是什么？</p>
+<p>需要注意的是，花费函数<span
+class="math inline">\(J_i\)</span>除了要知道<span
+class="math inline">\(i\)</span>玩家的动作<span
+class="math inline">\(x_i\)</span>，还需要知道所有玩家的输出函数<span
+class="math inline">\(\phi_i\)</span>。所以定义<span
+class="math inline">\(\sigma(x)\)</span>为所有玩家的输出函数之和。但是因为每个玩家没有上帝视角，所以<span
+class="math inline">\(\sigma(x)\)</span>是未知的，所以我们可以用<span
+class="math inline">\(\tilde\sigma_i\)</span>来代替<span
+class="math inline">\(\sigma(x)\)</span>。即每个玩家都有一个对<span
+class="math inline">\(\sigma(x)\)</span>的评估函数<span
+class="math inline">\(\tilde\sigma_i\)</span>（这个评估函数也是需要迭代更新的，最终要收敛于<span
+class="math inline">\(\sigma(x)\)</span>）</p>
+<p>至于<span
+class="math inline">\(V_k\)</span>，个人目前觉得是一个辅助矩阵，在迭代更新<span
+class="math inline">\(\tilde\sigma_k\)</span>时会用到。</p>
+<p>至于<span
+class="math inline">\(\lambda_i\)</span>，是动量项，加速收敛用的。</p>
+<p><strong>Algorithm 2</strong> <span class="math display">\[
+\begin{gathered}
+\\
+x_i^0=x_i^1\in\Omega_i,y_i^1=1,\tilde{\sigma}_i^1=\phi_i(x_i^1) \\
+w_{k+1}=A\left(k\right)\tilde{\sigma}_{k} \\
+y_{k+1}=A\left(k\right)y_{k} \\
+z_i^{k+1}=\frac{w_i^{k+1}}{y_i^{k+1}} \\
+x_{k+1}=P_{\Omega_i}\left[x_k-\alpha_kG_i(x_k,Nz_{k+1})+\lambda_i(x_k-x_{k-1})\right]
+\\
+\begin{aligned}\tilde{\sigma}_{k+1}=w_{k+1}+\phi_i\left(x_{k+1}\right)-\phi_i\left(x_k\right)\end{aligned}
+\end{gathered}
+\]</span> 目的同样是为了把<span
+class="math inline">\(x_k\)</span>收敛到<span
+class="math inline">\(x^*\)</span>。使得玩家动作为<span
+class="math inline">\(x^*\)</span>时，每个玩家的花费最少。</p>
+<p>整体思路跟Algorithm 1类似，通过<span
+class="math inline">\(x_i^k\)</span>和<span
+class="math inline">\(G_i(x_i^k, \tilde{\sigma}_i^k)\)</span>来更新<span
+class="math inline">\(x_i^{k+1}\)</span>。</p>
+<p>但是注意，Algorithm 2没有直接将<span
+class="math inline">\(\tilde{\sigma}_i^k\)</span>带入<span
+class="math inline">\(G_i\)</span>中。而是带入了<span
+class="math inline">\(Nz_{k+1}\)</span>，<span
+class="math inline">\(z_{k+1}\)</span>通过<span
+class="math inline">\(w_{k+1}, y_{k+1}\)</span>更新，<span
+class="math inline">\(w_{k+1}\)</span>又通过<span
+class="math inline">\(\tilde{\sigma}_k\)</span>更新。所以相当于多了<span
+class="math inline">\(w, y, z\)</span>三个中间辅助矩阵。</p>
+<h5 id="算法正确性证明">算法正确性证明</h5>
+<p>本文大篇幅都是在证这个。</p>
+<p>本质就是证<span class="math inline">\(x_k\)</span>最终收敛于<span
+class="math inline">\(x^*\)</span>。即<span class="math inline">\(\|x_k
+- x^*\|^2 \rightarrow 0\)</span>。</p>
+<p>具体内容过多不好总结 ，具体看下文证明。</p>
+<p>证明过程主要用到了：矩阵范数性质、范数的放缩、Cauchy-Schwarz。</p>
+<h5 id="收敛速度分析">收敛速度分析</h5>
+<p>在作者规定的更多特定条件下（条件比它提出的俩算法更严格），Algorithm
+1、2的收敛速度跟<span
+class="math inline">\(\{q_t\}\)</span>收敛到0的速度一样： <span
+class="math display">\[
+q_t=\frac{\sum\limits_{k=1}^t\alpha_k\|x_k-x^*\|^2}{\sum\limits_{k=1}^t\alpha_k}
+\]</span> 而<span
+class="math inline">\(\{q_t\}\)</span>收敛到0的速度经证明为：<span
+class="math inline">\(O(\frac{\ln t}{\sqrt{t}})\)</span></p>
+<h5 id="在phevs上的应用">在PHEVs上的应用</h5>
+<hr />
 <h3 id="abstract">Abstract</h3>
 <p>在聚合博弈中寻找分布式纳什均衡的关键点就是聚合博弈采取什么样的图结构。</p>
 <p>若采取无向图或者权衡平衡图结构，则这个问题已经被前人解决。</p>
@@ -325,6 +425,7 @@ Miele发展的增广拉格朗日技术相结合，解决了一些凸但非严格
 <p>创新点是受凸优化中重球法的启发，向玩家策略的更新规范中引入了“动量项”，使得加速了算法寻找NE的收敛速度。</p>
 <p>对于强连通固定图和b强连通时变图，从理论上证明，如果代价函数和参与人的集合满足一定条件，在步长减小的情况下，参与人的行动将收敛到集合博弈的NE上。</p>
 <p>本文最后将该算法运用于插电式混合动力汽车的能耗控制，检验了算法的正确性。</p>
+<hr />
 <h3 id="section-1-introduction">Section 1: Introduction</h3>
 <h4 id="研究背景">1-1: 研究背景</h4>
 <ul>
@@ -411,6 +512,7 @@ class="math inline">\([x]_i\)</span>：x这个n维向量中的第i项</li>
 <li><span
 class="math inline">\(H_{ij}\)</span>：矩阵H的i行j列那个元素</li>
 </ul>
+<hr />
 <h3 id="section-2-preliminary-knowledge">Section 2: Preliminary
 knowledge</h3>
 <h4 id="图理论">2-1: 图理论</h4>
@@ -646,6 +748,7 @@ class="math inline">\(a_{ij}&gt;0\)</span>"改为“若<span
 class="math inline">\((j, i) \in \varepsilon\)</span>则<span
 class="math inline">\(a_{ij}=\frac{1}{d_j^k}\)</span>”，则(3c)与(4e)等价</p>
 </blockquote>
+<hr />
 <h3 id="section-3-convergence-analysis-of-algorithm-1">Section 3:
 Convergence analysis of algorithm 1</h3>
 <h4 id="theorem-1">3-1: Theorem 1</h4>
@@ -897,6 +1000,7 @@ class="math inline">\(\alpha_{i}^{k}=\frac{1}{\sqrt{k}}\)</span>。则可以分�
 class="math inline">\(x^*\)</span>的速率与<span
 class="math inline">\(q_t\)</span>收敛到0的速率相同。证明如下：</p>
 <p><img src="17.png" /></p>
+<hr />
 <h3 id="section-4-convergence-analysis-of-algorithm-2">Section 4:
 Convergence analysis of algorithm 2</h3>
 <p>对于之前的algorithm 2中的公式(4a) - (4c)，用矩阵表示如下： <span
@@ -1226,7 +1330,7 @@ L_{2}\sqrt{N}M\beta_{l}+2dc\rho_{2}C\varrho^{2}\gamma\theta^{l}) \qquad
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1-introduction"><span class="nav-text">Section 1: Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="nav-text">1-1: 研究背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E8%87%B4%E7%9B%AE%E5%BD%95-%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F"><span class="nav-text">1-2: 大致目录 &amp; 基础公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2-preliminary-knowledge"><span class="nav-text">Section 2: Preliminary
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#personal-summary"><span class="nav-text">Personal summary</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%86%E5%B8%83%E5%BC%8F%E5%8F%91%E5%B1%95%E5%8E%86%E5%8F%B2"><span class="nav-text">0-1: 分布式发展历史</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E7%AB%A0%E6%80%BB%E7%BB%93"><span class="nav-text">0-2: 文章总结</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E4%BB%8B%E7%BB%8D"><span class="nav-text">算法介绍</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%AD%A3%E7%A1%AE%E6%80%A7%E8%AF%81%E6%98%8E"><span class="nav-text">算法正确性证明</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%94%B6%E6%95%9B%E9%80%9F%E5%BA%A6%E5%88%86%E6%9E%90"><span class="nav-text">收敛速度分析</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%9C%A8phevs%E4%B8%8A%E7%9A%84%E5%BA%94%E7%94%A8"><span class="nav-text">在PHEVs上的应用</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-1-introduction"><span class="nav-text">Section 1: Introduction</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="nav-text">1-1: 研究背景</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%A7%E8%87%B4%E7%9B%AE%E5%BD%95-%E5%9F%BA%E7%A1%80%E5%85%AC%E5%BC%8F"><span class="nav-text">1-2: 大致目录 &amp; 基础公式</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-2-preliminary-knowledge"><span class="nav-text">Section 2: Preliminary
 knowledge</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9B%BE%E7%90%86%E8%AE%BA"><span class="nav-text">2-1: 图理论</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%97%AE%E9%A2%98%E5%BB%BA%E6%A8%A1"><span class="nav-text">2-2: 问题建模</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-1"><span class="nav-text">Assumption 1</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-2"><span class="nav-text">Assumption 2</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-3"><span class="nav-text">Assumption 3</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#assumption-4"><span class="nav-text">Assumption 4</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E5%BC%95%E5%85%A5"><span class="nav-text">2-3: 算法引入</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-1-ne-seeking-with-row-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 1 NE Seeking With Row-Stochastic Adjacency Matrix</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#algorithm-2-ne-seeking-with-column-stochastic-adjacency-matrix"><span class="nav-text">Algorithm
 2 NE Seeking With Column-Stochastic Adjacency Matrix</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#section-3-convergence-analysis-of-algorithm-1"><span class="nav-text">Section 3:
