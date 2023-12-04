@@ -23,19 +23,19 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="使用GitHub + Hexo搭建的本博客。 教程参考从零开始搭建个人博客（超详细） - 知乎 (zhihu.com)。 上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。">
+  <meta name="description" content="中文翻译是：非协调步长行随机优化 个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。">
 <meta property="og:type" content="article">
-<meta property="og:title" content="个人博客搭建说明">
-<meta property="og:url" content="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/index.html">
+<meta property="og:title" content="FROST—Fast row-stochastic optimization with uncoordinated step-sizes">
+<meta property="og:url" content="http://example.com/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="使用GitHub + Hexo搭建的本博客。 教程参考从零开始搭建个人博客（超详细） - 知乎 (zhihu.com)。 上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。">
+<meta property="og:description" content="中文翻译是：非协调步长行随机优化 个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2023-10-03T05:32:44.000Z">
-<meta property="article:modified_time" content="2023-10-05T05:01:08.392Z">
+<meta property="article:published_time" content="2023-12-04T11:49:40.000Z">
+<meta property="article:modified_time" content="2023-12-04T15:55:59.831Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/">
+<link rel="canonical" href="http://example.com/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/">
 
 
 <script id="page-configurations">
@@ -48,7 +48,7 @@
   };
 </script>
 
-  <title>个人博客搭建说明 | Error_666</title>
+  <title>FROST—Fast row-stochastic optimization with uncoordinated step-sizes | Error_666</title>
   
 
 
@@ -199,7 +199,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -212,7 +212,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          个人博客搭建说明
+          FROST—Fast row-stochastic optimization with uncoordinated step-sizes
         </h1>
 
         <div class="post-meta">
@@ -221,23 +221,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2023-10-03 13:32:44" itemprop="dateCreated datePublished" datetime="2023-10-03T13:32:44+08:00">2023-10-03</time>
+              <time title="创建时间：2023-12-04 19:49:40 / 修改时间：23:55:59" itemprop="dateCreated datePublished" datetime="2023-12-04T19:49:40+08:00">2023-12-04</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-10-05 13:01:08" itemprop="dateModified" datetime="2023-10-05T13:01:08+08:00">2023-10-05</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                  <a href="/categories/%E8%AE%BA%E6%96%87/" itemprop="url" rel="index"><span itemprop="name">论文</span></a>
                 </span>
             </span>
 
@@ -254,14 +248,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>418</span>
+              <span>5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -273,30 +267,188 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>使用GitHub + Hexo搭建的本博客。</p>
-<p>教程参考<a
-target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细）
-- 知乎 (zhihu.com)</a>。</p>
-<p>上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。</p>
+        <p>中文翻译是：非协调步长行随机优化</p>
+<p>个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。</p>
 <span id="more"></span>
-<p>我大致总结一下流程：</p>
 <ol type="1">
-<li>注册GitHub</li>
-<li>下载Git并将Git绑定到GitHub（使用token）</li>
-<li>购买域名</li>
-<li>安装node.js并配置环境变量（建议全程使用cmd管理员而不是git
-bash）</li>
-<li>安装hexo</li>
-<li>解析域名</li>
-<li>设置并美化主题</li>
+<li>对于列随机矩阵，为什么不能采用梯度下降方法去更新动作，而是在推和协议的基础上不断改进？</li>
+<li>对于行随机矩阵，为什么不能跟列随机矩阵一样，在推和共识的基础上改动？</li>
 </ol>
-<p>另外，博客首页的头像是用的GitHub的头像链接，另外我不打算采用图床，因为怕翻车。所以文章里的全部图片都是存储在本地并push到GitHub中，若加载不出或速度慢可以尝试挂个梯子。</p>
-<p>域名第一年花了9块，之后续费好像是20多块一年。在阿里云买的。</p>
-<p>看板娘参考了两篇文章：<a
-target="_blank" rel="noopener" href="https://github.com/stevenjoezhang/live2d-widget">设置看板娘</a>,
-<a
-target="_blank" rel="noopener" href="https://www.cnblogs.com/c10udlnk/p/14727173.html">个性化配置看板娘</a>。</p>
-<p>但是live2d的模型默认的这几个我不是很熟悉，以后有空了想换成我自己喜欢的人物角色。</p>
+<hr />
+<h3 id="abstract">Abstract</h3>
+<p>本文讨论了构造不出双随机权值的有向图上的分布优化问题。</p>
+<p>现有算法大多采用推和共识算法，利用列随机权值来克服这一问题。列随机权值的形成要求每个代理(至少)知道其输出度，这在诸如基于广播的通信协议中可能是不切实际的。</p>
+<p>与此相反，我们描述了一种适用于不要求出度知识的有向图的快速行随机优化算法。</p>
+<p>该方法的实现很简单，因为每个代理在本地为传入的信息分配权重，并在本地选择合适的步长。我们证明了对于光滑且强凸函数，在最大步长为正且足够小的前提下，算法线性收敛到最优解。</p>
+<hr />
+<h3 id="introduction">1. Introduction</h3>
+<p>第2节阐述了问题和假设。第3节回顾了使用双随机或列随机权值的相关算法，并展示了这些类型算法分析背后的直觉。在第4节中，我们提供了本文提出的主要算法FROST。在第5节中，我们发展了FROST的收敛性质。第6节给出了仿真结果，第7节总结了本文。</p>
+<p>下面是Notation：</p>
+<p>对于行随机矩阵<span
+class="math inline">\(\underline{A}\)</span>，<span
+class="math inline">\(\pi_r,
+1_n\)</span>分别是其左右Perron特征向量，满足<span
+class="math inline">\(\pi_r^T1_n = 1\)</span></p>
+<p>对于列随机矩阵<span class="math inline">\(\underline{B}\)</span>
+，<span class="math inline">\(1_n,
+\pi_c\)</span>分别是其左右Perron特征向量，满足<span
+class="math inline">\(1_n^T\pi_c = 1\)</span></p>
+<p><span class="math inline">\(\|\|_F\)</span>是Frobenius范数，<span
+class="math inline">\(\|\|_2\)</span>是欧几里得范数，<span
+class="math inline">\(\|\|\)</span>也是一个范数，具体含义看具体那部分的文章</p>
+<span class="math inline">\({\otimes}\)</span>表示Kronecker积。即： $$ A
+=
+<span class="math display">\[\begin{pmatrix} a_{11} &amp; a_{12} &amp;
+\cdots &amp; a_{1n} \\ a_{21} &amp; a_{22} &amp; \cdots &amp; a_{2n} \\
+\vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1} &amp; a_{m2}
+&amp; \cdots &amp; a_{mn} \end{pmatrix}\]</span>
+<p>\</p>
+B =
+<span class="math display">\[\begin{pmatrix} b_{11} &amp; b_{12} &amp;
+\cdots &amp; b_{1q} \\ b_{21} &amp; b_{22} &amp; \cdots &amp; b_{2q}
+\\     \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ b_{p1} &amp;
+b_{p2} &amp; \cdots &amp; b_{pq} \end{pmatrix}\]</span>
+<p>\</p>
+A B =
+<span class="math display">\[\begin{pmatrix} a_{11}B &amp; a_{12}B &amp;
+\cdots &amp; a_{1n}B \\ a_{21}B &amp; a_{22}B &amp; \cdots &amp; a_{2n}B
+\\ \vdots &amp; \vdots &amp; \ddots &amp; \vdots \\ a_{m1}B &amp;
+a_{m2}B &amp; \cdots &amp; a_{mn}B \end{pmatrix}\]</span>
+<p>$$</p>
+<hr />
+<h3 id="problem-formulation">2. Problem formulation</h3>
+<p>如果 j 连向 i ，则$(i, h) , $另外，目标是最小化总花费，即： <span
+class="math display">\[
+\min_{\mathbf{x}}F(\mathbf{x})\triangleq\frac{1}{n}\sum_{i=1}^{n}f_{i}(\mathbf{x})
+\]</span></p>
+<h4 id="assumption-1">Assumption 1</h4>
+<p>图G是无向联通图。</p>
+<h4 id="assumption-2">Assumption 2</h4>
+<p>图G是有向强连通图。</p>
+<h4 id="assumption-3">Assumption 3</h4>
+<p><span
+class="math inline">\(f_i\)</span>是凸函数，且具有有界次梯度。</p>
+<h4 id="assumption-4">Assumption 4</h4>
+<p><span
+class="math inline">\(f_i\)</span>是光滑，且强凸的。（光滑定义：具有连续的导数）</p>
+<p>即满足以下式子： $$ |f_i()-f_i()|_2l|-|_2 \</p>
+<p>f_i()f_i()+f_i()^(-)+|-|_2^2 $$
+第一个就是导数满足Lipschitz连续，所以<span
+class="math inline">\(f_i\)</span>肯定光滑。</p>
+<p>第二个就是凸函数的定义，因为有不等号右边最后一项的存在，所以<span
+class="math inline">\(f_i\)</span>是个强凸函数。</p>
+<h4 id="assumption-5">Assumption 5</h4>
+<p>网络中的每个玩家都知道自己的编号。</p>
+<h4 id="assumption-6">Assumption 6</h4>
+<p>每个玩家知道它的出度。</p>
+<hr />
+<h3 id="related-work">3. Related work</h3>
+<h4 id="algorithms-using-doubly-stochastic-weighs">3.1 Algorithms using
+doubly-stochastic weighs</h4>
+<p>Distributed Gradient
+Descent(分布式梯度下降，DGD)是无向图上的一个解决算法。 <span
+class="math display">\[
+\mathbf{x}_{k+1}^i=\sum_{j=1}^nw_{ij}\mathbf{x}_k^j-\alpha_k\nabla
+f_i\left(\mathbf{x}_k^i\right)
+\]</span> <span class="math inline">\(W\)</span>是双随机矩阵。</p>
+<p>可以看出，这种就是最简单的迭代方法。跟梯度下降的最基本形式一样。</p>
+<p>在Assumption 1, 3, 6前提下，该算法收敛速度为<span
+class="math inline">\(O(\frac{log k}{\sqrt{k}})\)</span>。</p>
+<p>之所以慢是因为学习率递减，如果把学习率改为固定的，则会更快的收敛到<span
+class="math inline">\(x^*\)</span>的附近。</p>
+<p>为了加快，就有了下面这个方法： <span class="math display">\[
+\begin{aligned}
+&amp;\mathbf{x}_{k+1}^{i}
+=\sum_{j=1}^{n}w_{ij}\mathbf{x}_{k}^{j}-\alpha\mathbf{y}_{k}^{i}  \\
+&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}w_{ij}\mathbf{y}_{k}^{j}+\nabla
+f_{i}\left(\mathbf{x}_{k+1}^{i}\right)-\nabla
+f_{i}\left(\mathbf{x}_{k}^{i}\right)
+\end{aligned}
+\]</span>
+这是算法采用固定步长。另外，这个算法跟深度学习中的动量法很像，就是考虑历史梯度的“惯性”。</p>
+<p>但是上面这俩方法都不适用于有向图，因为他们需要双随机矩阵W。</p>
+<h4 id="algorithms-using-column-stochastic-weights">3.2 Algorithms using
+column-stochastic weights</h4>
+<h5 id="push-sum-consensus">3.2.1 Push-sum consensus</h5>
+<p>推和共识，就是一个用于列随机矩阵的迭代算法。通过迭代，<span
+class="math inline">\(x_k^i, v_k^i,
+z_k^i\)</span>都能收敛到特殊的值。具体看公式： <span
+class="math display">\[
+\begin{aligned}
+&amp;\nu_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\nu_{k}^{j}  \\
+&amp;\mathbf{x}_{k+1}^{i} =\sum_{j=1}^nb_{ij}\mathbf{x}_k^j  \\
+&amp;\mathbf{z}_{k+1}^{i} =\frac{\mathbf{x}_{k+1}^{i}}{\nu_{k+1}^{i}}
+\end{aligned}
+\]</span> <span
+class="math inline">\(\underline{B}\)</span>是列随机矩阵。</p>
+<p>可以被证明： $$ <em>{k}</em>{i}(k)=n[_{c}]_{i} \</p>
+<p><em>{k}</em>{i}(k)=[_{c}]<em>{i}</em>{i=1}^{n}<em>{i}(0) <span
+class="math display">\[
+所以：
+\]</span> </em>{k}<em>{k}^{i}=</em>{k}== $$
+个人感性理解：所谓共识，就是最后所有玩家的动作都变一样了。所谓推和，就是最后玩家收敛到所有玩家初始动作<strong>之和</strong>。</p>
+<h5 id="subgradient-push">3.2.2 Subgradient-push</h5>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\nu_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\nu_{k}^{j}  \\
+&amp;\mathbf{x}_{k+1}^{i}
+=\sum_{j=1}^{n}b_{ij}\mathbf{x}_{k}^{j}-\alpha_{k}\nabla
+f_{i}\left(\mathbf{z}_{k}^{i}\right)  \\
+&amp;\mathbf{z}_{k+1} =\frac{\mathbf{x}_{k+1}^{i}}{\nu_{k+1}^{i}},
+\end{aligned}
+\]</span></p>
+<p>这个算法个人感性理解为：推和共识 + 梯度下降（基础版）</p>
+<p>跟推和共识类似，只有第二行加了一个学习率和梯度（学习率跟DGD一样）。这会使得<span
+class="math inline">\(z_k^i\)</span>最终会趋于<span
+class="math inline">\(x*\)</span>。</p>
+<p>在满足Assumption 2, 3, 6条件下，该算法收敛速度为<span
+class="math inline">\(O(\frac{log k}{\sqrt{k}})\)</span>。</p>
+<h5 id="add-optpush-diging">3.2.3 ADD-OPT/Push-DIGing</h5>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\nu_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\nu_{k}^{j}  \\
+&amp;\mathbf{x}_{k+1}^{i}
+=\sum_{j=1}^{n}b_{ij}\mathbf{x}_{k}^{j}-\alpha\mathbf{y}_{k}^{i}  \\
+&amp;\mathbf{z}_{k+1}^{i}
+=\frac{\mathbf{x}_{k+1}^{i}}{\nu_{k+1}^{i}}  \\
+&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\mathbf{y}_{k}^{i}+\nabla
+f_{i}\left(\mathbf{z}_{k+1}^{i}\right)-\nabla
+f_{i}\left(\mathbf{z}_{k}^{i}\right)
+\end{aligned}
+\]</span></p>
+<p>这个算法个人感性理解为：推和共识 + 梯度下降（动量法加速）</p>
+<p>在满足Assumption 2, 4, 6条件下，收敛速度是线性的。</p>
+<h5 id="the-ab-algorithm">3.2.5 The AB algorithm</h5>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\mathbf{x}_{k+1}^{i}
+=\sum_{j=1}^{n}a_{ij}\mathbf{x}_{k}^{j}-\alpha\mathbf{y}_{k}^{i}  \\
+&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\mathbf{y}_{k}^{j}+\nabla
+f_{i}\left(\mathbf{x}_{k+1}^{i}\right)-\nabla
+f_{i}\left(\mathbf{x}_{k}^{i}\right)
+\end{aligned}
+\]</span></p>
+<p><span class="math inline">\(\underline{A}\)</span>是行随机矩阵，<span
+class="math inline">\(\underline{B}\)</span>是列随机矩阵。</p>
+<p>这个算法个人感性理解为：同时用俩随机矩阵消除不平衡影响从而可以使用梯度下降（动量法加速）</p>
+<hr />
+<h3 id="algorithms-using-row-stochastic-weights">4. Algorithms using
+row-stochastic weights</h3>
+<p>如果把双随机矩阵的梯度下降法拿来直接用，把双随机矩阵换成行随机矩阵，可以证明，最终所有玩家都会达成共识。但是这个共识不是最优解。</p>
+<h4 id="frost">4.1 FROST</h4>
+<p><span class="math display">\[
+\begin{aligned}
+&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}a_{ij}\mathbf{y}_{k}^{j}  \\
+&amp;\mathbf{x}_{k+1}^{i}
+=\sum_{j=1}^na_{ij}\mathbf{x}_{k}^j-\alpha_{i}\mathbf{z}_{k}^j  \\
+&amp;\mathbf{z}_{k+1}^{i}
+=\sum_{j=1}^{n}a_{ij}\mathbf{z}_{k}^{j}+\frac{\nabla
+f_{i}\left(\mathbf{x}_{k+1}^{i}\right)}{\left[\mathbf{y}_{k+1}^{i}\right]_{i}}-\frac{\nabla
+f_{i}\left(\mathbf{x}_{k}^{i}\right)}{\left[\mathbf{y}_{k}^{i}\right]_{i}}
+\end{aligned}
+\]</span></p>
+<p>这个算法个人感性理解为：就是把双随机矩阵的梯度下降（动量法加速）直接搬下来用。但是上面说了这样不会收敛到最优解。所以加了一个<span
+class="math inline">\(y_k^i\)</span>，在更新梯度z时除一下。这样就可以保证收敛到最优解了。</p>
 
     </div>
 
@@ -311,11 +463,11 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/c10udlnk/p/14727173
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/" rel="next" title="在VS Code中配置C/C++">
-      在VS Code中配置C/C++ <i class="fa fa-chevron-right"></i>
+    <a href="/2023/11/19/5-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89/" rel="prev" title="5. 凸函数的定义">
+      <i class="fa fa-chevron-left"></i> 5. 凸函数的定义
     </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -379,6 +531,10 @@ target="_blank" rel="noopener" href="https://www.cnblogs.com/c10udlnk/p/14727173
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#problem-formulation"><span class="nav-text">2. Problem formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-1"><span class="nav-text">Assumption 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-2"><span class="nav-text">Assumption 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-3"><span class="nav-text">Assumption 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-4"><span class="nav-text">Assumption 4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-5"><span class="nav-text">Assumption 5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-6"><span class="nav-text">Assumption 6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#related-work"><span class="nav-text">3. Related work</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#algorithms-using-doubly-stochastic-weighs"><span class="nav-text">3.1 Algorithms using
+doubly-stochastic weighs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#algorithms-using-column-stochastic-weights"><span class="nav-text">3.2 Algorithms using
+column-stochastic weights</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#push-sum-consensus"><span class="nav-text">3.2.1 Push-sum consensus</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#subgradient-push"><span class="nav-text">3.2.2 Subgradient-push</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#add-optpush-diging"><span class="nav-text">3.2.3 ADD-OPT&#x2F;Push-DIGing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-ab-algorithm"><span class="nav-text">3.2.5 The AB algorithm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#algorithms-using-row-stochastic-weights"><span class="nav-text">4. Algorithms using
+row-stochastic weights</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#frost"><span class="nav-text">4.1 FROST</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
