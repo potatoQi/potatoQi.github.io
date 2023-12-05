@@ -31,7 +31,7 @@
 <meta property="og:description" content="中文翻译是：非协调步长行随机优化 个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-12-04T11:49:40.000Z">
-<meta property="article:modified_time" content="2023-12-04T16:10:52.014Z">
+<meta property="article:modified_time" content="2023-12-05T16:12:57.096Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-05 00:10:52" itemprop="dateModified" datetime="2023-12-05T00:10:52+08:00">2023-12-05</time>
+                <time title="修改时间：2023-12-06 00:12:57" itemprop="dateModified" datetime="2023-12-06T00:12:57+08:00">2023-12-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -254,14 +254,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.8k</span>
+              <span>2.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -276,9 +276,25 @@
         <p>中文翻译是：非协调步长行随机优化</p>
 <p>个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。</p>
 <span id="more"></span>
+<p>TODO：</p>
 <ol type="1">
-<li>对于列随机矩阵，为什么不能采用梯度下降方法去更新动作，而是在推和协议的基础上不断改进？</li>
-<li>对于行随机矩阵，为什么不能跟列随机矩阵一样，在推和共识的基础上改动？</li>
+<li>去在不平衡图用push-sum算法求全局平均值</li>
+<li>去在不平衡图用Subgradient-push算法求最优解</li>
+</ol>
+<p>本周成果：</p>
+<ol type="1">
+<li>学习了平均一致性算法求解平衡图下的全局平均值</li>
+<li>学习了push-sum算法求解非平衡图下的全局平均值</li>
+</ol>
+<p>本周问题：</p>
+<ol type="1">
+<li>求F(x)最小和求纳什均衡的最优解都是<span
+class="math inline">\(x^*\)</span>吗？</li>
+</ol>
+<p>本周想法：</p>
+<ol type="1">
+<li>既然Subgradient-push算法可以直接用来求最优解。则Distributed那篇的Algorithm
+2就可以直接用其去做。而不是先用push-sum求平均值，然后再用梯度下降去求最优解。</li>
 </ol>
 <hr />
 <h3 id="abstract">Abstract</h3>
@@ -334,114 +350,49 @@ class="math inline">\(f_i\)</span>是个强凸函数。</p>
 <h4 id="assumption-6">Assumption 6</h4>
 <p>每个玩家知道它的出度。</p>
 <hr />
-<h3 id="related-work">3. Related work</h3>
-<h4 id="algorithms-using-doubly-stochastic-weighs">3.1 Algorithms using
-doubly-stochastic weighs</h4>
-<p>Distributed Gradient
-Descent(分布式梯度下降，DGD)是无向图上的一个解决算法。 <span
-class="math display">\[
-\mathbf{x}_{k+1}^i=\sum_{j=1}^nw_{ij}\mathbf{x}_k^j-\alpha_k\nabla
-f_i\left(\mathbf{x}_k^i\right)
-\]</span> <span class="math inline">\(W\)</span>是双随机矩阵。</p>
-<p>可以看出，这种就是最简单的迭代方法。跟梯度下降的最基本形式一样。</p>
-<p>在Assumption 1, 3, 6前提下，该算法收敛速度为<span
-class="math inline">\(O(\frac{log k}{\sqrt{k}})\)</span>。</p>
-<p>之所以慢是因为学习率递减，如果把学习率改为固定的，则会更快的收敛到<span
-class="math inline">\(x^*\)</span>的附近。</p>
-<p>为了加快，就有了下面这个方法： <span class="math display">\[
+<h3 id="补充">补充</h3>
+<p>看到这里。我想先停一下。来看一道题：假设每个玩家有一个初始值xi。如果他们都想知道所有玩家初始值的平均值是多少，应该怎么做？</p>
+<p>如果图是平衡的，则用平均一致性算法即可。即类似于：<span
+class="math inline">\(\tilde{\sigma}_i^{k+1}=\sum_{j=1}^Na_{ij}\tilde{\sigma}_j^k\)</span>。</p>
+<p>如果图不平衡，则采用推和算法。 <span class="math display">\[
 \begin{aligned}
-&amp;\mathbf{x}_{k+1}^{i}
-=\sum_{j=1}^{n}w_{ij}\mathbf{x}_{k}^{j}-\alpha\mathbf{y}_{k}^{i}  \\
-&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}w_{ij}\mathbf{y}_{k}^{j}+\nabla
-f_{i}\left(\mathbf{x}_{k+1}^{i}\right)-\nabla
-f_{i}\left(\mathbf{x}_{k}^{i}\right)
-\end{aligned}
-\]</span>
-这是算法采用固定步长。另外，这个算法跟深度学习中的动量法很像，就是考虑历史梯度的“惯性”。</p>
-<p>但是上面这俩方法都不适用于有向图，因为他们需要双随机矩阵W。</p>
-<h4 id="algorithms-using-column-stochastic-weights">3.2 Algorithms using
-column-stochastic weights</h4>
-<h5 id="push-sum-consensus">3.2.1 Push-sum consensus</h5>
-<p>推和共识，就是一个用于列随机矩阵的迭代算法。通过迭代，<span
-class="math inline">\(x_k^i, v_k^i,
-z_k^i\)</span>都能收敛到特殊的值。具体看公式： <span
-class="math display">\[
-\begin{aligned}
-&amp;\nu_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\nu_{k}^{j}  \\
+&amp;\nu_{k+1}^{i} =\sum_{j=1}^nb_{ij}\nu_k^j,  \\
 &amp;\mathbf{x}_{k+1}^{i} =\sum_{j=1}^nb_{ij}\mathbf{x}_k^j  \\
-&amp;\mathbf{z}_{k+1}^{i} =\frac{\mathbf{x}_{k+1}^{i}}{\nu_{k+1}^{i}}
+&amp;\mathbf{z}_{k+1}^{i} =\frac{\mathbf{x}_{k+1}^i}{\nu_{k+1}^i},
 \end{aligned}
-\]</span> <span
-class="math inline">\(\underline{B}\)</span>是列随机矩阵。</p>
-<p>可以被证明： <span class="math display">\[
-\lim_{k\to\infty}\nu_{i}(k)=n[\pi_{c}]_{i} \\
-\lim_{k\to\infty}\mathbf{x}_{i}(k)=[\pi_{c}]_{i}\sum_{i=1}^{n}\mathbf{x}_{i}(0)
-\]</span> 所以： <span class="math display">\[
-\lim\limits_{k\to\infty}\mathbf{z}_{k}^{i}=\lim\limits_{k\to\infty}\frac{\mathbf{x}_{k}^{i}}{\nu_{k}^{i}}=\frac{[\pi_{c}]_{i}\sum_{i=1}^{n}\mathbf{x}_{i}(0)}{n[\boldsymbol{\pi}_{c}]_{i}}=\frac{\sum_{i=1}^{n}\mathbf{x}_{0}^{i}}{n}
-\]</span>
-个人感性理解：所谓共识，就是最后所有玩家的动作都变一样了。所谓推和，就是最后玩家收敛到所有玩家初始动作<strong>之和</strong>。</p>
-<h5 id="subgradient-push">3.2.2 Subgradient-push</h5>
-<p><span class="math display">\[
+\]</span> 每一个点维护两个值：x、v（都是一维的）。所谓推，就是点 j
+把值xj / 出度推给邻居，把权重vj / 出度推给邻居。所谓和，就是点 i
+把所有邻居 j 推来的值加一起得到vi，把所有邻居 j
+推来的权重加一起得到xi。</p>
+<p>注意到，对于任意时刻k，有：<span
+class="math inline">\(\frac{\sum{x_i}}{\sum{v_i}} = \frac{x1 + x2 + ...
++ xn}{n} = avg\)</span></p>
+<p>当迭代的次数足够大时，信息已经在网络中充分流转。第 i 个点的<span
+class="math inline">\(x_i\)</span>会收敛到<span
+class="math inline">\(n[\boldsymbol{\pi}_c]_i * avg\)</span>，<span
+class="math inline">\(v_i\)</span>会收敛到<span
+class="math inline">\(n[\pi_c]_i\)</span>，所以<span
+class="math inline">\(\frac{x_i}{v_i} = avg\)</span>。（<span
+class="math inline">\(\pi_c\)</span>是列随机矩阵的右Perron特征向量）</p>
+<p>即每个点的xi / vi都收敛到全局平均值。</p>
+<p>这是一维的情况。</p>
+<p>如果每个玩家的初始值是一个向量xi（权重vi仍然不变初始值为1），则一样的，经过推和算法后，每个玩家的zi都收敛到avg（此时avg就是一个向量）。</p>
+<p>在推和共识上稍加改动，就可以得到下面这个算法： <span
+class="math display">\[
 \begin{aligned}
-&amp;\nu_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\nu_{k}^{j}  \\
+&amp;\nu_{k+1}^{i} =\sum_{j=1}^nb_{ij}\nu_k^j,  \\
 &amp;\mathbf{x}_{k+1}^{i}
-=\sum_{j=1}^{n}b_{ij}\mathbf{x}_{k}^{j}-\alpha_{k}\nabla
-f_{i}\left(\mathbf{z}_{k}^{i}\right)  \\
-&amp;\mathbf{z}_{k+1} =\frac{\mathbf{x}_{k+1}^{i}}{\nu_{k+1}^{i}},
+=\sum_{j=1}^nb_{ij}\mathbf{x}_k^j-\alpha_k\nabla
+f_i\left(\mathbf{z}_k^i\right),  \\
+&amp;\mathbf{z}_{k+1} =\frac{\mathbf{x}_{k+1}^i}{\nu_{k+1}^i},
 \end{aligned}
-\]</span></p>
-<p>这个算法个人感性理解为：推和共识 + 梯度下降（基础版）</p>
-<p>跟推和共识类似，只有第二行加了一个学习率和梯度（学习率跟DGD一样）。这会使得<span
-class="math inline">\(z_k^i\)</span>最终会趋于<span
-class="math inline">\(x*\)</span>。</p>
-<p>在满足Assumption 2, 3, 6条件下，该算法收敛速度为<span
-class="math inline">\(O(\frac{log k}{\sqrt{k}})\)</span>。</p>
-<h5 id="add-optpush-diging">3.2.3 ADD-OPT/Push-DIGing</h5>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\nu_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\nu_{k}^{j}  \\
-&amp;\mathbf{x}_{k+1}^{i}
-=\sum_{j=1}^{n}b_{ij}\mathbf{x}_{k}^{j}-\alpha\mathbf{y}_{k}^{i}  \\
-&amp;\mathbf{z}_{k+1}^{i}
-=\frac{\mathbf{x}_{k+1}^{i}}{\nu_{k+1}^{i}}  \\
-&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\mathbf{y}_{k}^{i}+\nabla
-f_{i}\left(\mathbf{z}_{k+1}^{i}\right)-\nabla
-f_{i}\left(\mathbf{z}_{k}^{i}\right)
-\end{aligned}
-\]</span></p>
-<p>这个算法个人感性理解为：推和共识 + 梯度下降（动量法加速）</p>
-<p>在满足Assumption 2, 4, 6条件下，收敛速度是线性的。</p>
-<h5 id="the-ab-algorithm">3.2.5 The AB algorithm</h5>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\mathbf{x}_{k+1}^{i}
-=\sum_{j=1}^{n}a_{ij}\mathbf{x}_{k}^{j}-\alpha\mathbf{y}_{k}^{i}  \\
-&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}b_{ij}\mathbf{y}_{k}^{j}+\nabla
-f_{i}\left(\mathbf{x}_{k+1}^{i}\right)-\nabla
-f_{i}\left(\mathbf{x}_{k}^{i}\right)
-\end{aligned}
-\]</span></p>
-<p><span class="math inline">\(\underline{A}\)</span>是行随机矩阵，<span
-class="math inline">\(\underline{B}\)</span>是列随机矩阵。</p>
-<p>这个算法个人感性理解为：同时用俩随机矩阵消除不平衡影响从而可以使用梯度下降（动量法加速）</p>
-<hr />
-<h3 id="algorithms-using-row-stochastic-weights">4. Algorithms using
-row-stochastic weights</h3>
-<p>如果把双随机矩阵的梯度下降法拿来直接用，把双随机矩阵换成行随机矩阵，可以证明，最终所有玩家都会达成共识。但是这个共识不是最优解。</p>
-<h4 id="frost">4.1 FROST</h4>
-<p><span class="math display">\[
-\begin{aligned}
-&amp;\mathbf{y}_{k+1}^{i} =\sum_{j=1}^{n}a_{ij}\mathbf{y}_{k}^{j}  \\
-&amp;\mathbf{x}_{k+1}^{i}
-=\sum_{j=1}^na_{ij}\mathbf{x}_{k}^j-\alpha_{i}\mathbf{z}_{k}^j  \\
-&amp;\mathbf{z}_{k+1}^{i}
-=\sum_{j=1}^{n}a_{ij}\mathbf{z}_{k}^{j}+\frac{\nabla
-f_{i}\left(\mathbf{x}_{k+1}^{i}\right)}{\left[\mathbf{y}_{k+1}^{i}\right]_{i}}-\frac{\nabla
-f_{i}\left(\mathbf{x}_{k}^{i}\right)}{\left[\mathbf{y}_{k}^{i}\right]_{i}}
-\end{aligned}
-\]</span></p>
-<p>这个算法个人感性理解为：就是把双随机矩阵的梯度下降（动量法加速）直接搬下来用。但是上面说了这样不会收敛到最优解。所以加了一个<span
-class="math inline">\(y_k^i\)</span>，在更新梯度z时除一下。这样就可以保证收敛到最优解了。</p>
+\]</span> 下面这个算法只在更新x时加了一个梯度项。</p>
+<p>这样的话，当迭代次数足够多时，第 i 个点的<span
+class="math inline">\(x_i\)</span>会收敛到<span
+class="math inline">\([\boldsymbol{\pi}_c]_i * x^*\)</span>，<span
+class="math inline">\(v_i\)</span>会收敛到<span
+class="math inline">\(n[\pi_c]_i\)</span>，所以<span
+class="math inline">\(\frac{x_i}{v_i} = x^*\)</span>。</p>
 
     </div>
 
@@ -524,10 +475,7 @@ class="math inline">\(y_k^i\)</span>，在更新梯度z时除一下。这样就�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#problem-formulation"><span class="nav-text">2. Problem formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-1"><span class="nav-text">Assumption 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-2"><span class="nav-text">Assumption 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-3"><span class="nav-text">Assumption 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-4"><span class="nav-text">Assumption 4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-5"><span class="nav-text">Assumption 5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-6"><span class="nav-text">Assumption 6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#related-work"><span class="nav-text">3. Related work</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#algorithms-using-doubly-stochastic-weighs"><span class="nav-text">3.1 Algorithms using
-doubly-stochastic weighs</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#algorithms-using-column-stochastic-weights"><span class="nav-text">3.2 Algorithms using
-column-stochastic weights</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#push-sum-consensus"><span class="nav-text">3.2.1 Push-sum consensus</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#subgradient-push"><span class="nav-text">3.2.2 Subgradient-push</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#add-optpush-diging"><span class="nav-text">3.2.3 ADD-OPT&#x2F;Push-DIGing</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#the-ab-algorithm"><span class="nav-text">3.2.5 The AB algorithm</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#algorithms-using-row-stochastic-weights"><span class="nav-text">4. Algorithms using
-row-stochastic weights</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#frost"><span class="nav-text">4.1 FROST</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#abstract"><span class="nav-text">Abstract</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#introduction"><span class="nav-text">1. Introduction</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#problem-formulation"><span class="nav-text">2. Problem formulation</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-1"><span class="nav-text">Assumption 1</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-2"><span class="nav-text">Assumption 2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-3"><span class="nav-text">Assumption 3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-4"><span class="nav-text">Assumption 4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-5"><span class="nav-text">Assumption 5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#assumption-6"><span class="nav-text">Assumption 6</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%A1%A5%E5%85%85"><span class="nav-text">补充</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
