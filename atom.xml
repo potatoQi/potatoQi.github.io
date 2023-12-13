@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-12-12T17:03:42.471Z</updated>
+  <updated>2023-12-13T17:55:21.547Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,32 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>未知</title>
+    <link href="http://example.com/2023/12/14/%E6%9C%AA%E7%9F%A5/"/>
+    <id>http://example.com/2023/12/14/%E6%9C%AA%E7%9F%A5/</id>
+    <published>2023-12-13T17:46:40.000Z</published>
+    <updated>2023-12-13T17:55:21.547Z</updated>
+    
+    <content type="html"><![CDATA[<p>看了几篇论文，东凑西凑搞出来的行随机算法，用来解决聚合游戏的NE寻找问题。</p><span id="more"></span><p>流程：</p><p>for k from 0 to iter_num:</p><p>​ if k &gt; 0: <span class="math inline">\(y_i^k = y_i^{k-1} + \beta(x_i^k - x_i^{k-1})\)</span></p><p>​ <span class="math inline">\(x_i^{k+1} = x_i^k - \alpha(\frac{\bigtriangledown{f_i(x_i^k, \tilde{\sigma}_i^k)}}{[v_i^k]_i} +y_i^k) + \lambda(x_i^k - x_i^{k-1})\)</span></p><p>​ <span class="math inline">\(v_i^{k+1} = \suma_{ij}v_j^k\)</span></p><p>​ <span class="math inline">\(\tilde{\sigma}_i^{k+1} = \suma_{ij}\tilde{\sigma}_j^k + \frac{\phi_i(x_i^{k+1})}{[v_i^{k+1}]_i} -\frac{\phi_i(x_i^k)}{[v_i^k]_i}\)</span></p><p>效果：</p><p><img src="1.png" /></p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;看了几篇论文，东凑西凑搞出来的行随机算法，用来解决聚合游戏的NE寻找问题。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="论文" scheme="http://example.com/categories/%E8%AE%BA%E6%96%87/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>FROST—Fast row-stochastic optimization with uncoordinated step-sizes</title>
     <link href="http://example.com/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/"/>
     <id>http://example.com/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/</id>
     <published>2023-12-04T11:49:40.000Z</published>
-    <updated>2023-12-12T17:03:42.471Z</updated>
+    <updated>2023-12-13T13:09:16.744Z</updated>
     
-    <content type="html"><![CDATA[<p>中文翻译是：非协调步长行随机优化</p><p>个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。</p><span id="more"></span><p>TODO：</p><ol type="1"><li>去在不平衡图用Subgradient-push/Push-DIGing算法求最优解</li></ol><p>本周成果：</p><ol type="1"><li>用平均一致性算法求解了平衡图下的全局平均值</li><li>用push-sum算法求解了非平衡图下的全局平均值</li><li>用push-sum算法求解了非平衡图下的最优问题</li></ol><p>本周问题：</p><ol type="1"><li>求F(x)最小和求纳什均衡的最优解都是<spanclass="math inline">\(x^*\)</span>吗？</li></ol><p>本周想法：</p><ol type="1"><li><p>Subgradient-push或Push-DiGing真的可以用来直接求最优解吗？我觉得最优解每个玩家的动作可能不同，但是通过这俩求出来的最优动作都会收敛到同一个值。</p></li><li><p>既然Subgradient-push或Push-DIGing算法可以直接用来求最优解。则Distributed那篇的Algorithm2就可以直接用其去做。而不是先用push-sum求平均值，然后再用梯度下降去求最优解。</p></li></ol><hr /><h3 id="abstract">Abstract</h3><p>本文讨论了构造不出双随机权值的有向图上的分布优化问题。</p><p>现有算法大多采用推和共识算法，利用列随机权值来克服这一问题。列随机权值的形成要求每个代理(至少)知道其输出度，这在诸如基于广播的通信协议中可能是不切实际的。</p><p>与此相反，我们描述了一种适用于不要求出度知识的有向图的快速行随机优化算法。</p><p>该方法的实现很简单，因为每个代理在本地为传入的信息分配权重，并在本地选择合适的步长。我们证明了对于光滑且强凸函数，在最大步长为正且足够小的前提下，算法线性收敛到最优解。</p><hr /><h3 id="introduction">1. Introduction</h3><p>第2节阐述了问题和假设。第3节回顾了使用双随机或列随机权值的相关算法，并展示了这些类型算法分析背后的直觉。在第4节中，我们提供了本文提出的主要算法FROST。在第5节中，我们发展了FROST的收敛性质。第6节给出了仿真结果，第7节总结了本文。</p><p>下面是Notation：</p><p>对于行随机矩阵<spanclass="math inline">\(\underline{A}\)</span>，<spanclass="math inline">\(\pi_r,1_n\)</span>分别是其左右Perron特征向量，满足<spanclass="math inline">\(\pi_r^T1_n = 1\)</span></p><p>对于列随机矩阵<span class="math inline">\(\underline{B}\)</span>，<span class="math inline">\(1_n,\pi_c\)</span>分别是其左右Perron特征向量，满足<spanclass="math inline">\(1_n^T\pi_c = 1\)</span></p><p><span class="math inline">\(\|\|_F\)</span>是Frobenius范数，<spanclass="math inline">\(\|\|_2\)</span>是欧几里得范数，<spanclass="math inline">\(\|\|\)</span>也是一个范数，具体含义看具体那部分的文章</p><p><span class="math inline">\({\otimes}\)</span>表示Kronecker积。</p><hr /><h3 id="problem-formulation">2. Problem formulation</h3><p>如果 j 连向 i ，则<span class="math inline">\((i, j) \in\mathcal{E}\)</span> 另外，目标是最小化总花费，即： <spanclass="math display">\[\min_{\mathbf{x}}F(\mathbf{x})\triangleq\frac{1}{n}\sum_{i=1}^{n}f_{i}(\mathbf{x})\]</span></p><h4 id="assumption-1">Assumption 1</h4><p>图G是无向联通图。</p><h4 id="assumption-2">Assumption 2</h4><p>图G是有向强连通图。</p><h4 id="assumption-3">Assumption 3</h4><p><spanclass="math inline">\(f_i\)</span>是凸函数，且具有有界次梯度。</p><h4 id="assumption-4">Assumption 4</h4><p><spanclass="math inline">\(f_i\)</span>是光滑，且强凸的。（光滑定义：具有连续的导数）</p><p>即满足以下式子： <span class="math display">\[\left\|\nabla f_i(\mathbf{x})-\nabla f_i(\mathbf{y})\right\|_2\leql\|\mathbf{x}-\mathbf{y}\|_2 \\f_i(\mathbf{y})\geq f_i(\mathbf{x})+\nablaf_i(\mathbf{x})^\top(\mathbf{y}-\mathbf{x})+\frac{\mu}{2}\|\mathbf{x}-\mathbf{y}\|_2^2\]</span> 第一个就是导数满足Lipschitz连续，所以<spanclass="math inline">\(f_i\)</span>肯定光滑。</p><p>第二个就是凸函数的定义，因为有不等号右边最后一项的存在，所以<spanclass="math inline">\(f_i\)</span>是个强凸函数。</p><h4 id="assumption-5">Assumption 5</h4><p>网络中的每个玩家都知道自己的编号。</p><h4 id="assumption-6">Assumption 6</h4><p>每个玩家知道它的出度。</p><hr /><h3 id="补充">补充</h3><p>看到这里。我想先停一下。来看一道题：假设每个玩家有一个初始值xi。如果他们都想知道所有玩家初始值的平均值是多少，应该怎么做？</p><p>如果图是平衡的，则用平均一致性算法即可。即类似于：<spanclass="math inline">\(\tilde{\sigma}_i^{k+1}=\sum_{j=1}^Na_{ij}\tilde{\sigma}_j^k\)</span>。</p><p>如果图不平衡，则采用推和算法。 <span class="math display">\[\begin{aligned}&amp;\nu_{k+1}^{i} =\sum_{j=1}^nb_{ij}\nu_k^j,  \\&amp;\mathbf{x}_{k+1}^{i} =\sum_{j=1}^nb_{ij}\mathbf{x}_k^j  \\&amp;\mathbf{z}_{k+1}^{i} =\frac{\mathbf{x}_{k+1}^i}{\nu_{k+1}^i},\end{aligned}\]</span> 每一个点维护两个值：x、v（都是一维的）。所谓推，就是点 j把值xj / 出度推给邻居，把权重vj / 出度推给邻居。所谓和，就是点 i把所有邻居 j 推来的值加一起得到vi，把所有邻居 j推来的权重加一起得到xi。</p><p>注意到，对于任意时刻k，有：<spanclass="math inline">\(\frac{\sum{x_i}}{\sum{v_i}} = \frac{x1 + x2 + ...+ xn}{n} = avg\)</span></p><p>当迭代的次数足够大时，信息已经在网络中充分流转。第 i 个点的<spanclass="math inline">\(x_i\)</span>会收敛到<spanclass="math inline">\(n[\boldsymbol{\pi}_c]_i * avg\)</span>，<spanclass="math inline">\(v_i\)</span>会收敛到<spanclass="math inline">\(n[\pi_c]_i\)</span>，所以<spanclass="math inline">\(\frac{x_i}{v_i} = avg\)</span>。（<spanclass="math inline">\(\pi_c\)</span>是列随机矩阵的右Perron特征向量）</p><p>即每个点的xi / vi都收敛到全局平均值。</p><p>这是一维的情况。</p><p>如果每个玩家的初始值是一个向量xi（权重vi仍然不变初始值为1），则一样的，经过推和算法后，每个玩家的zi都收敛到avg（此时avg就是一个向量）。</p><p>在推和共识上稍加改动，就可以得到下面这个算法： <spanclass="math display">\[\begin{aligned}&amp;\nu_{k+1}^{i} =\sum_{j=1}^nb_{ij}\nu_k^j,  \\&amp;\mathbf{x}_{k+1}^{i}=\sum_{j=1}^nb_{ij}\mathbf{x}_k^j-\alpha_k\nablaf_i\left(\mathbf{z}_k^i\right),  \\&amp;\mathbf{z}_{k+1} =\frac{\mathbf{x}_{k+1}^i}{\nu_{k+1}^i},\end{aligned}\]</span> 下面这个算法只在更新x时加了一个梯度项。</p><p>这样的话，当迭代次数足够多时，第 i 个点的<spanclass="math inline">\(x_i\)</span>会收敛到<spanclass="math inline">\([\boldsymbol{\pi}_c]_i * x^*\)</span>，<spanclass="math inline">\(v_i\)</span>会收敛到<spanclass="math inline">\(n[\pi_c]_i\)</span>，所以<spanclass="math inline">\(\frac{x_i}{v_i} = x^*\)</span>。</p>]]></content>
+    <content type="html"><![CDATA[<p>中文翻译是：非协调步长行随机优化</p><p>个人认为在仔细研读了Distributed那篇文章后，再看这篇文章时，会对双随机、列随机、行随机的算法分别有哪些有一个很好的认识。</p><span id="more"></span><p>TODO：</p><p>本周成果：</p><ol type="1"><li>用平均一致性算法求解了平衡图下的全局平均值</li><li>用push-sum算法求解了非平衡图下的全局平均值</li><li>用push-sum/Subgradient-push/Push-DIGing算法求解了非平衡图下的最优问题（最优时所有玩家的动作一样）</li><li>用普通行随机方法/FROST算法求解了非平衡图下的最优问题（最优时所有玩家的动作一样）</li></ol><p>本周问题：</p><p>本周想法：</p><hr /><h3 id="abstract">Abstract</h3><p>本文讨论了构造不出双随机权值的有向图上的分布优化问题。</p><p>现有算法大多采用推和共识算法，利用列随机权值来克服这一问题。列随机权值的形成要求每个代理(至少)知道其输出度，这在诸如基于广播的通信协议中可能是不切实际的。</p><p>与此相反，我们描述了一种适用于不要求出度知识的有向图的快速行随机优化算法。</p><p>该方法的实现很简单，因为每个代理在本地为传入的信息分配权重，并在本地选择合适的步长。我们证明了对于光滑且强凸函数，在最大步长为正且足够小的前提下，算法线性收敛到最优解。</p><hr /><h3 id="introduction">1. Introduction</h3><p>第2节阐述了问题和假设。第3节回顾了使用双随机或列随机权值的相关算法，并展示了这些类型算法分析背后的直觉。在第4节中，我们提供了本文提出的主要算法FROST。在第5节中，我们发展了FROST的收敛性质。第6节给出了仿真结果，第7节总结了本文。</p><p>下面是Notation：</p><p>对于行随机矩阵<spanclass="math inline">\(\underline{A}\)</span>，<spanclass="math inline">\(\pi_r,1_n\)</span>分别是其左右Perron特征向量，满足<spanclass="math inline">\(\pi_r^T1_n = 1\)</span></p><p>对于列随机矩阵<span class="math inline">\(\underline{B}\)</span>，<span class="math inline">\(1_n,\pi_c\)</span>分别是其左右Perron特征向量，满足<spanclass="math inline">\(1_n^T\pi_c = 1\)</span></p><p><span class="math inline">\(\|\|_F\)</span>是Frobenius范数，<spanclass="math inline">\(\|\|_2\)</span>是欧几里得范数，<spanclass="math inline">\(\|\|\)</span>也是一个范数，具体含义看具体那部分的文章</p><p><span class="math inline">\({\otimes}\)</span>表示Kronecker积。</p><hr /><h3 id="problem-formulation">2. Problem formulation</h3><p>如果 j 连向 i ，则<span class="math inline">\((i, j) \in\mathcal{E}\)</span> 另外，目标是最小化总花费，即： <spanclass="math display">\[\min_{\mathbf{x}}F(\mathbf{x})\triangleq\frac{1}{n}\sum_{i=1}^{n}f_{i}(\mathbf{x})\]</span></p><h4 id="assumption-1">Assumption 1</h4><p>图G是无向联通图。</p><h4 id="assumption-2">Assumption 2</h4><p>图G是有向强连通图。</p><h4 id="assumption-3">Assumption 3</h4><p><spanclass="math inline">\(f_i\)</span>是凸函数，且具有有界次梯度。</p><h4 id="assumption-4">Assumption 4</h4><p><spanclass="math inline">\(f_i\)</span>是光滑，且强凸的。（光滑定义：具有连续的导数）</p><p>即满足以下式子： <span class="math display">\[\left\|\nabla f_i(\mathbf{x})-\nabla f_i(\mathbf{y})\right\|_2\leql\|\mathbf{x}-\mathbf{y}\|_2 \\f_i(\mathbf{y})\geq f_i(\mathbf{x})+\nablaf_i(\mathbf{x})^\top(\mathbf{y}-\mathbf{x})+\frac{\mu}{2}\|\mathbf{x}-\mathbf{y}\|_2^2\]</span> 第一个就是导数满足Lipschitz连续，所以<spanclass="math inline">\(f_i\)</span>肯定光滑。</p><p>第二个就是凸函数的定义，因为有不等号右边最后一项的存在，所以<spanclass="math inline">\(f_i\)</span>是个强凸函数。</p><h4 id="assumption-5">Assumption 5</h4><p>网络中的每个玩家都知道自己的编号。</p><h4 id="assumption-6">Assumption 6</h4><p>每个玩家知道它的出度。</p><hr /><h3 id="补充">补充</h3><p>看到这里。我想先停一下。来看一道题：假设每个玩家有一个初始值xi。如果他们都想知道所有玩家初始值的平均值是多少，应该怎么做？</p><p>如果图是平衡的，则用平均一致性算法即可。即类似于：<spanclass="math inline">\(\tilde{\sigma}_i^{k+1}=\sum_{j=1}^Na_{ij}\tilde{\sigma}_j^k\)</span>。</p><p>如果图不平衡，则采用推和算法。 <span class="math display">\[\begin{aligned}&amp;\nu_{k+1}^{i} =\sum_{j=1}^nb_{ij}\nu_k^j,  \\&amp;\mathbf{x}_{k+1}^{i} =\sum_{j=1}^nb_{ij}\mathbf{x}_k^j  \\&amp;\mathbf{z}_{k+1}^{i} =\frac{\mathbf{x}_{k+1}^i}{\nu_{k+1}^i},\end{aligned}\]</span> 每一个点维护两个值：x、v（都是一维的）。所谓推，就是点 j把值xj / 出度推给邻居，把权重vj / 出度推给邻居。所谓和，就是点 i把所有邻居 j 推来的值加一起得到vi，把所有邻居 j推来的权重加一起得到xi。</p><p>注意到，对于任意时刻k，有：<spanclass="math inline">\(\frac{\sum{x_i}}{\sum{v_i}} = \frac{x1 + x2 + ...+ xn}{n} = avg\)</span></p><p>当迭代的次数足够大时，信息已经在网络中充分流转。第 i 个点的<spanclass="math inline">\(x_i\)</span>会收敛到<spanclass="math inline">\(n[\boldsymbol{\pi}_c]_i * avg\)</span>，<spanclass="math inline">\(v_i\)</span>会收敛到<spanclass="math inline">\(n[\pi_c]_i\)</span>，所以<spanclass="math inline">\(\frac{x_i}{v_i} = avg\)</span>。（<spanclass="math inline">\(\pi_c\)</span>是列随机矩阵的右Perron特征向量）</p><p>即每个点的xi / vi都收敛到全局平均值。</p><p>这是一维的情况。</p><p>如果每个玩家的初始值是一个向量xi（权重vi仍然不变初始值为1），则一样的，经过推和算法后，每个玩家的zi都收敛到avg（此时avg就是一个向量）。</p><p>在推和共识上稍加改动，就可以得到下面这个算法： <spanclass="math display">\[\begin{aligned}&amp;\nu_{k+1}^{i} =\sum_{j=1}^nb_{ij}\nu_k^j,  \\&amp;\mathbf{x}_{k+1}^{i}=\sum_{j=1}^nb_{ij}\mathbf{x}_k^j-\alpha_k\nablaf_i\left(\mathbf{z}_k^i\right),  \\&amp;\mathbf{z}_{k+1} =\frac{\mathbf{x}_{k+1}^i}{\nu_{k+1}^i},\end{aligned}\]</span> 下面这个算法只在更新x时加了一个梯度项。</p><p>这样的话，当迭代次数足够多时，第 i 个点的<spanclass="math inline">\(x_i\)</span>会收敛到<spanclass="math inline">\([\boldsymbol{\pi}_c]_i * x^*\)</span>，<spanclass="math inline">\(v_i\)</span>会收敛到<spanclass="math inline">\(n[\pi_c]_i\)</span>，所以<spanclass="math inline">\(\frac{x_i}{v_i} = x^*\)</span>。</p><h3 id="personal-summary">Personal Summary</h3><p>首先是由推和协议衍生出来的算法，推和协议用列随机矩阵可以求出全局平均值（如果玩家动作是动态更新的话，更新sigma时记得+x[i]- xx[i]）。</p><p>因此套一个梯度下降就可以解决聚合游戏问题。</p><p>如果已知最优解都会收敛到一个值的话，可以直接在推和协议中修改加一个梯度项，使得收敛到最优解。为了加快速度，还可以将普通的梯度项改为考虑全局的梯度项。</p>]]></content>
     
     
     <summary type="html">&lt;p&gt;中文翻译是：非协调步长行随机优化&lt;/p&gt;
@@ -395,29 +414,6 @@ href=&quot;https://www.bilibili.com/video/BV19M411T7S7?p=1&amp;amp;vd_source=250
 &lt;p&gt;今天要写C++的代码，以前都是用VS写的。但是突然想了一下既然都装了VS
 Code，为啥不配置一下。配置好了后以后写C/C++代码也不用打开繁重的VS了。而且VS
 Code还能加很多插件。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="杂项" scheme="http://example.com/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>个人博客搭建说明</title>
-    <link href="http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/"/>
-    <id>http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</id>
-    <published>2023-10-03T05:32:44.000Z</published>
-    <updated>2023-10-05T05:01:08.392Z</updated>
-    
-    <content type="html"><![CDATA[<p>使用GitHub + Hexo搭建的本博客。</p><p>教程参考<ahref="https://zhuanlan.zhihu.com/p/102592286">从零开始搭建个人博客（超详细）- 知乎 (zhihu.com)</a>。</p><p>上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。</p><span id="more"></span><p>我大致总结一下流程：</p><ol type="1"><li>注册GitHub</li><li>下载Git并将Git绑定到GitHub（使用token）</li><li>购买域名</li><li>安装node.js并配置环境变量（建议全程使用cmd管理员而不是gitbash）</li><li>安装hexo</li><li>解析域名</li><li>设置并美化主题</li></ol><p>另外，博客首页的头像是用的GitHub的头像链接，另外我不打算采用图床，因为怕翻车。所以文章里的全部图片都是存储在本地并push到GitHub中，若加载不出或速度慢可以尝试挂个梯子。</p><p>域名第一年花了9块，之后续费好像是20多块一年。在阿里云买的。</p><p>看板娘参考了两篇文章：<ahref="https://github.com/stevenjoezhang/live2d-widget">设置看板娘</a>,<ahref="https://www.cnblogs.com/c10udlnk/p/14727173.html">个性化配置看板娘</a>。</p><p>但是live2d的模型默认的这几个我不是很熟悉，以后有空了想换成我自己喜欢的人物角色。</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;使用GitHub + Hexo搭建的本博客。&lt;/p&gt;
-&lt;p&gt;教程参考&lt;a
-href=&quot;https://zhuanlan.zhihu.com/p/102592286&quot;&gt;从零开始搭建个人博客（超详细）
-- 知乎 (zhihu.com)&lt;/a&gt;。&lt;/p&gt;
-&lt;p&gt;上面这篇文章可以说是从0到1很详细的介绍了搭建个人博客的全流程，不过仍然有许多小错误，需要结合评论区和其它博文一起阅读才会避免踩坑。&lt;/p&gt;</summary>
     
     
     
