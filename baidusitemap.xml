@@ -1,12 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-12-28</lastmod>
+    <loc>http://example.com/2023/10/23/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-01-14</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/10/19/%E6%95%B0%E6%8D%AE%E5%BA%93%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-12-24</lastmod>
+    <lastmod>2024-01-14</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
+    <lastmod>2024-01-14</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/</loc>
@@ -19,10 +23,6 @@
   <url>
     <loc>http://example.com/2023/10/31/Linear-convergence-in-optimization-over-directed-graphs-with-row-stochastic-matrices/</loc>
     <lastmod>2023-12-04</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/10/23/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</loc>
-    <lastmod>2023-11-26</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/11/19/5-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89/</loc>
