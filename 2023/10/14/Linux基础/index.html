@@ -23,15 +23,15 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="大二学数据库这门课的时候接触到了Linux，因为期末大作业是在Linux环境下进行的。涉及到Linux系统编程函数的一些调用。所以学习Linux的基本使用就十分必要。">
+  <meta name="description" content="这篇文章涉及到的都是本人用到的知识，没用到的我都没写。 学会这些算是一个计算机学生的基本素养吧。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Linux基础">
 <meta property="og:url" content="http://example.com/2023/10/14/Linux%E5%9F%BA%E7%A1%80/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="大二学数据库这门课的时候接触到了Linux，因为期末大作业是在Linux环境下进行的。涉及到Linux系统编程函数的一些调用。所以学习Linux的基本使用就十分必要。">
+<meta property="og:description" content="这篇文章涉及到的都是本人用到的知识，没用到的我都没写。 学会这些算是一个计算机学生的基本素养吧。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2023-10-14T10:08:55.000Z">
-<meta property="article:modified_time" content="2023-10-14T10:14:20.306Z">
+<meta property="article:modified_time" content="2024-02-19T16:46:28.952Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -221,17 +221,27 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2023-10-14 18:08:55 / 修改时间：18:14:20" itemprop="dateCreated datePublished" datetime="2023-10-14T18:08:55+08:00">2023-10-14</time>
+              <time title="创建时间：2023-10-14 18:08:55" itemprop="dateCreated datePublished" datetime="2023-10-14T18:08:55+08:00">2023-10-14</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-02-20 00:46:28" itemprop="dateModified" datetime="2024-02-20T00:46:28+08:00">2024-02-20</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                  <a href="/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/" itemprop="url" rel="index"><span itemprop="name">2. 技能栈</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
                 </span>
             </span>
 
@@ -248,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.2k</span>
+              <span>2.6k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -267,133 +277,165 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>大二学数据库这门课的时候接触到了Linux，因为期末大作业是在Linux环境下进行的。涉及到Linux系统编程函数的一些调用。所以学习Linux的基本使用就十分必要。</p>
+        <ul>
+<li>这篇文章涉及到的都是本人用到的知识，没用到的我都没写。</li>
+<li>学会这些算是一个计算机学生的基本素养吧。</li>
+</ul>
 <span id="more"></span>
-<h3 id="前言">前言</h3>
-<p>在Windows上想使用Linux系统可以用虚拟机（VM /
-Hyper-V）或者wsl或者docker。如果使用虚拟机的话建议装一个Finalshell，这样就不用频繁的在虚拟机和win界面里切换了。</p>
-<h3 id="linux系统目录">Linux系统目录</h3>
-<p>Linux下一切皆文件，所以了解Linux的一些系统目录是干啥的就很重要：</p>
-<p>/dev：与本机设备（比如鼠标）有关的目录</p>
-<p>/etc：配置文件信息</p>
-<p>/home：用户目录</p>
-<p>/lib：库目录（比如C库、python库）</p>
-<p>/media、/mnt：磁盘挂载目录</p>
-<p>/opt、/proc：进程目录</p>
-<p>/usr：Unix Software Resource，软件目录，比如第三方安装的qq</p>
-<p>/bin：存放二进制可执行文件</p>
-<p>/boot：存放开机启动程序</p>
-<p>一般/etc和/home是经常用的，如果你是用wsl的话/mnt也比较常用。</p>
-<p>前面提到Linux下一切皆文件，但是Linux里对文件的命名比较不规范。文件名可以随便自己起，所以你可以起一个名为test.mp3的文件，然后在里面只写一点文本。</p>
-<p>所以使用file 文件名 命令可以知道这个文件到底是属于啥文件。</p>
-<p>在Linux下的文件类型如下：</p>
-<ol type="1">
-<li>普通文件：-</li>
-<li>目录文件：d</li>
-<li>软链接：l</li>
-<li>字符设备文件：c</li>
-<li>块设备文件：b</li>
-<li>管道文件：p</li>
-<li>套接字：s</li>
-</ol>
-<p>一般前三种我比较常见。</p>
-<h3 id="linux基础命令">Linux基础命令</h3>
-<h4 id="快捷键相关">快捷键相关</h4>
-<p>ctrl + c：强制中断当前进程</p>
-<p>ctrl + l：清屏</p>
-<p>ctrl + a：跳转到行首</p>
-<p>ctrl + e：跳转到行尾</p>
-<p>ctrl + ←：往左跳一个单词</p>
-<p>ctrl + →：往右跳一个单词</p>
-<p>ctrl + r：进入命令搜索模式</p>
-<h4 id="用户相关">用户相关</h4>
-<p>sudo - username：切换用户</p>
-<p>sudo 命令：以root用户的权限执行这条命令</p>
-<p>chmod 777 filename：修改文件的权限（三个数字分别对应user, group,
-others）</p>
-<h4 id="查看文件相关">查看文件相关</h4>
-<p>cat filename：查看文件</p>
-<p>more filename：分屏查看文件</p>
-<p>head filename：查看文件开头几行</p>
-<p>tail filename：查看文件后面几行</p>
-<p>tree：以树目录形式展现当前目录（需apt install tree）</p>
-<p>ls -l / -h /
--a：查看文件详细信息，以列表/以人类形式(可以看文件占多少M)/显示隐藏文件</p>
-<h4 id="文件操作相关">文件操作相关</h4>
-<p>mkdir dirname：创建文件夹</p>
-<p>touch filename：创建文件</p>
-<p>cp path1 path2 [-r]：将path1的东西复制到path2那</p>
-<p>mv path1 path2：将path1的东西移动到path2那</p>
-<p>rm [-r] path：删除path处的东西</p>
-<p>ln -s path
-链接：将path处的东西创建软链接（path处要写绝对路径，因为本质就是每次访问链接的时候都是去访问path）</p>
-<p>ln path 链接：将path处的东西创建硬链接，形成铁索连环的效果</p>
-<p>find path -name/-type/-size 条件 -exec rm {} ; ：批量删除文件</p>
-<h4 id="查找相关">查找相关</h4>
 <ul>
-<li>文件—基本查找（看文件路径在哪）</li>
+<li>比如以后进厂打工可嫩会接触到Linux环境，那么<strong>tmux、nano、Linux下的基础操作</strong>，总得会吧。</li>
+<li>然后工作或者租算力服务器或者连学校服务器，可能会用到<strong>SSH</strong>吧，所以ssh也总得会吧。</li>
+<li>然后因为自己平时也可能会写工程，所以<strong>Git、类github软件</strong>总得会用吧。</li>
+<li>然后可能偶尔在Linux或者Win下写点脚本来批处理文件，所以<strong>shell语法</strong>也得会一点吧。</li>
+<li>最后是docker，到时候别人传一个docker给你，你都不会配环境，这说不过去，所以<strong>docker</strong>也得会用吧。</li>
 </ul>
-<p>find path -name 'xxx'：按文件名字来找</p>
-<p>find path -type 'xxx'：按文件类型来找</p>
-<p>find path -size +/-(num)k/M/G：按文件大小来找</p>
+<hr />
+<h3 id="tmux">tmux</h3>
+<p>学这个是为了可以在一个终端里开多个屏来工作，提高生产效率。</p>
 <ul>
-<li>文件—详细查找</li>
+<li>tmux ls：显示所有session列表</li>
+<li>tmux attach -t [id]：进入到某个session中</li>
+<li>tmux：新建一个session并进入</li>
+<li>ctrl + b, s：显示session、window、pane树形结构</li>
+<li>ctrl + d：删除当前pane/window/session</li>
+<li>ctrl + b, d：在不删除session的前提下退出tmux</li>
+<li>ctrl + b, %：左右分屏</li>
+<li>ctrl + b, "：上下分屏</li>
+<li>ctrl + b, ↑←↓→：在pane中切换</li>
+<li>ctrl + b不松开 + ↑←↓→：调整当前pane大小</li>
+<li>ctrl +
+b，[：进入复制模式，在此模式下按上下左右可控制光标移动。按q退出该模式</li>
 </ul>
-<p>find ... ... | xargs ls -l -h</p>
+<h3 id="nanovim">nano/vim</h3>
+<p>学这个是为了在Linux系统下处理文本。本质上就是学如何用记事本。</p>
+<p>关于vim我能不用尽量不用，但是迫不得已的时候使用的时候还是要会它的基本操作。按Esc回到命令模式，命令模式下dd删除本行，:wq保存退出，:q!强制退出，i进入编辑模式。下面是关于nano的操作</p>
+<p>另外，在/etc/nanorc里可以配置nano</p>
 <ul>
-<li>内容查找</li>
+<li>ctrl + x：退出</li>
+<li>ctrl + o：保存</li>
+<li>ctrl + k：剪切</li>
+<li>ctrl + u：粘贴</li>
+<li>alt +6：复制</li>
+<li>alt + u：撤销</li>
+<li>alt +
+a：开启选中模式（注意这个快捷键与微信截图冲突了，记得把vx的改了）</li>
+<li>alt + m：开始鼠标模式</li>
+<li>alt + shift + 3：开启行号</li>
+<li>ctrl + a：回到行首；ctrl + e：回到行末；alt + /：跳转到文末；alt +
+：跳转到开头</li>
+<li>ctrl + shift + v：将windows文本复制到nano/vim/shell里</li>
 </ul>
-<p>grep 'xxx' path [-r]
-[-n]：-n是显示行号，如果path为文件夹则需要加-r</p>
-<p>ls -l | grep 'xxx' -n 或 cat filename | grep 'xxx' -n 或 ps aux |
-grep 'xxx' -n 或 lsof -u username | grep 'xxx'
--n：在某些输出内容中找特定内容</p>
-<h4 id="软件包解压缩相关">软件包，解压缩相关</h4>
-<p>apt install xxx：安装软件包</p>
-<p>apt remove xxx：删除软件包</p>
-<p>dpkg -i xxx.deb：安装.deb软件包</p>
-<p>源码安装（具体方法看每个源码中的README.md）：</p>
-<ol type="1">
-<li>解压源代码包</li>
-<li>cd dir（源代码包）</li>
-<li>运行./configure（这一步是检测文件是否缺失以及创建Makefile以及检测编译环境）</li>
-<li>运行make（这一步是在编译源码、生成库和可执行程序）</li>
-<li>运行make install（这一步是把库和可执行程序安装到系统路径下）</li>
-</ol>
-<p>tar -zcvf 压缩包名 压缩材料：压缩</p>
-<p>tar -zxvf 压缩包名：解压</p>
-<h4 id="其它常用指令">其它常用指令</h4>
-<p>alias
-别名='指令'：给指令起别名，只能临时生效（永久生效将alias语句写入~/.bashrc，然后source
-~/.bashrc）</p>
-<p>ps aux：查看进程</p>
-<p>lsof -u username：查看user打开的文件</p>
-<p>gcc filename -o 输出名字：编译c程序（需apt install gcc）</p>
-<p>g++ filename -o 输出名字：编译c++程序（需apt install g++）</p>
-<p>man -k 函数名：查看Linux函数在man手册中的章节</p>
-<p>man 章节 函数：查看Linux函数在man手册中的讲解</p>
-<h4 id="vim相关">vim相关</h4>
-<p>适应不了vim可以用nano。</p>
-<p>ESC：返回命令模式</p>
-<p>a/i：进入编辑模式</p>
-<p>冒号：进行底栏模式</p>
-<p>:wq：保存并退出</p>
-<p>:set nu：显示行号</p>
-<p>hjkl：上下左右</p>
-<p>0：移动到行首</p>
-<p>$：移动到行尾</p>
-<p>gg：移动到文件开头</p>
-<p>G：移动到文件结尾</p>
-<p>数字 + G：移动到指定行</p>
-<p>x：删除单个字符</p>
-<p>dd：删除当前行</p>
-<p>d0：删除光标到行首</p>
-<p>d$：删除光标到行尾</p>
-<p>v + hjkl + d：删除选定内容</p>
-<p>v + hjkl + y：复制选定内容</p>
-<p>p：粘贴</p>
-<p>u：撤销</p>
-<p>ctrl + u：反向撤销</p>
+<hr />
+<h3 id="ssh">ssh</h3>
+<p>这个ssh以后自己租服务器的时候用得上。就是学会如何登录，以及主机和服务器之间如何传文件即可。</p>
+<ul>
+<li><p>ssh user@hostname：登录</p></li>
+<li><p>在~/.ssh/config里写配置文件，格式如下</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Host name1</span><br><span class="line">	HostName IP地址</span><br><span class="line">	User 用户名</span><br></pre></td></tr></table></figure>
+<p>那么在下次使用服务器时，就可以ssh name1来登录</p></li>
+<li><p>ssh-keygen：创建密钥（密钥文件存储在~/.ssh/下）</p></li>
+<li><p>ssh-copy-id
+服务器别名：向服务器添加自己的公钥，这样以后登录服务器可以免密登录</p></li>
+<li><p>scp source destinatino：跟cp一样，本机与服务器传文件</p>
+<ul>
+<li>例如scp /etc/nanorc 服务器别名:/etc/nanorc</li>
+<li>注意在传文件夹时要加-r，而且-r必须紧跟在scp后</li>
+</ul></li>
+</ul>
+<hr />
+<h3 id="shell">shell</h3>
+<p>shell语言主要学来用来批处理文件的，比如建立多个文件夹，改名多个文件夹啥的。学完后在window里也用得上。比如打竞赛出题的数据的时候，就可以用shell写个脚本统一创建文件/改名。在windows里用git的git
+bash运行脚本即可。</p>
+<h4 id="基本">基本</h4>
+<ul>
+<li>su - root/zhou：换用户</li>
+<li>mkdir/touch/cp/mv/rm/cat：基本操作</li>
+<li>chmod +x+x+x
+[filename]：给权限（3个x对应user,group,others，如果只给user写1个x即可）</li>
+<li>.sh为shell脚本后缀，在文件里第一行应为#!
+/bin/bash。执行方式有两种，bash filename.sh或者./filename.sh</li>
+<li>echo：输出
+<ul>
+<li>加参数-e：可在输出内容中识别转移字符，例如echo -e "hello"。</li>
+<li>加参数echo默认会输出换行，在结尾处加（要加-e）</li>
+<li>echo ${a[@]}：输出数组中的数，以一行形式</li>
+<li>echo ${a[@]:1:n}：输出数组下标为1 ~ n的数</li>
+</ul></li>
+<li>“”：可将有空格的名字看作一个整体</li>
+</ul>
+<h4 id="变量">变量</h4>
+<ul>
+<li>变量=xxx：定义变量</li>
+<li>${变量}：使用变量</li>
+<li>$0, $1, $2, ...：为传入的参数（$0为文件名）</li>
+<li>$#：传入的参数个数</li>
+<li>$?：返回上一条command的exit code</li>
+<li>`command`：返回command的stdout（不支持嵌套）</li>
+<li>$(command)：作用同``，但是支持嵌套</li>
+</ul>
+<h4 id="运算">运算</h4>
+<ul>
+<li>expr $a +/- $b：进行a±b的运算</li>
+<li>expr $a \* $b：进行a*b的运算</li>
+<li>expr $a / $b：进行a/b的运算</li>
+<li>expr $a % $b：进行a%b的运算</li>
+<li>()可以改变优先级，但要加\转义，同时记得打括号</li>
+</ul>
+<h4 id="循环">循环</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">for</span>法一</span></span><br><span class="line">for var in val1 val2 val3</span><br><span class="line">do</span><br><span class="line">  ....</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">for</span>法二</span></span><br><span class="line">for var in `seq 1 10`</span><br><span class="line">do</span><br><span class="line">  ...</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">for</span>法三</span></span><br><span class="line">for var in &#123;1..10&#125;/&#123;10..1&#125;/&#123;a..z&#125;/&#123;z..a&#125;	# 这种写法&#123;&#125;里面只能是常量</span><br><span class="line">do</span><br><span class="line">  ...</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">for</span>法四（跟C++一样，只不过多了层括号）</span></span><br><span class="line">for ((expreesion; condition; expression))</span><br><span class="line">do</span><br><span class="line">  ...</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">while</span></span></span><br><span class="line">while condition</span><br><span class="line">do</span><br><span class="line">  ...</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="built_in">break</span>/continue</span></span><br><span class="line">跟C++一样</span><br></pre></td></tr></table></figure>
+<h4 id="判断">判断</h4>
+<ul>
+<li>shell里的if看的是exit code的状态。如果exit
+code为0，则为真。否则为假</li>
+</ul>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="keyword">if</span></span></span><br><span class="line">if condition</span><br><span class="line">then</span><br><span class="line">  ...</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">if-else</span></span><br><span class="line">if condition</span><br><span class="line">then</span><br><span class="line">  ...</span><br><span class="line">else</span><br><span class="line">  ...</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">if-elif-else</span></span><br><span class="line">if condition</span><br><span class="line">then</span><br><span class="line">  ...</span><br><span class="line">elif</span><br><span class="line">then</span><br><span class="line">  ...</span><br><span class="line">else</span><br><span class="line">  ...</span><br><span class="line">fi</span><br></pre></td></tr></table></figure>
+<h4 id="test">test/[ ]</h4>
+<ul>
+<li>[ $a -[参数] $b ]：整数a与b的比较
+<ul>
+<li>-eq：是否相等（equal）</li>
+<li>-ne：是否不相等（not equal）</li>
+<li>-gt：是否大于（greater than）</li>
+<li>-ge：是否大于等于（greater than or equal）</li>
+<li>-lt：是否小于（less than）</li>
+<li>-le：是否小于等于（less than or equal）</li>
+</ul></li>
+<li>[ -[参数] filename ]：文件类型判断
+<ul>
+<li>-e：文件是否存在</li>
+<li>-f：是否为文件</li>
+<li>-d：是否为目录</li>
+</ul></li>
+<li>[ -[参数] filename ]：文件权限判断
+<ul>
+<li>-r：是否可读</li>
+<li>-w：是否可写</li>
+<li>-x：是否可执行</li>
+<li>-s：是否为非空文件</li>
+</ul></li>
+<li>可用&amp;&amp;、||、!拼接</li>
+</ul>
+<h4 id="函数">函数</h4>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fun_name() &#123;</span><br><span class="line">    ...</span><br><span class="line">    ...</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ul>
+<li>调用方式：fun_name val1 val2 val3</li>
+<li>函数内部默认参数从1开始，没有0，即$1</li>
+<li>在函数里面return的是exit code。echo的是stdout</li>
+<li>不管在函数还是函数外部直接使用的变量默认都是全局变量，所以若想使用局部变量，需要用local关键字声明</li>
+</ul>
+<h4 id="文件重定向">文件重定向</h4>
+<ul>
+<li>&gt;：将原本输出到stdout的内容以覆盖形式输出到指定文件</li>
+<li>&lt;：原本从stdin读入数据，现在从指定文件中读入数据</li>
+<li>&gt;&gt;：将原本输出到stdout的内容以追加形式输出到指定文件</li>
+</ul>
+<h4 id="其它">其它</h4>
+<ul>
+<li>导入外部脚本：source
+filename（本质就是将外部脚本粘贴复制到本脚本中）</li>
+<li>更多shell语法：<a
+target="_blank" rel="noopener" href="https://www.acwing.com/file_system/file/content/whole/index/content/2855883/">传送门</a></li>
+</ul>
 
     </div>
 
@@ -479,7 +521,7 @@ grep 'xxx' -n 或 lsof -u username | grep 'xxx'
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E8%A8%80"><span class="nav-text">前言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E7%B3%BB%E7%BB%9F%E7%9B%AE%E5%BD%95"><span class="nav-text">Linux系统目录</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linux%E5%9F%BA%E7%A1%80%E5%91%BD%E4%BB%A4"><span class="nav-text">Linux基础命令</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE%E7%9B%B8%E5%85%B3"><span class="nav-text">快捷键相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%94%A8%E6%88%B7%E7%9B%B8%E5%85%B3"><span class="nav-text">用户相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E7%9C%8B%E6%96%87%E4%BB%B6%E7%9B%B8%E5%85%B3"><span class="nav-text">查看文件相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%93%8D%E4%BD%9C%E7%9B%B8%E5%85%B3"><span class="nav-text">文件操作相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE%E7%9B%B8%E5%85%B3"><span class="nav-text">查找相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%AF%E4%BB%B6%E5%8C%85%E8%A7%A3%E5%8E%8B%E7%BC%A9%E7%9B%B8%E5%85%B3"><span class="nav-text">软件包，解压缩相关</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E5%AE%83%E5%B8%B8%E7%94%A8%E6%8C%87%E4%BB%A4"><span class="nav-text">其它常用指令</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#vim%E7%9B%B8%E5%85%B3"><span class="nav-text">vim相关</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#tmux"><span class="nav-text">tmux</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#nanovim"><span class="nav-text">nano&#x2F;vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ssh"><span class="nav-text">ssh</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#shell"><span class="nav-text">shell</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%9F%BA%E6%9C%AC"><span class="nav-text">基本</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%98%E9%87%8F"><span class="nav-text">变量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97"><span class="nav-text">运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BE%AA%E7%8E%AF"><span class="nav-text">循环</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A4%E6%96%AD"><span class="nav-text">判断</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test"><span class="nav-text">test&#x2F;[ ]</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0"><span class="nav-text">函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E9%87%8D%E5%AE%9A%E5%90%91"><span class="nav-text">文件重定向</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B6%E5%AE%83"><span class="nav-text">其它</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -502,7 +544,7 @@ grep 'xxx' -n 或 lsof -u username | grep 'xxx'
       <div class="site-state-item site-state-categories">
             <a href="/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">分类</span></a>
       </div>
   </nav>
