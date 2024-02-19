@@ -1,0 +1,984 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="信息学竞赛刷题笔记">
+<meta property="og:type" content="article">
+<meta property="og:title" content="刷题笔记">
+<meta property="og:url" content="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Error_666">
+<meta property="og:description" content="信息学竞赛刷题笔记">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1.png">
+<meta property="article:published_time" content="2024-02-19T16:27:02.000Z">
+<meta property="article:modified_time" content="2024-02-19T16:29:54.778Z">
+<meta property="article:author" content="Error_666">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1.png">
+
+<link rel="canonical" href="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>刷题笔记 | Error_666</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="/live2d-widget/autoload.js"></script>
+<link rel="alternate" href="/atom.xml" title="Error_666" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Error_666</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Error_666">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Error_666">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          刷题笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-02-20 00:27:02 / 修改时间：00:29:54" itemprop="dateCreated datePublished" datetime="2024-02-20T00:27:02+08:00">2024-02-20</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AB%9E%E8%B5%9B/" itemprop="url" rel="index"><span itemprop="name">竞赛</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>7.8k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>7 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>信息学竞赛刷题笔记</p>
+<span id="more"></span>
+<h3 id="思维题">思维题</h3>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/97/">95.
+费解的开关 - AcWing题库</a></p>
+<ul>
+<li>经过思考后，发现一个开关按2次与没按没差别。所以对于每个开关，要不就按，要不就不按。继续思考，对于一个开关，它的状态取决于它自己以及上下左右共5个开关按or不按，而且跟顺序无关。</li>
+<li>接着往下想，既然与顺序无关，那我就可以从第一个开始按。假设（1，1）按了，那么...
+...感觉还是不好想。</li>
+<li>这时要学会给自己增加已知信息。假设我第一行开关按or不按已经知道。那么我就可以推出第二行的按法。因为当第一行按完之后，能改变第一行状态的只有第二行（不能再按第一行了，因为按两次等于没按）。所以如果（1，j）是0，那么（2，j）就要按。</li>
+<li>思路就出来了，枚举第一行的按法，然后推出第二行按法，继续推出第三行按法，直至推出第五行按法。此时1-4行都是1了，最后检查第5行是否全是1即可。</li>
+</ul></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/107/">105. 七夕祭
+- AcWing题库</a></p>
+<ul>
+<li><p>首先很容易看出行和列是独立的问题，而且本质是一样的。所以接下来都讨论列。</p></li>
+<li><p>然后略加思考也可以发现最终每列的数量就是全部列加起来取平均，取不了平均就没解。</p></li>
+<li><p>假设a1, a2, ...,
+an平均值为avg，假设1号给2号b1个，2号给3号b2个，n号给1号bn个。则所求可表达为：<span
+class="math inline">\(|b_1|+|b_2|+...+|b_n|\)</span>。且有下列方程组成立：
+<span class="math display">\[
+a1 - b1 + bn = avg \\
+a2 - b2 + b1 = avg \\
+a3 - b3 + b2 = avg \\
+... \\
+an - bn + b_{n-1} = avg
+\]</span></p></li>
+<li><p>整理可得</p></li>
+</ul>
+<p><span class="math display">\[
+-b_1+b_n = avg - a_1 \\
+-b_2+b_n = 2avg - (a_1+a_2) \\
+-b_3+b_n = 3avg - (a_1+a_2+a_3) \\
+...
+-b_{n-1}+b_n = (n-1)avg - (a_1+a_2+...+a_{n-1})
+\]</span></p>
+<ul>
+<li>继续整理</li>
+</ul>
+<p><span class="math display">\[
+b_1 = -avg + a_1 + b_n \\
+b_2 = -2avg + (a_1 + a_2) + b_n \\
+... \\
+b_{n-1} = -(n-1)avg + (a_1+a_2+...+a_{n-1})
+\]</span></p>
+<ul>
+<li>继续整理</li>
+</ul>
+<p><span class="math display">\[
+b_1 = b_n - avg + a_1 \\
+b_2 = b_n - 2avg + (a_1+a_2) \\
+...\\
+b_{n-1} = b_n - (n-1)avg + (a_1+a_2+...+a_{n-1})
+\]</span></p>
+<ul>
+<li>令x = bn，则所求为：<span
+class="math inline">\(|x-c1|+|x-c2|+...+|x-c_{n-1}|+|x - c_n|,
+c_n=0\)</span></li>
+<li>一目了然，x取c的中位数时，所求最小。</li>
+</ul></li>
+</ul>
+<h3 id="基础算法">基础算法</h3>
+<h4 id="位运算">位运算</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/92/">90.
+64位整数乘法 - AcWing题库</a>
+<ul>
+<li>计算a * b %
+p的结果。O(1)即可得出结果，但是a和b的范围很大会爆longlong。所以要用时间换空间。考虑a
+* b = a * (b的二进制表示)，例如a * 5 = a * (101) = a * (4 + 0 +
+1)。于是很容易的想到用logn的时间去分解b，用个中间变量sum对自己做累加（sum初始值为a），这样sum就会等于a
+，然后等于2a，然后等于4a...
+...。分解b的过程中如果最后一位二进制是1，就ans +=
+sum即可。这种用加法代替乘法的方法，叫做龟速乘。</li>
+<li>注意，%的优先级比+高。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/877/">875. 快速幂 -
+AcWing题库</a>
+<ul>
+<li>计算<span class="math inline">\(a^b %
+p\)</span>的结果。思路跟龟速乘一样，都是分解b。考虑<span
+class="math inline">\(a^b = a^{b的二进制形式}\)</span>，例如<span
+class="math inline">\(a^5 = a^{101} = a^{4 + 0 + 1} = a^4 *
+a^1\)</span>。用while去分解b的二进制，用个中间变量sum对自己做累乘（sum初始值为b），如果分解过程中b的最后一位二进制是1，就ans
+*= sum即可。</li>
+</ul></li>
+</ul>
+<h4 id="递归分治">递归/分治</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/99/">97.
+约数之和 - AcWing题库</a>
+<ul>
+<li>求<span
+class="math inline">\(a^b\)</span>的所有约数之和。不难想到分解质因数。假设数num分解为<span
+class="math inline">\(p_1^{k1} \cdot p_2^{k2} \cdot ... \cdot
+p_n^{kn}\)</span>，那么数num的约数的个数就是(k1 + 1) * (k2 + 1) * ... *
+(kn +
+1)（相当于每个质数是材料，可以拿0/1/2/...个）。数num的约数之和就是<span
+class="math inline">\((1+p_1+p_1^2+...+p_1^{k1}) \cdot
+(1+p_2+p_2^2+...+p_2^{k2}) \cdot ... \cdot
+(1+p_n+p_n^2+...+p_n^{kn})\)</span>。</li>
+<li>上面的数学推导作为一个大学生不难想出。那么这题思路就是先将a分解质因数，然后将每个质数的次数乘b。然后求<span
+class="math inline">\((1+p_1+p_1^2+...+p_1^{k1}) \cdot
+(1+p_2+p_2^2+...+p_2^{k2}) \cdot ... \cdot
+(1+p_n+p_n^2+...+p_n^{kn})\)</span>即可。</li>
+<li>关键<span
+class="math inline">\((1+p_1+p_1^2+...+p_1^{k1})\)</span>怎么求，其实这种看起来有规律的东西都是用递归去加速，根据直觉尝试一下，假设sum
+= 1, mul = p1，然后while( sum += mul, mul *= mul )。第一次：sum=1+p1,
+mul=p1<sup>2；第二次：sum=1+p1+p1</sup>2+p1^3, mul = p1^4...
+...你看，这不就出来了。</li>
+<li>递归是俩倍俩倍去递归的，所以最后可能剩一点边角料。假设<span
+class="math inline">\(p_1^{cnt}\)</span>到<span
+class="math inline">\(p_1^{k1}\)</span>还没求，很简单，直接递归调用函数cal(p1,
+k1-cnt) * ksm(p1, cnt)</li>
+<li>这题坑点较多，注意b有可能为0。注意a可能为0/1。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/100/">98. 分形之城 -
+AcWing题库</a>
+<ul>
+<li>一道找规律模拟题，挺恶心的。本质上就是给一个数num，找出其对应的坐标（x,
+y）。观察后不难发现，num会落到4个区，其中2、3区的区内坐标就等于上一个等级的对应数的坐标。1区的区内坐标等于上一个等级的对应数的坐标沿[左上到右下对角线]对称的坐标。4区的区内坐标等于上一个等级的对应数的坐标沿[右上到左下对角线]对称的坐标。</li>
+</ul></li>
+</ul>
+<h4 id="前缀和差分">前缀和/差分</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/101/">99. 激光炸弹 -
+AcWing题库</a>
+<ul>
+<li>简单二维前缀和</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/102/">100. 增减序列
+- AcWing题库</a>
+<ul>
+<li>差分题。最关键的一步是要联想到看一看差分数组。做题多就有经验了，这种区间操作问题一般要想到转换为差分数组，然后区间操作问题就转为端点修改问题。</li>
+<li>将a转化为差分数组b后，这题就变成了，将b2~bn全部变为0的最少次数是多少？在最少次数的前提下，b1有多少种取值方式？每一次区间操作等价于将<span
+class="math inline">\(b_i\)</span>加或减1，<span
+class="math inline">\(b_j\)</span>加或减1（i &lt; j &amp;&amp; 1 &lt;= i
+&lt;= n &amp;&amp; 2 &lt;= j &lt;= n + 1）</li>
+<li>然后由于贪心思想，尽可能将b2~bn中的正负数抵消掉。剩下抵消不掉的数的绝对值+1其实就是b1的不同取值个数。因为剩下不能凑对抵消的只能通过和b1或者<span
+class="math inline">\(b_{n+1}\)</span>凑对来抵消。选择用b1凑对多少次，b1就有多少种取值方式。</li>
+</ul></li>
+</ul>
+<h4 id="二分">二分</h4>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/104/">102.
+最佳牛围栏 - AcWing题库</a>
+<ul>
+<li>看到平均数就想到整体减平均数，假设答案是一个数，然后每个数减掉这个数，那么只要找出一段区间长度&gt;=f的区间和&gt;=0就可以了。只要找出这样的区间。说明答案还可以更大，如果找不出，答案就要减小。所以二分答案即可。</li>
+<li>关键是如何找到“一段区间长度&gt;=f的区间和&gt;=0”，如果没有区间长度限制O(n)扫一遍用最大连续子段和即可。主要有区间限制，那么就多开一个数组minn[i]表示截止到0
+~
+i位置中sum[i]中的最小值即可。（其实这也是最大连续子段和的另一种做法）</li>
+</ul></li>
+</ul>
+<h4 id="排序">排序</h4>
+<ul>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/115/">113.
+特殊排序 - AcWing题库</a>
+<ul>
+<li>本质上就是裸排序题，用归并或者快排把&lt;号换成题中的compare即可。</li>
+</ul></li>
+</ul>
+<h3 id="数据结构">数据结构</h3>
+<h4 id="并查集">并查集</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1252/">1250.
+格子游戏 - AcWing题库</a>
+<ul>
+<li>乍一看题目觉得很复杂，但实际上想到把二维转为一维就简单了。给每一个二维坐标赋予一个独一的一维坐标。每次一条边就是将两个点merge起来。如果一条边的两个点已经在一个集合里面了，说明产生了环。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1254/">1252.
+搭配购买 - AcWing题库</a>
+<ul>
+<li>将所有捆绑在一起的东西看作一个物品，然后01背包即可。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/239/">237.
+程序自动分析 - AcWing题库</a>
+<ul>
+<li>对于一组约束，将相等条件都用并查集并起来。然后依次检查不相等条件的两个点是否在同一集合中，如果在就是NO。全部检查完没问题就是YES。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/241/">239. 奇偶游戏
+- AcWing题库</a>
+<ul>
+<li>这题涉及到区间问题，都应该往是否可以转换成“前缀和数组和差分数组上的区间俩端点“问题这个方向思考。这题考虑前缀和数组sum，区间[l,
+r]有偶数个1说明sum[r]与sum[l - 1]的奇偶性相同，区间[l,
+r]有奇数个1说明sum[r]与sum[l - 1]的奇偶性不同。</li>
+<li>看出这个后这题就好做了，二分M，每次检查前mid个条件是否满足。显然满足当且仅当是一个二分图，那么用染色法就检查前mid个条件形成的图是不是一个二分图即可。</li>
+<li>这题其实我还这样想过，就是用的[程序自动分析]这题的思路：二分M，每次检查前mid个条件是否满足。检查方法使用并查集，先将前mid个条件中相同条件的俩元素并起来，再检查前mid个条件中不相同条件的俩元素是否在同一集合，在就return
+0。都检查完了没问题就return 1。</li>
+<li>但上面这样想是错的，因为这题是有个隐藏条件的，任意一个元素，它不是奇数，就是偶数。所以上面并查集的做法是无法做到保证只有两个集合的。例如下面这个例子：</li>
+<li><img src="1.png" /></li>
+<li>通过三句红话其实可以推出这些条件无法共存（不是二分图）。但是上面的并查集做法是检查不出来的。</li>
+<li>如果要用并查集的话要用这种思路：维护d[x]，表示x与父亲的奇偶性（如果俩点奇偶性相同则为0，不相同则为1）。在更新fat[x]的时候顺便更新一下d[x]，那么更新完后d[x]就成为了x与祖先的奇偶性。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/240/">238.
+银河英雄传说 - AcWing题库</a>
+<ul>
+<li>跟上一题一样维护d[x]，表示x到父亲的距离。也是在更新fat[x]时顺便更新一下d[x]即可，更新完后d[x]就成为了x到祖先的距离。</li>
+<li>这题在merge时会用到并查集大小信息，所以还要多维护一个siz[x]。</li>
+</ul></li>
+</ul>
+<h4 id="对顶堆">对顶堆</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/108/">106.
+动态中位数 - AcWing题库</a>
+<ul>
+<li>将数分为较大的一部分和较小的一部分。而且保证较大一部分的数的数量在偶数时与较小一部分的数的数量相等，在奇数时较大一部分的数的数量比较小一部分数的数量大1。</li>
+<li>用小根堆b维护较大的一部分，大根堆a维护较小的一部分。每次一进来一个数t，先与b.top()（也就是较大一部分中的最小的数）比较，如果比b.top()小，则把t插入a中。反之，把t插入b中。</li>
+<li>然后就要保证两个堆之间的数量关系。写俩if即可，if (a.size() &gt;
+b.size()) b.push(a.top()),
+a.pop()。这句话保证了a的数量一旦超过b，就会被b反超。if (b.size() - 1
+&gt; a.size()) a.push(b.top()),
+a.pop()。这句话保证了如果b的数量比a大2，则马上削弱它使得a、b数量相等。</li>
+</ul></li>
+</ul>
+<h4 id="线段树">线段树</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1275/">1273.
+天才的记忆 - AcWing题库</a>
+<ul>
+<li>区间查询最大值。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/248/">242.
+一个简单的整数问题 - AcWing题库</a>
+<ul>
+<li>区间修改，单点查询。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/244/">243.
+一个简单的整数问题2 - AcWing题库</a>
+<ul>
+<li>区间修改，区间查询。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1279/">1277.
+维护序列 - AcWing题库</a>
+<ul>
+<li>区间修改（乘法加法），区间查询。</li>
+<li>假设sum' = sum * a + b，那么加一个数sum' + c = sum * a + (b +
+c)，相当于加法标记加了个c；乘一个数sum' * c = sum * ac +
+(bc)，相当于加法和乘法标记都自乘了个c。所以就这样维护俩标记即可，然后按照sum
+= sum * mul + add的规则去更新sum即可。</li>
+<li>但如果假设sum' = (sum + a) * b，那么加一个数sum' + c = sum * b + ab
++ c，你看，就不好可持续性维护了。</li>
+<li>这题注意build初始化时每个t[p]的mul标记都要初始化为1。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1277/">1275. 最大数
+- AcWing题库</a>
+<ul>
+<li>动态维护后L个数中的最大值，可以发现数组的数量是只会增加不会减少的，而且数组元素数量最多增长到2e5。所以对数组下标建一颗线段树维护区间最大值即可。单点修改
++ 区间查询。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/246/">245.
+你能回答这些问题吗 - AcWing题库</a>
+<ul>
+<li>考虑t[p]的最大子段和sm如何转移：max(t[p1].sm, t[p2].sm,
+跨过mid的最大子段和)。跨过mid的最大子段和 = t[p1]的最大后缀和 +
+t[p2]的最大前缀和。</li>
+<li>所以t[p]需要维护最大子段和sm，最大前缀和lm，最大后缀和rm，在维护lm,
+rm时还会用到区间和sum。</li>
+<li>查询区间[l, r]时，ask函数应返回一个Tree类型，当l &lt;= mid &lt;=
+r（mid = (t[p].l + t[p].r) / 2）时，可以通过子树t1,
+t2表示出状态。如果不返回Tree类型的话，就没有子树t1,
+t2的信息，状态不好表示出来。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/247/">246.
+区间最大公约数 - AcWing题库</a>
+<ul>
+<li>由更相减损术可知gcd(a, b) = gcd(a, b -
+a)。次公式可扩展到多个变量：gcd(a, b, c, d) = gcd(a, b - a, c - b, d -
+c)，这其实就是差分形式。所以可以线段树维护原数组的差分数组的区间gcd和区间和，那么操作1就是单点修改（单点修改那可以完全不用考虑懒标记问题了很舒服），操作2求gcd(A[l],
+A[l + 1], A[l + 2], ..., A[r]) = gcd(A[l], A[l + 1] - A[l], A[l + 2] -
+A[l + 1], ..., A[r] - A[r - 1]) = gcd(差分数组[1 ~ l]之和，差分数组[l +
+1到r]的gcd)。</li>
+<li>这题有俩小细节，第一差分单点修改r +
+1有可能到n外边去，第二查询时如果l = r则要特判下。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/249/">247.
+亚特兰蒂斯 - AcWing题库</a>
+<ul>
+<li>扫描线算法，扫描线算法是个比较死的算法，因为其有一个特殊性质：线段是成对出现的。</li>
+<li>做法两种，我喜欢这种：维护区间最小值min和区间最小值的长度minlen。这样，如果t[1].min
+= 0，则被覆盖的长度 = 全部长度 - t[1].minlen。如果t[1].min !=
+0，则被覆盖的长度 =
+全部长度。区间最小值和区间最小值长度都非常好维护，区间修改就是给最小值打个懒标记即可，不用管minlen，因为最小值加一个数减一个数仍然是最小值，minlen不会变。</li>
+<li>上面就是扫描线的做法。所以扫描线很简单，关键这题的细节处理有点点小麻烦。</li>
+<li>一，坐标都是小数，所以需要离散化处理成整数才能建线段树。二，t[p]管理的实际区间为getVal(t[p].r
++ 1) -
+getVal(t[p].l)，因为只有这样，线段树的子节点才可以初始化minlen，不然minlen不好初始化。三，离散化的俩函数getRank,
+getVal的参数类型要注意。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://ac.nowcoder.com/acm/contest/67742/H">H-Tokitsukaze
+and Power Battle (hard)_2024牛客寒假算法基础集训营2</a>
+<ul>
+<li>是“最大区间和”的变形题。</li>
+<li>考虑i，j的位置，如果i，j都在mid左边是一种情况，即t[p].ans =
+t[p1].ans。如果i，j都在mid右边是一种情况，即t[p].ans =
+t[p2].ans。如果i，j分布在mid两边，则需要考虑x(即中间砍的那一刀)的位置。</li>
+<li>如果砍的一刀在mid, mid + 1之间，则t[p].ans =
+t[p1].包含右端点的最大后缀和 - t[p2].包含左端点的最小前缀和。</li>
+<li>如果砍的一刀在左半边，则t[p].ans = t[p1].包含右端点的答案 -
+t[p2].包含左端点的最小前缀和。</li>
+<li>如果砍的一刀在右半边，则t[p].ans = t[p1].包含右端点的最大后缀和 +
+t[p2].包含左端点的答案。</li>
+<li>所以t[p].ans就是在上面几种情况取max。发现用到了“包含右端点的最大后缀和rmax”，“包含左端点的最小前缀和lmin”，“包含右端点的答案rans”，“包含左端点的答案lans”，rmax和lmin很好维护，现在来看lans和rans如何维护。</li>
+<li>先考虑t[p].lans。此时i是卡死的就在l上，考虑j的位置。如果j左半边，则t[p].lans
+= t[p1].lans。如果j在右半边，则考虑砍的一刀位置，如果砍在mid,
+mid+1中间，则t[p].lans = t[p1].sum -
+t[p2].lmin；如果砍在左半边，则t[p].lans = t[p1].包含左右端点的答案 -
+t[p2].lmin；如果砍在右半边，则t[p].lans = t[p1].sum + t[p2].lans。</li>
+<li>t[p].rans同理。发现在维护这俩的时候还用到了"包含左右端点的答案lrans"。</li>
+<li>现在考虑t[p].lrans。因为i，j都定死了，所以只需考虑砍的一刀的位置。如果砍在mid,mid+1中间，则t[p].lrans
+= t[p1].sum - t[p2].sum。如果砍在左半边，则t[p].lrans = t[p1].lrans -
+t[p2].sum。如果砍在右半边，则t[p].lrans = t[p1].sum + t[p2].lrans。</li>
+</ul></li>
+</ul>
+<h4 id="树状数组">树状数组</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/109/">107.
+超快速排序 - AcWing题库</a>
+<ul>
+<li>求逆序对。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/243/">241. 楼兰图腾
+- AcWing题库</a>
+<ul>
+<li>简单的求每个数之前比它大的数的个数。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/245/">244.
+谜一样的牛 - AcWing题库</a>
+<ul>
+<li>最后一头牛的高度是确定的，在确定最后一头牛高度后，倒数第二头牛的高度也确定了，依次类推。假设现在要求第i头牛的高度，则若数组c的区间和[1,
+k] = 比第i头牛矮的牛数量 + 1，则第i头牛的高度为k（最开始每个位置的c[i] =
+1）。</li>
+<li>区间和查询用树状数组，找高度时配合二分。找到该牛高度k后，upd(x,
+-1)。</li>
+</ul></li>
+</ul>
+<h4 id="字典树">字典树</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/837/">835.
+Trie字符串统计 - AcWing题库</a>
+<ul>
+<li>板子题，字典树空间一般不知道开多少合适，建议用vector。就比如这题，开个vector&lt;Node&gt;
+a。Node结构体里放指向信息，这题的指向信息有26个，就在Node里开一个alpha[26]。</li>
+<li>从根节点编号0出发，若a[0].alpha[k] =
+0，那就新开一个点，a[0].alpha[k] = ++dex,
+a.push_back(tmp)即可。然后编号跳到a[0].alpha[k]，继续依次类推。</li>
+<li>通过这种方法，就不需要考虑空间应该开多大了。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/145/">143.
+最大异或对 - AcWing题库</a>
+<ul>
+<li>思考每个数的二进制形式，将每个数的二进制形式insert到字典树中（字典树就两个指向信息p[0/1]），然后对于每个数，依次扫二进制的每一位数k，在字典树里找a[p].nxt[k
+^
+1]是否存在，存在p就指向它，不存在就指向a[p].nxt[k]。在过程中统计答案求最大值即可。</li>
+</ul></li>
+<li><a
+target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/description/258/">256.
+最大异或和 - AcWing题库</a>
+<ul>
+<li>涉及到区间异或运算，所以尝试是否可以前缀和/差分转化为单点运算，发现是可以的。考虑维护前缀异或数组，s[i]
+= a[1] ^ a[2] ... ^ a[i]，这样a[p] ^ a[p + 1] ^ a[p + 2] ^ ... ^ a[n] =
+s[n] ^ s[l - 1]。所以所求为x ^ s[n] ^ s[p - 1]。(x ^
+s[n])是一个定值C，所以就是在[l - 1, r - 1]内找一个数s[i]，使得s[i] ^
+C最大。所以就是可持久化Trie树。</li>
+<li>可持久化Trie树就是每次添加一条链，具体算法是p = root[now], q =
+root[now - 1]。然后p的所有子节点除了新链上的点，复制q的节点，然后p =
+t[p][k] = ++dex, q = t[q][k]。再递归进行直至把这条链添加进Trie树。</li>
+</ul></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/02/20/%E9%98%B6%E6%AE%B5%E6%80%A7%E8%A7%84%E5%88%92/" rel="prev" title="阶段性规划">
+      <i class="fa fa-chevron-left"></i> 阶段性规划
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81OTA0Ny8zNTUwOQ=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E7%BB%B4%E9%A2%98"><span class="nav-text">思维题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95"><span class="nav-text">基础算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-text">位运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%B2%BB"><span class="nav-text">递归&#x2F;分治</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C%E5%B7%AE%E5%88%86"><span class="nav-text">前缀和&#x2F;差分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%88%86"><span class="nav-text">二分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-text">排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="nav-text">并查集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E9%A1%B6%E5%A0%86"><span class="nav-text">对顶堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-text">线段树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E6%A0%91"><span class="nav-text">字典树</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Error_666"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Error_666</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">22</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/potatoQi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;potatoQi" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/8252/" title="AcWing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;8252&#x2F;" rel="noopener" target="_blank"><i class="fas fa-rocket fa-fw"></i>AcWing</a>
+      </span>
+  </div>
+
+
+
+  <div class="links-of-recent-posts motion-element">
+    <div class="links-of-recent-posts-title">
+      <i class="fa fa-history fa-fw"></i>
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" title="2024&#x2F;02&#x2F;20&#x2F;刷题笔记&#x2F;">刷题笔记</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/02/20/%E9%98%B6%E6%AE%B5%E6%80%A7%E8%A7%84%E5%88%92/" title="2024&#x2F;02&#x2F;20&#x2F;阶段性规划&#x2F;">阶段性规划</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/12/04/FROST%E2%80%94Fast-row-stochastic-optimization-with-uncoordinated-step-sizes/" title="2023&#x2F;12&#x2F;04&#x2F;FROST—Fast-row-stochastic-optimization-with-uncoordinated-step-sizes&#x2F;">FROST—Fast row-stochastic optimization with uncoordinated step-sizes</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/11/19/5-%E5%87%B8%E5%87%BD%E6%95%B0%E7%9A%84%E5%AE%9A%E4%B9%89/" title="2023&#x2F;11&#x2F;19&#x2F;5-凸函数的定义&#x2F;">5. 凸函数的定义</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2023/11/19/4-%E4%BF%9D%E5%87%B8%E8%BF%90%E7%AE%97/" title="2023&#x2F;11&#x2F;19&#x2F;4-保凸运算&#x2F;">4. 保凸运算</a>
+        </li>
+    </ul>
+  </div>
+      </div>
+	<br>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-10-1 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Error_666</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+ -->
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+setInterval(function () {
+    var box = document.querySelector(".trc_rbox_container");
+    if(box) box.outerHTML = "";
+}, 2000);
+</script>
+
+</body>
+</html>
