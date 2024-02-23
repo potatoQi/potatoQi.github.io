@@ -2,7 +2,7 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://example.com/2024/02/23/Python%E5%9F%BA%E7%A1%80/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -12,6 +12,15 @@
   
   <url>
     <loc>http://example.com/2024/02/23/VS-Code%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    
+    <lastmod>2024-02-23</lastmod>
+    
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
     
     <lastmod>2024-02-23</lastmod>
     
@@ -119,15 +128,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/10/16/2-python%E6%80%A5%E6%95%91%E5%8C%85/</loc>
-    
-    <lastmod>2024-02-19</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</loc>
     
     <lastmod>2024-02-19</lastmod>
@@ -209,15 +209,6 @@
   </url>
   
   <url>
-    <loc>http://example.com/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/</loc>
-    
-    <lastmod>2023-10-09</lastmod>
-    
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/about/index.html</loc>
     
     <lastmod>2023-10-08</lastmod>
@@ -256,13 +247,6 @@
 
   
   <url>
-    <loc>http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/</loc>
-    <lastmod>2024-02-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
     <loc>http://example.com/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
@@ -270,7 +254,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/%E5%87%B8%E4%BC%98%E5%8C%96/</loc>
+    <loc>http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -284,7 +268,7 @@
   </url>
   
   <url>
-    <loc>http://example.com/categories/1-%E8%AE%BA%E6%96%87/</loc>
+    <loc>http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/%E5%87%B8%E4%BC%98%E5%8C%96/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -298,7 +282,21 @@
   </url>
   
   <url>
+    <loc>http://example.com/categories/1-%E8%AE%BA%E6%96%87/</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
     <loc>http://example.com/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Linux/</loc>
+    <lastmod>2024-02-23</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://example.com/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Python/</loc>
     <lastmod>2024-02-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>

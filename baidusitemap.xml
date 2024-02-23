@@ -1,11 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
+    <loc>http://example.com/2024/02/23/Python%E5%9F%BA%E7%A1%80/</loc>
     <lastmod>2024-02-23</lastmod>
   </url>
   <url>
     <loc>http://example.com/2024/02/23/VS-Code%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/</loc>
+    <lastmod>2024-02-23</lastmod>
+  </url>
+  <url>
+    <loc>http://example.com/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</loc>
     <lastmod>2024-02-23</lastmod>
   </url>
   <url>
@@ -53,10 +57,6 @@
     <lastmod>2024-02-19</lastmod>
   </url>
   <url>
-    <loc>http://example.com/2023/10/16/2-python%E6%80%A5%E6%95%91%E5%8C%85/</loc>
-    <lastmod>2024-02-19</lastmod>
-  </url>
-  <url>
     <loc>http://example.com/2023/10/15/1-%E6%B7%B1%E5%BA%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0%E5%AF%BC%E8%AE%BA/</loc>
     <lastmod>2024-02-19</lastmod>
   </url>
@@ -87,10 +87,6 @@
   <url>
     <loc>http://example.com/2023/11/12/ChatGPT4%E4%BD%BF%E7%94%A8/</loc>
     <lastmod>2023-11-12</lastmod>
-  </url>
-  <url>
-    <loc>http://example.com/2023/10/03/%E5%9C%A8VS-Code%E4%B8%AD%E9%85%8D%E7%BD%AEC-C/</loc>
-    <lastmod>2023-10-09</lastmod>
   </url>
   <url>
     <loc>http://example.com/2023/10/03/%E4%B8%AA%E4%BA%BA%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E8%AF%B4%E6%98%8E/</loc>
