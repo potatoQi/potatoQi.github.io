@@ -31,7 +31,7 @@
 <meta property="og:description" content="什么？你连基本的Python相关知识都不会？">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-23T15:08:48.000Z">
-<meta property="article:modified_time" content="2024-02-24T08:22:40.009Z">
+<meta property="article:modified_time" content="2024-02-25T07:08:26.049Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-24 16:22:40" itemprop="dateModified" datetime="2024-02-24T16:22:40+08:00">2024-02-24</time>
+                <time title="修改时间：2024-02-25 15:08:26" itemprop="dateModified" datetime="2024-02-25T15:08:26+08:00">2024-02-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.1k</span>
+              <span>3.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -354,6 +354,7 @@ b：三目运算符，max_value=a仅当a&gt;b时成立，否则=b</li>
 <li>切片
 <ul>
 <li>a[l:r]：返回a[l], a[l+1], ..., a[r-1]（l、r可缺省）</li>
+<li>a[1:]：返回a[1], a[2], ... a[len(a) - 1]</li>
 <li>a[1:3] = [2, 3]：等价于a[1]=2, a[2]=3</li>
 <li>a[1:3] = [0]：等价于a[1]=0，把a[2]删掉</li>
 <li>a[1:3] = []：等价于把a[1]、a[2]删掉</li>
@@ -361,18 +362,24 @@ b：三目运算符，max_value=a仅当a&gt;b时成立，否则=b</li>
 <li>复制
 <ul>
 <li>不能用等号复制，用等号复制的话相当于新列表只是原列表的一个别名。修改新列表仍会对原列表产生影响。</li>
-<li>用切片即可，即b = a[:]</li>
+<li>用切片复制即可，即b = a[:]</li>
 </ul></li>
 <li>列表的运算
 <ul>
 <li>列表的加法可以将两个列表拼接起来，得到一个新列表。</li>
 <li>列表乘以一个整数，可以将若干个自身拼接起来，得到一个新列表。</li>
+<li>将列表中的每个元素加上一个1
+<ul>
+<li>a = [x + 1 for x in a]</li>
+</ul></li>
 </ul></li>
 <li>列表常用函数
 <ul>
 <li>len(a)：返回列表长度</li>
 <li>a.append(x)：尾部插入x</li>
+<li>a.insert(pos, x)：在pos处插入x</li>
 <li>a.pop()：删除尾部最后一个元素</li>
+<li>a.pop(pos)：删除下标为pos处的元素</li>
 <li>a.reverse()：翻转</li>
 <li>a.sort()：排序
 <ul>
@@ -475,6 +482,7 @@ x[0]))：a是一个列表，列表里的元素也是列表（里头有2个数）
 <li>conda activate 环境名：进入某个虚拟环境</li>
 <li>conda list：查看当前虚拟环境内安装了哪些包</li>
 <li>conda install 包名：在当前虚拟环境内安装一个包</li>
+<li>conda create -n xxx python=x.x：创建一个虚拟环境</li>
 </ul>
 
     </div>
@@ -494,7 +502,10 @@ x[0]))：a是一个列表，列表里的元素也是列表（里头有2个数）
     <a href="/2024/02/23/VS-Code%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" rel="prev" title="VS Code基本使用">
       <i class="fa fa-chevron-left"></i> VS Code基本使用
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/02/24/Python%E8%BF%9B%E9%98%B6/" rel="next" title="Python进阶">
+      Python进阶 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -574,7 +585,7 @@ x[0]))：a是一个列表，列表里的元素也是列表（里头有2个数）
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">23</span>
+          <span class="site-state-item-count">24</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -604,6 +615,9 @@ x[0]))：a是一个列表，列表里的元素也是列表（里头有2个数）
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/2024/02/24/Python%E8%BF%9B%E9%98%B6/" title="2024&#x2F;02&#x2F;24&#x2F;Python进阶&#x2F;">Python进阶</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/2024/02/23/Python%E5%9F%BA%E7%A1%80/" title="2024&#x2F;02&#x2F;23&#x2F;Python基础&#x2F;">Python基础</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -614,9 +628,6 @@ x[0]))：a是一个列表，列表里的元素也是列表（里头有2个数）
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/" title="2024&#x2F;02&#x2F;20&#x2F;刷题笔记&#x2F;">刷题笔记</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/02/20/%E9%98%B6%E6%AE%B5%E6%80%A7%E8%A7%84%E5%88%92/" title="2024&#x2F;02&#x2F;20&#x2F;阶段性规划&#x2F;">阶段性规划</a>
         </li>
     </ul>
   </div>
