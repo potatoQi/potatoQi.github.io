@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/2.png">
 <meta property="og:image" content="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/1.png">
 <meta property="article:published_time" content="2024-02-19T16:27:02.000Z">
-<meta property="article:modified_time" content="2024-02-26T16:19:47.310Z">
+<meta property="article:modified_time" content="2024-02-28T08:39:55.243Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/02/20/%E5%88%B7%E9%A2%98%E7%AC%94%E8%AE%B0/2.png">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-02-27 00:19:47" itemprop="dateModified" datetime="2024-02-27T00:19:47+08:00">2024-02-27</time>
+                <time title="修改时间：2024-02-28 16:39:55" itemprop="dateModified" datetime="2024-02-28T16:39:55+08:00">2024-02-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -257,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>8.2k</span>
+              <span>8.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>7 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -346,6 +346,13 @@ c_n=0\)</span></li>
 <ul>
 <li>如上图，考虑d，如果d是0。那么当d这一位取1的话，左边只能是000 ~
 (abc-1)，右边可以是000 ~ 999。上图都清晰明了了，分情况讨论即可。</li>
+</ul></li>
+<li><p><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1643/">1641.
+狼人杀-简单版 - AcWing题库</a></p>
+<ul>
+<li>枚举哪两个人是狼人，那么此时所有人的身份就确定了。然后检查两个条件。(1):
+是否有且仅有两个人在说谎；(2):
+俩狼人中是否有且仅有一个人在说谎。若俩条件满足则是一组解。</li>
 </ul></li>
 </ul>
 <h3 id="基础算法">基础算法</h3>
@@ -496,11 +503,26 @@ r]有奇数个1说明sum[r]与sum[l - 1]的奇偶性不同。</li>
 <ul>
 <li>将数分为较大的一部分和较小的一部分。而且保证较大一部分的数的数量在偶数时与较小一部分的数的数量相等，在奇数时较大一部分的数的数量比较小一部分数的数量大1。</li>
 <li>用小根堆b维护较大的一部分，大根堆a维护较小的一部分。每次一进来一个数t，先与b.top()（也就是较大一部分中的最小的数）比较，如果比b.top()小，则把t插入a中。反之，把t插入b中。</li>
-<li>然后就要保证两个堆之间的数量关系。写俩if即可，if (a.size() &gt;
-b.size()) b.push(a.top()),
-a.pop()。这句话保证了a的数量一旦超过b，就会被b反超。if (b.size() - 1
-&gt; a.size()) a.push(b.top()),
-a.pop()。这句话保证了如果b的数量比a大2，则马上削弱它使得a、b数量相等。</li>
+<li>然后就要保证两个堆之间的数量关系。维护一下即可。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1545/">1543. 栈 -
+AcWing题库</a>
+<ul>
+<li>相对于上面一题，就多了一个删除操作。</li>
+<li>使用multiset，这玩意内部是自动从小到大排序的。支持插入、删除、用迭代器访问，两个堆分别用俩multiset代替就行了。</li>
+<li>删除要a.erase(a.find(x))，而不是a.erase(x)，后者会把所有x全删掉。</li>
+</ul></li>
+</ul>
+<h4 id="优先双端队列">优先/双端队列</h4>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1543/">1541.
+世界首富 - AcWing题库</a>
+<ul>
+<li>把每个人的信息都用结构体记录下来，然后对于每个查询，二分找到左右端点，然后对区间内的点重新sort一遍。这种做法时间过不去，因为n有1e5。极端情况每次查询都要对1e5个元素重新sort。</li>
+<li>看题目年龄最多200，所以考虑以年龄作为索引。相当于每个年龄开一条链，然后把对应年龄人的信息链上去。</li>
+<li>输出规定年龄区间内前m个人的信息，其实就是一个多路合并问题。用一个优先队列解决。</li>
+<li>（P.S.
+vector类型可以定义为pair/struct，写一个排序函数cmp即可。但是priority_queue里若想实现自己定义的规则，不要用pair最好用struct，而且不是写排序函数，而是写一个重载&lt;的规则，注意规则内部大于要变小于，小于要变大于）</li>
 </ul></li>
 </ul>
 <h4 id="线段树">线段树</h4>
@@ -664,7 +686,7 @@ t[p][k] = ++dex, q = t[q][k]。再递归进行直至把这条链添加进Trie树
 <ul>
 <li>还行的一道模拟题，考虑时间轴，每个人要等的时间 = 到他的时间 -
 他到的时间。用一个优先队列维护正在办理业务的人，按照谁先结束排序。</li>
-<li>通过这题可以学到priority_queue是可以自定义排序规则的，只需要重载&lt;号。</li>
+<li>通过这题可以学到priority_queue是可以自定义排序规则的，只需要重载&lt;号（类型一定要是结构体不能是pair）</li>
 </ul></li>
 <li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1559/">1557.
 说话方式 - AcWing题库</a>
@@ -673,6 +695,12 @@ t[p][k] = ++dex, q = t[q][k]。再递归进行直至把这条链添加进Trie树
 <li>通过这题可以学到map也是可以排序的。只需要vector&lt;PAIR&gt;
 vec(mp.begin(),
 mp.end())，即可把mp转换成一个vector。然后用sort对vector排序即可。</li>
+</ul></li>
+<li><a target="_blank" rel="noopener" href="https://www.acwing.com/problem/content/1488/">1486.
+排队等候 - AcWing题库</a>
+<ul>
+<li>跟“银行排队”那题比较像，这题多了一个“等待区”的概念，而且没有了具体的时间。所以不像上一题好写。所以学会自己给自己增加条件，用一个循环模拟时间线（因为17点下班所以复杂度不会很高）。然后对于当前第T秒，先把每个窗口办理完手续的人赶出去，然后再依次把人放进等待区，分配到对应的窗口。</li>
+<li>这题坑点是即使一个人它开始办理业务的时间超过了17点，它也要分配到对应的窗口，因为对于他自己，是不知道前面的人需要多久的，所以他肯定会排进某个窗口的队里。</li>
 </ul></li>
 </ul>
 
@@ -760,7 +788,7 @@ mp.end())，即可把mp转换成一个vector。然后用sort对vector排序即�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E7%BB%B4%E9%A2%98"><span class="nav-text">思维题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95"><span class="nav-text">基础算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-text">位运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%B2%BB"><span class="nav-text">递归&#x2F;分治</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C%E5%B7%AE%E5%88%86"><span class="nav-text">前缀和&#x2F;差分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%88%86"><span class="nav-text">二分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-text">排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="nav-text">并查集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E9%A1%B6%E5%A0%86"><span class="nav-text">对顶堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-text">线段树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E6%A0%91"><span class="nav-text">字典树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F"><span class="nav-text">模拟</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%80%9D%E7%BB%B4%E9%A2%98"><span class="nav-text">思维题</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%AE%97%E6%B3%95"><span class="nav-text">基础算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%8D%E8%BF%90%E7%AE%97"><span class="nav-text">位运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%92%E5%BD%92%E5%88%86%E6%B2%BB"><span class="nav-text">递归&#x2F;分治</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%89%8D%E7%BC%80%E5%92%8C%E5%B7%AE%E5%88%86"><span class="nav-text">前缀和&#x2F;差分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8C%E5%88%86"><span class="nav-text">二分</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8E%92%E5%BA%8F"><span class="nav-text">排序</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84"><span class="nav-text">数据结构</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B9%B6%E6%9F%A5%E9%9B%86"><span class="nav-text">并查集</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AF%B9%E9%A1%B6%E5%A0%86"><span class="nav-text">对顶堆</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%85%88%E5%8F%8C%E7%AB%AF%E9%98%9F%E5%88%97"><span class="nav-text">优先&#x2F;双端队列</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%BA%BF%E6%AE%B5%E6%A0%91"><span class="nav-text">线段树</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84"><span class="nav-text">树状数组</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AD%97%E5%85%B8%E6%A0%91"><span class="nav-text">字典树</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A8%A1%E6%8B%9F"><span class="nav-text">模拟</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -776,7 +804,7 @@ mp.end())，即可把mp转换成一个vector。然后用sort对vector排序即�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">25</span>
+          <span class="site-state-item-count">26</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -806,6 +834,9 @@ mp.end())，即可把mp转换成一个vector。然后用sort对vector排序即�
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/2024/03/03/%E5%86%99%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84CPU/" title="2024&#x2F;03&#x2F;03&#x2F;写一个简单的CPU&#x2F;">写一个简单的CPU</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/2024/02/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="2024&#x2F;02&#x2F;27&#x2F;计算机组成原理自学笔记&#x2F;">计算机组成原理自学笔记</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -816,9 +847,6 @@ mp.end())，即可把mp转换成一个vector。然后用sort对vector排序即�
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/2024/02/23/VS-Code%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="2024&#x2F;02&#x2F;23&#x2F;VS-Code基本使用&#x2F;">VS Code基本使用</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/02/22/SAI2%E7%9A%84%E5%9F%BA%E6%9C%AC%E4%BD%BF%E7%94%A8/" title="2024&#x2F;02&#x2F;22&#x2F;SAI2的基本使用&#x2F;">SAI2的基本使用</a>
         </li>
     </ul>
   </div>
