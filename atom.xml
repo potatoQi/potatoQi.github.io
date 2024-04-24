@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-04-24T16:37:24.873Z</updated>
+  <updated>2024-04-24T16:56:32.517Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Matlab基础</title>
+    <link href="http://example.com/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/"/>
+    <id>http://example.com/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/</id>
+    <published>2024-04-24T16:53:52.000Z</published>
+    <updated>2024-04-24T16:56:32.517Z</updated>
+    
+    <content type="html"><![CDATA[<p>学习Matlab，一方面是数模需要，另一方面是Matlab +FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以就学习一下。</p><span id="more"></span><p>1</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;学习Matlab，一方面是数模需要，另一方面是Matlab +
+FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以就学习一下。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="2. 技能栈" scheme="http://example.com/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/"/>
+    
+    <category term="Matlab" scheme="http://example.com/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Matlab/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>各种工具使用手册</title>
@@ -401,27 +423,6 @@ Games With Directed Communication Graphs&lt;/p&gt;
     
     
     <summary type="html">&lt;p&gt;介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="4. 大学" scheme="http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/"/>
-    
-    <category term="凸优化" scheme="http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2. 几种重要的凸集-上</title>
-    <link href="http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/"/>
-    <id>http://example.com/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/</id>
-    <published>2023-10-05T06:30:21.000Z</published>
-    <updated>2024-02-19T16:37:58.139Z</updated>
-    
-    <content type="html"><![CDATA[<p>介绍了一个点、空集、超平面、半空间、球、椭球。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;介绍了一个点、空集、超平面、半空间、球、椭球。&lt;/p&gt;</summary>
     
     
     
