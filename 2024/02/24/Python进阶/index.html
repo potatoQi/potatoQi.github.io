@@ -31,7 +31,7 @@
 <meta property="og:description" content="说是进阶，其实就讲了三个数据分析常用包：numpy、pandas、matplotlib">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-02-24T08:49:18.000Z">
-<meta property="article:modified_time" content="2024-04-19T07:01:19.049Z">
+<meta property="article:modified_time" content="2024-04-26T17:34:38.155Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -229,7 +229,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-04-19 15:01:19" itemprop="dateModified" datetime="2024-04-19T15:01:19+08:00">2024-04-19</time>
+                <time title="修改时间：2024-04-27 01:34:38" itemprop="dateModified" datetime="2024-04-27T01:34:38+08:00">2024-04-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -258,7 +258,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.5k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -378,11 +378,11 @@ pd.read_excel('路径')：把一个excel表文件读入到一个dataframe变量�
 <li>a.tail()：查看后5行</li>
 </ul>
 <hr />
-<h3 id="matplotlib">Matplotlib</h3>
+<h3 id="matplotlib">matplotlib</h3>
 <ul>
 <li>matplotlib 是一个Python 的2D
 图形包。pyplot封装了很多画图的函数。所以在实际的使用过程中，常常以plt
-作为 matplotlib.pyplot 的省略</li>
+作为 matplotlib.pyplot 的省略。import matplotlib.pyplot as plt</li>
 <li>找参数的网站：https://blog.csdn.net/qq_40481843/article/details/106231257</li>
 <li>plt.plot
 <ul>
@@ -445,13 +445,36 @@ pd.read_excel('路径')：把一个excel表文件读入到一个dataframe变量�
 <ul>
 <li>改变图片大小（单位为英寸）：plt.rcParams['figure.figsize']=(6.0,4.0)
 # 默认是(6, 4)</li>
-<li>改变图片显示清晰度：plt.rcParams['savefig.dpi'] = 100 #
+<li>改变图片保存时清晰度：plt.rcParams['savefig.dpi'] = 100 #
 默认是100</li>
-<li>改变图片保存时的清晰度：plt.rcParams['figure.dpi'] = 100 #
+<li>改变图片显示的清晰度：plt.rcParams['figure.dpi'] = 100 #
 默认是100</li>
 <li>Note：改变dpi只对栅格图有效，矢量图无需设置dpi，清晰度都一样的</li>
 </ul></li>
 </ul>
+<hr />
+<h3 id="sympy">sympy</h3>
+<p>一般使用即from sympy import *。</p>
+<p>启用美化打印：init_printing(use_unicode=True,
+use_latex=True)。（配合display使用而不是print）</p>
+<h4 id="矩阵相关">矩阵相关</h4>
+<ol type="1">
+<li>定义</li>
+</ol>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x, y, z = symbols(<span class="string">&#x27;x y z&#x27;</span>)</span><br><span class="line">v = Matrix([x, y, z])</span><br><span class="line">M = Matrix([</span><br><span class="line">    [x, y, z],</span><br><span class="line">    [x, y, z],</span><br><span class="line">    [x, y, z]</span><br><span class="line">])</span><br></pre></td></tr></table></figure>
+<ol start="2" type="1">
+<li><p>常用函数</p>
+<ul>
+<li>M.det()：返回M的行列式</li>
+<li>M.inv()：返回矩阵的逆（如果存在）</li>
+<li>M.T：返回转置</li>
+<li>Eq(left, right)：返回left = right这个方程</li>
+<li>solve(eq,
+goal)：对于eq这个方程(eq是个Eq对象)，求解goal目标变量的取值</li>
+</ul></li>
+<li><p>实战例子</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sympy <span class="keyword">import</span> *</span><br><span class="line">init_printing(use_unicode=<span class="literal">True</span>, use_latex=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line">rho = symbols(<span class="string">&#x27;rho&#x27;</span>)</span><br><span class="line">varrho = symbols(<span class="string">&#x27;varrho&#x27;</span>)</span><br><span class="line">L1, L2, L3 = symbols(<span class="string">&#x27;L_1 L_2 L_3&#x27;</span>)</span><br><span class="line">AI_norm = symbols(<span class="string">&#x27;\|A-I\|&#x27;</span>)</span><br><span class="line">IJ_norm = symbols(<span class="string">&#x27;\|I-J\|&#x27;</span>)</span><br><span class="line">beta = symbols(<span class="string">&#x27;beta&#x27;</span>)</span><br><span class="line"></span><br><span class="line">X = Matrix([</span><br><span class="line">    [<span class="number">1</span>, <span class="number">0</span>, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">0</span>, rho, <span class="number">0</span>],</span><br><span class="line">    [<span class="number">0</span>, L2 * rho * AI_norm * IJ_norm + beta * (<span class="number">1</span> + rho), rho]</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">alpha = symbols(<span class="string">&#x27;alpha&#x27;</span>)</span><br><span class="line">mu = symbols(<span class="string">&#x27;mu&#x27;</span>)</span><br><span class="line">tau = symbols(<span class="string">&#x27;tau&#x27;</span>)</span><br><span class="line"></span><br><span class="line">E = Matrix([</span><br><span class="line">    [-<span class="number">1</span> * mu, L1, L3],</span><br><span class="line">    [varrho * L1 * L3 * (<span class="number">1</span> + tau * varrho * L3) * IJ_norm, varrho * L1 * L3 * IJ_norm, varrho * L3 * L3 *  IJ_norm],</span><br><span class="line">    [varrho * L1 * L2 * (<span class="number">1</span> + varrho * L3) * (<span class="number">1</span> + tau * varrho * L3) * IJ_norm, varrho * L1 * L2 * (<span class="number">1</span> + varrho * L3) * IJ_norm, varrho * L2 * L3 * (<span class="number">1</span> + varrho * L3) * IJ_norm]</span><br><span class="line">])</span><br><span class="line"></span><br><span class="line">M = X + alpha * E</span><br><span class="line"></span><br><span class="line">I = eye(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">eq = Eq((I - M).det(), <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">ans = solve(eq, alpha)</span><br><span class="line"></span><br><span class="line">display(ans)</span><br></pre></td></tr></table></figure></li>
+</ol>
 
     </div>
 
@@ -537,7 +560,7 @@ pd.read_excel('路径')：把一个excel表文件读入到一个dataframe变量�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy"><span class="nav-text">numpy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97"><span class="nav-text">运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%83%85%E5%86%B5"><span class="nav-text">多维情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="nav-text">矩阵运算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas"><span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#series"><span class="nav-text">Series</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dataframe"><span class="nav-text">DataFrame</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matplotlib"><span class="nav-text">Matplotlib</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#numpy"><span class="nav-text">numpy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9A%E4%B9%89"><span class="nav-text">定义</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7"><span class="nav-text">属性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%90%E7%AE%97"><span class="nav-text">运算</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E7%BB%B4%E6%83%85%E5%86%B5"><span class="nav-text">多维情况</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E5%87%BD%E6%95%B0"><span class="nav-text">常用函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E8%BF%90%E7%AE%97"><span class="nav-text">矩阵运算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pandas"><span class="nav-text">pandas</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#series"><span class="nav-text">Series</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#dataframe"><span class="nav-text">DataFrame</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#matplotlib"><span class="nav-text">matplotlib</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#sympy"><span class="nav-text">sympy</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9F%A9%E9%98%B5%E7%9B%B8%E5%85%B3"><span class="nav-text">矩阵相关</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
