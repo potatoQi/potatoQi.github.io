@@ -81,9 +81,9 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     <link href="http://example.com/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
     <id>http://example.com/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
     <published>2024-03-28T13:12:34.000Z</published>
-    <updated>2024-03-28T13:31:06.105Z</updated>
+    <updated>2024-06-21T17:39:27.139Z</updated>
     
-    <content type="html"><![CDATA[<p>用Verilog实现一个简易RISC-V指令集CPU软核。</p><p>本次实验是重庆大学2022级弘深计算机拔尖班计算机组成原理的实验项目。</p><span id="more"></span><p>在开始做实验之前，首先要对CPU的物理结构和数据是如何在regfile, ram,rom中传输的有比较清晰的认知。建议观看视频: <ahref="https://www.bilibili.com/video/BV1wi4y157D3?p=1">从0到1设计一台计算机</a>，掌握理论知识。</p><p>在看完视频后，可以先跟着这个<ahref="https://www.bilibili.com/video/BV1pK4y1C7es?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">教你写一个简单的CPU</a>视频，实现一个简单的MIPS指令集CPU软核，掌握实践知识。不用完全写对，跟着写一遍知道各个模块是如何互相运作的即可。因为视频中没有测试文件测试各个模块，都是一口气写下来的。所以最终版仿真是跑不起来的，因为存在诸多bug。</p><p>在以上两个内容完成后，即可自己动手写一个RISC-V指令集的CPU软核了。</p><h3 id="思路">思路</h3><p>等待结构图中... ...</p>]]></content>
+    <content type="html"><![CDATA[<p>用Verilog实现一个简易RISC-V指令集CPU软核。</p><p>本次实验是重庆大学2022级弘深计算机拔尖班计算机组成原理的实验项目。</p><span id="more"></span><h3 id="一.-想说的话">一. 想说的话</h3><p>在开始做实验之前，首先要对CPU的物理结构和数据是如何在regfile,data_memory, instr_memory、alu中传输的有比较清晰的认知。建议观看视频: <ahref="https://www.bilibili.com/video/BV1wi4y157D3?p=1">从0到1设计一台计算机</a>，掌握理论知识。</p><p>在看完视频后，可以先跟着这个<ahref="https://www.bilibili.com/video/BV1pK4y1C7es?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">教你写一个简单的CPU</a>视频，实现一个简单的MIPS指令集CPU软核，掌握实践知识。不用完全写对，跟着写一遍知道各个模块是如何互相运作的即可。因为视频中没有测试文件测试各个模块，都是一口气写下来的。所以最终版仿真是跑不起来的，因为存在诸多bug。</p><p>然后，最好在系统学习完一遍计组的理论知识（尤其是流水线冒险）后，在去写RISC-V指令集的软核。或者边学边做也行。我就是在全部写完后，才去学的计组理论知识，所以写出来的软核在冒险那一块是存在几个bug的，已经懒得调了。到时候下半年参加龙芯杯的时候反正也要再一个cpu，把这个遗憾留到龙芯杯解决就是了。</p><h3 id="二.-思路">二. 思路</h3><p>有啥思路？拿到设计图干就完事了，把线连好就行了，没啥难度。</p><p>代码已开源：<ahref="https://github.com/potatoQi/RISCV_CPU_Chongqing-University-Computer-Organization-Principles-Course-Project">RISCV_CPU(ChongqingUniversity Computer Organization Principles Course Project)</a></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;用Verilog实现一个简易RISC-V指令集CPU软核。&lt;/p&gt;
