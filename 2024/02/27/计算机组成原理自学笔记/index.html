@@ -55,7 +55,7 @@
 <meta property="og:image" content="http://example.com/2024/02/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/6.png">
 <meta property="og:image" content="http://example.com/2024/02/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/7.png">
 <meta property="article:published_time" content="2024-02-26T17:06:20.000Z">
-<meta property="article:modified_time" content="2024-06-21T17:23:56.639Z">
+<meta property="article:modified_time" content="2024-06-21T17:26:18.957Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/02/27/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/8.png">
@@ -254,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-22 01:23:56" itemprop="dateModified" datetime="2024-06-22T01:23:56+08:00">2024-06-22</time>
+                <time title="修改时间：2024-06-22 01:26:18" itemprop="dateModified" datetime="2024-06-22T01:26:18+08:00">2024-06-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -283,7 +283,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.5k</span>
+              <span>7.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -380,10 +380,7 @@ INT_MAX。当x取0的时候，-0表示为0 000.00，当x取INT_MAX时，-x表示
 <li><span class="math inline">\(1 \le E \le 2046(1023 * 2)\)</span></li>
 <li>11位阶码，共64位</li>
 </ol></li>
-<li><figure>
-<img src="8.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure></li>
+<li><img src="8.png" /></li>
 <li><img src="9.png" /></li>
 </ol></li>
 </ol>
@@ -521,10 +518,10 @@ INT_MAX。当x取0的时候，-0表示为0 000.00，当x取INT_MAX时，-x表示
 <li>x8-9/x18-27：保存寄存器，在函数调用中需要保存恢复（入栈）</li>
 <li>读取字符是lbu，存储字符是sb</li>
 <li>函数中return的固定格式：jalr x0, 0(x1)</li>
-<li><img src="10.png" alt="image" /> ppt4(15)</li>
-<li><img src="24.png" alt="image" /> ppt4(16)</li>
-<li><img src="11.png" alt="image" /> ppt4(25)</li>
-<li><img src="12.png" alt="image" /> ppt4(38)</li>
+<li><img src="10.png" /> ppt4(15)</li>
+<li><img src="24.png" /> ppt4(16)</li>
+<li><img src="11.png" /> ppt4(25)</li>
+<li><img src="12.png" /> ppt4(38)</li>
 </ul></li>
 </ul>
 <h3 id="三.-单周期数据通路">三. 单周期数据通路</h3>
@@ -542,25 +539,13 @@ class="math inline">\(\frac{改进前的总时间}{改进后的总时间}\)</spa
 class="math inline">\(\frac{改进后的吞吐量}{改进前的吞吐量}\)</span></p></li>
 <li><p>关键路径分析</p>
 <ol type="1">
-<li><figure>
-<img src="13.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<li><p><img src="13.png" /></p>
 <p>俩寄存器从readdata1/2出来然后进alu运算，得到结果直接传回registers</p></li>
-<li><figure>
-<img src="14.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<li><p><img src="14.png" /></p>
 <p>readdata1是首地址，immgen是偏移量，经alu运算后得到地址，然后ram的readdata读到数据后传回registers，赋值给rd</p></li>
-<li><figure>
-<img src="15.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<li><p><img src="15.png" /></p>
 <p>readdata2是要写入ram的数据，直接流入ram的writedata，readdata1是首地址，immgen是偏移量，经alu运算后得到地址</p></li>
-<li><figure>
-<img src="16.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<li><p><img src="16.png" /></p>
 <p>readdata1/2分别是rs1,
 rs2，经alu判断是否相等后zero信号给到pc那边的mux。label通过immgen传到mux</p></li>
 </ol></li>
@@ -579,10 +564,7 @@ up，如果只是读东西就只加一个read。</p>
 <li><p>EX：执行操作或计算地址</p></li>
 <li><p>MEM：访问内存操作数</p></li>
 <li><p>WB：将结果写回寄存器</p>
-<figure>
-<img src="17.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure></li>
+<p><img src="17.png" /></p></li>
 </ol></li>
 <li><p>流水线数据通路的延迟</p>
 <ol type="1">
@@ -600,22 +582,13 @@ lat(MEM), lat(WB) }</p></li>
 <li><p>画流水线图</p>
 <ol type="1">
 <li><p>传统流水线图</p>
-<figure>
-<img src="18.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<p><img src="18.png" /></p>
 <p>直接IF、ID、EX、MEM、WB五个阶段哐哐往上写就好了</p></li>
 <li><p>资源调度流水线图</p>
-<figure>
-<img src="19.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<p><img src="19.png" /></p>
 <p>固定的五套件是IM（instr_memory）、Reg、ALU、DM（data_memory）、Reg。如果写就前半部分标黑，如果读就后半部分标黑，如果都用到了就都标黑。没用到就标白（例如sub、add没用到DM）</p></li>
 <li><p>插气泡的写法</p>
-<figure>
-<img src="20.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure></li>
+<p><img src="20.png" /></p></li>
 </ol></li>
 <li><p>冒险</p>
 <ol type="1">
@@ -695,25 +668,16 @@ ID/EX.Rd == IF/ID.Rs)</li>
 </ol></li>
 <li><p>流水线性能分析</p>
 <ol type="1">
-<li><figure>
-<img src="21.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure></li>
+<li><p><img src="21.png" /></p></li>
 <li><p>可以发现，多插一个bubble就会多一个时间周期才能完成</p></li>
 <li><p>而且可以发现一个规律，插入bubble后的<span
 class="math inline">\(CPI = 1 +
 \frac{bubble数}{指令数}\)</span></p></li>
 <li><p>那么下面这题就可以理解了</p>
-<figure>
-<img src="22.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<p><img src="22.png" /></p>
 <p>只有beq、jal、ld会产生惩罚，题目说了没有结构冒险，所以只考虑ld。只有40%load，一个load指令会bubble一个周期，所以假设指令数是x，那么bubble数就是0.4x，代入公式：CPI
 = 1 + 0.4x / x = 1.4，然后T = CPI * 时钟周期 = 1.4 * 1.1 = 1.54</p></li>
-<li><figure>
-<img src="23.png" alt="image" />
-<figcaption aria-hidden="true">image</figcaption>
-</figure>
+<li><p><img src="23.png" /></p>
 <ul>
 <li>条件分支beq 20%，无条件跳转jal
 5%。跳转地址在ID阶段解决意味着会延迟一个周期跳转，跳转条件在EX解决意思是到EX/MEM才知道是否要跳转，也就是延迟3个周期跳转。</li>
