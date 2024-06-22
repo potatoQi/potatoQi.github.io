@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2024-06-21T17:11:34.315Z</updated>
+  <updated>2024-06-22T18:23:04.594Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机网络自学笔记</title>
+    <link href="http://example.com/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://example.com/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-06-22T12:20:35.000Z</published>
+    <updated>2024-06-22T18:23:04.594Z</updated>
+    
+    <content type="html"><![CDATA[<p>参考视频：<ahref="%5B课程目标_哔哩哔哩_bilibili%5D(https://www.bilibili.com/video/BV1JV411t7ow/?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0)">中科大郑烇</a></p><span id="more"></span><ol type="1"><li>网络、互联网、因特网</li></ol><p>网络由若干<strong>结点</strong>和连接这些结点的<strong>链路</strong>组成。</p><p>结点可以是手机/主机/打印机/交换机，链路可以是有线/无线。</p><p>多个网络通过<strong>路由器</strong>连接起来，形成<strong>互联网(internet)</strong>。<strong>因特网(Internet)</strong>是最大的互联网。</p><p>互联网的通信协议可以是任意的，因特网的通信协议是TCP/IP协议。</p><ol start="2" type="1"><li>因特网的组成</li></ol><p>由边缘部分和核心部分组成。边缘部分就是所有连接在因特网的主机，核心部分就是大量网络和连接这些网路的路由器组成。为连入核心部分的边缘部分提供数据交换服务。</p><ol start="3" type="1"><li><p>三种交换方式</p><ol type="1"><li><p>电路交换</p><ul><li><p>定义：就是很多设备连接到交换机上，交换机感性理解就是有许多入口和出口，它可以指定某个入口的信号发送到某个出口，这样，多个设备就可以同时互不干扰的发送信号了。交换机又可以与交换机相连，扩大网络范围。</p></li><li><p>电路交换的步骤：</p><ol type="1"><li>建立连接（给通信俩主机分配一条物理通信线路）</li><li>传输信号（这条物理通信线路一直被占用）</li><li>释放连接（归还通信资源）</li></ol></li><li><p>电路交换的优缺点</p><ul><li>优点：延迟小，通信线路都双方专属了，能不小吗。而且数据是有序的。</li><li>缺点：建立连接时间长；无法做到很多台主机之间同时相互通信（因为俩俩主机通信时就会占用一条通信线路，但是没有那么多通信线路）</li></ul></li></ul></li><li><p>报文交换</p><ol type="1"><li>定义：就是不建立连接了，也就是不锁死一条通信线路了。而是直接把<strong>报文(发送的数据)</strong>发送到交换机上，然后交换机存储转发给下一个交换机，一直到接收方收到报文为止。</li><li>报文交换的优缺点<ol type="1"><li>优点：无需建立连接；动态分配线路</li><li>缺点：引入了转发时延；需要较大的缓存空间(报文可能很大)</li></ol></li></ol></li><li><p>分组交换</p><ol type="1"><li><p>定义：就是所谓的边缘部分和核心部分，发送方将报文发送到其所连网络中，通过路由器不断的转发，最终转发到接收方中。</p></li><li><p>分组交换步骤</p><ol type="1"><li>构造分组：先讲报文划分成若干个等长的数据段，在每个数据段前加上元数据，这些元数据叫首部。</li><li>存储转发：路由器在拿到分组后，根据首部进行查表转发，找到合适的转发接口，然后转发给下一个路由器</li><li>还原报文：接收方在收到分组后，去掉首部，将数据段组合还原出报文</li></ol><ul><li>Note：对于同一报文的不同分组，分组的路由路径不一定相同，而且分组到达接收者的顺序不一定与发送时的顺序相同。</li></ul></li><li><p>分组交换的优缺点</p><ol type="1"><li>优点：无需建立连接；简化了存储管理（因为对报文进行了切片，所以路由器的缓存区只需固定即可，不论报文多大都可以切片为分组后转发出去）；减小重发数据量（假设传输过程中出错了，报文交换就要重新发送整个报文，但分组交换只需重发出错的那个分组即可）</li><li>缺点：引入了转发时延；更多的元数据信息（切完片后每个分组都有首部）；还原报文时复杂</li></ol></li></ol></li></ol></li></ol>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;参考视频：&lt;a
+href=&quot;%5B课程目标_哔哩哔哩_bilibili%5D(https://www.bilibili.com/video/BV1JV411t7ow/?p=1&amp;amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0)&quot;&gt;中科大郑烇&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="大学" scheme="http://example.com/categories/%E5%A4%A7%E5%AD%A6/"/>
+    
+    <category term="计算机网络" scheme="http://example.com/categories/%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>2024上半年算法竞赛游记</title>
@@ -81,9 +103,9 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     <link href="http://example.com/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
     <id>http://example.com/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
     <published>2024-03-28T13:12:34.000Z</published>
-    <updated>2024-06-21T17:39:27.139Z</updated>
+    <updated>2024-06-21T17:40:39.924Z</updated>
     
-    <content type="html"><![CDATA[<p>用Verilog实现一个简易RISC-V指令集CPU软核。</p><p>本次实验是重庆大学2022级弘深计算机拔尖班计算机组成原理的实验项目。</p><span id="more"></span><h3 id="一.-想说的话">一. 想说的话</h3><p>在开始做实验之前，首先要对CPU的物理结构和数据是如何在regfile,data_memory, instr_memory、alu中传输的有比较清晰的认知。建议观看视频: <ahref="https://www.bilibili.com/video/BV1wi4y157D3?p=1">从0到1设计一台计算机</a>，掌握理论知识。</p><p>在看完视频后，可以先跟着这个<ahref="https://www.bilibili.com/video/BV1pK4y1C7es?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">教你写一个简单的CPU</a>视频，实现一个简单的MIPS指令集CPU软核，掌握实践知识。不用完全写对，跟着写一遍知道各个模块是如何互相运作的即可。因为视频中没有测试文件测试各个模块，都是一口气写下来的。所以最终版仿真是跑不起来的，因为存在诸多bug。</p><p>然后，最好在系统学习完一遍计组的理论知识（尤其是流水线冒险）后，在去写RISC-V指令集的软核。或者边学边做也行。我就是在全部写完后，才去学的计组理论知识，所以写出来的软核在冒险那一块是存在几个bug的，已经懒得调了。到时候下半年参加龙芯杯的时候反正也要再一个cpu，把这个遗憾留到龙芯杯解决就是了。</p><h3 id="二.-思路">二. 思路</h3><p>有啥思路？拿到设计图干就完事了，把线连好就行了，没啥难度。</p><p>代码已开源：<ahref="https://github.com/potatoQi/RISCV_CPU_Chongqing-University-Computer-Organization-Principles-Course-Project">RISCV_CPU(ChongqingUniversity Computer Organization Principles Course Project)</a></p>]]></content>
+    <content type="html"><![CDATA[<p>用Verilog实现一个简易RISC-V指令集CPU软核。</p><p>本次实验是重庆大学2022级弘深计算机拔尖班计算机组成原理的实验项目。</p><span id="more"></span><h3 id="一.-想说的话">一. 想说的话</h3><p>在开始做实验之前，首先要对CPU的物理结构和数据是如何在regfile,data_memory, instr_memory、alu中传输的有比较清晰的认知。建议观看视频: <ahref="https://www.bilibili.com/video/BV1wi4y157D3?p=1">从0到1设计一台计算机</a>，掌握理论知识。</p><p>在看完视频后，可以先跟着这个<ahref="https://www.bilibili.com/video/BV1pK4y1C7es?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">教你写一个简单的CPU</a>视频，实现一个简单的MIPS指令集CPU软核，掌握实践知识。不用完全写对，跟着写一遍知道各个模块是如何互相运作的即可。因为视频中没有测试文件测试各个模块，都是一口气写下来的。所以最终版仿真是跑不起来的，因为存在诸多bug。</p><p>然后，最好在系统学习完一遍计组的理论知识（尤其是流水线冒险）后，再去写RISC-V指令集的软核。或者边学边做也行。我就是在全部写完后，才去学的计组理论知识，所以写出来的软核在冒险那一块是存在几个bug的，已经懒得调了。到时候下半年参加龙芯杯的时候反正也要再一个cpu，把这个遗憾留到龙芯杯解决就是了。</p><h3 id="二.-思路">二. 思路</h3><p>有啥思路？拿到设计图干就完事了，把线连好就行了，没啥难度。</p><p>代码已开源：<ahref="https://github.com/potatoQi/RISCV_CPU_Chongqing-University-Computer-Organization-Principles-Course-Project">RISCV_CPU(ChongqingUniversity Computer Organization Principles Course Project)</a></p>]]></content>
     
     
     <summary type="html">&lt;p&gt;用Verilog实现一个简易RISC-V指令集CPU软核。&lt;/p&gt;
@@ -406,27 +428,6 @@ Games With Directed Communication Graphs&lt;/p&gt;
     <category term="4. 大学" scheme="http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
     <category term="数字逻辑" scheme="http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>3. 几种重要的凸集-下</title>
-    <link href="http://example.com/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/"/>
-    <id>http://example.com/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/</id>
-    <published>2023-10-05T06:30:39.000Z</published>
-    <updated>2024-02-19T16:38:01.575Z</updated>
-    
-    <content type="html"><![CDATA[<p>介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。</p><span id="more"></span><p><img src="1.jpg" /></p><p><img src="2.jpg" /></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="4. 大学" scheme="http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/"/>
-    
-    <category term="凸优化" scheme="http://example.com/categories/4-%E5%A4%A7%E5%AD%A6/%E5%87%B8%E4%BC%98%E5%8C%96/"/>
     
     
   </entry>
