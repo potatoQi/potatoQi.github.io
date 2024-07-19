@@ -23,19 +23,22 @@
     var CONFIG = {"hostname":"example.com","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="工具能大大提升效率。所以掌握有必要掌握一些常用工具。">
+  <meta name="description" content="最近有个合作idea，需要魔改llama3代码，所以来学习下transformers和llama3">
 <meta property="og:type" content="article">
-<meta property="og:title" content="各种工具使用手册">
-<meta property="og:url" content="http://example.com/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/index.html">
+<meta property="og:title" content="transformers、llama3学习">
+<meta property="og:url" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="工具能大大提升效率。所以掌握有必要掌握一些常用工具。">
+<meta property="og:description" content="最近有个合作idea，需要魔改llama3代码，所以来学习下transformers和llama3">
 <meta property="og:locale" content="zh_CN">
-<meta property="article:published_time" content="2024-04-24T16:28:29.000Z">
-<meta property="article:modified_time" content="2024-06-30T18:22:44.700Z">
+<meta property="og:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/1.png">
+<meta property="og:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/2.png">
+<meta property="article:published_time" content="2024-07-19T18:26:55.000Z">
+<meta property="article:modified_time" content="2024-07-19T18:33:59.772Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/1.png">
 
-<link rel="canonical" href="http://example.com/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+<link rel="canonical" href="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/">
 
 
 <script id="page-configurations">
@@ -48,7 +51,7 @@
   };
 </script>
 
-  <title>各种工具使用手册 | Error_666</title>
+  <title>transformers、llama3学习 | Error_666</title>
   
 
 
@@ -199,7 +202,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://example.com/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -212,7 +215,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          各种工具使用手册
+          transformers、llama3学习
         </h1>
 
         <div class="post-meta">
@@ -221,23 +224,17 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
+              
 
-              <time title="创建时间：2024-04-25 00:28:29" itemprop="dateCreated datePublished" datetime="2024-04-25T00:28:29+08:00">2024-04-25</time>
+              <time title="创建时间：2024-07-20 02:26:55 / 修改时间：02:33:59" itemprop="dateCreated datePublished" datetime="2024-07-20T02:26:55+08:00">2024-07-20</time>
             </span>
-              <span class="post-meta-item">
-                <span class="post-meta-item-icon">
-                  <i class="far fa-calendar-check"></i>
-                </span>
-                <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-07-01 02:22:44" itemprop="dateModified" datetime="2024-07-01T02:22:44+08:00">2024-07-01</time>
-              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E6%9D%82%E9%A1%B9/" itemprop="url" rel="index"><span itemprop="name">杂项</span></a>
+                  <a href="/categories/1-%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">1. 科研</span></a>
                 </span>
             </span>
 
@@ -254,14 +251,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -273,179 +270,220 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>工具能大大提升效率。所以掌握有必要掌握一些常用工具。</p>
+        <p>最近有个合作idea，需要魔改llama3代码，所以来学习下transformers和llama3</p>
 <span id="more"></span>
-<h3 id="一.-chatgpt">一. ChatGPT</h3>
-<h4 id="如何订阅gpt4-plus">如何订阅GPT4 PLUS？</h4>
+<h3 id="先验知识">先验知识</h3>
+<h3 id="一.-预处理">一. 预处理</h3>
 <ol type="1">
-<li>去<a target="_blank" rel="noopener" href="https://chat.openai.com/">官网链接
-(openai.com)</a>注册一个OpenAI账号并登录（建议通过Google邮箱注册）</li>
-<li>注册过程中，需要用到手机号验证，使用<a
-target="_blank" rel="noopener" href="https://sms-activate.org/cn">SMS-Activate</a>解决</li>
-<li>1、2步完成后，就可以使用ChatGPT服务了，但是只能使用3.5而且有次数限制。点击升级，会看到一个支付界面，界面里要填银行卡相关信息。银行卡只能使用美国的。所以在<a
-target="_blank" rel="noopener" href="https://www.fomepay.com/">FOMEPay</a>上购买一张虚拟美国银行卡，往里充钱。然后将卡号信息填到刚才的界面中即可。</li>
-<li>充值成功，可正常使用ChatGPT4</li>
-</ol>
-<p>（注意，充值过程尽量要全程使用美国IP的梯子！）</p>
-<h4 id="如何使用">如何使用？</h4>
-<p>想怎么用怎么用，推荐几个插件：</p>
-<ol type="1">
-<li>WebPilot：帮助ChatGPT联网搜索信息</li>
-<li>Wolfram：科学计算，图标绘制</li>
-<li>Tutory：可以帮你制定任意领域的学习路线</li>
-<li>Ai Tool Hunt：找插件的插件</li>
-<li>MixerBox Scholar：可以访问一些学术资源</li>
-</ol>
-<hr />
-<h3 id="二.-vs-code">二. VS Code</h3>
-<p>VS Code作为最常用的IDE，掌握其使用方法以及相关插件十分必要。</p>
-<p>而且这玩意还可以通过Github同步配置，所以配置一次，永久享用。</p>
-<p>而且VS Code里有终端，于是写项目配合git使用很方便。</p>
-<h4 id="快捷键">快捷键</h4>
+<li><p>分词</p>
 <ul>
-<li>ctrl + ,：设置</li>
-<li>ctrl + shift + p：命令面板</li>
-<li>ctrl + p：最近文件列表</li>
-<li>ctrl + j：切出下面板（用来在代码和终端输入间跳转）</li>
-<li>ctrl + b：隐藏/显示目录</li>
-<li>ctrl + shift + n：新建vscode窗口</li>
-<li>ctrl + 1/2/3：分屏/不同分屏中跳转</li>
-<li>ctrl + alt + right/left：将文件移动到不同分屏中</li>
-<li>alt + ijkl/[]：上下左右/HOME,END（自己改的键）</li>
-<li>alt + up/down：行移动</li>
-</ul>
-<h4 id="插件">插件</h4>
-<h5 id="code-runner">code runner</h5>
-<ul>
-<li>ctrl + alt + n：编译运行程序</li>
-<li>ctrl + c：退出当前命令（死循环时退出运行）</li>
-</ul>
-<h5 id="wsl">WSL</h5>
-<ul>
-<li>直接在本地vscode登入进wsl子系统中的vscode</li>
-<li>或者在wsl中输入code .进入vscode界面</li>
-</ul>
-<h5 id="git-graph">Git Graph</h5>
-<ul>
-<li>装了之后，直接在vscode中就可以查看提交/分支状态</li>
-<li>可以查看每次commit的id/author/date/parents/与上一次commit的不同之处
-<ul>
-<li>查看与任意一次commit的不同之处：先点一个，再按住ctrl点另一个</li>
+<li>Text -&gt; tokenizer -&gt; input_ids</li>
+<li>Text是文本，tokenizer是分词器，将text转成一个个token，然后通过词汇表将token映射到整数id上，得到input_ids</li>
 </ul></li>
-</ul>
-<h5 id="todo-tree">Todo Tree</h5>
+<li><p>embedding</p>
 <ul>
-<li>TODO表示待办，FIXME表示写了一半还没写完，BUG表示这段程序有问题，HACK表示这段程序可以优化，NOTE表示想法</li>
-<li>这个插件除了方便写注释，还可以充当打标签的作用</li>
-</ul>
-<h5 id="bookmarks">Bookmarks</h5>
+<li>将整数id映射为一个向量的。目的是为了丰富其蕴含的信息，意思相近的token的向量在距离上也会彼此接近</li>
+</ul></li>
+<li><p>位置编码</p>
 <ul>
-<li>打标签，当程序很长的时候，用鼠标跳转很不方便，用书签跳转就很快。</li>
-</ul>
-<h5 id="jupyter">Jupyter</h5>
-<ul>
-<li>无需安装jupyter notebook即可在vscode实现相同功能</li>
-<li>Esc + M：markdown模式</li>
-<li>Esc + Y：代码模式</li>
-<li>ctrl + enter：运行</li>
-<li>Esc + D, D：删除该单元</li>
-<li>Esc + B：在下方添加一个单元</li>
-<li>Esc + A：在上方添加一个单元</li>
-<li>Esc + L：显示行号</li>
-</ul>
-<h5 id="draw.io-integration">Draw.io Integration</h5>
-<ul>
-<li>画流程图</li>
-</ul>
-<hr />
-<h3 id="三.-sai2">三. SAI2</h3>
-<p>SAI2的最最最基本使用（我不玩板绘）。主要用来方便授课。</p>
-<p>因为最近接了一个线上一对一的算法家教，所以买了一块数位板（高漫1060pro）方便授课，然后下了个SAI2。</p>
-<p>首先改板子的映射区，这个型号的板子对我来说太大了，手移动距离太多很累。所以把板子工作区域改小。记得去官方下驱动。</p>
-<p>然后是改板子的快捷键，我板子的快捷键从上到下分别是：（对应着SAI2里的功能）</p>
-<ul>
-<li>选中、剪切</li>
-<li>复制、粘贴</li>
-<li>画笔、橡皮</li>
-<li>ctrl、shift</li>
-<li>文字、ESC</li>
-<li>合并图层、画面居中</li>
-</ul>
-<p>所以设置好快捷键后，基本上只需要打开SAI2，然后在板子上操作就好了。不怎么需要去SAI2里操作了。</p>
-<p>说一下SAI2的操作逻辑，首先是文字，每次输入文字SAI2都会新建一个图层，所以在输入完文字后要按ESC
-+ 合并图层，才能将文字和原本内容合并到同一图层中。</p>
-<p>然后是粘贴，在你选中、复制、粘贴后，粘贴的内容会新开一个图层。所以需要按住ctrl移动到恰当位置后，按下合并图层，才能实现粘贴的内容和原内容在同一图层中。</p>
-<p>最后是操作时遇到的一些问题：</p>
-<ol type="1">
-<li>为什么切换到画笔后，写不出东西？
-<ul>
-<li>可能是因为你选中了某个区域，没有取消就切换到画笔模式了。所以可以先按剪切后，再切换到画笔模式即可正常工作。</li>
+<li><p>为什么需要位置编码？</p></li>
+<li><p>因为“猫在椅子上”和“椅子在猫上”意思完全不同。位置编码就是告诉模型每个token在句子中的位置，这样模型就可以理解单词的顺序。</p></li>
+<li><p>假设有“I love machine
+learning.“，将其切为token后且embedding后，得到的向量如下：</p></li>
+<li><p>I -&gt; [0.1, 0.2, 0.3, 0.4]</p></li>
+<li><p>love -&gt; [0.5, 0.6, 0.7,. 0.8]</p></li>
+<li><p>...</p></li>
+<li><p>最简单的位置编码方式就是token在句子中出现的位置下标为1，其余分量为0的向量。即
+I 的位置向量为[1, 0, 0, 0]，love的位置向量为[0, 1, 0, 0]</p></li>
+<li><p>然后将embedding vector与position
+vector相加，得到的向量就不仅有词义信息，还蕴含了位置信息。</p></li>
 </ul></li>
 </ol>
-<hr />
-<h3 id="四.-adobe-illustrator">四. Adobe illustrator</h3>
-<p>通俗的理解，Adobe
-illustrator就是针对于矢量图的画图工具。发英文期刊/会议，配图格式经常要求是矢量图且质量比较高。所以matplotlib/Matlab
-+ Adobe illustrator + MathType就足以制作论文的配图。</p>
-<h4 id="界面">界面</h4>
-<ul>
-<li>视图 -&gt; 标尺：打开标尺</li>
-<li>右键标尺：选择标尺单位</li>
-<li>视图 -&gt; 智能参考线：打开自动吸附功能</li>
-<li>文件 -&gt; 存储：即保存，格式有eps等</li>
-<li>文件 -&gt; 导出：即导出，格式有jpg/png等</li>
-<li>文件 -&gt; 置入：插入图片到该画板</li>
-<li>窗口 -&gt; 描边：里面有更多关于描边的参数（例如画箭头/虚线）</li>
-</ul>
-<h4 id="操作">操作</h4>
-<ul>
-<li>鼠标中键：移动</li>
-<li>alt + 滚轮：放大/缩小</li>
-<li>双击对象：对象进入隔离模式，防止操作时误操作到其它对象</li>
-</ul>
-<h4 id="工具栏">工具栏</h4>
-<ul>
-<li>空心箭头（普通选择）
-<ul>
-<li>单击对象：用于选择然后移动/放大/缩小/旋转
-<ul>
-<li>右键：编组/取消编组</li>
-</ul></li>
-<li>按住ctrl：显示所有锚点，点击锚点可编辑锚点</li>
-<li>按shift + 单击其它对象：可多选其它对象</li>
-<li>按alt + 拖动：可复制一份对象出来</li>
-</ul></li>
-<li>形状工具
-<ul>
-<li>右键可以选择画不同的形状，按住shift可画标准化图形</li>
-<li>矩形、椭圆、多边形、星形、直线</li>
-</ul></li>
-</ul>
-<h4 id="属性图层库">属性/图层/库</h4>
-<ul>
-<li>属性：调节对象的属性，比如改变位置/设置颜色/填充</li>
-</ul>
-<h3 id="五.-origin">五. Origin</h3>
-<p>画图神器。我觉得比matlab那一套方便多了，图形化的操作更加容易上手，不会把时间浪费在很多无意义的细节上。</p>
-<p>Origin的组织结构：项目(.opju) -&gt; 文件夹 -&gt;
-book(数据)/graph(图)</p>
-<p>对于book，使用内置python编程导入数据（菜单栏 -&gt; 连接 -&gt;
-.py），下面是一个导入的例子：</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wks = op.new_sheet()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    wks.from_list(i * <span class="number">2</span>, ans_x[i])</span><br><span class="line">    wks.from_list(i * <span class="number">2</span> + <span class="number">1</span>, ans_y[i])</span><br></pre></td></tr></table></figure>
-<p>对于graph，其组织结构为：画布 -&gt; 图层(坐标轴) -&gt; 点/线。</p>
-<p>上面是简单概念介绍，下面将对操作细节进行更多的阐述：</p>
+<h3 id="二.-编码器层encoder-layer">二. 编码器层(Encoder Layer)</h3>
+<p>编码器是由多个编码器层堆叠而成。编码器用于处理输入序列，生成上下文敏感的表示。</p>
 <ol type="1">
-<li>A + 鼠标拖拽滚轮：实现页面的移动 + 放大/缩小</li>
-<li>右上角有抗锯齿功能</li>
-<li>最后画完图后，菜单栏 -&gt; 格式 -&gt;
-调整页面至图层大小，可以把白边裁掉。
+<li><p>自注意力机制</p>
 <ul>
-<li>建议对于宽度选择边界为5，对于高度选择紧凑</li>
+<li>自注意机制让每个单词能够关注句子中的其他单词，从而理解上下文</li>
+<li>具体来说，首先会有三个权重矩阵：<span
+class="math inline">\(W_Q\)</span>（查询权重）、<span
+class="math inline">\(W_K\)</span>（键权重）、<span
+class="math inline">\(W_V\)</span>（值权重）</li>
+<li>然后对于每个进来的vector x，都会分别与这三个矩阵相乘，每个vector
+x可得到<span class="math inline">\(x_Q\)</span>（查询向量）、<span
+class="math inline">\(x_K\)</span>（键向量）、<span
+class="math inline">\(x_V\)</span>（值向量）三个向量。</li>
+<li>查询向量<span
+class="math inline">\(x_Q\)</span>：可以理解为每个词在关注其他词提出的问题</li>
+<li>键向量<span
+class="math inline">\(x_K\)</span>：可以理解为每个词的特征表示，用来与查询向量匹配。例如你自己有个键向量，然后另一个人有个查询向量。发现你们的这俩向量向量比较接近，说明他查到了你，那么你的值向量就会返回给他</li>
+<li>值向量<span
+class="math inline">\(x_V\)</span>：可以理解为token实际的内容信息</li>
+<li>下面举个实际的例子：</li>
+<li>对于句子“I love
+NLP“，对于I，可以计算出查询、键、值向量。对于love、NLP同理。</li>
+<li>那么对于I，计算它的查询向量与其余token的键向量的点积，将这些点积用softmax归一化，得到的一组权重就是I与其它token之间的联系权重（联系越大，权重越大，所有权重之和为1）。然后分别用对应的权重乘上对应token的值向量，然后求和，得到的向量叫做
+I 的注意力输出。（即 I 在关注了句子中其余token后，得出的一个向量）
+<ul>
+<li>softmax：将一组向量转换为一个概率分布向量，全部分量之和为</li>
+<li>对于<span class="math inline">\(x_i\)</span>，其softmax后的值为<span
+class="math inline">\(\frac{e^{x_i}}{\sum_{j=1}^n e^{x_j}}\)</span></li>
+<li>softmax的特性是放大差异，较大的输入值对应的输出概率更高，较小的输入值对应的输出概率更小</li>
 </ul></li>
-<li>画风格类似的图时，可以使用复制风格功能</li>
-<li>画子图时，建议先把每一张图画好，再使用“菜单栏 -&gt; 图 -&gt;
-合并图表”完成子图绘制</li>
+</ul></li>
+<li><p>多头注意力机制</p>
+<ul>
+<li><p>上面讲了注意力机制，其中提到了三个权重矩阵，这三个权重矩阵我们叫做“注意力头”</p></li>
+<li><p>那么前面说的是，对于一个vector
+x，通过一个注意力头，可以得到一个注意力输出</p></li>
+<li><p>那为了让一个token能捕捉到更多信息，我们可以对于一个vector
+x使用多个注意力头（也就是多个不同的权重矩阵），得到多个注意力输出，这就是多头注意力机制</p></li>
+<li><p>前面说到，注意力输出是一个向量，表示该token关注句子中其余token后得出的信息。那么多头注意力机制会得到多个注意力输出</p></li>
+<li><p>将多个注意力输出简单拼接在一起，然后通过一个Linear变换再把数据映射回原始token的shape</p></li>
+</ul></li>
+<li><p>层归一化 &amp; 残差连接</p>
+<ul>
+<li><p>层归一化有助于消除梯度消失和梯度爆炸问题，使得梯度能够更稳定地传播到前面的层。这种稳定性加快了模型的收敛速度，使得模型能够更快地达到较优的性能。</p></li>
+<li><p>具体操作就是对输入向量进行标准化，使其具有零均值和单位方差，有助于加快训练速度并稳定模型性能（就是对一个向量进行归一化，就这么简单）</p></li>
+<li><p>残差连接就更简单了，将归一化后的向量与输入进来的向量做加法，得到的向量就是输出。</p>
+<ul>
+<li>为什么要使用残差连接？
+<ul>
+<li>在深层神经网络中，随着层数的增加，梯度消失和梯度爆炸的问题变得越来越严重。残差连接为梯度提供了直接路径，使得梯度可以更顺畅地反向传播，缓解了这些问题。</li>
+<li>残差连接确保输入信息在深层网络中不会丢失，保持了输入的原始特征。这有助于模型在学习新的特征时，不会遗忘前面层已经学习到的重要信息。</li>
+</ul></li>
+<li>关于梯度消失
+<ul>
+<li>梯度消失的主要原因是激活函数的选择和链式法则的计算。常见的激活函数（如Sigmoid和Tanh）在其取值范围的两端会趋近于零，这会导致其导数也趋近于零。当使用这些激活函数时，梯度在反向传播过程中会不断地乘以这些小于1的数值，从而逐渐衰减为接近零的值。</li>
+<li>梯度爆炸问题是指在训练深层神经网络时，梯度在反向传播过程中逐渐变大，最终变得非常大。这会导致前面层的权重更新幅度过大，从而使得网络无法稳定训练，甚至导致数值溢出。</li>
+</ul></li>
+</ul></li>
+</ul></li>
+<li><p>前馈神经网络层（FNN, feedforward neural network）</p>
+<ul>
+<li><p>FNN层提供了一个非线性转换（激活函数），使模型能够学习输入数据中的复杂模式和关系。通常，FNN由两层全连接网络和一个非线性激活函数（通常是ReLU）组成。这种结构使得模型不仅能够捕捉线性关系，还能够处理非线性关系。</p></li>
+<li><p>具体操作就是对于刚才经过层归一化和残差连接后的多头注意输出向量，先做一次线性变换，然后ReLu一下，再做一次线性变化，得到FFN的输出向量</p></li>
+</ul></li>
+<li><p>层归一化 &amp; 残差连接</p>
+<ul>
+<li>跟上面一样，对经过FNN后的向量做层归一化和残差连接即可。</li>
+</ul></li>
 </ol>
+<p>‍</p>
+<h3 id="三.-解码器层decoder-layer">三. 解码器层（Decoder Layer）</h3>
+<p>解码器是由多个解码器层堆叠而成。解码器利用编码器的表示和自身的机制生成目标序列。</p>
+<ol type="1">
+<li><p>掩码注意力机制</p>
+<ul>
+<li><p>首先跟编码器一样，需要将句子经过tokenizer和embedding，添加位置编码</p></li>
+<li><p>然后对于每个token的输入向量x，先是计算其查询向量、键向量、值向量，然后对于每个x，计算它的查询向量与其余token的键向量的点积，再将这些点积形成的向量乘上一个掩码矩阵，再将结果进行softmax归一化，得到注意力权重向量</p>
+<ul>
+<li>掩码矩阵：掩码矩阵中的值为 0 或 <span
+class="math inline">\(-\infty\)</span>。在计算注意力得分时，任何被掩盖的（未来的）词都会被设置为
+<span class="math inline">\(-\infty\)</span>，从而在 Softmax
+计算时被转化为 0 的权重，确保未来的词对当前词的生成没有影响。</li>
+</ul></li>
+<li><p>再将注意力权重向量乘上值向量，得到最终的注意力输出</p></li>
+</ul></li>
+<li><p>多头掩码注意力机制</p>
+<ul>
+<li>跟上面的原理一样，就是有多个不同的查询、键、值矩阵，所以对于一个token的向量x，会得到多个注意力输出。只需要将这些注意力输出向量直接拼起来，然后做一次线性变化，即得到了最终的输出向量。</li>
+</ul></li>
+<li><p>层归一化 &amp; 残差连接</p></li>
+<li><p>编码器-解码器注意力机制</p>
+<ul>
+<li>本质就是多头注意力机制，对于每个token的注意力输出，将其乘上$W_Q
+<span class="math inline">\(，得到查询向量\)</span>x_Q<span
+class="math inline">\(，然后用encoder的输出向量乘上\)</span>W_K、W_V<span
+class="math inline">\(，得到\)</span>x_K、x_V$。然后计算注意力权重，最后得到注意力输出即可。</li>
+</ul></li>
+<li><p>层归一化 &amp; 残差连接</p></li>
+<li><p>前馈神经网络层</p></li>
+<li><p>层归一化 &amp; 残差连接</p></li>
+</ol>
+<p>‍</p>
+<h3 id="四.-transformer">四. transformer</h3>
+<p>在了解了上面的encoder和decoder后，就可以用一张图来概括Transformer的工作流程了：</p>
+<p><img src="1.png" /></p>
+<p>图里只有Linear和Softmax没有讲到了。Linear就是将高维向量映射到词汇表的维度，然后进行Softmax后就得到了每个单词出现的概率。</p>
+<p>图片来源：<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1Di4y1c7Zm?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">链接</a></p>
+<p>‍</p>
+<h3 id="五.-llama-2">五. llama 2</h3>
+<p><img src="2.png" /></p>
+<p>上图是llama 2的模型架构。</p>
+<p>有一些不同的地方：</p>
+<ol type="1">
+<li>embedding后没有加上position
+bedding，而是把位置编码的工作放在了注意力层</li>
+<li>每个transformer
+block中的注意力层和feedforward层一进去都进行了一个RMSNorm，而不是像transformer一样，在每层的最后加LayerNorm</li>
+<li>在对token
+bedding后的向量x分别乘三个矩阵得到Q、K、V三个向量后，没有直接去计算注意力权重，而是对Q和K向量进行了一次位置编码</li>
+<li>feedward层跟transformer有蛮大的不同，首先先进入来一次RMSNorm，然后如上图，两个线性变换并行，其中一个结果经过SiLU后与另一个线性变换的结果对矩阵点乘（对应元素相乘）。然后再做一次线性变化得到结果，结果做一次残差连接，得到最终输出结果</li>
+</ol>
+<p>‍</p>
+<h2 id="transformers库学习">transformers库学习</h2>
+<p>首先去huggingface上下模型，建议用ssh下载，然后选择“只下载除了lfs文件”的下载方式，将项目clone到本地。然后再单独手动下载几个lfs大文件，流量多的话直接在官网下即可，少的话就去魔塔下。下完之后把它们丢到项目里。</p>
+<p>新建一个虚拟环境，然后下载好transformers、pytorch（pytorch的下载最好用官网源和官网下载指令，不然会出很多莫名奇妙的错误）</p>
+<p>然后即可在本地运行模型啦，使用huggingface的官方示例代码看看是否能运行成功。</p>
+<h3 id="pipeline">Pipeline</h3>
+<ul>
+<li>是transformers里的一个库，用来让你傻瓜实现各种推理任务。你只需要输入文本，它会帮你数据预处理、模型调用、处理输出结果。</li>
+<li>pipeline支持的推理任务类型：</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 57%" />
+<col style="width: 28%" />
+<col style="width: 14%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>名称</th>
+<th>解释</th>
+<th>任务类型</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>text-classification(sentiment-analysis)</td>
+<td>分析句子情感取向</td>
+<td>text</td>
+</tr>
+<tr class="even">
+<td>token-classification(ner)</td>
+<td>识别句子中主体分类</td>
+<td>text</td>
+</tr>
+<tr class="odd">
+<td>...</td>
+<td>...</td>
+<td>...</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><p>模型加载方式：</p>
+<ul>
+<li>pipe = pipeline("text-classification")：使用默认模型</li>
+<li>pipe = pipeline("text-classification",
+model="模型path")：使用自定义模型</li>
+<li>pipe = pipeline("text-classification", model="模型path",
+tokenizer="分词器path")：使用自定义模型和分词器</li>
+<li>pipe = pipeline("text-classification", model="模型path",
+device_map="auto")：使用多卡gpu进行推理</li>
+</ul></li>
+<li><p>查看推理使用的硬件资源：</p>
+<ul>
+<li>print(pipe.model.device)</li>
+</ul></li>
+<li><p>查看不同推理任务pipeline的文档：</p>
+<ul>
+<li>首先from transformers import
+*，然后定义了一个pipeline对象后（比如叫pipe），直接display一下pipe，然后找到其对应的对象名字的最后一截（例如text-classification就是TextClassificationPipeline），然后display一下TextClassificationPipeline，ctrl加单击它去到对应的文档</li>
+</ul></li>
+</ul>
 
     </div>
 
@@ -461,13 +499,10 @@ book(数据)/graph(图)</p>
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/" rel="prev" title="计算机组成原理实验笔记">
-      <i class="fa fa-chevron-left"></i> 计算机组成原理实验笔记
+    <a href="/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="计算机网络自学笔记">
+      <i class="fa fa-chevron-left"></i> 计算机网络自学笔记
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/" rel="next" title="Matlab基础">
-      Matlab基础 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -531,7 +566,7 @@ book(数据)/graph(图)</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-chatgpt"><span class="nav-text">一. ChatGPT</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E8%AE%A2%E9%98%85gpt4-plus"><span class="nav-text">如何订阅GPT4 PLUS？</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="nav-text">如何使用？</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-vs-code"><span class="nav-text">二. VS Code</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BF%AB%E6%8D%B7%E9%94%AE"><span class="nav-text">快捷键</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%8F%92%E4%BB%B6"><span class="nav-text">插件</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#code-runner"><span class="nav-text">code runner</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#wsl"><span class="nav-text">WSL</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#git-graph"><span class="nav-text">Git Graph</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#todo-tree"><span class="nav-text">Todo Tree</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#bookmarks"><span class="nav-text">Bookmarks</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#jupyter"><span class="nav-text">Jupyter</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#draw.io-integration"><span class="nav-text">Draw.io Integration</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-sai2"><span class="nav-text">三. SAI2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-adobe-illustrator"><span class="nav-text">四. Adobe illustrator</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%95%8C%E9%9D%A2"><span class="nav-text">界面</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%93%8D%E4%BD%9C"><span class="nav-text">操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B7%A5%E5%85%B7%E6%A0%8F"><span class="nav-text">工具栏</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%B1%9E%E6%80%A7%E5%9B%BE%E5%B1%82%E5%BA%93"><span class="nav-text">属性&#x2F;图层&#x2F;库</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-origin"><span class="nav-text">五. Origin</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E7%9F%A5%E8%AF%86"><span class="nav-text">先验知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">一. 预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BC%96%E7%A0%81%E5%99%A8%E5%B1%82encoder-layer"><span class="nav-text">二. 编码器层(Encoder Layer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%A7%A3%E7%A0%81%E5%99%A8%E5%B1%82decoder-layer"><span class="nav-text">三. 解码器层（Decoder Layer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-transformer"><span class="nav-text">四. transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-llama-2"><span class="nav-text">五. llama 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformers%E5%BA%93%E5%AD%A6%E4%B9%A0"><span class="nav-text">transformers库学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pipeline"><span class="nav-text">Pipeline</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
