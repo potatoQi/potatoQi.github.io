@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/1.png">
 <meta property="og:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/2.png">
 <meta property="article:published_time" content="2024-07-19T18:26:55.000Z">
-<meta property="article:modified_time" content="2024-07-19T18:33:59.772Z">
+<meta property="article:modified_time" content="2024-07-20T13:49:25.502Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/1.png">
@@ -226,7 +226,7 @@
               <span class="post-meta-item-text">发表于</span>
               
 
-              <time title="创建时间：2024-07-20 02:26:55 / 修改时间：02:33:59" itemprop="dateCreated datePublished" datetime="2024-07-20T02:26:55+08:00">2024-07-20</time>
+              <time title="创建时间：2024-07-20 02:26:55 / 修改时间：21:49:25" itemprop="dateCreated datePublished" datetime="2024-07-20T02:26:55+08:00">2024-07-20</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -251,14 +251,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
+              <span>5.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -484,6 +484,67 @@ device_map="auto")：使用多卡gpu进行推理</li>
 *，然后定义了一个pipeline对象后（比如叫pipe），直接display一下pipe，然后找到其对应的对象名字的最后一截（例如text-classification就是TextClassificationPipeline），然后display一下TextClassificationPipeline，ctrl加单击它去到对应的文档</li>
 </ul></li>
 </ul>
+<h3 id="tokenizer">tokenizer</h3>
+<ul>
+<li>transformers里的tokenizer比先验知识里学到的tokenizer内容更丰富些。包含分词、构建词典、数据转换、数据填充与截断。</li>
+<li>导入包：from transformers import AutoTokenizer</li>
+<li>加载分词器：tokenizer =
+AutoTokenizer.from_pretrainded("模型路径")</li>
+<li>保存分词器：tokenizer.save_pretrained("保存路径")</li>
+<li>查看词表：tokenizer.vocab</li>
+<li>分词：tokens = tokenizer.tokenize(句子)</li>
+<li>索引转换：
+<ul>
+<li>ids = tokenizer.convert_tokens_to_ids(tokens)</li>
+<li>其实.convert_...有很多转换方式，总之tokens、ids之间可以互转，tokens可以转回string</li>
+</ul></li>
+<li>简单的实现方式：
+<ul>
+<li>ids = tokenizer.encode(句子, [add_special_tokens=True])</li>
+<li>str = tokenizer.decode(ids, [skip_special_tokens=False])</li>
+<li>不同模型在encode/decode句子的时候，会在句子前后加特殊字符，若不想要可以使用add/skip_special_tokens参数</li>
+</ul></li>
+<li>更简单的实现方式：
+<ul>
+<li>inputs = tokenizer(句子,
+return_tensors="pt")：以pytorch形式返回tokenizer结果</li>
+</ul></li>
+</ul>
+<h3 id="model">model</h3>
+<ul>
+<li>模型分类
+<ol type="1">
+<li>编码器类型：自编码模型，使用Encoder，双向注意力机制</li>
+<li>解码器类型：自回归模型，使用Decoder，单向注意力机制</li>
+<li>编码器解码器模型：sequence to sequence模型，使用Encoder +
+Decoder</li>
+</ol></li>
+<li>model head
+<ul>
+<li>定义：连接在模型后的层，通常由一个或多个全连接层组成。model
+head将模型的编码的表示结果进行映射，以解决不同类型的任务</li>
+<li>transformers中的任务头
+<ul>
+<li>model：返回模型本身的编码结果，等价于无任务头</li>
+<li>ForCausalLM：纯的解码器类型任务头</li>
+<li>... ...</li>
+</ul></li>
+</ul></li>
+<li>无任务头模型加载：model = AutoModel.from_pretrained("模型路径",
+device_map="auto")</li>
+<li>无任务头模型使用：
+<ul>
+<li>output = model(inputs)</li>
+<li>inputs是一个字典，包括input_ids和attention_mask俩键，inputs相当于传俩参进去，第一个参是input_ids的值，第二个参是attention_mask的值</li>
+</ul></li>
+<li>有任务头模型加载：
+<ul>
+<li>output =
+AutoModelForSequenceClassification.from_pretained("模型路径",
+device_map="auto")</li>
+<li>记得from transformers import AutoModelForSequenceClassification</li>
+</ul></li>
+</ul>
 
     </div>
 
@@ -566,7 +627,7 @@ device_map="auto")：使用多卡gpu进行推理</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E7%9F%A5%E8%AF%86"><span class="nav-text">先验知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">一. 预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BC%96%E7%A0%81%E5%99%A8%E5%B1%82encoder-layer"><span class="nav-text">二. 编码器层(Encoder Layer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%A7%A3%E7%A0%81%E5%99%A8%E5%B1%82decoder-layer"><span class="nav-text">三. 解码器层（Decoder Layer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-transformer"><span class="nav-text">四. transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-llama-2"><span class="nav-text">五. llama 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformers%E5%BA%93%E5%AD%A6%E4%B9%A0"><span class="nav-text">transformers库学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pipeline"><span class="nav-text">Pipeline</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E7%9F%A5%E8%AF%86"><span class="nav-text">先验知识</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">一. 预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BC%96%E7%A0%81%E5%99%A8%E5%B1%82encoder-layer"><span class="nav-text">二. 编码器层(Encoder Layer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%A7%A3%E7%A0%81%E5%99%A8%E5%B1%82decoder-layer"><span class="nav-text">三. 解码器层（Decoder Layer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-transformer"><span class="nav-text">四. transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-llama-2"><span class="nav-text">五. llama 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformers%E5%BA%93%E5%AD%A6%E4%B9%A0"><span class="nav-text">transformers库学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#pipeline"><span class="nav-text">Pipeline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#tokenizer"><span class="nav-text">tokenizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#model"><span class="nav-text">model</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
