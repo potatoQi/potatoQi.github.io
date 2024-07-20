@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/1.png">
 <meta property="og:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/2.png">
 <meta property="article:published_time" content="2024-07-19T18:26:55.000Z">
-<meta property="article:modified_time" content="2024-07-20T14:24:30.877Z">
+<meta property="article:modified_time" content="2024-07-20T16:19:18.598Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/1.png">
@@ -224,10 +224,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-07-20 02:26:55 / 修改时间：22:24:30" itemprop="dateCreated datePublished" datetime="2024-07-20T02:26:55+08:00">2024-07-20</time>
+              <time title="创建时间：2024-07-20 02:26:55" itemprop="dateCreated datePublished" datetime="2024-07-20T02:26:55+08:00">2024-07-20</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-07-21 00:19:18" itemprop="dateModified" datetime="2024-07-21T00:19:18+08:00">2024-07-21</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -251,14 +257,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.7k</span>
+              <span>7.1k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -423,7 +429,7 @@ block中的注意力层和feedforward层一进去都进行了一个RMSNorm，而
 bedding后的向量x分别乘三个矩阵得到Q、K、V三个向量后，没有直接去计算注意力权重，而是对Q和K向量进行了一次位置编码</li>
 <li>feedward层跟transformer有蛮大的不同，首先先进入来一次RMSNorm，然后如上图，两个线性变换并行，其中一个结果经过SiLU后与另一个线性变换的结果对矩阵点乘（对应元素相乘）。然后再做一次线性变化得到结果，结果做一次残差连接，得到最终输出结果</li>
 </ol>
-<h2 id="transformers库学习">transformers库学习</h2>
+<h2 id="transformers库入门学习">transformers库入门学习</h2>
 <p>首先去huggingface上下模型，建议用ssh下载，然后选择“只下载除了lfs文件”的下载方式，将项目clone到本地。然后再单独手动下载几个lfs大文件，流量多的话直接在官网下即可，少的话就去魔塔下。下完之后把它们丢到项目里。</p>
 <p>新建一个虚拟环境，然后下载好transformers、pytorch（pytorch的下载最好用官网源和官网下载指令，不然会出很多莫名奇妙的错误）</p>
 <p>然后即可在本地运行模型啦，使用huggingface的官方示例代码看看是否能运行成功。</p>
@@ -545,6 +551,57 @@ device_map="auto")</li>
 <li>记得from transformers import AutoModelForSequenceClassification</li>
 </ul></li>
 </ul>
+<h2 id="llama-factory">llama-factory</h2>
+<h3 id="一.-概念介绍">一. 概念介绍</h3>
+<p>在介绍llama-factory之前，我想先对大模型中的几个概念做一下阐述：</p>
+<ul>
+<li><p>训练：训练是指从头开始构建一个模型，并通过大量的数据让模型学习。这一阶段包括以下几个步骤</p>
+<ol type="1">
+<li>数据收集和准备：收集大量相关的训练数据，并进行预处理，以确保数据质量和格式一致性</li>
+<li>模型初始化：定义模型的架构并初始化参数，通常参数初始化为随机值</li>
+<li>前向传播：将输入数据通过模型，计算出预测值</li>
+<li>损失计算：计算预测值与真实值之间的差异，即损失函数</li>
+<li>后向传播：通过损失函数的梯度，反向调整模型参数以最小化损失</li>
+<li>优化：使用优化算法（如梯度下降、Adam等）更新模型参数</li>
+<li>迭代：重复前向传播、损失计算和后向传播，直到模型在训练数据上达到满意的性能或达到预定的训练轮次</li>
+</ol></li>
+<li><p>微调：微调是指在一个已经训练好的大模型基础上，使用特定领域的数据进行进一步的训练，以便模型在特定任务或领域上表现更好。这一阶段包括以下几个步骤</p>
+<ol type="1">
+<li>预训练模型选择：选择一个已经训练好的大模型作为基础模型，这个模型已经具备了丰富的知识和特征。</li>
+<li>特定领域数据准备：收集和准备与目标任务相关的特定领域数据。</li>
+<li>模型调整：根据特定任务的需求，对模型架构进行适当的调整（如增加或修改一些层）。</li>
+<li>训练数据微调：使用特定领域的数据对模型进行训练，但通常学习率较低，训练时间较短。这样可以在保持原模型知识的同时，学习新的特定领域知识。</li>
+<li>评估和验证：在特定任务的数据集上评估微调后的模型性能，并进行验证。</li>
+</ol></li>
+<li><p>推理：是指在深度学习和机器学习模型中，使用已经训练好的模型来对新数据进行预测或决策的过程。前面“transformers库入门学习”中调包都是用来做推理任务的。</p></li>
+<li><p>现在我们来介绍一下llama-factory：</p>
+<ul>
+<li>定义：LLaMA-Factory 是一个开源的工具，旨在简化大语言模型（LLMs）如
+LLaMA、BLOOM、Mistral、Baichuan 和 Qwen
+的微调和训练过程。它提供了用户友好的界面和一整套工具，使得即使是对机器学习了解不多的人也可以轻松进行各种微调和训练任务。</li>
+<li>特点：
+<ul>
+<li>支持多种大语言模型，并集成了高效的微调技术，适用于各种应用场景</li>
+<li>平台支持全参数调优、部分参数调优，以及诸如
+LoRA（低秩适配）、QLoRA（量化低秩适配）和奖励建模等技术。这些方法有助于在尽量少的计算资源下优化模型</li>
+<li>LLaMA-Factory
+提供了一些工具，用于以标准化格式准备数据，便于训练数据的处理和分词。这确保了不同数据集和模型之间的兼容性和效率</li>
+<li>该框架包括基于 Gradio 的 Web
+UI，用于交互式测试和演示，允许用户实时输入提示并生成模型的输出。这个界面使得微调后的模型可以更容易地进行展示和验证</li>
+</ul></li>
+</ul></li>
+</ul>
+<h3 id="二.-基本功能学习">二. 基本功能学习</h3>
+<ol type="1">
+<li>将llama-factory部署到本地（参考github官方教程即可，就三行话）</li>
+<li>准备数据集，在LLaMA-Factory -&gt;
+data下面把自己的数据集粘贴进去（用json格式），然后在dataset_info.json中添加新数据集的记录</li>
+<li>启动可视化微调：llamafactory-cli webui</li>
+<li>在webui中配置好微调设置后就可以开始微调了（微调结束后UI界面的loss图会显示出来）</li>
+<li>然后在Chat里加载检查点，跟其对话，检验微调成果</li>
+<li>如果觉得可以了，就在Export里把检查点和原模型合并，导出为新模型</li>
+<li>如果想量化，也是在Export里量化导出即可（量化时不能有检查点）</li>
+</ol>
 
     </div>
 
@@ -627,7 +684,7 @@ device_map="auto")</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E7%9F%A5%E8%AF%86"><span class="nav-text">先验知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">一. 预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BC%96%E7%A0%81%E5%99%A8%E5%B1%82encoder-layer"><span class="nav-text">二. 编码器层(Encoder Layer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%A7%A3%E7%A0%81%E5%99%A8%E5%B1%82decoder-layer"><span class="nav-text">三. 解码器层（Decoder Layer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-transformer"><span class="nav-text">四. transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-llama-2"><span class="nav-text">五. llama 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformers%E5%BA%93%E5%AD%A6%E4%B9%A0"><span class="nav-text">transformers库学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-pipeline"><span class="nav-text">一. Pipeline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-tokenizer"><span class="nav-text">二. tokenizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-model"><span class="nav-text">三. model</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%88%E9%AA%8C%E7%9F%A5%E8%AF%86"><span class="nav-text">先验知识</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E9%A2%84%E5%A4%84%E7%90%86"><span class="nav-text">一. 预处理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%BC%96%E7%A0%81%E5%99%A8%E5%B1%82encoder-layer"><span class="nav-text">二. 编码器层(Encoder Layer)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%A7%A3%E7%A0%81%E5%99%A8%E5%B1%82decoder-layer"><span class="nav-text">三. 解码器层（Decoder Layer）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-transformer"><span class="nav-text">四. transformer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-llama-2"><span class="nav-text">五. llama 2</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transformers%E5%BA%93%E5%85%A5%E9%97%A8%E5%AD%A6%E4%B9%A0"><span class="nav-text">transformers库入门学习</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-pipeline"><span class="nav-text">一. Pipeline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-tokenizer"><span class="nav-text">二. tokenizer</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-model"><span class="nav-text">三. model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#llama-factory"><span class="nav-text">llama-factory</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E6%A6%82%E5%BF%B5%E4%BB%8B%E7%BB%8D"><span class="nav-text">一. 概念介绍</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%9F%BA%E6%9C%AC%E5%8A%9F%E8%83%BD%E5%AD%A6%E4%B9%A0"><span class="nav-text">二. 基本功能学习</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
