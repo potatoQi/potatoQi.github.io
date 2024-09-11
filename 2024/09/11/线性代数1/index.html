@@ -32,7 +32,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://example.com/2024/09/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/1.png">
 <meta property="article:published_time" content="2024-09-11T10:58:18.000Z">
-<meta property="article:modified_time" content="2024-09-11T11:08:10.794Z">
+<meta property="article:modified_time" content="2024-09-11T16:53:52.841Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://example.com/2024/09/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/1.png">
@@ -223,10 +223,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-09-11 18:58:18 / 修改时间：19:08:10" itemprop="dateCreated datePublished" datetime="2024-09-11T18:58:18+08:00">2024-09-11</time>
+              <time title="创建时间：2024-09-11 18:58:18" itemprop="dateCreated datePublished" datetime="2024-09-11T18:58:18+08:00">2024-09-11</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-09-12 00:53:52" itemprop="dateModified" datetime="2024-09-12T00:53:52+08:00">2024-09-12</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -258,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>14k</span>
+              <span>15k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>12 分钟</span>
+              <span>14 分钟</span>
             </span>
 
         </div>
@@ -1147,6 +1153,80 @@ r很显然，那么基呢？最简单的方法就是对<span
 class="math inline">\(A^\mathrm{T}\)</span>消元，然后m -
 r组特解就是左零向量的一组基。</p></li>
 </ul>
+<h3 id="十一.-矩阵空间">十一. 矩阵空间</h3>
+<p>既然有向量空间，那么其实也有矩阵空间。其实任意东西都可以抽象成“向量空间”。</p>
+<p>想象一个以3X3矩阵构成的空间M为例。你从M中任挑俩矩阵，相加或者做数乘，发现仍然得到3X3矩阵，所以这是一个矩阵空间。</p>
+<p>这个矩阵空间还有一些有意思的子空间，比如3X3对称矩阵这个子空间、3X3的上三角矩阵这个子空间。</p>
+<p>显然，M的一组基是9个矩阵，所以M的维数是9（dimM=9）。</p>
+<p>记3X3对称矩阵构成的空间为S，那么显然S的一组基是6个矩阵，dimS=6。</p>
+<p>记3X3上三角矩阵构成的空间为U，那么那么显然U的一组基也是6个矩阵，dimY=6。</p>
+<p>考虑<span class="math inline">\(S \cap
+U\)</span>，一个矩阵即是对称的又是上三角的，那么它就是对角的。所以<span
+class="math inline">\(S \cap
+U\)</span>表示的是3X3对角矩阵这个子空间。显然，<span
+class="math inline">\(\mathrm{dim}(S \cap U)=3\)</span>。</p>
+<p>好，现在考虑一下<span class="math inline">\(S \cup U\)</span>和<span
+class="math inline">\(S +
+U\)</span>的区别。只要一个矩阵是对称的，或者上三角的，那么它就属于<span
+class="math inline">\(S \cup
+U\)</span>，但是在这个空间对加法不封闭，所以<span
+class="math inline">\(S \cup U\)</span>不是一个子空间；</p>
+<p><span class="math inline">\(S +
+U\)</span>中的每一个矩阵都可以i表示为<span
+class="math inline">\(S\)</span>中的一个矩阵加上<span
+class="math inline">\(U\)</span>中的一个矩阵。所以<span
+class="math inline">\(S + U\)</span>是对加法和数乘封闭的，所以<span
+class="math inline">\(S + U\)</span>是一个子空间。另外，当在<span
+class="math inline">\(S\)</span>中任取时，<span
+class="math inline">\(U\)</span>中取零矩阵时，得到的就是<span
+class="math inline">\(S\)</span>。同理，在<span
+class="math inline">\(U\)</span>中任取时，<span
+class="math inline">\(S\)</span>中取零矩阵时， 得到的就是<span
+class="math inline">\(U\)</span>。所以<span class="math inline">\(S +
+U\)</span>是包含<span class="math inline">\(S \cup
+U\)</span>的，换句话说，<span class="math inline">\((S \cap U) \subseteq
+(S \cup U) \subseteq (S + U)\)</span>。</p>
+<p>进一步想想，<span class="math inline">\(S +
+U\)</span>是什么，其实它就是<span
+class="math inline">\(M\)</span>这个空间。所以显然<span
+class="math inline">\(dim(S + U) = dim(M) = 9\)</span>。</p>
+<p>到这里，我们可以发现一个式子：<span class="math inline">\(dim(S) +
+dim(U) = dim(S + U) + dim(S \cap U)\)</span></p>
+<p>这不是碰巧，这确实是一个定理。</p>
+<p>所以总结一下，若有向量空间<span class="math inline">\(S,
+U\)</span>，则<span class="math inline">\(S \cap U\)</span>和<span
+class="math inline">\(S + U\)</span>也是向量空间，但<span
+class="math inline">\(S \cup U\)</span>不是。而且满足：<span
+class="math inline">\(dim(S) + dim(U) = dim(S + U) + dim(S \cap
+U)\)</span></p>
+<hr />
+<p>下面来一个有趣的例题，假设列向量<span class="math inline">\(v \in
+\mathbb{R}^4\)</span>，且满足其四个分量之和为0。那么<span
+class="math inline">\(v\)</span>是不是一个向量空间？如果是的话，基和维数是什么？</p>
+<p>首先，在v中任取俩v1,
+v2，做加法和数乘仍在v中，所以v是一个向量空间。</p>
+<p>然后它的基和维数是多少呢？</p>
+<p>因为v不是一个传统的给定数值的矩阵，所以它的秩不好求。所以这里需要转化思维，如果把v看作是某个矩阵A的零空间，那么只需求出<span
+class="math inline">\(dim(N(A))\)</span>就是v的基，同样，零空间的一组基就是n
+- r个特解。</p>
+<p>思考后不难发现，<span class="math inline">\(A = [1, 1, 1,
+1]\)</span>，此时有<span class="math inline">\(Av = 0\)</span>，<span
+class="math inline">\(N(A) = v\)</span>。</p>
+<p>显然对于矩阵<span class="math inline">\(A\)</span>，秩为1，那么<span
+class="math inline">\(dim(N(A)) = dim(v) = n - r = 3\)</span></p>
+<p>主列为第一列，所以自由变量为后三个 ，所以分别可得出特解：<span
+class="math inline">\([-1, 1, 0, 0]^\mathrm{T}, [-1, 0, 1,
+0]^\mathrm{T}, [-1, 0, 0, 1]^\mathrm{T}]\)</span>。这三个向量就是<span
+class="math inline">\(v\)</span>向量空间的一组基。</p>
+<p>这种解法非常的巧妙，既然正着不好求，就把其转换为矩阵的零空间，从而得到它的空间性质。</p>
+<h3 id="十二.-图和网络">十二. 图和网络</h3>
+<p>本小节不涉及新的线性代数的知识，而是对于实际问题建模，用线性代数去解决，具有启发意义的一节。</p>
+<p>这篇<a
+href="%5BLec12%20-%20图和网络%20%7C%20RQTN%5D(https://rqtn.github.io/mit-18.06/mit-18.06-lec12/)">博文</a>写的不错</p>
+<h3 id="十三.-复习课一">十三. 复习课一</h3>
+<p><a
+href="%5B13.13复习一_哔哩哔哩_bilibili%5D(https://www.bilibili.com/video/BV16Z4y1U7oU?p=13&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0)">链接</a>：直接去听，如果都掌握了的话，全部内容是都可以听懂的。</p>
+<p>如果听不懂，说明前面的知识没掌握牢固，建议回到对应的位置重新温习后再来听这堂课。</p>
 
     </div>
 
@@ -1229,7 +1309,7 @@ r组特解就是左零向量的一组基。</p></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A"><span class="nav-text">一. 方程组的几何解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%9F%A9%E9%98%B5%E6%B6%88%E5%85%83"><span class="nav-text">二. 矩阵消元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E5%92%8C%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">三. 矩阵乘法和逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E7%9F%A9%E9%98%B5a%E7%9A%84lu%E5%88%86%E8%A7%A3"><span class="nav-text">四. 矩阵A的LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E7%BD%AE%E6%8D%A2-%E8%BD%AC%E7%BD%AE-%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="nav-text">五. 置换, 转置, 向量空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E5%88%97%E7%A9%BA%E9%97%B4%E5%92%8C%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="nav-text">六. 列空间和零空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83.-%E6%B1%82%E8%A7%A3ax0"><span class="nav-text">七. 求解Ax&#x3D;0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB.-%E6%B1%82%E8%A7%A3axb"><span class="nav-text">八. 求解Ax&#x3D;b</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D.-%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3-%E5%9F%BA-%E7%BB%B4%E6%95%B0"><span class="nav-text">九. 线性相关, 基, 维数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81.-%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="nav-text">十. 四个基本子空间</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E6%96%B9%E7%A8%8B%E7%BB%84%E7%9A%84%E5%87%A0%E4%BD%95%E8%A7%A3%E9%87%8A"><span class="nav-text">一. 方程组的几何解释</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E7%9F%A9%E9%98%B5%E6%B6%88%E5%85%83"><span class="nav-text">二. 矩阵消元</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%9F%A9%E9%98%B5%E4%B9%98%E6%B3%95%E5%92%8C%E9%80%86%E7%9F%A9%E9%98%B5"><span class="nav-text">三. 矩阵乘法和逆矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E7%9F%A9%E9%98%B5a%E7%9A%84lu%E5%88%86%E8%A7%A3"><span class="nav-text">四. 矩阵A的LU分解</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E7%BD%AE%E6%8D%A2-%E8%BD%AC%E7%BD%AE-%E5%90%91%E9%87%8F%E7%A9%BA%E9%97%B4"><span class="nav-text">五. 置换, 转置, 向量空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E5%88%97%E7%A9%BA%E9%97%B4%E5%92%8C%E9%9B%B6%E7%A9%BA%E9%97%B4"><span class="nav-text">六. 列空间和零空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83.-%E6%B1%82%E8%A7%A3ax0"><span class="nav-text">七. 求解Ax&#x3D;0</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB.-%E6%B1%82%E8%A7%A3axb"><span class="nav-text">八. 求解Ax&#x3D;b</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D.-%E7%BA%BF%E6%80%A7%E7%9B%B8%E5%85%B3-%E5%9F%BA-%E7%BB%B4%E6%95%B0"><span class="nav-text">九. 线性相关, 基, 维数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81.-%E5%9B%9B%E4%B8%AA%E5%9F%BA%E6%9C%AC%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="nav-text">十. 四个基本子空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%B8%80.-%E7%9F%A9%E9%98%B5%E7%A9%BA%E9%97%B4"><span class="nav-text">十一. 矩阵空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%BA%8C.-%E5%9B%BE%E5%92%8C%E7%BD%91%E7%BB%9C"><span class="nav-text">十二. 图和网络</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81%E4%B8%89.-%E5%A4%8D%E4%B9%A0%E8%AF%BE%E4%B8%80"><span class="nav-text">十三. 复习课一</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
