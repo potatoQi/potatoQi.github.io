@@ -37,7 +37,7 @@
 <meta property="og:image" content="http://error666.top/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/2.png">
 <meta property="og:image" content="http://error666.top/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/3.png">
 <meta property="article:published_time" content="2024-09-12T13:56:55.000Z">
-<meta property="article:modified_time" content="2024-09-13T16:03:40.060Z">
+<meta property="article:modified_time" content="2024-09-14T14:40:56.581Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/1.png">
@@ -236,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-14 00:03:40" itemprop="dateModified" datetime="2024-09-14T00:03:40+08:00">2024-09-14</time>
+                <time title="修改时间：2024-09-14 22:40:56" itemprop="dateModified" datetime="2024-09-14T22:40:56+08:00">2024-09-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -269,14 +269,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>14k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>13 分钟</span>
             </span>
 
         </div>
@@ -714,6 +714,10 @@ class="math inline">\(P\)</span>特征值为0的特征向量就是垂直于投�
 <li>n个特征值的和加起来等于方阵对角线之和</li>
 <li>n个特征值的乘积等于方阵的特征值</li>
 <li>上三角方阵的特征值就是对角线上的元素</li>
+<li><span class="math inline">\(A\)</span>的特征值等于<span
+class="math inline">\(A^\mathrm{T}\)</span>的特征值</li>
+<li><span class="math inline">\(A^{-1}\)</span>的特征值等于<span
+class="math inline">\(A\)</span>的特征值取倒数</li>
 </ol>
 <hr />
 <p>好，那给你一个矩阵<span
@@ -836,6 +840,143 @@ class="math inline">\(c_i \ne
 <p>这一节的内容稍微有点点难消化，不过这已经有点点科研证明的味道了。多看多理解。</p>
 <hr />
 <h3 id="八.-微分方程-expat">八. 微分方程, exp(At)</h3>
+<p>在开始这节课之前，我觉得有必要补充介绍一点微分方程的概念。</p>
+<p>定义：含自变量（例如<span
+class="math inline">\(x\)</span>）、函数（例如<span
+class="math inline">\(y\)</span>）以及函数各阶导数（例如<span
+class="math inline">\(\dot{y},
+\ddot{y}\)</span>）的等式称为微分方程。</p>
+<p>抱歉，真听不懂，是我高数太垃圾了，回头补完微分方程再来听这节课。</p>
+<h3 id="九.-马尔可夫矩阵-傅里叶级数">九. 马尔可夫矩阵, 傅里叶级数</h3>
+<p>什么是马尔可夫矩阵，若<span
+class="math inline">\(A\)</span>满足以下两条定义，则它是马尔可夫矩阵：</p>
+<ol type="1">
+<li>所有元素大于0（概率值不能为负数）</li>
+<li>每一列元素和为1</li>
+<li>方阵</li>
+</ol>
+<p>对于马尔可夫矩阵，很容易发现，其幂即<span
+class="math inline">\(A^k\)</span>同样也是马尔可夫矩阵。</p>
+<p>这里我直接给出两个结论：</p>
+<ol type="1">
+<li>马尔可夫矩阵有一个特征值为1</li>
+<li>马尔可夫矩阵其余特征值绝对值小于等于1</li>
+</ol>
+<p>根据上面的结果，我们可以知道，如果一个向量一直左乘马尔可夫矩阵，那么最终会达到一个稳态。显然这个稳态是我们关心的，我们需要找到它。</p>
+<p>假设矩阵<span
+class="math inline">\(A\)</span>有n个线性无关的特征向量<span
+class="math inline">\(\beta\)</span>-s，那么对于式子：<span
+class="math inline">\(u_k = A^ku_0\)</span></p>
+<p><span class="math inline">\(u_0\)</span>可以被表示为：<span
+class="math inline">\(u_0 = c_1\beta_1 + c_2\beta_2 + \cdots +
+c_n\beta_n = Sc\)</span></p>
+<p><span class="math inline">\(A^k\)</span>根据前面所学可对角化为：<span
+class="math inline">\(A_k = S\Lambda^kS^{-1}\)</span></p>
+<p><span class="math inline">\(\therefore u_k = S\Lambda^kS^{-1}Sc =
+S\Lambda^kc = c_1\lambda_1\beta_1 + c_2\lambda_2\beta_2 + \cdots +
+c_n\lambda_n\beta_n\)</span></p>
+<p>所以那些绝对值&lt;1的项最终会迭代没，绝对值为1的项加起来就是稳态。</p>
+<hr />
+<p>傅里叶级数是一个可用来拟合任意周期函数的工具，例如我想拟合一个周期为<span
+class="math inline">\(2\pi\)</span>的函数<span
+class="math inline">\(f(x)\)</span>，可用傅立叶级数表达为下列形式：</p>
+<p><span class="math inline">\(f(x) = a_0\cdot 1 + a_1\cos x + b_1\sin x
++ a_2\cos 2x + b_2\sin 2x + \cdots + a_n\cos nx+ b_n\sin nx\)</span></p>
+<p>所以关键就是确定下系数<span class="math inline">\(a_i,
+b_i\)</span>，那我们用线性代数来看待这个问题。</p>
+<p>可以把<span class="math inline">\(1, \cos x, \sin x, \cos 2x, \sin
+2x, \cdots, \cos nx, \sin nx\)</span>看作基<span
+class="math inline">\(\beta_i\)</span>-s，<span
+class="math inline">\(f(x)\)</span>看作<span
+class="math inline">\(b\)</span>，那么<span class="math inline">\(a_i,
+b_i\)</span>就是线性组合的系数。</p>
+<p>让我写成这种形式：<span class="math inline">\(c_0\beta_0 + c_1\beta_1
++ c_2\beta_2 + \cdots + c_n\beta_n = b\)</span></p>
+<p>问题即为求出<span class="math inline">\(c_i\)</span>。</p>
+<p>假设<span
+class="math inline">\(\beta_i\)</span>-s们正交就好了，我们来检查一下是否正交。</p>
+<p>因为这里的“向量”是函数，所以离散型的点积在这里并不是适用，对于函数<span
+class="math inline">\(f(x), g(x)\)</span>，其实点积是<span
+class="math inline">\(\int_a^b f(x)g(x)
+\mathrm{d}x\)</span>，因为本题函数周期为<span
+class="math inline">\(2\pi\)</span>，所以俩函数点积为：<span
+class="math inline">\(\int_0^{2\pi}f(x)g(x)
+\mathrm{d}x\)</span>，检查一下发现这些“基”们确实是正交的。</p>
+<p>那么求系数<span
+class="math inline">\(c_i\)</span>就好办了，比如我要求<span
+class="math inline">\(c_1\)</span>，那么等式两边分别“点积”<span
+class="math inline">\(\beta_1\)</span>，得：</p>
+<p><span class="math inline">\(c_1 \int_0^{2\pi}(cosx)^2\mathrm{d}x =
+\int_0^{2\pi}f(x)\cos x\mathrm{d}x\)</span></p>
+<p>因为正交性，非<span
+class="math inline">\(\beta_1\)</span>的项都为0了，所以解这个方程即可把<span
+class="math inline">\(c_1\)</span>求出来，其余系数求法同理。</p>
+<p>非常巧妙优美的做法。</p>
+<h3 id="十.-复习课二">十. 复习课二</h3>
+<p>主要因为这章的知识比较重要，所以适合来2道例题巩固一下。而且我想通过例题顺便补充下代数重数和几何重数的知识点。</p>
+<p><strong>例1.</strong> <span class="math inline">\(a = \begin{bmatrix}
+2 \\ 1 \\ 2 \end{bmatrix}\)</span></p>
+<ol type="1">
+<li>求投影到<span class="math inline">\(a\)</span>的投影矩阵<span
+class="math inline">\(P\)</span></li>
+</ol>
+<p>套公式：<span class="math inline">\(P =
+\frac{aa^\mathrm{T}}{a^\mathrm{T}a} = \frac{1}{9} \begin{bmatrix} 4
+&amp; 2 &amp; 4 \\ 2 &amp; 1 &amp; 2 \\ 4 &amp; 2 &amp; 4
+\end{bmatrix}\)</span></p>
+<ol start="2" type="1">
+<li>求<span class="math inline">\(P\)</span>的秩</li>
+</ol>
+<p>因为<span class="math inline">\(P\)</span>的列空间<span
+class="math inline">\(C(P)\)</span>是投影面，而投影面又是三维空间里的一维直线，所以<span
+class="math inline">\(dim(C(A)) = r = 1\)</span>。</p>
+<ol start="3" type="1">
+<li>求<span class="math inline">\(P\)</span>的特征值</li>
+</ol>
+<p>因为<span class="math inline">\(r(P) =
+1\)</span>，所以它是奇异，所以<span class="math inline">\(det(P) =
+0\)</span>，所以它必有一个特征值为0。</p>
+<p>我们知道特征值为0对应的特征向量就是<span
+class="math inline">\(N(P)\)</span>里的那些基们，而我们知道<span
+class="math inline">\(dim(N(P)) = n - r =
+2\)</span>，所以基里有俩向量，所以特征值0的几何重数为2，又因为几何重数
+&lt;= 代数重数，所以至少有两个特征值为0。</p>
+<p><span
+class="math inline">\(P\)</span>的迹又是1，所以不可能三个特征值都为0，所以可确定特征值0的代数重数也为2。所以特征值分别为0、0、1</p>
+<blockquote>
+<p>知识点补充：代数重数、几何重数</p>
+<p>代数重数就是某特征值重复的个数</p>
+<p>几何重数就是某特征值对应的互相线性无关的特征向量的个数。这些线性无关的特征向量组合的空间叫做特征子空间</p>
+<p>性质：几何重数 &lt;= 代数重数</p>
+</blockquote>
+<ol start="4" type="1">
+<li><span
+class="math inline">\(P\)</span>特征值为1对应的特征向量是啥</li>
+</ol>
+<p>其实就是问你<span class="math inline">\(Px=x\)</span>的<span
+class="math inline">\(x\)</span>都有谁，根据几何意义，显然<span
+class="math inline">\(x\)</span>就在投影面上啊，即那条线，所以特征向量写<span
+class="math inline">\(a\)</span>就行了</p>
+<p><strong>例2.</strong> 已知一个4阶方阵<span
+class="math inline">\(A\)</span>具有特征值<span
+class="math inline">\(\lambda_1, \lambda_2, \lambda_3,
+\lambda_4\)</span></p>
+<ol type="1">
+<li>特征值需要满足什么条件才能保证<span
+class="math inline">\(A\)</span>为可逆矩阵</li>
+</ol>
+<p>可逆矩阵说明<span class="math inline">\(r(A) =
+n\)</span>，那么零空间的维数就为0。而如果有特征值为0，那么必然说明零空间有非零向量，即<span
+class="math inline">\(r(A) \ne
+n\)</span>。所以必须满足所有特征值不为0，才能保证<span
+class="math inline">\(A\)</span>为可逆矩阵</p>
+<ol start="2" type="1">
+<li>求<span class="math inline">\(A^{-1}\)</span>的行列式</li>
+</ol>
+<p>因为<span class="math inline">\(A^{-1}\)</span>的特征值是<span
+class="math inline">\(A\)</span>特征值取倒数，行列式又是特征值之积，所以<span
+class="math inline">\(det(A^{-1}) =
+\frac{1}{\lambda_1\lambda_2\lambda_3\lambda_4}\)</span></p>
 
     </div>
 
@@ -918,7 +1059,7 @@ class="math inline">\(c_i \ne
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E4%B8%8E%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="nav-text">一. 正交向量与子空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%AD%90%E7%A9%BA%E9%97%B4%E6%8A%95%E5%BD%B1"><span class="nav-text">二. 子空间投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5-schmidt%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-text">三. 正交矩阵, Schmidt正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E6%80%A7%E8%B4%A8"><span class="nav-text">四. 行列式及其性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E5%85%8B%E6%8B%89%E9%BB%98%E6%B3%95%E5%88%99-%E4%BD%93%E7%A7%AF"><span class="nav-text">五. 克拉默法则, 体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E7%89%B9%E5%BE%81%E5%80%BC-%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-text">六. 特征值, 特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83.-%E5%AF%B9%E8%A7%92%E5%8C%96-a%E7%9A%84%E5%B9%82"><span class="nav-text">七. 对角化, A的幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB.-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B-expat"><span class="nav-text">八. 微分方程, exp(At)</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E6%AD%A3%E4%BA%A4%E5%90%91%E9%87%8F%E4%B8%8E%E5%AD%90%E7%A9%BA%E9%97%B4"><span class="nav-text">一. 正交向量与子空间</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%AD%90%E7%A9%BA%E9%97%B4%E6%8A%95%E5%BD%B1"><span class="nav-text">二. 子空间投影</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E6%AD%A3%E4%BA%A4%E7%9F%A9%E9%98%B5-schmidt%E6%AD%A3%E4%BA%A4%E5%8C%96"><span class="nav-text">三. 正交矩阵, Schmidt正交化</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E8%A1%8C%E5%88%97%E5%BC%8F%E5%8F%8A%E5%85%B6%E6%80%A7%E8%B4%A8"><span class="nav-text">四. 行列式及其性质</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E5%85%8B%E6%8B%89%E9%BB%98%E6%B3%95%E5%88%99-%E4%BD%93%E7%A7%AF"><span class="nav-text">五. 克拉默法则, 体积</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AD.-%E7%89%B9%E5%BE%81%E5%80%BC-%E7%89%B9%E5%BE%81%E5%90%91%E9%87%8F"><span class="nav-text">六. 特征值, 特征向量</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%83.-%E5%AF%B9%E8%A7%92%E5%8C%96-a%E7%9A%84%E5%B9%82"><span class="nav-text">七. 对角化, A的幂</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%85%AB.-%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B-expat"><span class="nav-text">八. 微分方程, exp(At)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%9D.-%E9%A9%AC%E5%B0%94%E5%8F%AF%E5%A4%AB%E7%9F%A9%E9%98%B5-%E5%82%85%E9%87%8C%E5%8F%B6%E7%BA%A7%E6%95%B0"><span class="nav-text">九. 马尔可夫矩阵, 傅里叶级数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8D%81.-%E5%A4%8D%E4%B9%A0%E8%AF%BE%E4%BA%8C"><span class="nav-text">十. 复习课二</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
