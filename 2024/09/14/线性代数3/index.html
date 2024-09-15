@@ -33,10 +33,12 @@
 <meta property="og:site_name" content="Error_666">
 <meta property="og:description" content="等学完回来写写写写写写写写写写写写写写写写写写">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://error666.top/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/1.png">
 <meta property="article:published_time" content="2024-09-14T15:31:27.000Z">
-<meta property="article:modified_time" content="2024-09-14T18:28:21.435Z">
+<meta property="article:modified_time" content="2024-09-15T17:49:49.076Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://error666.top/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/1.png">
 
 <link rel="canonical" href="http://error666.top/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/">
 
@@ -232,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-15 02:28:21" itemprop="dateModified" datetime="2024-09-15T02:28:21+08:00">2024-09-15</time>
+                <time title="修改时间：2024-09-16 01:49:49" itemprop="dateModified" datetime="2024-09-16T01:49:49+08:00">2024-09-16</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,14 +267,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.1k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -328,6 +330,109 @@ n\)</span>子行列式数值均为正。这很好理解，由对称矩阵的性�
 <h3 id="二.-复数矩阵-快速傅里叶变换">二. 复数矩阵, 快速傅里叶变换</h3>
 <p>对不起我的高数很垃圾，这节我也听不懂。等我学完mit
 18.03再来听这一节课</p>
+<h3 id="三.-正定矩阵">三. 正定矩阵</h3>
+<p>正定矩阵是很好的矩阵，它是对称的而且所有特征值都大于零。那么如何判定一个方阵是正定矩阵呢？这里我给出几种方法</p>
+<ol type="1">
+<li>所有特征值<span class="math inline">\(\lambda_i &gt; 0\)</span></li>
+<li>所有主元大于零</li>
+<li>所有子行列式们大于零</li>
+<li><span class="math inline">\(x^\mathrm{T}Ax &gt; 0, x \ne
+\textbf{0}\)</span></li>
+</ol>
+<p>第一个是定义，第二个是因为对称矩阵有一个性质就是特征值正负号与主元相同，所以可根据(1)得到第二条等价条件。第三个是用行列式判断正定性(前面讲过)。第四个是新加的，我们很喜欢用第四个判据。让我们来看看为什么这个判据可以推出矩阵是正定的。</p>
+<p>对于<span
+class="math inline">\(x^\mathrm{T}Ax\)</span>，我们将其展开： <span
+class="math display">\[
+x^\mathrm{T}Ax = \begin{bmatrix}x_1, x_2, \cdots,
+x_n\end{bmatrix}\begin{bmatrix} a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n \\
+a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n \\ a_{31}x_1 + a_{32}x_2 +
+\cdots + a_{3n}x_n \\ \cdots \\ a_{n1}x_1 + a_{n2}x_2 + \cdots +
+a_{nn}x_n\end{bmatrix} = \\ x_1(a_{11}x_1+a_{12}x_2+\cdots+a_{1n}x_n)+
+x_2(a_{21}x_1 + a_{22}x_2 + \cdots + a_{2n}x_n) + \cdots + x_n(a_{n1}x_1
++ a_{n2}x_2 + \cdots + a_{nn}x_n)
+\]</span>
+可以发现，每一项都是二次的。其实如果用图像去研究这个函数：<span
+class="math inline">\(f(x) =
+x^\mathrm{T}Ax\)</span>，（这个函数也叫二次型）</p>
+<p>矩阵为正定时二次型图像见左上角，为半正定时图像见右下角，为非正定/半正定时图像见左下角，负定时图像见右上角</p>
+<p>这些图像研究的是二维方阵的二次型，xy轴是<span
+class="math inline">\(x\)</span>的俩分量<span class="math inline">\(x_1,
+x_2\)</span>，z轴是<span
+class="math inline">\(f(x)=x^\mathrm{T}Ax\)</span></p>
+<p><img src="1.png" /></p>
+<hr />
+<p>下面继续讨论下正定矩阵还有哪些性质，假设<span
+class="math inline">\(A, B\)</span>为正定矩阵，<span
+class="math inline">\(C\)</span>为矩阵。</p>
+<p>那么<span
+class="math inline">\(A\)</span>是否可逆呢？答案是肯定的，因为我们知道<span
+class="math inline">\(A\)</span>的子行列式们都大于0，所以<span
+class="math inline">\(det(A) &gt; 0\)</span>，所以<span
+class="math inline">\(A\)</span>是非奇异的，即满秩可逆的。</p>
+<p>那么<span
+class="math inline">\(A^{-1}\)</span>是不是正定矩阵呢？答案是肯定的。因为我们知道<span
+class="math inline">\(A^{-1}\)</span>的特征值们就是<span
+class="math inline">\(A\)</span>的特征值取倒数，而<span
+class="math inline">\(A\)</span>的特征值都大于0，所以<span
+class="math inline">\(A^{-1}\)</span>的特征值也都大于0，所以<span
+class="math inline">\(A^{-1}\)</span>也为正定矩阵。</p>
+<p>那么<span class="math inline">\(A +
+B\)</span>是不是正定矩阵呢？答案是肯定的。我们来看看<span
+class="math inline">\(x^\mathrm{T}(A+B)x = x^\mathrm{T}Ax +
+x^\mathrm{T}Bx &gt; 0\)</span>，所以<span class="math inline">\(A +
+B\)</span>也是正定矩阵。</p>
+<p>那么<span
+class="math inline">\(C^\mathrm{T}C\)</span>是不是正定矩阵呢？答案是不一定。我们来看看<span
+class="math inline">\(x^\mathrm{T}(C^\mathrm{T}C)x = (Cx)^\mathrm{T}(CX)
+= \|Cx\|^2 \ge 0\)</span>。</p>
+<p>所以<span
+class="math inline">\(C^\mathrm{T}C\)</span>至少是半正定的，那什么时候是正定的呢？只要没有非零向量使得<span
+class="math inline">\(Cx = \textbf{0}\)</span>，那么就可以保证：<span
+class="math inline">\(x^\mathrm{T}(C^\mathrm{T}C)x &gt; 0\)</span>。</p>
+<p>即要保证<span class="math inline">\(N(C) =
+\{\textbf{0}\}\)</span>，即要保证<span class="math inline">\(r(C) =
+n\)</span>，即可保证<span
+class="math inline">\(C^\mathrm{T}C\)</span>是正定矩阵。</p>
+<p>还记得<span
+class="math inline">\(C^\mathrm{T}C\)</span>在哪用到吗？即最小二乘求最优近似解那里，最后方程为：<span
+class="math inline">\(C\hat{x}=Pb =
+C(C^\mathrm{T}C)^{-1}C^\mathrm{T}b\)</span></p>
+<p>只要保证<span class="math inline">\(C\)</span>各列线性无关，则<span
+class="math inline">\(C^\mathrm{T}C\)</span>是正定矩阵，所以<span
+class="math inline">\(C^\mathrm{T}C\)</span>可逆，则上述方程成立，同左乘<span
+class="math inline">\(C^\mathrm{T}\)</span>，然后再左乘<span
+class="math inline">\((C^\mathrm{T}C)^{-1}\)</span>，即可求出<span
+class="math inline">\(\hat{x}\)</span>。</p>
+<h3 id="四.-相似矩阵">四. 相似矩阵</h3>
+<p><span class="math inline">\(A, B\)</span>均为<span
+class="math inline">\(n \times n\)</span>的方阵，那么<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(B\)</span>相似，用数学语言表达为：存在可逆矩阵<span
+class="math inline">\(M\)</span>，使得<span class="math inline">\(B =
+M^{-1}AM\)</span></p>
+<p>它具有一个性质：相似的矩阵拥有相同的特征值。</p>
+<blockquote>
+<p>证明：</p>
+<p><span class="math inline">\(Ax = \lambda x\)</span></p>
+<p><span class="math inline">\(A(MM^{-1})x = \lambda x\)</span></p>
+<p><span class="math inline">\(M^{-1}AMM^{-1}x = \lambda
+M^{-1}x\)</span></p>
+<p><span class="math inline">\(BM^{-1}x = \lambda M^{-1}x\)</span></p>
+<p><span class="math inline">\(B(M^{-1}x) = \lambda
+(M^{-1}x)\)</span></p>
+<p>证毕。且可看出特征值虽然不变，但是特征向量由<span
+class="math inline">\(x\)</span>变为了<span
+class="math inline">\(M^{-1}x\)</span>。</p>
+</blockquote>
+<p>举个例子，例如可对角化的矩阵<span
+class="math inline">\(A\)</span>，其可分解为：<span
+class="math inline">\(A = S^{-1}\Lambda S\)</span>。其中<span
+class="math inline">\(S\)</span>是可逆的，因为各特征向量线性无关。所以<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(\Lambda\)</span>就相似。而且我们会发现，<span
+class="math inline">\(A\)</span>与<span
+class="math inline">\(\Lambda\)</span>的特征值一样。</p>
+<h3 id="五.-奇异值分解">五. 奇异值分解</h3>
 
     </div>
 
@@ -346,7 +451,10 @@ n\)</span>子行列式数值均为正。这很好理解，由对称矩阵的性�
     <a href="/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/" rel="prev" title="线性代数2">
       <i class="fa fa-chevron-left"></i> 线性代数2
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/" rel="next" title="线性代数4">
+      线性代数4 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -410,7 +518,7 @@ n\)</span>子行列式数值均为正。这很好理解，由对称矩阵的性�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%8F%8A%E5%85%B6%E6%AD%A3%E5%AE%9A%E6%80%A7"><span class="nav-text">一. 对称矩阵及其正定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%A4%8D%E6%95%B0%E7%9F%A9%E9%98%B5-%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="nav-text">二. 复数矩阵, 快速傅里叶变换</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%AF%B9%E7%A7%B0%E7%9F%A9%E9%98%B5%E5%8F%8A%E5%85%B6%E6%AD%A3%E5%AE%9A%E6%80%A7"><span class="nav-text">一. 对称矩阵及其正定性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%A4%8D%E6%95%B0%E7%9F%A9%E9%98%B5-%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2"><span class="nav-text">二. 复数矩阵, 快速傅里叶变换</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E6%AD%A3%E5%AE%9A%E7%9F%A9%E9%98%B5"><span class="nav-text">三. 正定矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5"><span class="nav-text">四. 相似矩阵</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E5%A5%87%E5%BC%82%E5%80%BC%E5%88%86%E8%A7%A3"><span class="nav-text">五. 奇异值分解</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -426,7 +534,7 @@ n\)</span>子行列式数值均为正。这很好理解，由对称矩阵的性�
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">31</span>
+          <span class="site-state-item-count">32</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -462,6 +570,9 @@ n\)</span>子行列式数值均为正。这很好理解，由对称矩阵的性�
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/" title="2024&#x2F;09&#x2F;15&#x2F;线性代数4&#x2F;">线性代数4</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/" title="2024&#x2F;09&#x2F;14&#x2F;线性代数3&#x2F;">线性代数3</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -472,9 +583,6 @@ n\)</span>子行列式数值均为正。这很好理解，由对称矩阵的性�
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/2024/09/09/2024%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E6%B8%B8%E8%AE%B0/" title="2024&#x2F;09&#x2F;09&#x2F;2024数学建模国赛游记&#x2F;">2024数学建模国赛游记</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/09/04/%E5%A4%A7%E6%95%B0%E6%8D%AE%E6%9E%B6%E6%9E%84%E4%B8%8E%E6%8A%80%E6%9C%AF%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="2024&#x2F;09&#x2F;04&#x2F;大数据架构与技术自学笔记&#x2F;">大数据架构与技术自学笔记</a>
         </li>
     </ul>
   </div>
