@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 6.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <meta name="google-site-verification" content="Nju-Ov4omLH_XBGFv1RDU5xdZaGOW05OvwIjIu_498Q">
+  <meta name="msvalidate.01" content="2CE08595DA3460134EDC20E4D8663AD4">
+  <meta name="baidu-site-verification" content="codeva-j0Zy96Rpmy">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-minimal.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
+  </script>
+
+  <meta name="description" content="参考内容：《机器学习》周志华">
+<meta property="og:type" content="article">
+<meta property="og:title" content="机器学习课程自学笔记">
+<meta property="og:url" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
+<meta property="og:site_name" content="Error_666">
+<meta property="og:description" content="参考内容：《机器学习》周志华">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
+<meta property="og:image" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/3.png">
+<meta property="og:image" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/2.png">
+<meta property="og:image" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/4.png">
+<meta property="og:image" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/5.png">
+<meta property="article:published_time" content="2024-09-19T04:25:47.000Z">
+<meta property="article:modified_time" content="2024-09-19T12:22:03.351Z">
+<meta property="article:author" content="Error_666">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
+
+<link rel="canonical" href="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>机器学习课程自学笔记 | Error_666</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script src="/live2d-widget/autoload.js"></script>
+<link rel="alternate" href="/atom.xml" title="Error_666" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Error_666</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>关于</a>
+
+  </li>
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>分类</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>归档</a>
+
+  </li>
+        <li class="menu-item menu-item-tools">
+
+    <a href="/tools/" rel="section"><i class="fa fa-toolbox fa-fw"></i>工具</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://error666.top/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.png">
+      <meta itemprop="name" content="Error_666">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Error_666">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          机器学习课程自学笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2024-09-19 12:25:47 / 修改时间：20:22:03" itemprop="dateCreated datePublished" datetime="2024-09-19T12:25:47+08:00">2024-09-19</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/4-%E5%A4%A7%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">4. 大学</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/" itemprop="url" rel="index"><span itemprop="name">计算机专业课</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>6k</span>
+            </span>
+            <span class="post-meta-item" title="阅读时长">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+                <span class="post-meta-item-text">阅读时长 &asymp;</span>
+              <span>5 分钟</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>参考内容：《机器学习》周志华</p>
+<span id="more"></span>
+<hr />
+<p>我觉得学校应该多开数学课啊，开机器学习老师光念ppt有啥好听的呢？</p>
+<p>弄来弄去最终反正都要靠自学。学的教材是周志华的西瓜书。书挺好的，挺全面。</p>
+<p>无所谓了，学就学呗，反正早学晚学都要学。顺便了解下机器学习的基础知识。</p>
+<p>以上为个人吐槽，写着玩的，看看就好。</p>
+<p>成绩构成：</p>
+<ol type="1">
+<li>考勤、作业、研讨：10%</li>
+<li>项目：40%</li>
+<li>期末：50%</li>
+</ol>
+<h3 id="一.-绪论">一. 绪论</h3>
+<ol type="1">
+<li><p>根据训练数据是否拥有标记数据，学习任务大致可分为两类：监督学习、无监督学习。</p>
+<ul>
+<li>分类和回归是前者的代表，聚类是后者的代表</li>
+<li>聚类意思是在训练过程中，机器会自动的对事物的潜在概念进行划分，并把物体分成若干组</li>
+</ul></li>
+<li><p>模型适用于新样本的能力，称为泛化能力</p></li>
+<li><p>通常假设样本空间中全体样本服从一个位置分布<span
+class="math inline">\(\mathcal{D}\)</span>，我们获得的每个样本都是独立地从这个分布上采样得到的，即“独立同分布”。</p></li>
+<li><p>假设空间</p>
+<ul>
+<li>简单理解，就是所有输入的状态</li>
+<li>书中举了个例子，有A、B、C三种属性，分别有3、2、2种取值方式。学习目标是某个状态<span
+class="math inline">\((a, b, c)\)</span>是否是牛逼的？求所有状态数。
+<ul>
+<li>对于属性A，其实有4种状态，<span class="math inline">\(a_1, a_2, a_3,
+*\)</span>，<span
+class="math inline">\(*\)</span>表示这个属性取什么无所谓。对于B、C属性同理</li>
+<li>那么状态数就有：<span class="math inline">\(4 * 3 * 3 =
+36\)</span>种</li>
+<li>其实还漏了一种，还有一种状态是世界上没有"牛逼"这个概念，也就是<span
+class="math inline">\(\phi\)</span>状态。</li>
+<li>所以这个例子的总状态数是37种。</li>
+<li>我来列举其中的几种：
+<ul>
+<li>A是<span class="math inline">\(a_1\)</span>，B是<span
+class="math inline">\(b_2\)</span>，C是<span
+class="math inline">\(c_3\)</span>时，是牛逼的</li>
+<li>A是<span class="math inline">\(*\)</span>，B是<span
+class="math inline">\(b_1\)</span>，C是<span
+class="math inline">\(*\)</span>时，是牛逼的</li>
+<li><span class="math inline">\(\cdots\)</span></li>
+<li>世界上没有"牛逼"这个东西</li>
+</ul></li>
+<li>（讲实话，个人觉得纠结定义没意思，纠结实践学科的文字定义就是傻逼啊。除了考八股文还能干啥，浪费生命。搞不清楚就算了，反正假设空间就是所有输入的状态）</li>
+</ul></li>
+</ul></li>
+<li><p>版本空间</p>
+<ul>
+<li><p>简单理解，就是把假设空间中不符合样本的所有假设剔除掉的空间</p></li>
+<li><p>以书中例子为例</p>
+<ul>
+<li>根据表1.1，我们知“好瓜”的概念是成立的，所以先删除 <span
+class="math inline">\(\phi\)</span> 的假设</li>
+<li>根据样本（（色泽=青绿）<sup>（根蒂=蜷缩）</sup>（敲声=浊响））——&gt;好瓜，删除所有状态对不上的假设</li>
+<li>根据样本（（色泽=乌黑）<sup>（根蒂=蜷缩）</sup>（敲声=浊响））——&gt;好瓜，删除所有状态对不上的假设</li>
+</ul>
+<blockquote>
+<p>这里把（（色泽=乌黑）<sup>（根蒂=蜷缩）</sup>（敲声=浊响））删除，这个和样本2符合，不要觉得心虚，因为利用样本2进行删除的时候也会删掉（（色泽=青绿）<sup>（根蒂=蜷缩）</sup>（敲声=浊响））这样刚好留下了（（色泽=*）<sup>（根蒂=蜷缩）</sup>（敲声=浊响）</p>
+</blockquote>
+<ul>
+<li>根据样本（（色泽=青绿）<sup>（根蒂=硬挺）</sup>（敲声=清脆））——&gt;不是好瓜，删除所有状态对上的假设</li>
+<li>根据样本（（色泽=乌黑）<sup>（根蒂=稍蜷）</sup>（敲声=沉闷））——&gt;不是好瓜，删除所有状态对上的假设</li>
+<li>所以最后剩下了三个假设，这三个假设我们称之为版本空间：(色泽 = <em>,
+根蒂 = 蜷缩, 敲声 = </em>)、(色泽 = <em>, 根蒂 = </em>, 敲声 =
+清脆)、(色泽 = *, 根蒂 = 蜷缩, 敲声 = 清脆)</li>
+</ul></li>
+</ul></li>
+<li><p>归纳偏好</p>
+<ul>
+<li>现实问题中，我们常面临很大的假设空间，但学习过程是根据有限的样本训练集进行的，那么对于不同版本的训练集，就会有不同的版本空间。版本空间内每一个假设都可以判断上面数据集中的每一条数据，是好瓜还是不是好瓜，但是用不同的假设判断一条新数据可能会得出不一样的结果，这就属于“归纳偏好”。</li>
+</ul></li>
+</ol>
+<h3 id="二.-模型评估与选择">二. 模型评估与选择</h3>
+<ol type="1">
+<li>精度 = 1 - 错误率</li>
+<li>学习器在训练集上的误差叫“训练误差”或“经验误差”</li>
+<li>学习器在新样本上的误差叫“泛化误差”。显然，我们想要泛化误差小的学习器。</li>
+<li>过拟合是指训练误差很小，但是泛化误差不理想。欠拟合是指俩误差都不理想。</li>
+</ol>
+<h4 id="模型评估方法">模型评估方法</h4>
+<ul>
+<li><p>评估方法存在的意义：实际中，我们不可能直接拿到泛化误差，因为泛化误差是指实际情况的误差。产品都没开发出来咋获得嘛。而训练误差又由于过拟合现象的存在而不适合作为标准。所以，这时候就需要设计一些精妙的评估方法</p></li>
+<li><p>留出法</p>
+<ul>
+<li>将数据集D切为训练集S和验证集T</li>
+<li>需要注意，S和T的划分要尽可能保持数据分布的一致性。例如在分类任务中至少要保证样本的类别比例相似</li>
+<li>为了结果可靠，可以进行多次留出法，用平均值作为最终结果</li>
+<li>留出法的缺点：我们希望的是评估用D训练出的模型的性能，但留出法本质上是评估的S训练出来的模型的性能。这就会陷入一个窘境：若S包含绝大多数样本，虽然S与D的差距拉近，但是T太小导致评估结果可能不稳定；若S太少，S与D的差距就更远了。所以这个bug没有完全的解决方案，常见做法是将约1/5
+~ 1/3的样本用于测试，剩下的用于训练</li>
+</ul></li>
+<li><p>交叉验证法</p>
+<ul>
+<li>将D划分为k个大小相似的互斥子集：<span class="math inline">\(D = D_1
+\cup D_2 \cup \cdots \cup D_k\)</span>。然后枚举<span
+class="math inline">\(D_i\)</span>，每次(全集 - <span
+class="math inline">\(D_i\)</span>)作为训练集，<span
+class="math inline">\(D_i\)</span>作为验证集。进行k次训练测试，最后返回k次结果的均值。</li>
+<li>可以发现，交叉验证法的稳定性和保真性很大程度取决于k，通常取10，称为10折交叉验证</li>
+<li>需要注意，<span
+class="math inline">\(D_i\)</span>尽可能保持数据分布的一致性</li>
+<li>为了结果可靠，可以进行多次交叉验证法，用均值作为最终结果。常见的有：10次10折交叉验证</li>
+<li>（当k = D样本数量时，是交叉验证法的一个特例，称为留一法）</li>
+</ul></li>
+<li><p>自助法</p>
+<ul>
+<li>无论是留出法还是交叉验证法，S !=
+D，所以必然会存在一定偏差。留一法虽然可以使得S <span
+class="math inline">\(\to\)</span>
+D，但是训练集太大计算复杂度太高。有没有两全其美的方法呢——自助法。</li>
+<li>做法：假设D样本数为m，则进行放回随机采样m次，得到D'。用D'作为训练集，D'作为验证集。</li>
+<li>样本在m次采样始终不被采到的概率：</li>
+</ul>
+<p><span class="math display">\[
+\lim_{m\mapsto\infty}\left(1-\frac1m\right)^m\mapsto\frac1e\approx0.368
+\]</span></p>
+<ul>
+<li>即数据集D中约36.8%的样本不会出现在D'中。</li>
+<li>优点：评估的模型和期望评估的模型都使用了m个样本，但仍有1/3的数据供我们验证。在数据集较小或难以划分训练/验证集时很有用。</li>
+<li>缺点：自助法生产的数据集改变了初始数据集分布，会引入估计偏差。因此数据量充足时，留出法和交叉验证法更常用</li>
+</ul></li>
+<li><p>在进行完模型评估（也就是训练和评估）后，需要再将数据集D全部丢进模型训练一次。这么做是因为模型评估时S
+!= D。</p></li>
+</ul>
+<h4 id="性能度量">性能度量</h4>
+<ul>
+<li>当得到一个模型后，如何评估它的泛化能力呢？显然需要去度量它的性能，衡量模型泛化能力的评价标准，就叫性能度量。不同的性能度量往往会导致不同的评判结果。</li>
+<li>回归任务最常用的性能度量是“均方误差”：
+<ul>
+<li>离散：<span class="math inline">\(E(f; D) =
+\frac1m\sum_{i=1}^m(f(x_i) - y_i)^2\)</span></li>
+<li>一般：<span class="math inline">\(E(f; \mathcal{D}) = \int_{x \sim
+\mathcal{D}}(f(x) - y)^2p(x)dx\)</span></li>
+</ul></li>
+<li>ok，接下来介绍分类任务的性能度量</li>
+</ul>
+<ol type="1">
+<li><p>错误率和精度</p>
+<ul>
+<li>错误率定义
+<ul>
+<li>离散：<span class="math inline">\(E(f; D) =
+\frac1m\sum_{i=1}^m\mathbb{I}(f(x_i) \ne y_i)\)</span></li>
+<li>一般：<span class="math inline">\(E(f; \mathcal{D}) = \int_{x \sim
+\mathcal{D}}\mathbb{I}(f(x)\ne y)p(x)dx\)</span></li>
+</ul></li>
+<li>精度定义
+<ul>
+<li>离散：<span class="math inline">\(acc(f; D) =
+\frac1m\sum_{i=1}^m\mathbb{I}(f(x_i)=y_i)=1-E(f; D)\)</span></li>
+<li>一般：<span class="math inline">\(acc(f; \mathcal{D}) = \int_{x \sim
+\mathcal{D}}\mathbb{I}(f(x)=y)p(x)dx=1-E(f; \mathcal{D})\)</span></li>
+</ul></li>
+</ul></li>
+<li><p>查准率、查全率、F1</p>
+<ul>
+<li>举个例子，若我们关心“挑出的西瓜中有多少比例是好瓜”以及“所有好瓜中有多少比例被挑了出来”。前者我们用“查准率”(precision)描述，后者用"查全率"(recall)来描述。</li>
+<li>对二分类来说，我们将预测结果抽象为混淆矩阵：</li>
+<li><img src="1.png" /></li>
+<li>（TP, true positive表示它确实是正例，表示我们预测对了。TN, true
+negative表示它确实是反例，表示我们预测对了。）</li>
+<li>显然$TP + FN + FP + TN = $样例总数</li>
+<li>查准率：<span class="math inline">\(P = \frac{TP}{TP +
+FP}\)</span></li>
+<li>查全率：<span class="math inline">\(R = \frac{TP}{TP +
+FN}\)</span></li>
+<li>可以发现，查准率和查全率都兼顾有些困难。因为如果想让查全率高，那么就要增加选瓜数量，但是选瓜数量增加后，选出的瓜中是好瓜的概率可能就下降，即查准率下降；若希望选出的好瓜比例高，那么只挑选最有把握的瓜，这样难免就会漏掉不少好瓜，即查全率较低。通常只有在一些简单任务中，才能使P和R都很高。</li>
+<li>所以，有没有直观的比较方法呢——PR图。</li>
+<li>我们根据学习器的预测结果对样例排序，＂最可能＂是正例的排在最前边或者说最左边，＂最不可能＂是正例的排在最后边或者说最右边．按此顺序逐个把样本作为正例进行预测，每次计算测试样本的查准率和查全率并把这两项作为PR曲线的纵轴和横轴。</li>
+<li><img src="3.png" /></li>
+<li>显然若一条曲线包住了另一条曲线，那么说明它在任意时刻表现都好。如果俩曲线有相交，那么就比较下俩曲线所形成的面积，谁大谁牛逼。</li>
+<li>当然面积可能不好算，所以我们直接用“平衡点”（BEP, 即P =
+R时的R坐标）来衡量，谁平衡点大谁牛逼。但是平衡点这方法还是太简陋了，所以我们使用F1度量（谁大谁牛逼）：</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{F_1} = \frac12\cdot (\frac1P + \frac1R)
+\]</span></p>
+<ul>
+<li>为了更定制化，还可以使用<span
+class="math inline">\(F_\beta\)</span>度量（<span
+class="math inline">\(F_1\)</span>是调和平均，<span
+class="math inline">\(F_\beta\)</span>是加权调和平均）：</li>
+</ul>
+<p><span class="math display">\[
+\frac{1}{F_\beta} = \frac{1}{1+\beta^2}\cdot (\frac1P +
+\frac{\beta^2}{R})
+\]</span></p>
+<ul>
+<li><span
+class="math inline">\(\beta\)</span>度量了查全率对查准率的相对重要性，<span
+class="math inline">\(\beta=1\)</span>为一样重要，<span
+class="math inline">\(\beta &gt; 1\)</span>表示我们更重视查全率。</li>
+<li>如果有多个混淆矩阵呢？</li>
+<li>第一种方法，直接对所有P、R、F1取均值作为最终结果。这样得到的结果叫做：宏查准率、宏查全率、宏F1</li>
+<li>第二种方法，先对所有混淆矩阵对应四个位置取均值，再算出对应的P、R、F1。这样得到的结果叫做：微查准率、微查全率、微F1</li>
+</ul></li>
+<li><p>ROC和AUC</p>
+<ul>
+<li>ROC曲线跟PR曲线绘制流程一样，只是横坐标换为了“假正例率”（FPR），纵坐标换为了“真正例率”（TPR）。</li>
+<li><span class="math inline">\(TPR = \frac{TP}{TP + FN}, \quad FPR =
+\frac{FP}{FP + FN}\)</span></li>
+<li>TPR表示对于全部好瓜，你预测对了百分之TPR；FPR表示对于全部坏瓜，你预测错了百分之FPR。</li>
+<li>显然TPR越高越好，FPR越低越好。</li>
+<li>ROC曲线画出来的感觉如下：</li>
+<li><img src="2.png" /></li>
+<li>AUC是ROC曲线的面积。显然如果一个曲线包住另一个，但它就更牛逼。如果俩线有相交，那么就看看谁的AUC更大，越大越牛逼。</li>
+</ul></li>
+<li><p>代价敏感错误率和代价曲线</p>
+<ul>
+<li>在现实中同样是判断错误，但是后果可能不同。比如门禁系统错误的把陌生人放进来的危害肯定比把可通行人拦在外边危害更大。所以同样是判断错误，我们需要赋予其不同的权值。最后的目标是使平均代价最小。</li>
+<li>所以可以抽象出代价矩阵的概念：</li>
+<li><img src="4.png" /></li>
+<li>代价敏感错误率：</li>
+</ul>
+<p><span class="math display">\[
+E(f; D; cost) = \frac1m(\sum_{x_i \in D^+}\mathbb{I}(f(x_i) \ne y_i)
+\times cost_{01} + \sum_{x_i \in D^-}\mathbb{I}(f(x_i) \ne y_i) \times
+cost_{10})
+\]</span></p>
+<ul>
+<li>当不同后果的权重不同时，上面说的ROC曲线就不能直接反映出学习器的期望总体代价了。所以这时候我们需要“代价曲线”。</li>
+<li>略</li>
+</ul></li>
+</ol>
+<h4 id="比较检验">比较检验</h4>
+<ul>
+<li><p>目前，我们已经可以使用某种模型评估方法，测出某个性能度量的结果。</p></li>
+<li><p>但是泛化性能是对新样本进行预测的性能，新样本看成一个总体，那么这个总体我们永远无法完整获得，也就是真实泛化性能永远也不知道是多少。从这个总体中抽样得到一个样本集合，也就是我们通常说的“测试集”，很显然，每次抽样，获得的测试集都不相同，从而从测试集计算得到的性能值也就不同。从测试集得到的性能值可以看成是总体泛化性能的一个估计值，基于这个估计值可以对总体泛化性能进行假设检验和区间估计。</p></li>
+<li><p>如果<span
+class="math inline">\(\mathcal{D}\)</span>是服从二项分布的。那么测试集样本容量n你是知道的，错误次数k你也是知道的。那么你可以开始玩假设检验。比如假设<span
+class="math inline">\(H_0: p_0 \le
+0.5\)</span>。然后你就假设你这个假设是对的呗，然后算一算在此假设下，错误次数为k的概率。如果算出来的概率小于<span
+class="math inline">\(\alpha\)</span>（显著性水平），说明在此假设下发生这件事的概率极低，那么说明你假设是错的。如果概率大于了<span
+class="math inline">\(\alpha\)</span>，说明至少我不能信心满满的否决你的假设了，我只能说我有<span
+class="math inline">\(1 -
+\alpha\)</span>置信度认为你的假设是正确的。</p></li>
+<li><p>很多时候我们并非做一次留出法估计，而是多次。所以我们会得到k个测试错误率。则我们可以计算平均错误率及其方差。那么检验统计量<span
+class="math inline">\(\tau_t = \frac{\sqrt{k}(\mu -
+\epsilon_0)}{\sigma}\)</span>服从t分布。（<span
+class="math inline">\(\mu\)</span>是平均错误率，<span
+class="math inline">\(\epsilon_0\)</span>是假设的错误率， <span
+class="math inline">\(\sigma\)</span>是前面算的方差）</p></li>
+<li><p>如果算出来的<span class="math inline">\(\tau_t\)</span>落在<span
+class="math inline">\([t_{-\alpha/2},
+t_{\alpha/2}]\)</span>内，则可下置信度为<span class="math inline">\(1 -
+\alpha\)</span>的判断认为真实错误率为<span
+class="math inline">\(\epsilon_0\)</span>；反之则可下真是错误率不为<span
+class="math inline">\(\epsilon_0\)</span>的判断。</p></li>
+<li><p>以上俩方法都是关于对单个学习器泛化性能的假设进行的检验，但在实际任务中，更多时候我们需要对不同学习器的性能进行比较，方法有：交叉验证t检验、McNemar检验、Friedman检验、Nemenyi后续检验</p></li>
+</ul>
+<ol type="1">
+<li><p>交叉验证t检验</p>
+<ul>
+<li>略</li>
+</ul></li>
+<li><p>McNemar检验</p>
+<ul>
+<li><p>对二分类问题，使用留出法不仅可估计出学习器A、B的测试错误率，还可以获得俩学习器分类结果的差别，即：两者都分类正确、都错误、A对B错，A错B对的次数，即“列联表”：</p></li>
+<li><p><img src="5.png" /></p></li>
+<li><p>若我们的假设是俩学习器性能相同，则应有<span
+class="math inline">\(e_{01} = e_{10}\)</span>。则<span
+class="math inline">\(|e_{01} - e_{10}| \sim N(1, e_{01} +
+e_{10})\)</span>。</p></li>
+<li><p>则有：<span class="math inline">\(\tau_{\chi^2}=\frac{(|e_{01} -
+e_{10}| - 1) ^ 2}{e_{01} + e_{10}}\)</span></p></li>
+<li><p>即<span
+class="math inline">\(\tau_{\chi^2}\)</span>服从自由度为1的卡方分布。</p></li>
+<li><p>当<span
+class="math inline">\(\tau_{\chi^2}\)</span>小于临界值<span
+class="math inline">\(\chi_\alpha^2\)</span>时，即认为俩学习器性能没有显著差别；反之则认为有显著差别，平均错误率小的那个更牛逼。</p></li>
+</ul></li>
+<li><p>Friedman检验</p>
+<ul>
+<li>略</li>
+</ul></li>
+<li><p>Nemenyi后续检验</p>
+<ul>
+<li>略</li>
+</ul></li>
+</ol>
+<h4 id="偏差与方差">偏差与方差</h4>
+<ul>
+<li>为取得良好的泛化能力，则需使偏差较小，此时能够充分拟合数据。并且要使方差较小，因为越小的方差表示受数据扰动的影响小。</li>
+<li>但是往往两全不能齐美，称为偏差-方差窘境。</li>
+<li>具体内容略。</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/09/18/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B1/" rel="prev" title="微分方程1">
+      <i class="fa fa-chevron-left"></i> 微分方程1
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="lv-container" data-id="city" data-uid="MTAyMC81OTA0Ny8zNTUwOQ=="></div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E7%BB%AA%E8%AE%BA"><span class="nav-text">一. 绪论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E4%B8%8E%E9%80%89%E6%8B%A9"><span class="nav-text">二. 模型评估与选择</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A8%A1%E5%9E%8B%E8%AF%84%E4%BC%B0%E6%96%B9%E6%B3%95"><span class="nav-text">模型评估方法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%A7%E8%83%BD%E5%BA%A6%E9%87%8F"><span class="nav-text">性能度量</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%AF%94%E8%BE%83%E6%A3%80%E9%AA%8C"><span class="nav-text">比较检验</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%81%8F%E5%B7%AE%E4%B8%8E%E6%96%B9%E5%B7%AE"><span class="nav-text">偏差与方差</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Error_666"
+      src="/images/avatar.png">
+  <p class="site-author-name" itemprop="name">Error_666</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">13</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/potatoQi" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;potatoQi" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://gitee.com/Error_666" title="Gitee → https:&#x2F;&#x2F;gitee.com&#x2F;Error_666" rel="noopener" target="_blank"><i class="fa fa-paper-plane fa-fw"></i>Gitee</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://www.acwing.com/user/myspace/index/8252/" title="AcWing → https:&#x2F;&#x2F;www.acwing.com&#x2F;user&#x2F;myspace&#x2F;index&#x2F;8252&#x2F;" rel="noopener" target="_blank"><i class="fas fa-rocket fa-fw"></i>AcWing</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://cn.overleaf.com/project" title="Overleaf → https:&#x2F;&#x2F;cn.overleaf.com&#x2F;project" rel="noopener" target="_blank"><i class="fa fa-edit fa-fw"></i>Overleaf</a>
+      </span>
+  </div>
+
+
+
+  <div class="links-of-recent-posts motion-element">
+    <div class="links-of-recent-posts-title">
+      <i class="fa fa-history fa-fw"></i>
+      最近文章
+    </div>
+    <ul class="links-of-recent-posts-list">
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="2024&#x2F;09&#x2F;19&#x2F;机器学习课程自学笔记&#x2F;">机器学习课程自学笔记</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/09/18/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B1/" title="2024&#x2F;09&#x2F;18&#x2F;微分方程1&#x2F;">微分方程1</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/" title="2024&#x2F;09&#x2F;15&#x2F;线性代数4&#x2F;">线性代数4</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/" title="2024&#x2F;09&#x2F;14&#x2F;线性代数3&#x2F;">线性代数3</a>
+        </li>
+        <li class="links-of-recent-posts-item">
+          <a href="/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/" title="2024&#x2F;09&#x2F;12&#x2F;线性代数2&#x2F;">线性代数2</a>
+        </li>
+    </ul>
+  </div>
+      </div>
+	<br>
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2023-10-1 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Error_666</span>
+</div>
+
+<!--
+  <div class="powered-by">由 <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Gemini</a> 强力驱动
+  </div>
+ -->
+
+
+    <script async src="//dn-lbstatics.qbox.me/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+    <span id="busuanzi_container_site_pv">总访问量<span id="busuanzi_value_site_pv"></span>次</span>
+    <span class="post-meta-divider">|</span>
+    <span id="busuanzi_container_site_uv">总访客数<span id="busuanzi_value_site_uv"></span>人</span>
+    <span class="post-meta-divider">|</span>
+<!-- 不蒜子计数初始值纠正 -->
+<script>
+$(document).ready(function() {
+
+    var int = setInterval(fixCount, 50);  // 50ms周期检测函数
+    var countOffset = 20000;  // 初始化首次数据
+
+    function fixCount() {            
+       if (document.getElementById("busuanzi_container_site_pv").style.display != "none")
+        {
+            $("#busuanzi_value_site_pv").html(parseInt($("#busuanzi_value_site_pv").html()) + countOffset); 
+            clearInterval(int);
+        }                  
+        if ($("#busuanzi_container_site_pv").css("display") != "none")
+        {
+            $("#busuanzi_value_site_uv").html(parseInt($("#busuanzi_value_site_uv").html()) + countOffset); // 加上初始数据 
+            clearInterval(int); // 停止检测
+        }  
+    }
+       	
+});
+</script> 
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+  <script>
+    (function(){
+      var canonicalURL, curProtocol;
+      //Get the <link> tag
+      var x=document.getElementsByTagName("link");
+		//Find the last canonical URL
+		if(x.length > 0){
+			for (i=0;i<x.length;i++){
+				if(x[i].rel.toLowerCase() == 'canonical' && x[i].href){
+					canonicalURL=x[i].href;
+				}
+			}
+		}
+    //Get protocol
+	    if (!canonicalURL){
+	    	curProtocol = window.location.protocol.split(':')[0];
+	    }
+	    else{
+	    	curProtocol = canonicalURL.split(':')[0];
+	    }
+      //Get current URL if the canonical URL does not exist
+	    if (!canonicalURL) canonicalURL = window.location.href;
+	    //Assign script content. Replace current URL with the canonical URL
+      !function(){var e=/([http|https]:\/\/[a-zA-Z0-9\_\.]+\.baidu\.com)/gi,r=canonicalURL,t=document.referrer;if(!e.test(r)){var n=(String(curProtocol).toLowerCase() === 'https')?"https://sp0.baidu.com/9_Q4simg2RQJ8t7jm9iCKT-xh_/s.gif":"//api.share.baidu.com/s.gif";t?(n+="?r="+encodeURIComponent(document.referrer),r&&(n+="&l="+r)):r&&(n+="?l="+r);var i=new Image;i.src=n}}(window);})();
+  </script>
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+      
+
+<script>
+  if (typeof MathJax === 'undefined') {
+    window.MathJax = {
+      loader: {
+        source: {
+          '[tex]/amsCd': '[tex]/amscd',
+          '[tex]/AMScd': '[tex]/amscd'
+        }
+      },
+      tex: {
+        inlineMath: {'[+]': [['$', '$']]},
+        tags: 'ams'
+      },
+      options: {
+        renderActions: {
+          findScript: [10, doc => {
+            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
+              const display = !!node.type.match(/; *mode=display/);
+              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
+              const text = document.createTextNode('');
+              node.parentNode.replaceChild(text, node);
+              math.start = {node: text, delim: '', n: 0};
+              math.end = {node: text, delim: '', n: 0};
+              doc.math.push(math);
+            });
+          }, '', false],
+          insertedScript: [200, () => {
+            document.querySelectorAll('mjx-container').forEach(node => {
+              let target = node.parentNode;
+              if (target.nodeName.toLowerCase() === 'li') {
+                target.parentNode.classList.add('has-jax');
+              }
+            });
+          }, '', false]
+        }
+      }
+    };
+    (function () {
+      var script = document.createElement('script');
+      script.src = '//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-MML-AM_CHTML';
+      script.defer = true;
+      document.head.appendChild(script);
+    })();
+  } else {
+    MathJax.startup.document.state(0);
+    MathJax.texReset();
+    MathJax.typeset();
+  }
+</script>
+
+    
+
+  
+
+<script>
+NexT.utils.loadComments(document.querySelector('#lv-container'), () => {
+  window.livereOptions = {
+    refer: location.pathname.replace(CONFIG.root, '').replace('index.html', '')
+  };
+  (function(d, s) {
+    var j, e = d.getElementsByTagName(s)[0];
+    if (typeof LivereTower === 'function') { return; }
+    j = d.createElement(s);
+    j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+    j.async = true;
+    e.parentNode.insertBefore(j, e);
+  })(document, 'script');
+});
+setInterval(function () {
+    var box = document.querySelector(".trc_rbox_container");
+    if(box) box.outerHTML = "";
+}, 2000);
+</script>
+
+</body>
+</html>
