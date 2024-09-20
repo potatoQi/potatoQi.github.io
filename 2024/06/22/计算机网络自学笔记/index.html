@@ -37,8 +37,9 @@
 <meta property="og:image" content="http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/2.png">
 <meta property="og:image" content="http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/4.png">
 <meta property="og:image" content="http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/3.png">
+<meta property="og:image" content="http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/5.png">
 <meta property="article:published_time" content="2024-06-22T12:20:35.000Z">
-<meta property="article:modified_time" content="2024-09-03T18:12:47.178Z">
+<meta property="article:modified_time" content="2024-09-19T16:43:30.447Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
@@ -237,7 +238,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-04 02:12:47" itemprop="dateModified" datetime="2024-09-04T02:12:47+08:00">2024-09-04</time>
+                <time title="修改时间：2024-09-20 00:43:30" itemprop="dateModified" datetime="2024-09-20T00:43:30+08:00">2024-09-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -266,14 +267,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.7k</span>
+              <span>5.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -377,7 +378,8 @@ Mbps，则网卡发送完该数据块需要多长时间?</li>
 </ol></li>
 <li><p>时延</p>
 <ol type="1">
-<li>定义：网络时延 = 发送时延 + 传播时延 + 处理时延</li>
+<li>定义：时延 = 发送时延 + 传播时延 + 处理时延 + 排队时延</li>
+<li>Note：写这类题最好的方法是画图分析！</li>
 <li>其中，发送时延是计算机将信息发送到网络中的时延，传播时延是网络的信息传播到路由器的时延，处理时延是路由器存储转发的时延</li>
 </ol>
 <ul>
@@ -518,9 +520,127 @@ class="math inline">\(D = \frac{D_0}{1 - U}\)</span></li>
 </ul></li>
 </ol></li>
 </ol>
-<h3 id="习题课">习题课</h3>
-<p>待填坑... ...</p>
-<h3 id="三.">三.</h3>
+<h3 id="三.-物理层">三. 物理层</h3>
+<ol type="1">
+<li><p>物理层的基本概念</p>
+<ul>
+<li>在计网中，用来连接各种网络设备的传输媒体种类众多，大致可分为两类，一类是导引型传输媒体（双绞线、同轴电缆），一类是非导引型传输媒体（微波通信）。</li>
+<li>物理层考虑的是怎样才能在连接各种计算机的传输媒体上传输数据比特流。</li>
+<li>物理层位数据链路层屏蔽了各种传输媒体的差异，使数据链路层只需要考虑如何完成本层的协议和服务，而不必考虑网络具体的传输媒体是什么</li>
+<li>物理层协议的主要任务
+<ol type="1">
+<li>机械特性：指明接口所用接线器的形状和尺寸、引脚数目和排列、固定和锁定装置</li>
+<li>电气特性：指明在接口电缆的各条线上出现的电压的范围</li>
+<li>功能特性：指明某条线上出现的某一电平的电压表示何种意义</li>
+<li>过程特性：指明对于不同功能的各种可能事件的出现顺序</li>
+</ol></li>
+</ul></li>
+<li><p>物理层下面的传输媒体</p>
+<ul>
+<li>引导型传输媒体：同轴电缆、双绞线、光纤、电力线</li>
+<li>非引导型传输媒体：无线电波、微波、红外线、可见光</li>
+</ul></li>
+<li><p>传输方式</p>
+<ul>
+<li>串行/并行传输：
+<ul>
+<li>串行传输：只需一条线，一个一个bit的传输</li>
+<li>并行传输：n条先，n个n个bit的传输，速率位串行传输的n倍</li>
+<li>计算机之间的传输通常为串行传输，计算机内部（如果CPU与内存之间的传输通常为并行）</li>
+</ul></li>
+<li>同步传输/异步传输：
+<ul>
+<li>同步传输：数据块以bit流传输过去，字节之间没有间隔
+<ul>
+<li>因为没有间隔，所以必须保证收发双方的时钟频率同步
+<ul>
+<li>外同步：在收发双方之间添加一条单独的时钟信号线</li>
+<li>内同步：发送端将时钟同步信号编码到发送数据中一起传输（例如曼彻斯特编码）</li>
+</ul></li>
+</ul></li>
+<li>异步传输：字节之间有间隙，且间隙时间不固定
+<ul>
+<li>因为间隙时间不固定，所以叫异步。所以发送端要在每个字节前后加上起始位和结束位</li>
+</ul></li>
+</ul></li>
+<li>单工/半双工/全双工通信：
+<ul>
+<li>单工(向)通信：通信双方只有一个数据传输方向（例如广播）</li>
+<li>半双工通信：通信双方可以互相传数据，但是不能同时进行（例如对讲机）</li>
+<li>双工通信：通信双方可以互相传数据，且可以同时进行（例如电话）</li>
+</ul></li>
+</ul></li>
+<li><p>编码与调制</p>
+<ul>
+<li><p>信号都是发到信道中，信道不等于传输媒体。如果是单工传输，那么传输媒体中只有一个信道。而对于半双工和全双工传输，传输媒体中就有两个信道。</p></li>
+<li><p>以下是几种常用编码技术：</p>
+<ol type="1">
+<li>不归零编码：就是010101直接传，缺点就是接受双方时钟频率必须一样</li>
+<li>归零编码：就是10(-1)(0)1010(01)0这样传，接收方只需在信号归零时进行采样即可，无需保证双方时钟频率必须一样。但是缺点就是一般的编码内容都给归零了，浪费资源</li>
+<li>曼彻斯特编码：每个码元的中间时刻都会发生信号跳变，跳变既表示了时钟也表示了数据</li>
+<li>差分曼彻斯特编码：一样是用跳变，但是跳变仅表示时钟，数据要看每个码元开始处的电平与上一个码元结束处电平是否变化，来表示数据</li>
+</ol></li>
+<li><p>调制是指把数字信号调制为可以发出去的信号。</p></li>
+<li><p>以下是一个基本调制方法：</p>
+<ul>
+<li>正交振幅调制QAM，例如QAM16，它调制出的波形可以有12种相位，每种相位有1或2种振幅可选。故可调制出16种码元（看图）</li>
+</ul>
+<p><img src="5.png" /></p>
+<ul>
+<li>每个码元可以表示4个bit信息。码元与4位bit信息之间的对应关系采用格雷码。</li>
+</ul></li>
+</ul></li>
+<li><p>信道的极限容量</p>
+<ul>
+<li>奈氏准则（没考虑噪声）：
+<ul>
+<li>理想低通信道的最高码元传输速率：2 * W(信道带宽，单位Hz) (码元 /
+秒)</li>
+<li>理想带通信道的最高码元传输速率：W (码元 / 秒)</li>
+<li>码元 / 秒与bit / s的换算，若一个码元携带n个比特，则码元 / 秒 = n
+bit/s</li>
+</ul></li>
+<li>香农公式：
+<ul>
+<li><span class="math inline">\(c = W \times
+\log_2(1+\frac{S}{N})\)</span></li>
+<li>c：信道的极限信息传输速率(bit/s)</li>
+<li>W：信道带宽（Hz）</li>
+<li>S：信道内所传信号的平均功率</li>
+<li>N：信道内的高斯噪声功率</li>
+<li>S/N：信噪比（dB）</li>
+</ul></li>
+</ul></li>
+<li><p>信道复用技术</p>
+<ul>
+<li>频分复用(FDM)、时分复用(TDM)、统计时分复用
+<ul>
+<li>略</li>
+</ul></li>
+<li>波分复用
+<ul>
+<li>略</li>
+</ul></li>
+<li>码分复用
+<ul>
+<li>打个比方，FDM是不同的组在不同的房间里说话，TDM是不同的人在不同的时刻说话，CDMA是不同的人使用不同的语言说话</li>
+<li>CDMA技术可以让不同用户在同样的时间使用同样的频率进行通信。为什么能做到呢？因为每个用户有一个唯一标识符——码型(芯片序列)</li>
+<li>码型有m位，用1代表1，-1代表0。且要保证不同用户的码型俩俩正交，这样才可以互不干扰同时发送。</li>
+<li>用<span class="math inline">\(S,
+T\)</span>表示俩用户的码型，那么有<span
+class="math inline">\(S^\mathrm{T}T=0\)</span>，说明对应位相等的个数与对应位不等的个数一样。那么可推导出<span
+class="math inline">\(S^\mathrm{T}\overline{T} =
+0\)</span>。取反后对应位原本相等的就变不等了，原本不等的就变相等了，但个数还是一样的。</li>
+<li>OK，然后如果一个用户要发送一个1，那么就把自己的码型发出去(1
+bit时)，如果发送0，就把自己的反码发出去(1 bit时)。</li>
+<li>如果n个用户同时发送一个bit信息，那么n个码型线性叠加在一起记为W，然后丢给接收站点。</li>
+<li>如果想得到用户1，也就是码型为S的那个人在这一时刻发送的bit信号时什么，就拿它的码型S与叠加后码型W做点乘。即<span
+class="math inline">\(S \cdot
+W\)</span>。若结果为1，则这一时刻用户1发了一个1；如果结果为-1，则它发了一个0；如果结果为0，则它在这一时刻啥都没发。</li>
+<li>原理非常好理解，把W展开，除了自身码型，其余码型相乘后因为正交都为0了。只剩自己了（若这一时刻没发就连自己都没有），然后自己与自己相乘就是1。</li>
+</ul></li>
+</ul></li>
+</ol>
 
     </div>
 
@@ -606,7 +726,7 @@ class="math inline">\(D = \frac{D_0}{1 - U}\)</span></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%AF%BC%E8%AE%BA"><span class="nav-text">一. 导论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%80%BB%E8%A7%88"><span class="nav-text">二. 计算机网络体系结构总览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B9%A0%E9%A2%98%E8%AF%BE"><span class="nav-text">习题课</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89."><span class="nav-text">三.</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%AF%BC%E8%AE%BA"><span class="nav-text">一. 导论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E4%BD%93%E7%B3%BB%E7%BB%93%E6%9E%84%E6%80%BB%E8%A7%88"><span class="nav-text">二. 计算机网络体系结构总览</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E7%89%A9%E7%90%86%E5%B1%82"><span class="nav-text">三. 物理层</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -622,7 +742,7 @@ class="math inline">\(D = \frac{D_0}{1 - U}\)</span></li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">34</span>
+          <span class="site-state-item-count">35</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -658,6 +778,9 @@ class="math inline">\(D = \frac{D_0}{1 - U}\)</span></li>
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="2024&#x2F;09&#x2F;20&#x2F;操作系统自学笔记&#x2F;">操作系统自学笔记</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="2024&#x2F;09&#x2F;19&#x2F;机器学习课程自学笔记&#x2F;">机器学习课程自学笔记</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -668,9 +791,6 @@ class="math inline">\(D = \frac{D_0}{1 - U}\)</span></li>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/" title="2024&#x2F;09&#x2F;14&#x2F;线性代数3&#x2F;">线性代数3</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/" title="2024&#x2F;09&#x2F;12&#x2F;线性代数2&#x2F;">线性代数2</a>
         </li>
     </ul>
   </div>
