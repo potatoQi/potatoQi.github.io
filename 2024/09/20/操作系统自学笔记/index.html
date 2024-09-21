@@ -33,10 +33,12 @@
 <meta property="og:site_name" content="Error_666">
 <meta property="og:description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 <meta property="article:published_time" content="2024-09-20T13:53:43.000Z">
-<meta property="article:modified_time" content="2024-09-20T19:24:20.041Z">
+<meta property="article:modified_time" content="2024-09-21T18:50:10.645Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 
 <link rel="canonical" href="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/">
 
@@ -232,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-21 03:24:20" itemprop="dateModified" datetime="2024-09-21T03:24:20+08:00">2024-09-21</time>
+                <time title="修改时间：2024-09-22 02:50:10" itemprop="dateModified" datetime="2024-09-22T02:50:10+08:00">2024-09-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,14 +263,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>2.7k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -327,7 +329,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 <li><p>所以上面宏的逻辑就是，先写好各种功能宏（DEFINE、UPDATE、PRINT），功能宏传入的参数是一个变量，因为它是作用于一个变量的。</p></li>
 <li><p>然后为了一次作用于多个变量，要再写个循环宏（REGS_FOREACH），循环宏传入的参数是一个功能宏，因为它展开就是把功能宏作用到各个变量上。所以各个变量的名字就要在循环宏里写好。</p>
 <blockquote>
-<p>练习1：理解后，试着写出上述程序</p>
+<p>练习：理解后，试着写出上述程序</p>
 </blockquote></li>
 </ul></li>
 </ul>
@@ -336,7 +338,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 <li><p>该程序功能：通过两个变量X、Y，4种状态对应数字0、1、2、3。控制对应的七个变量的输出（与下文的seven-seg.py配合使用）</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DEFINE(x) static int x, x##1;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> UPDATE(x) x = x##1;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RUN_LOGIC \</span></span><br><span class="line"><span class="meta">    x1 = (x ^ y); \</span></span><br><span class="line"><span class="meta">    y1 = (y == 0 ? 1 : 0); \</span></span><br><span class="line"><span class="meta">    A = (y == 0); \</span></span><br><span class="line"><span class="meta">    B = (x == y); \</span></span><br><span class="line"><span class="meta">    C = (1); \</span></span><br><span class="line"><span class="meta">    D = (x == 1); \</span></span><br><span class="line"><span class="meta">    E = (y == 0); \</span></span><br><span class="line"><span class="meta">    F = !(x == 1 &amp;&amp; y == 0); \</span></span><br><span class="line"><span class="meta">    G = (y == 0);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PRINT(x) printf(#x<span class="string">&quot; = %d; &quot;</span>, x);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> REGS_FOREACH(_) _(x) _(y)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OUTS_FOREACH(_) _(A) _(B) _(C) _(D) _(E) _(F) _(G)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    REGS_FOREACH(DEFINE);</span><br><span class="line">    OUTS_FOREACH(DEFINE);</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        RUN_LOGIC;              <span class="comment">// 得到x1, y1, (ABCDEFG)由x,y得到</span></span><br><span class="line">        REGS_FOREACH(UPDATE);   <span class="comment">// 更新x, y</span></span><br><span class="line">        sleep(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        OUTS_FOREACH(PRINT);</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>练习2：试着自己写出这个程序（RUN_LOGIC部分可借鉴）</p>
+<p>练习：试着自己写出这个程序（RUN_LOGIC部分可借鉴）</p>
 </blockquote></li>
 </ul>
 <h3 id="seven-seg.py">seven-seg.py</h3>
@@ -344,9 +346,43 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 <li><p>该程序功能：接受一行字符串代表7个灯的亮灭情况，输出对应的数字</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="comment"># \033[2J: 清楚整个屏幕</span></span><br><span class="line"><span class="comment"># \-33[1;1f: 将光标移到左上角</span></span><br><span class="line">TEMPLATE = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">\033[2J\033[1;1f</span></span><br><span class="line"><span class="string">     AAAAAAAAA</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    DDDDDDDDD</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">    GGGGGGGGGG</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span> </span><br><span class="line"></span><br><span class="line">BLOCK = &#123;</span><br><span class="line">    <span class="number">0</span>: <span class="string">&#x27;\033[37m░\033[0m&#x27;</span>,  <span class="comment"># \033[37m表示设置字体颜色为白色，░是一个字符，\033[0m表示重置颜色</span></span><br><span class="line">    <span class="number">1</span>: <span class="string">&#x27;\033[31m█\033[0m&#x27;</span>,  <span class="comment"># \033[31m表示设置字体颜色为红色，█是一个字符</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">VARS = <span class="string">&#x27;ABCDEFG&#x27;</span></span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> VARS:</span><br><span class="line">    <span class="comment"># Example: globals()[&#x27;my_var&#x27;] = 42  # 动态创建一个名为 my_var 的全局变量并赋值为 42</span></span><br><span class="line">    <span class="built_in">globals</span>()[v] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从 stdin 逐行读取</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    line = sys.stdin.readline().strip()  <span class="comment"># 使用 readline 逐行读取来自管道的数据</span></span><br><span class="line">    <span class="keyword">if</span> line:</span><br><span class="line">        <span class="built_in">exec</span>(line)</span><br><span class="line">        pic = TEMPLATE</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> VARS:</span><br><span class="line">            pic = pic.replace(v, BLOCK[<span class="built_in">globals</span>()[v]]) <span class="comment"># &#x27;A&#x27; -&gt; BLOCK[A], ...</span></span><br><span class="line">        <span class="built_in">print</span>(pic)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Received line: <span class="subst">&#123;line&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
 <blockquote>
-<p>练习3：看懂这个py程序</p>
+<p>练习：看懂这个py程序</p>
 </blockquote></li>
 </ul>
+<h3 id="hanoi-r.c">hanoi-r.c</h3>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">hanoi</span><span class="params">(<span class="type">int</span> n, <span class="type">char</span> from, <span class="type">char</span> to, <span class="type">char</span> via)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot;%c -&gt; %c\n&quot;</span>, from, to);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        hanoi(n - <span class="number">1</span>, from, via, to);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c -&gt; %c\n&quot;</span>, from, to);</span><br><span class="line">        hanoi(n - <span class="number">1</span>, via, to, from);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span> &#123;</span><br><span class="line">    hanoi(<span class="number">3</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>练习：自己写出这个汉诺塔程序</p>
+</blockquote>
+<ul>
+<li><p>首先你先自己写出这个程序</p></li>
+<li><p>然后去配置一下vscode里的gdb，配置完了试下各种功能以及反汇编视图是否可用</p></li>
+<li><p>几个快捷键要熟悉：F5启动调试，shift+F5关闭调试，F11单步调试(会进入函数内部)，F10逐过程(把函数当作一条语句处理)</p></li>
+<li><p>然后思考一下带递归的程序是如何从汇编角度和cpu执行角度去理解：</p>
+<ul>
+<li><p>假设你写了一个带递归的程序hanio-r.c，然后你可以得到它的汇编。</p></li>
+<li><p>回忆一下当时用vivado做计组项目的时候，是不是将一段汇编硬编码到rom里了？（哈佛结构）所以说，汇编程序本质上也是一段线性的，就是靠着PC在上下跳来跳去来实现的。</p></li>
+<li><p>先思考下循环在汇编里的逻辑，本质就是PC加或者减某个数在每行的汇编里跳来跳去。</p></li>
+<li><p>再思考下递归在汇编里的逻辑，递归里会开局部变量，这又是如何实现的呢？我以下面的代码来举例：</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">    </span><br></pre></td></tr></table></figure></li>
+<li><p>下面是对应的汇编：</p>
+<p><img src="1.png" /></p></li>
+<li><p>哈佛结构除了ROM里存汇编，RAM里是存数据的。数据存储本质上也是一个“数组”。你可以想象数组长度很长，其实的某一段拿来当栈空间，栈空间的起点就是sp，它是栈空间数组的下标。</p></li>
+<li><p>cpu执行角度是没有什么全局变量/局部变量这种说法的，数据要么就是通用寄存器，那么就存在RAM里。sp在通用regs里。</p></li>
+<li><p>除了sp外，通用寄存器里，我们还需要一个x1。x1是RAM里数组的一个下标，其对应的数据是“最后一次”发生跳转的那条汇编的PC值+4。</p></li>
+<li><p>举个例子，比如我在主函数里调用了fact()函数，那么调用这条语句的PC加4之后的PC'，就被存到了data[x1]里。然后如果我想return回主函数，只需jalr
+x0, 0(x1)即可，那么PC就跳到了PC'。</p></li>
+<li><p>所以，为了实现函数调用，x1和sp必不可少 。</p></li>
+<li><p>那么局部变量和嵌套调用如何实现呢？</p></li>
+<li><p>仔细看上面的汇编，进入函数的第一件事，是将当前的x1和x10(结果)存到RAM里的栈空间内，这样后续嵌套递归的话，x1和x10的值一定会被更改，但没事，因为我们已经将当前这一层调用的x1,
+x10存到RAM里了，当后续的调用return回当前层时，从RAM里重新取出即可。</p></li>
+<li><p>听了我以上的讲解，相信我已经能完全看懂上面的汇编了，也就完全理解C语言里的递归在cpu执行角度是如何理解的了。</p></li>
+<li><p>总结一下，cpu执行角度没有全局变量/局部变量之说，数据存储要不就在通用寄存器，要不就在RAM里。通用寄存器里俩很重要的分别是sp和x1，sp掌管着RAM里栈空间的下标，x1掌管着RAM里"调用PC+4"这个元素的下标。</p></li>
+<li><p>递归本质就是一进入当前层时，把当前层信息(x1 +
+数据信息)压入栈中(sp减一个数)，当前层return的时候就弹栈(sp加回来)。如果在当前层嵌套调用了自己(语句1)，那么在当前层语句1之后的语句，若用到了当前层的数据，就从栈里取出来。不这么做的话，数据信息其实是已经被污染，因为CPU没有作用域这种说法。</p></li>
+</ul></li>
+</ul>
+<p>1</p>
 
     </div>
 
@@ -429,7 +465,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
