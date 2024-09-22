@@ -26,16 +26,16 @@
     var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页">
+  <meta name="description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页 文字、程序、图片来源包括但不限于蒋老师的课件、我计组老师的课件、我的个人理解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统自学笔记">
 <meta property="og:url" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页">
+<meta property="og:description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页 文字、程序、图片来源包括但不限于蒋老师的课件、我计组老师的课件、我的个人理解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 <meta property="article:published_time" content="2024-09-20T13:53:43.000Z">
-<meta property="article:modified_time" content="2024-09-21T18:51:40.650Z">
+<meta property="article:modified_time" content="2024-09-22T08:20:37.949Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-22 02:51:40" itemprop="dateModified" datetime="2024-09-22T02:51:40+08:00">2024-09-22</time>
+                <time title="修改时间：2024-09-22 16:20:37" itemprop="dateModified" datetime="2024-09-22T16:20:37+08:00">2024-09-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,14 +263,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.7k</span>
+              <span>3.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>3 分钟</span>
             </span>
 
         </div>
@@ -284,9 +284,10 @@
       
         <p>这门课follow的是南京大学蒋老师开设的操作系统。<a
 target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2022/index.html">课程首页</a></p>
+<p>文字、程序、图片来源包括但不限于蒋老师的课件、我计组老师的课件、我的个人理解</p>
 <span id="more"></span>
 <hr />
-<h3 id="导言">导言</h3>
+<h2 id="导言">导言</h2>
 <ul>
 <li>操作系统是一个典型的
 “system”——它完成对计算机硬件系统的抽象，提供应用程序的运行环境</li>
@@ -303,9 +304,12 @@ target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2022/index.html">课�
 <li>操作系统为什么难学？最主要原因是操作系统里的主题很多，有些主题对大家来说并不太熟悉。例如，同学们到目前为止编写的大部分代码都是串行的，打个比方，就是写一个程序模仿
 “一个人”，一次执行一步动作。但操作系统引入了并发编程，也就是你需要协同多个共享内存的
 “多个人” 时，会遇到很多你也许意料之外的问题。</li>
+<li>AMD是芯片公司造芯片的；x86是Intel提出的指令集，用在AMD造出的芯片上；windows/linux是操作系统</li>
 </ul>
+<h2 id="什么是程序如何理解程序">什么是程序？如何理解程序？</h2>
 <h3 id="logisim_1.c">logisim_1.c</h3>
 <ul>
+<li><p>讲这个程序的目的，首先是为了让你学习宏的一些用法，其次是为了让你感受X-macro的设计美学(用于处理状态机)。</p></li>
 <li><p>该程序的功能：两位bit，4状态循环模拟器。</p></li>
 <li><p>X-macro 是一种在 C 和 C++
 编程中使用的技术，通过预处理器宏来简化代码的维护和扩展。它的核心思想是将重复代码的部分抽象为一个宏列表，从而避免硬编码多次相似的代码。X-macro
@@ -335,6 +339,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 </ul>
 <h3 id="logisim_2.c">logisim_2.c</h3>
 <ul>
+<li><p>讲这个程序的目的，是为了让你感受到管道符的魅力，以及前后端结合的魅力。</p></li>
 <li><p>该程序功能：通过两个变量X、Y，4种状态对应数字0、1、2、3。控制对应的七个变量的输出（与下文的seven-seg.py配合使用）</p>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;unistd.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> DEFINE(x) static int x, x##1;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> UPDATE(x) x = x##1;</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> RUN_LOGIC \</span></span><br><span class="line"><span class="meta">    x1 = (x ^ y); \</span></span><br><span class="line"><span class="meta">    y1 = (y == 0 ? 1 : 0); \</span></span><br><span class="line"><span class="meta">    A = (y == 0); \</span></span><br><span class="line"><span class="meta">    B = (x == y); \</span></span><br><span class="line"><span class="meta">    C = (1); \</span></span><br><span class="line"><span class="meta">    D = (x == 1); \</span></span><br><span class="line"><span class="meta">    E = (y == 0); \</span></span><br><span class="line"><span class="meta">    F = !(x == 1 &amp;&amp; y == 0); \</span></span><br><span class="line"><span class="meta">    G = (y == 0);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> PRINT(x) printf(#x<span class="string">&quot; = %d; &quot;</span>, x);</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> REGS_FOREACH(_) _(x) _(y)</span></span><br><span class="line"><span class="meta">#<span class="keyword">define</span> OUTS_FOREACH(_) _(A) _(B) _(C) _(D) _(E) _(F) _(G)</span></span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span><span class="params">()</span> &#123;</span><br><span class="line">    REGS_FOREACH(DEFINE);</span><br><span class="line">    OUTS_FOREACH(DEFINE);</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">        RUN_LOGIC;              <span class="comment">// 得到x1, y1, (ABCDEFG)由x,y得到</span></span><br><span class="line">        REGS_FOREACH(UPDATE);   <span class="comment">// 更新x, y</span></span><br><span class="line">        sleep(<span class="number">1</span>);</span><br><span class="line"></span><br><span class="line">        OUTS_FOREACH(PRINT);</span><br><span class="line">        <span class="built_in">putchar</span>(<span class="string">&#x27;\n&#x27;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
@@ -355,6 +360,8 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 <p>练习：自己写出这个汉诺塔程序</p>
 </blockquote>
 <ul>
+<li><p>讲这个程序的目的，是为了让你会用vscode
+gdb调试，以及引出如何用cpu执行角度去理解c语言程序</p></li>
 <li><p>首先你先自己写出这个程序</p></li>
 <li><p>然后去配置一下vscode里的gdb，配置完了试下各种功能以及反汇编视图是否可用</p></li>
 <li><p>几个快捷键要熟悉：F5启动调试，shift+F5关闭调试，F11单步调试(会进入函数内部)，F10逐过程(把函数当作一条语句处理)</p></li>
@@ -381,8 +388,18 @@ x10存到RAM里了，当后续的调用return回当前层时，从RAM里重新�
 <li><p>递归本质就是一进入当前层时，把当前层信息(x1 +
 数据信息)压入栈中(sp减一个数)，当前层return的时候就弹栈(sp加回来)。如果在当前层嵌套调用了自己(语句1)，那么在当前层语句1之后的语句，若用到了当前层的数据，就从栈里取出来。不这么做的话，数据信息其实是已经被污染，因为CPU没有作用域这种说法。</p></li>
 </ul></li>
+<li><p>Well，了解了cpu执行角度的c语言程序，我们就可以做一个高抽象性的概括了，即：C语言本质就是状态机，状态为（通用寄存器,
+RAM），C语言里的每一条语句，即每一条汇编的执行，都是一个状态到另一个状态的改变。这个状态机不是自发运行的，而是按照ROM里的指令去实现状态之间的改变。</p></li>
 </ul>
-<p>1</p>
+<h3 id="syscall">syscall</h3>
+<ul>
+<li>一条神奇的指令，即调用操作系统</li>
+<li>从上面的讲解，我们知道，任意程序本质上就是对状态机（通用寄存器,
+RAM）状态改变的指挥棒。那么当一个程序调用syscall的时候，就会执行操作系统里的程序，也就是指挥棒交到了操作系统手上。</li>
+<li>在程序眼里，操作系统就是syscall这条指令，syscall指令的各种api包罗万象。你想用屏幕？可以，syscall请求一下。你想与别的进程交互？可以，syscall请求一下。So，没什么神奇的，所有的程序与操作系统交互都是通过syscall。</li>
+<li>由此，就实现了操作系统与任意程序的交互。</li>
+</ul>
+<h2 id="多处理器编程">多处理器编程</h2>
 
     </div>
 
@@ -465,7 +482,7 @@ x10存到RAM里了，当后续的调用return回当前层时，从RAM里重新�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F"><span class="nav-text">什么是程序？如何理解程序？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#syscall"><span class="nav-text">syscall</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%BC%96%E7%A8%8B"><span class="nav-text">多处理器编程</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
