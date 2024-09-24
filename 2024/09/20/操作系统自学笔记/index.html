@@ -35,7 +35,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 <meta property="article:published_time" content="2024-09-20T13:53:43.000Z">
-<meta property="article:modified_time" content="2024-09-22T08:20:37.949Z">
+<meta property="article:modified_time" content="2024-09-24T17:10:54.277Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-22 16:20:37" itemprop="dateModified" datetime="2024-09-22T16:20:37+08:00">2024-09-22</time>
+                <time title="修改时间：2024-09-25 01:10:54" itemprop="dateModified" datetime="2024-09-25T01:10:54+08:00">2024-09-25</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,14 +263,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.3k</span>
+              <span>4.5k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>3 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -399,7 +399,39 @@ RAM）状态改变的指挥棒。那么当一个程序调用syscall的时候，�
 <li>在程序眼里，操作系统就是syscall这条指令，syscall指令的各种api包罗万象。你想用屏幕？可以，syscall请求一下。你想与别的进程交互？可以，syscall请求一下。So，没什么神奇的，所有的程序与操作系统交互都是通过syscall。</li>
 <li>由此，就实现了操作系统与任意程序的交互。</li>
 </ul>
-<h2 id="多处理器编程">多处理器编程</h2>
+<h2 id="lab0裸机程序">lab0裸机程序</h2>
+<p>makefile<a
+target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1tyWWeeEpp/?spm_id_from=333.337.search-card.all.click&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">快速入门</a>：</p>
+<p><code>gcc test.c</code>：编译test.c并生成可执行文件a.out</p>
+<p><code>gcc test.c -o yyy</code>：编译test.c并将可执行文件重命名为yyy</p>
+<p><code>gcc test.c -c</code>：编译test.c但不链接，生成目标文件test.o</p>
+<p><code>gcc test.c -c -o yyy</code>：编译test.c但不链接，将目标文件改名为yyy</p>
+<ul>
+<li><p>最普通的makefile写法</p></li>
+<li><p>```makefile .PHONY: clean</p>
+<p>hello: hello.o print.o gcc hello.o print.o -o hello</p>
+<p>hello.o: hello.c gcc hello.c -c</p>
+<p>print.o: print.c gcc print.c -c</p>
+<p>clean: rm -f *.o <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">- .PHONY 后面跟着的东西，就可以使你make xxx的时候执行的是makefile里xxx的逻辑。</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">局部变量：函数结束就销毁</span><br><span class="line"></span><br><span class="line">静态局部变量：静态局部变量永远在，直到程序结束。但仍只能被本函数访问</span><br><span class="line"></span><br><span class="line">全局变量：任何文件，只要通过extern关键字，就可以访问它</span><br><span class="line"></span><br><span class="line">静态全局变量：只有本文件能够访问它 </span><br><span class="line"></span><br><span class="line">静态变量 = 静态局部变量 + 静态全局变量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">`objdump -h test.o`：查看目标文件test.o的段头</span><br><span class="line"></span><br><span class="line">​    什么是段头？就是程序编译过后的ELF文件的头（元数据）</span><br><span class="line"></span><br><span class="line">​    `.text`段：存放程序编译后生成的机器码</span><br><span class="line"></span><br><span class="line">​    `.data`段：存放已初始化过的死不了的东西，即初始化过的全局变量和静态变量</span><br><span class="line"></span><br><span class="line">​        在ELF文件中，已经记录了这些变量的初始值，运行时便会加载到内存中</span><br><span class="line"></span><br><span class="line">​    `.bss`段：存放未初始化过的死不了的东西，即未初始化过的全局变量和静态变量</span><br><span class="line"></span><br><span class="line">​        在ELF文件中，没有这些变量的初始值，但是会告诉OS在运行时将他们初始化为0/NULL</span><br><span class="line"></span><br><span class="line">​    `.rodata`段：存在只读的常量，若试图修改，会导致运行错误</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">下面来看一段`objdump -h test.o`的例子：</span><br><span class="line"></span><br></pre></td></tr></table></figure> hello.o: file format
+elf64-x86-64</p></li>
+</ul>
+<p>Sections: Idx Name Size VMA LMA File off Algn 0 .text 0000001e
+0000000000000000 0000000000000000 00000040 2<strong>0 CONTENTS, ALLOC,
+LOAD, RELOC, READONLY, CODE 1 .data 00000000 0000000000000000
+0000000000000000 0000005e 2</strong>0 CONTENTS, ALLOC, LOAD, DATA 2 .bss
+00000000 0000000000000000 0000000000000000 0000005e 2<strong>0 ALLOC 3
+.rodata 0000000e 0000000000000000 0000000000000000 0000005e 2</strong>0
+CONTENTS, ALLOC, LOAD, READONLY, DATA 4 .comment 00000027
+0000000000000000 0000000000000000 0000006c 2**0 CONTENTS, READONLY</p>
+<p>5 .note.GNU-stack 00000000 0000000000000000 0000000000000000 00000093
+2<strong>0 CONTENTS, READONLY 6 .note.gnu.property 00000020
+0000000000000000 0000000000000000 00000098 2</strong>3 CONTENTS, ALLOC,
+LOAD, READONLY, DATA 7 .eh_frame 00000038 0000000000000000
+0000000000000000 000000b8 2**3 CONTENTS, ALLOC, LOAD, RELOC, READONLY,
+DATA</p>
+<p>```</p>
+<p>Size是段的大小，VMA是程序加载到内存中时段的虚拟地址，LMA是程序加载时的物理内存地址，File
+off是该段相对于文件开头的便宜量，AIgn是该段的对齐要求</p>
 
     </div>
 
@@ -482,7 +514,7 @@ RAM）状态改变的指挥棒。那么当一个程序调用syscall的时候，�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F"><span class="nav-text">什么是程序？如何理解程序？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#syscall"><span class="nav-text">syscall</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A4%9A%E5%A4%84%E7%90%86%E5%99%A8%E7%BC%96%E7%A8%8B"><span class="nav-text">多处理器编程</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F"><span class="nav-text">什么是程序？如何理解程序？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#syscall"><span class="nav-text">syscall</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lab0%E8%A3%B8%E6%9C%BA%E7%A8%8B%E5%BA%8F"><span class="nav-text">lab0裸机程序</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
