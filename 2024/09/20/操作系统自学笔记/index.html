@@ -26,16 +26,16 @@
     var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页 文字、程序、图片来源包括但不限于蒋老师的课件、我计组老师的课件、我的个人理解">
+  <meta name="description" content="文字、程序、图片来源包括但不限于蒋老师的课件、我OS&#x2F;计组老师的课件、助教的实验文档、我的个人理解">
 <meta property="og:type" content="article">
 <meta property="og:title" content="操作系统自学笔记">
 <meta property="og:url" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="这门课follow的是南京大学蒋老师开设的操作系统。课程首页 文字、程序、图片来源包括但不限于蒋老师的课件、我计组老师的课件、我的个人理解">
+<meta property="og:description" content="文字、程序、图片来源包括但不限于蒋老师的课件、我OS&#x2F;计组老师的课件、助教的实验文档、我的个人理解">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
 <meta property="article:published_time" content="2024-09-20T13:53:43.000Z">
-<meta property="article:modified_time" content="2024-09-24T17:17:29.678Z">
+<meta property="article:modified_time" content="2024-10-01T16:09:14.958Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/1.png">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-25 01:17:29" itemprop="dateModified" datetime="2024-09-25T01:17:29+08:00">2024-09-25</time>
+                <time title="修改时间：2024-10-02 00:09:14" itemprop="dateModified" datetime="2024-10-02T00:09:14+08:00">2024-10-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -263,7 +263,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3.9k</span>
+              <span>4.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -282,12 +282,10 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这门课follow的是南京大学蒋老师开设的操作系统。<a
-target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2022/index.html">课程首页</a></p>
-<p>文字、程序、图片来源包括但不限于蒋老师的课件、我计组老师的课件、我的个人理解</p>
+        <p>文字、程序、图片来源包括但不限于蒋老师的课件、我OS/计组老师的课件、助教的实验文档、我的个人理解</p>
 <span id="more"></span>
 <hr />
-<h2 id="导言">导言</h2>
+<h3 id="导言">导言</h3>
 <ul>
 <li>操作系统是一个典型的
 “system”——它完成对计算机硬件系统的抽象，提供应用程序的运行环境</li>
@@ -306,8 +304,8 @@ target="_blank" rel="noopener" href="https://jyywiki.cn/OS/2022/index.html">课�
 “多个人” 时，会遇到很多你也许意料之外的问题。</li>
 <li>AMD是芯片公司造芯片的；x86是Intel提出的指令集，用在AMD造出的芯片上；windows/linux是操作系统</li>
 </ul>
-<h2 id="什么是程序如何理解程序">什么是程序？如何理解程序？</h2>
-<h3 id="logisim_1.c">logisim_1.c</h3>
+<h3 id="什么是程序如何理解程序">什么是程序？如何理解程序？</h3>
+<h4 id="logisim_1.c">logisim_1.c</h4>
 <ul>
 <li><p>讲这个程序的目的，首先是为了让你学习宏的一些用法，其次是为了让你感受X-macro的设计美学(用于处理状态机)。</p></li>
 <li><p>该程序的功能：两位bit，4状态循环模拟器。</p></li>
@@ -337,7 +335,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 </blockquote></li>
 </ul></li>
 </ul>
-<h3 id="logisim_2.c">logisim_2.c</h3>
+<h4 id="logisim_2.c">logisim_2.c</h4>
 <ul>
 <li><p>讲这个程序的目的，是为了让你感受到管道符的魅力，以及前后端结合的魅力。</p></li>
 <li><p>该程序功能：通过两个变量X、Y，4种状态对应数字0、1、2、3。控制对应的七个变量的输出（与下文的seven-seg.py配合使用）</p>
@@ -346,7 +344,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 <p>练习：试着自己写出这个程序（RUN_LOGIC部分可借鉴）</p>
 </blockquote></li>
 </ul>
-<h3 id="seven-seg.py">seven-seg.py</h3>
+<h4 id="seven-seg.py">seven-seg.py</h4>
 <ul>
 <li><p>该程序功能：接受一行字符串代表7个灯的亮灭情况，输出对应的数字</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"> </span><br><span class="line"><span class="comment"># \033[2J: 清楚整个屏幕</span></span><br><span class="line"><span class="comment"># \-33[1;1f: 将光标移到左上角</span></span><br><span class="line">TEMPLATE = <span class="string">&#x27;&#x27;&#x27;</span></span><br><span class="line"><span class="string">\033[2J\033[1;1f</span></span><br><span class="line"><span class="string">     AAAAAAAAA</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    BB       CC</span></span><br><span class="line"><span class="string">    DDDDDDDDD</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">   EE       FF</span></span><br><span class="line"><span class="string">    GGGGGGGGGG</span></span><br><span class="line"><span class="string">&#x27;&#x27;&#x27;</span> </span><br><span class="line"></span><br><span class="line">BLOCK = &#123;</span><br><span class="line">    <span class="number">0</span>: <span class="string">&#x27;\033[37m░\033[0m&#x27;</span>,  <span class="comment"># \033[37m表示设置字体颜色为白色，░是一个字符，\033[0m表示重置颜色</span></span><br><span class="line">    <span class="number">1</span>: <span class="string">&#x27;\033[31m█\033[0m&#x27;</span>,  <span class="comment"># \033[31m表示设置字体颜色为红色，█是一个字符</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">VARS = <span class="string">&#x27;ABCDEFG&#x27;</span></span><br><span class="line"><span class="keyword">for</span> v <span class="keyword">in</span> VARS:</span><br><span class="line">    <span class="comment"># Example: globals()[&#x27;my_var&#x27;] = 42  # 动态创建一个名为 my_var 的全局变量并赋值为 42</span></span><br><span class="line">    <span class="built_in">globals</span>()[v] = <span class="number">0</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 从 stdin 逐行读取</span></span><br><span class="line"><span class="keyword">while</span> <span class="literal">True</span>:</span><br><span class="line">    line = sys.stdin.readline().strip()  <span class="comment"># 使用 readline 逐行读取来自管道的数据</span></span><br><span class="line">    <span class="keyword">if</span> line:</span><br><span class="line">        <span class="built_in">exec</span>(line)</span><br><span class="line">        pic = TEMPLATE</span><br><span class="line">        <span class="keyword">for</span> v <span class="keyword">in</span> VARS:</span><br><span class="line">            pic = pic.replace(v, BLOCK[<span class="built_in">globals</span>()[v]]) <span class="comment"># &#x27;A&#x27; -&gt; BLOCK[A], ...</span></span><br><span class="line">        <span class="built_in">print</span>(pic)</span><br><span class="line">        <span class="built_in">print</span>(<span class="string">f&quot;Received line: <span class="subst">&#123;line&#125;</span>&quot;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">break</span></span><br></pre></td></tr></table></figure>
@@ -354,7 +352,7 @@ POSIX（可移植操作系统接口）标准中的头文件，提供了对各种
 <p>练习：看懂这个py程序</p>
 </blockquote></li>
 </ul>
-<h3 id="hanoi-r.c">hanoi-r.c</h3>
+<h4 id="hanoi-r.c">hanoi-r.c</h4>
 <figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="keyword">include</span> <span class="string">&lt;stdio.h&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="type">void</span> <span class="title function_">hanoi</span><span class="params">(<span class="type">int</span> n, <span class="type">char</span> from, <span class="type">char</span> to, <span class="type">char</span> via)</span> &#123;</span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">1</span>) <span class="built_in">printf</span>(<span class="string">&quot;%c -&gt; %c\n&quot;</span>, from, to);</span><br><span class="line">    <span class="keyword">else</span> &#123;</span><br><span class="line">        hanoi(n - <span class="number">1</span>, from, via, to);</span><br><span class="line">        <span class="built_in">printf</span>(<span class="string">&quot;%c -&gt; %c\n&quot;</span>, from, to);</span><br><span class="line">        hanoi(n - <span class="number">1</span>, via, to, from);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="type">int</span> <span class="title function_">main</span> <span class="params">()</span> &#123;</span><br><span class="line">    hanoi(<span class="number">3</span>, <span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <blockquote>
 <p>练习：自己写出这个汉诺塔程序</p>
@@ -391,7 +389,7 @@ x10存到RAM里了，当后续的调用return回当前层时，从RAM里重新�
 <li><p>Well，了解了cpu执行角度的c语言程序，我们就可以做一个高抽象性的概括了，即：C语言本质就是状态机，状态为（通用寄存器,
 RAM），C语言里的每一条语句，即每一条汇编的执行，都是一个状态到另一个状态的改变。这个状态机不是自发运行的，而是按照ROM里的指令去实现状态之间的改变。</p></li>
 </ul>
-<h3 id="syscall">syscall</h3>
+<h4 id="syscall">syscall</h4>
 <ul>
 <li>一条神奇的指令，即调用操作系统</li>
 <li>从上面的讲解，我们知道，任意程序本质上就是对状态机（通用寄存器,
@@ -399,7 +397,8 @@ RAM）状态改变的指挥棒。那么当一个程序调用syscall的时候，�
 <li>在程序眼里，操作系统就是syscall这条指令，syscall指令的各种api包罗万象。你想用屏幕？可以，syscall请求一下。你想与别的进程交互？可以，syscall请求一下。So，没什么神奇的，所有的程序与操作系统交互都是通过syscall。</li>
 <li>由此，就实现了操作系统与任意程序的交互。</li>
 </ul>
-<h2 id="lab0裸机程序">lab0裸机程序</h2>
+<h3 id="lab0-裸机程序">lab0-裸机程序</h3>
+<h4 id="预备知识">预备知识</h4>
 <ul>
 <li><p>makefile<a
 target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1tyWWeeEpp/?spm_id_from=333.337.search-card.all.click&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">快速入门</a>：</p></li>
@@ -439,6 +438,52 @@ xxx的时候执行的是makefile里xxx的逻辑。</li>
 <li><code>.rodata</code>段：存在只读的常量，若试图修改，会导致运行错误</li>
 </ul></li>
 </ul>
+<h4 id="实现裸机hello-world">实现裸机Hello world!</h4>
+<ul>
+<li>我们以往写用户程序时，通常都只关注代码本身，而将运行时的环境交给了编译器等系统软件进行处理，但我们若要编写裸机程序，就需要进一步揭开运行时环境的神秘面纱。</li>
+<li>下表揭示了裸机程序与用户程序的区别：</li>
+</ul>
+<table>
+<colgroup>
+<col style="width: 9%" />
+<col style="width: 48%" />
+<col style="width: 42%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>对比对象</th>
+<th>裸机程序</th>
+<th>常规用户程序</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>内存地址空间</td>
+<td>自行管理物理地址空间，可以自行对虚拟内存进行配置后使自己运行在虚拟地址空间</td>
+<td>由操作系统管理的虚拟地址空间（不考虑Linux NOMMU模式）</td>
+</tr>
+<tr class="even">
+<td>系统调用</td>
+<td>调用自己</td>
+<td>调用更高特权级的操作系统/固件</td>
+</tr>
+<tr class="odd">
+<td>栈的初始化</td>
+<td>自行完成</td>
+<td>操作系统载入用户进程时完成（毕竟还要通过栈传递参数）</td>
+</tr>
+<tr class="even">
+<td>BSS段的清空</td>
+<td>自行完成</td>
+<td>操作系统分配虚拟页面时完成清零</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>ok，那开始吧！首先先写一个用于初始化的汇编代码。（用于初始化虚实地址映射方式、栈初始化、执行main）</li>
+<li>注释写的非常详细了，请仔细阅读：</li>
+</ul>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"># 告诉汇编器main这个东西是外部C语言的main函数</span><br><span class="line"># 不用担心路径，因为在makefile的时候会把C程序和汇编程序绑在一起</span><br><span class="line"># 也不用担心有多个C程序从而有多个main，如果是这样的话会报错的，因为一个项目里只能有一个main函数</span><br><span class="line">.extern main</span><br><span class="line"></span><br><span class="line"># .text 伪指令用于指定代码段的开始，通常放在需要生成机器码的指令之前</span><br><span class="line">.text</span><br><span class="line"></span><br><span class="line"># 声明_start为全局符号</span><br><span class="line">.globl _start</span><br><span class="line"></span><br><span class="line">_start:</span><br><span class="line">    # li.w的意思是load immediate word，就是加载一个立即数的意思，就是把0xa0000011加载到t0里</span><br><span class="line">    # 为什么要选择t0? 没有什么特殊含义，因为t0是通用寄存器，用于存储临时数据，所以顺手就用它了</span><br><span class="line">    # 0xa0000011 = 1010 0000 0000 0000 0000 0000 0001 0001</span><br><span class="line">    li.w    $t0, 0xa0000011</span><br><span class="line"></span><br><span class="line">    # 什么是CSR?（Control and Status Registers）</span><br><span class="line">    # 简单理解，CSR就是一组寄存器，跟registers里的寄存器一样，只不过这组寄存器的不同的取值会使cpu做一些事情（具体请看龙芯32位手册_v1.02的p65）</span><br><span class="line">    # 需要通过特殊的命令，例如csrwr, csrrw来读取和写入</span><br><span class="line">    # 下面这句话就是说，把t0的值写入地位为“0x180”的这个CSR里。csrwr的意思是csr write</span><br><span class="line">    </span><br><span class="line">    # 然后补一下关于虚拟地址、物理地址、地址映射的知识</span><br><span class="line">    /*</span><br><span class="line">        * 物理地址：是内存的实际地址，即内存芯片上的实际位置</span><br><span class="line">        * 虚拟地址：由程序生成的地址，不是实际的物理地址</span><br><span class="line">        * 地址映射：将虚拟地址转换为物理地址的过程。这种映射通常由硬件（如 MMU，内存管理单元）和操作系统共同完成</span><br><span class="line">        * 龙芯中，mmu支持两种翻译模式：直接地址翻译(直接窗口)、映射地址翻译(页表)。优先级直接 &gt; 页表</span><br><span class="line">        * 直接窗口：直接窗口是一种地址映射机制，用于将虚拟地址直接映射到物理地址</span><br><span class="line">        * 配置直接窗口：直接窗口是一种机制，所以我们需要配置其具体机制的设置，那么在龙芯里，就通过地址为“0x180”这个csr（其实叫CSR_DMWIN0）来</span><br><span class="line">                      配置第0个直接窗口的设置</span><br><span class="line">     */</span><br><span class="line">    /*</span><br><span class="line">        * 知道了CSR_DMWIN0这个csr寄存器是第0个直接窗口的配置信息之后，我们需要了解具体什么数对应着什么配置：</span><br><span class="line">        * 参考龙芯32位手册_v1.02的p76</span><br><span class="line">        * 第31-29位：虚地址的[31:29]位</span><br><span class="line">        * 第27-25位：物理地址的[31:29]位</span><br><span class="line">        * 第3位：为1表示在特权等级PLV3(用户态)下可以使用该直接窗口进行地址翻译</span><br><span class="line">        * 第0位：为1表示在特权等级PLV0(内核态)下可以使用该直接窗口进行地址翻译</span><br><span class="line">        * ... ...</span><br><span class="line">     */</span><br><span class="line">    csrwr   $t0, 0x180  # 所以这里CSR_DMWIN0被配置为：“起始地址0xa0000000, PLV0时该直接窗口激活”</span><br><span class="line"></span><br><span class="line">    # 下面这两行跟上面两行一样，只不过是配置CSR_DMWIN1，它被配置为：“起始地址0x80000000, PLV0时该直接窗口激活”</span><br><span class="line">    # 0x80000001 = 10000000000000000000000000000001</span><br><span class="line">    li.w    $t0, 0x80000001</span><br><span class="line">    csrrw   $t0, 0x181</span><br><span class="line"></span><br><span class="line">    # -----------------------------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">    li.w    $t0, 0xb0   # 0000 0000 0000 0000 0000 0000 1011 0000</span><br><span class="line">    # 地址为0x0的csr是CSR_CRMD，所以我们需要了解CSR_CRMD（Control and Status Register for Control and Management）是什么</span><br><span class="line">    # 详细参考龙芯32位手册_v1.02的p67</span><br><span class="line">    /*</span><br><span class="line">        * PLV(Privilege Level)</span><br><span class="line">            位范围：第1-0位</span><br><span class="line">            取值：</span><br><span class="line">                00：内核模式（内核模式下的代码可以执行所有操作，包括直接访问硬件资源、修改系统状态等）</span><br><span class="line">                11：用户模式（用户模式下的代码不能执行某些敏感操作，如直接访问硬件资源、修改关键系统状态等）</span><br><span class="line">        * DA</span><br><span class="line">            位范围：第3位</span><br><span class="line">            取值：</span><br><span class="line">                0：静默使用直接翻译（实际上当DA=0, PG=1时仍然会静默开启直接翻译）</span><br><span class="line">                1：启用使用直接翻译</span><br><span class="line">        * PG(Page Enable)</span><br><span class="line">            位范围：第4位</span><br><span class="line">            取值：</span><br><span class="line">                0：禁用分页翻译</span><br><span class="line">                1：启动分页翻译（直接翻译仍会起效且优先级比页表翻译高）</span><br><span class="line">        * ... ...</span><br><span class="line">     */</span><br><span class="line">    csrwr   $t0, 0x0    # 所以这里CSR_CRMD被配置为：“内核模式 + 启用分页翻译”</span><br><span class="line"></span><br><span class="line">    # -----------------------------------------------------------------------------------------------------</span><br><span class="line"></span><br><span class="line">    # la的意思是load address</span><br><span class="line">    # 初始化栈指针为bootstacktop这个地址</span><br><span class="line">    la  $sp, bootstacktop</span><br><span class="line"></span><br><span class="line">    # 将main标签的地址给t0</span><br><span class="line">    la  $t0, main</span><br><span class="line">    # 跳转到main标签的地址，即开始执行main函数</span><br><span class="line">    jr  $t0</span><br><span class="line"></span><br><span class="line"># 当main函数执行完后，会回到汇编这里，然后_stack就执行完了，自然会执行到poweroff这里</span><br><span class="line">poweroff:</span><br><span class="line">    b poweroff  # b是branch的意思，即无条件跳转到poweroff，形成死循环</span><br><span class="line">    # 通过 b poweroff 形成的无限循环，可以确保程序在 main 函数返回后不会继续执行无效的代码，防止未定义行为的发生。</span><br><span class="line"></span><br><span class="line"># ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~</span><br><span class="line"></span><br><span class="line"># _stack是一个标签，没用</span><br><span class="line">_stack:</span><br><span class="line"></span><br><span class="line"># 切换段为数据段</span><br><span class="line"># 需要注意.data里的分配动作在链接阶段就会分配内存空间</span><br><span class="line">.section .data</span><br><span class="line"></span><br><span class="line"># 声明bootstack为全局符号</span><br><span class="line">.global bootstack</span><br><span class="line">bootstack:</span><br><span class="line">    .space 1024 # 从bootstack这个地址开始，分配1024个空间</span><br><span class="line"></span><br><span class="line"># 声明bootstacktop为全局符号</span><br><span class="line">.global bootstacktop</span><br><span class="line">bootstacktop:</span><br><span class="line">    .space 64   # 从bootstacktop这个地址开始，分配64个空间</span><br><span class="line"></span><br><span class="line">/*</span><br><span class="line">    更多相关知识介绍：https://osdocs.cqu.ai/lab0/intro/#io</span><br><span class="line"></span><br><span class="line">    总结：</span><br><span class="line">    这段汇编首先配置了 PLV0下的俩直接翻译窗口CSR_DMWIN0, CSR_DMWIN1，即分别将虚拟地址0xa0000011、0x80000000映射到物理地址上</span><br><span class="line">    然后设置了CSR_CRMD，即启用PLV0内核模式 + 启用分页翻译模式（此时也会静默启动直接翻译，因为其优先级高）</span><br><span class="line">    然后初始化了栈顶地址($sp)，栈的大小在.data中已设置</span><br><span class="line"> */</span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -457,7 +502,10 @@ xxx的时候执行的是makefile里xxx的逻辑。</li>
     <a href="/2024/09/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%AF%BE%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" rel="prev" title="机器学习课程自学笔记">
       <i class="fa fa-chevron-left"></i> 机器学习课程自学笔记
     </a></div>
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/" rel="next" title="微分方程2">
+      微分方程2 <i class="fa fa-chevron-right"></i>
+    </a></div>
     </div>
       </footer>
     
@@ -521,7 +569,7 @@ xxx的时候执行的是makefile里xxx的逻辑。</li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F"><span class="nav-text">什么是程序？如何理解程序？</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#syscall"><span class="nav-text">syscall</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#lab0%E8%A3%B8%E6%9C%BA%E7%A8%8B%E5%BA%8F"><span class="nav-text">lab0裸机程序</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AF%BC%E8%A8%80"><span class="nav-text">导言</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E7%A8%8B%E5%BA%8F%E5%A6%82%E4%BD%95%E7%90%86%E8%A7%A3%E7%A8%8B%E5%BA%8F"><span class="nav-text">什么是程序？如何理解程序？</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#logisim_1.c"><span class="nav-text">logisim_1.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#logisim_2.c"><span class="nav-text">logisim_2.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#seven-seg.py"><span class="nav-text">seven-seg.py</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#hanoi-r.c"><span class="nav-text">hanoi-r.c</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#syscall"><span class="nav-text">syscall</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#lab0-%E8%A3%B8%E6%9C%BA%E7%A8%8B%E5%BA%8F"><span class="nav-text">lab0-裸机程序</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="nav-text">预备知识</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E8%A3%B8%E6%9C%BAhello-world"><span class="nav-text">实现裸机Hello world!</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -537,7 +585,7 @@ xxx的时候执行的是makefile里xxx的逻辑。</li>
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">35</span>
+          <span class="site-state-item-count">36</span>
           <span class="site-state-item-name">日志</span>
         </a>
       </div>
@@ -573,6 +621,9 @@ xxx的时候执行的是makefile里xxx的逻辑。</li>
     </div>
     <ul class="links-of-recent-posts-list">
         <li class="links-of-recent-posts-item">
+          <a href="/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/" title="2024&#x2F;10&#x2F;02&#x2F;微分方程2&#x2F;">微分方程2</a>
+        </li>
+        <li class="links-of-recent-posts-item">
           <a href="/2024/09/20/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" title="2024&#x2F;09&#x2F;20&#x2F;操作系统自学笔记&#x2F;">操作系统自学笔记</a>
         </li>
         <li class="links-of-recent-posts-item">
@@ -583,9 +634,6 @@ xxx的时候执行的是makefile里xxx的逻辑。</li>
         </li>
         <li class="links-of-recent-posts-item">
           <a href="/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/" title="2024&#x2F;09&#x2F;15&#x2F;线性代数4&#x2F;">线性代数4</a>
-        </li>
-        <li class="links-of-recent-posts-item">
-          <a href="/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/" title="2024&#x2F;09&#x2F;14&#x2F;线性代数3&#x2F;">线性代数3</a>
         </li>
     </ul>
   </div>
