@@ -34,8 +34,10 @@
 <meta property="og:description" content="你好你好，学完再写">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/1.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/2.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/3.png">
 <meta property="article:published_time" content="2024-10-03T14:35:02.000Z">
-<meta property="article:modified_time" content="2024-10-03T15:10:53.892Z">
+<meta property="article:modified_time" content="2024-10-03T16:29:05.062Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/1.png">
@@ -226,10 +228,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-10-03 22:35:02 / 修改时间：23:10:53" itemprop="dateCreated datePublished" datetime="2024-10-03T22:35:02+08:00">2024-10-03</time>
+              <time title="创建时间：2024-10-03 22:35:02" itemprop="dateCreated datePublished" datetime="2024-10-03T22:35:02+08:00">2024-10-03</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-04 00:29:05" itemprop="dateModified" datetime="2024-10-04T00:29:05+08:00">2024-10-04</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -257,14 +265,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>209</span>
+              <span>2.3k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>2 分钟</span>
             </span>
 
         </div>
@@ -281,22 +289,153 @@
 <p>Follow的西湖大学赵老师的B站课程</p>
 <hr />
 <h3 id="一.-基本概念">一. 基本概念</h3>
-<ul>
-<li>考虑一个在强化学习里很常见的例子“Grid-world”，网格世界：</li>
-</ul>
+<p>考虑一个在强化学习里很常见的例子“Grid-world”，网格世界：</p>
 <p><img src="1.png" style="zoom:67%;" /></p>
-<ul>
-<li>网格有以下几种类型：
+<p>网格有以下几种类型：</p>
 <ol type="1">
 <li>Acessible cell：可到达，即白色</li>
-<li>Forbidden cell：不可进去，即黄色</li>
+<li>Forbidden cell：进去会得到惩罚的地方，即黄色</li>
 <li>Target cell：希望到达的地方，即蓝色</li>
-</ol></li>
-<li>网格世界有边界，且机器人只能在相邻块间移动。</li>
-<li>网格世界的任务就是：找到一个“好”的路径到达target cell。</li>
+</ol>
+<p>网格世界有边界，且机器人只能在相邻块间移动。</p>
+<p>网格世界的任务就是：找到一个“好”的路径到达target cell。</p>
+<p>下面借用grid-world例子，来介绍几个在RL里常见的名词</p>
+<ul>
+<li><p><code>state</code>：</p>
+<ul>
+<li>符号：<span class="math inline">\(s_i\)</span></li>
+<li>解释：agent的可能会处于的状态，在grid-world里robot的state就是它的location</li>
+</ul></li>
+<li><p><code>state-space</code>：</p>
+<ul>
+<li>符号：<span class="math inline">\(\mathcal{S} =
+\{s_i\}\)</span></li>
+<li>解释：所有state的集合，在grid-world里state-space就是全部的location</li>
+</ul></li>
+<li><p><code>action</code>：</p>
+<ul>
+<li>符号：<span class="math inline">\(a_i\)</span></li>
+<li>解释：action的概念都是基于state，即当前state为了达到下一个state所采取的一个动作，在grid-world里任意一个state的action都是上/下/左右/不动</li>
+</ul></li>
+<li><p><code>action-space</code>：</p>
+<ul>
+<li>符号：<span class="math inline">\(\mathcal{A}(s_i) =
+\{a_i\}\)</span></li>
+<li>解释：action-space的概念也是基于state，即当前state所有action的集合，在grid-world里所有state的action-space都是上下左右不动五个动作</li>
+</ul></li>
+<li><p><code>state-transition</code>：</p>
+<ul>
+<li><p>符号：<span class="math inline">\(s_1 \stackrel{a_3}{\to}
+s_2\)</span></p></li>
+<li><p>解释：从某个state，通过其某个action，转移到另一个state的过程</p></li>
+<li><p>简单的state-transition可以用表格的形式表现出来：</p>
+<p><img src="2.png" /></p></li>
+<li><p>还可以用条件概率来描述state-transition：<span
+class="math inline">\(p(s_2 | s_1, a_3) = 1\)</span>（当前在<span
+class="math inline">\(s_1\)</span>通过<span
+class="math inline">\(a_3\)</span>，跳到<span
+class="math inline">\(s_2\)</span>的概率是1）</p></li>
+</ul></li>
+<li><p><code>policy</code>：</p>
+<ul>
+<li><p>解释：告诉agent当它处于某state时，应该采取什么action</p></li>
+<li><p>符号：</p>
+<ul>
+<li><span class="math inline">\(\pi(a_1 | s_1) = 0\)</span>：在<span
+class="math inline">\(s_1\)</span>下，采取<span
+class="math inline">\(a_1\)</span>策略的概率是0</li>
+<li><span class="math inline">\(\pi(a_2 | s_1) = 0.5\)</span>：在<span
+class="math inline">\(s_1\)</span>下，采取<span
+class="math inline">\(a_2\)</span>策略的概率是0.5</li>
+<li><span class="math inline">\(\sum_{i=1}^{m} \pi(a_i | s_1) =
+1\)</span></li>
+</ul></li>
+<li><p>简单的policy也可以用表格的形式表现出来：</p>
+<p><img src="3.png" /></p></li>
+</ul></li>
+<li><p><code>reward</code>：</p>
+<ul>
+<li>解释：在agent处于某个state，采取某个action后得到的一个real number
+<ul>
+<li>A positive reward represents encouragement to take such
+actions.</li>
+<li>A negative reward represents punishment to take such actions.</li>
+<li>reward依赖于state + action</li>
+</ul></li>
+<li>符号：<span class="math inline">\(r_i\)</span></li>
+<li>同样可以用条件概率来表达reward：<span class="math inline">\(p(r=1 |
+s_1, a_1)\)</span> = 1</li>
+</ul></li>
+<li><p><code>trajectory</code>：</p>
+<ul>
+<li>解释：一条“state-action-reward”的链</li>
+<li>符号：<span class="math inline">\(s_1 \xrightarrow[r=0]{a_2} s_2
+\xrightarrow[r=0]{a_3} s_5 \xrightarrow[r=0]{a_3} s_8
+\xrightarrow[r=1]{a_2} s_9\)</span></li>
+</ul></li>
+<li><p><code>return</code>：</p>
+<ul>
+<li>解释：沿着一条trajectory的reward总和</li>
+</ul></li>
+<li><p><code>discount rate</code>：</p>
+<ul>
+<li>符号：<span class="math inline">\(\gamma, 0 &lt; \gamma &lt;
+1\)</span></li>
+<li>解释： 一个控制着agent策略“近视”/“远视”的参数
+<ul>
+<li>在trajectory路上每一个新得到一个reward都叠加一个<span
+class="math inline">\(\gamma\)</span>，即<span
+class="math inline">\(\gamma r_1 + \gamma^2 r_2 + \cdots + \gamma^k
+r_k\)</span></li>
+<li>若<span
+class="math inline">\(\gamma\)</span>越接近0，则agent的策略会更加关注眼前结果</li>
+<li>若<span
+class="math inline">\(\gamma\)</span>越接近1，则agent的策略会考虑的更长远</li>
+</ul></li>
+</ul></li>
+<li><p><code>discount return</code>：</p>
+<ul>
+<li>解释：沿着一条trajectory的叠加过discount rate后的reward总和</li>
+</ul></li>
+<li><p><code>episode</code>：</p>
+<ul>
+<li>解释：一段有terminal state的trajectory</li>
+</ul></li>
 </ul>
-<p><br /></p>
-<p>12312312313</p>
+<h3 id="二.-mdp">二. MDP</h3>
+<p>MDP，Markov decision
+process，马尔可夫决策过程，是一个描述RL的框架。</p>
+<p>MDP的组成如下：</p>
+<ul>
+<li>Sets（集合）
+<ul>
+<li>state-space：<span class="math inline">\(\mathcal{S}\)</span></li>
+<li>action-space：<span
+class="math inline">\(\mathcal{A}(s)\)</span></li>
+<li>reward-space：<span class="math inline">\(\mathcal{R}(s,
+a)\)</span></li>
+</ul></li>
+<li>Probability distribution（概率分布）
+<ul>
+<li>state transition probability：<span class="math inline">\(p(s&#39; |
+s, a)\)</span></li>
+<li>reward probability：<span class="math inline">\(p(r | s,
+a)\)</span></li>
+</ul></li>
+<li>Policy（策略）
+<ul>
+<li>policy：<span class="math inline">\(\pi(a | s)\)</span></li>
+</ul></li>
+<li>Markov property（马尔可夫性质）
+<ul>
+<li><span class="math inline">\(p(s_{t+1} | a_{t + 1}, s_t, \cdots, a_1,
+s_0) = p(s_{t+1} | a_{t+1}, s_t)\)</span></li>
+<li><span class="math inline">\(p(r_{t+1} | a_{t+1}, s_t, \cdots, a_1,
+s_0) = p(r_{t+1} | a_{t+1}, s_t)\)</span></li>
+<li>即每一步transition后的state和reward的概率都是与历史无关的，只与action的当前这一步有关</li>
+</ul></li>
+</ul>
+<h3 id="三.-贝尔曼公式">三. 贝尔曼公式</h3>
 
     </div>
 
@@ -379,7 +518,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">一. 基本概念</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">一. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-mdp"><span class="nav-text">二. MDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%B4%9D%E5%B0%94%E6%9B%BC%E5%85%AC%E5%BC%8F"><span class="nav-text">三. 贝尔曼公式</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 

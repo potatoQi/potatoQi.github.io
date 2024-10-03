@@ -35,7 +35,7 @@
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/1.png">
 <meta property="article:published_time" content="2024-10-02T07:17:35.000Z">
-<meta property="article:modified_time" content="2024-10-03T14:17:39.226Z">
+<meta property="article:modified_time" content="2024-10-03T18:01:03.729Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/1.png">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-03 22:17:39" itemprop="dateModified" datetime="2024-10-03T22:17:39+08:00">2024-10-03</time>
+                <time title="修改时间：2024-10-04 02:01:03" itemprop="dateModified" datetime="2024-10-04T02:01:03+08:00">2024-10-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,14 +267,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.8k</span>
+              <span>6.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>6 分钟</span>
             </span>
 
         </div>
@@ -481,6 +481,116 @@ class="math inline">\(\phi =
 <p><span class="math inline">\(\therefore \tilde{y} = \frac{1}{\sqrt{1 +
 (\frac{w}{k})^2}} \cdot \cos(wt - \phi) + c, \quad \phi =
 \arctan\frac{w}{t}\)</span></p>
+<h3 id="三.-二阶常系数齐次线性ode">三. 二阶常系数齐次线性ODE</h3>
+<p>前面学习了：</p>
+<ol type="1">
+<li>一阶线性ODE：<span class="math inline">\(y&#39; + p(x)y =
+q(x)\)</span></li>
+<li>伯努利方程：<span class="math inline">\(y&#39; = p(x)y +
+q(x)y^n\)</span></li>
+<li>一阶齐次ODE：<span class="math inline">\(y&#39; =
+f(\frac{y}{x})\)</span></li>
+<li>一阶自治ODE：<span class="math inline">\(y&#39; = f(y)\)</span></li>
+<li>一阶常系数线性ODE：<span class="math inline">\(y&#39; + ky =
+kq(x)\)</span></li>
+</ol>
+<p>今天来学习形如<span class="math inline">\(y&#39;&#39; + Ay&#39; + By
+=
+0\)</span>的方程，因为方程右边是0，所以叫齐次，所以这类方程叫：“二阶常系数齐次线性ODE”</p>
+<p>首先先说结论，对于二阶ODE，其通解必然为：<span
+class="math inline">\(y = c_1y_1 + c_2y_2\)</span>，<span
+class="math inline">\(y_1,
+y_2\)</span>线性无关。想起了线性代数right？Ahahah</p>
+<p>那么想解<span class="math inline">\(y&#39;&#39; + Ay&#39; + By =
+0\)</span>，我们的任务就是找出<span class="math inline">\(y_1,
+y_2\)</span></p>
+<p>欧拉已经发现了，对于二阶常系数齐次线性ODE，其解形如：<span
+class="math inline">\(e^{rx}\)</span></p>
+<p>将其代入试一下：<span class="math inline">\(r^2 \cdot e^{rx} + Ar
+\cdot e^{rx} + B \cdot e^{rx} = 0\)</span></p>
+<p><span class="math inline">\(\therefore r^2 + Ar + B = 0\)</span></p>
+<p>所以解出<span
+class="math inline">\(r\)</span>就行了，上面这个方程也叫二阶常系数齐次线性ODE的“特征方程”。</p>
+<p>那么其实有几种情况：</p>
+<ol type="1">
+<li><span class="math inline">\(r_1 \ne r_2\)</span>且都是real
+number</li>
+<li><span class="math inline">\(r1, r2\)</span>都是复数</li>
+<li><span class="math inline">\(r1 = r2\)</span>且是real number</li>
+</ol>
+<p>我们一个一个来分析。</p>
+<p><strong>Case 1：</strong></p>
+<p>首先先讨论第一种情况，此时俩特解就是<span
+class="math inline">\(e^{r_1x}, e^{r_2x}\)</span>，那么通解就是<span
+class="math inline">\(y = c_1e^{r_1x} + c_2e^{r_2x}\)</span></p>
+<p><strong>Case 2：</strong></p>
+<p>然后讨论第二种情况，此时不妨设特征方程的根是<span
+class="math inline">\(a \pm bi\)</span>，那么俩特解就是<span
+class="math inline">\(e^{(a+bi)x},
+e^{(a-bi)x}\)</span>，但是显然我们不希望通解里包含复数啊，怎么办呢？用下面这个定理</p>
+<blockquote>
+<p>定理：若<span class="math inline">\(u + vi\)</span>是<span
+class="math inline">\(y&#39;&#39; + Ay&#39; + By =
+0\)</span>的解，那么<span class="math inline">\(u,
+v\)</span>都是此方程的解</p>
+<p>证明：</p>
+<p><span class="math inline">\(\because (u+vi)&#39;&#39; + A(u+vi)&#39;
++ B(u+vi) = 0\)</span></p>
+<p><span class="math inline">\(\therefore (u&#39;&#39; + Au&#39; + Bu) +
+i(v&#39;&#39; + Av&#39; + Bv) = 0\)</span></p>
+<p><span class="math inline">\(\therefore u, v\)</span> are the
+solutions of the equation.</p>
+</blockquote>
+<p>而<span class="math inline">\(e^{(a\pm
+bi)x}\)</span>对应的复数是<span class="math inline">\(e^{ax} \cdot (\cos
+bx \pm i\sin bx)\)</span></p>
+<p>所以<span class="math inline">\(e^{ax}\cos bx\)</span>和<span
+class="math inline">\(e^{ax}\sin bx\)</span>也是方程的俩特解（其实<span
+class="math inline">\(-e^{ax}\sin
+bx\)</span>也是，不过只需要俩线性无关的就行，所以任选一个）</p>
+<p>所以通解为：<span class="math inline">\(y = e^{ax}(c_1\cos bt +
+c_2\sin bt)\)</span></p>
+<p>（这里教授用弹簧-阻尼-木块模型描述了这个方程的物理现象，就是在不断震荡，趋近于稳态但不会到稳态。即震荡现象与特征方程复数根联系在一起）</p>
+<p><strong>Case 3：</strong></p>
+<p>最后讨论第三种情况，此时不妨设特征方程的重根为<span
+class="math inline">\(r\)</span>，那么特解就是<span
+class="math inline">\(e^{rx}\)</span>，另一个特解是啥呢？继续用一个定理</p>
+<blockquote>
+<p>定理：若知道了<span class="math inline">\(y&#39;&#39; + p(x)y&#39; +
+q(x)y = 0\)</span>的一个解<span
+class="math inline">\(y_1\)</span>，那么另一个解必然可以写成<span
+class="math inline">\(u(x)y_1\)</span></p>
+</blockquote>
+<p>ok，来找一下这个u吧！</p>
+<p>首先我们的方程是<span class="math inline">\(y&#39;&#39; + Ay&#39; +
+By = 0\)</span>，然后其中一个解<span
+class="math inline">\(y_1\)</span>为<span
+class="math inline">\(e^{rx}\)</span>，另一个解<span
+class="math inline">\(y_2\)</span>为<span
+class="math inline">\(ue^{rx}\)</span></p>
+<p>求出<span class="math inline">\(y, y_2&#39;, y_2&#39;&#39;\)</span>
+<span class="math display">\[
+\begin{cases}
+    &amp;y_2 = ue^{rx} \\
+    &amp;y_2&#39; = u&#39;e^{rx} + ure^{rx} \\
+    &amp;y_2&#39;&#39; = u&#39;&#39;e^{rx} + 2u&#39;re^{rx} + ur^2e^{rx}
+\end{cases}
+\]</span> 因为是重根，所以<span class="math inline">\(A = -2r, B =
+r^2\)</span></p>
+<p><span class="math inline">\(\therefore y_2&#39;&#39; + Ay_2&#39; +
+By_2 = u&#39;&#39;e^{rx} + 2u&#39;re^{rx} + ur^2e^{rx} - 2ru&#39;e^{rx}
+- 2r^2ue^{rx} + r^2ue^{rx} = 0\)</span></p>
+<p><span class="math inline">\(\therefore u&#39;&#39;e^{rx} =
+0\)</span></p>
+<p><span class="math inline">\(\therefore u = c_1x + c_2\)</span></p>
+<p>因为我们只需要求出<span
+class="math inline">\(y_2\)</span>的一个特解，所以<span
+class="math inline">\(u\)</span>不妨取<span
+class="math inline">\(x\)</span>，这样即得到<span
+class="math inline">\(y_2 = xe^{rx}\)</span></p>
+<p>所以通解为：<span class="math inline">\(y = c_1e^{rx} +
+c_2xe^{rx}\)</span></p>
+<h3 id="四.">四.</h3>
 
     </div>
 
@@ -567,7 +677,7 @@ class="math inline">\(\phi =
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%A4%8D%E6%95%B0%E5%92%8C%E5%A4%8D%E6%8C%87%E6%95%B0"><span class="nav-text">一. 复数和复指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%A4%8D%E5%8C%96%E8%A7%A3%E5%B8%A6%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7ode"><span class="nav-text">二.
-复化解带三角函数的一阶常系数线性ODE</span></a></li></ol></div>
+复化解带三角函数的一阶常系数线性ODE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7ode"><span class="nav-text">三. 二阶常系数齐次线性ODE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B."><span class="nav-text">四.</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
