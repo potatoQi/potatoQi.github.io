@@ -26,18 +26,23 @@
     var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="你好你好，学完再写">
+  <meta name="description" content="基本概念、MDP、贝尔曼公式">
 <meta property="og:type" content="article">
 <meta property="og:title" content="强化学习1">
 <meta property="og:url" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="你好你好，学完再写">
+<meta property="og:description" content="基本概念、MDP、贝尔曼公式">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/1.png">
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/2.png">
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/3.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/4.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/5.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/6.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/7.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/8.png">
 <meta property="article:published_time" content="2024-10-03T14:35:02.000Z">
-<meta property="article:modified_time" content="2024-10-03T16:29:05.062Z">
+<meta property="article:modified_time" content="2024-10-04T14:22:19.100Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/1.png">
@@ -236,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-04 00:29:05" itemprop="dateModified" datetime="2024-10-04T00:29:05+08:00">2024-10-04</time>
+                <time title="修改时间：2024-10-04 22:22:19" itemprop="dateModified" datetime="2024-10-04T22:22:19+08:00">2024-10-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,14 +270,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.3k</span>
+              <span>9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>2 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -284,7 +289,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>你好你好，学完再写</p>
+        <p>基本概念、MDP、贝尔曼公式</p>
 <span id="more"></span>
 <p>Follow的西湖大学赵老师的B站课程</p>
 <hr />
@@ -417,14 +422,11 @@ a)\)</span></li>
 </ul></li>
 <li>Probability distribution（概率分布）
 <ul>
-<li>state transition probability：<span class="math inline">\(p(s&#39; |
-s, a)\)</span></li>
-<li>reward probability：<span class="math inline">\(p(r | s,
-a)\)</span></li>
-</ul></li>
-<li>Policy（策略）
-<ul>
-<li>policy：<span class="math inline">\(\pi(a | s)\)</span></li>
+<li><p>state transition probability：<span
+class="math inline">\(p(s&#39; | s, a)\)</span></p></li>
+<li><p>reward probability：<span class="math inline">\(p(r | s,
+a)\)</span></p></li>
+<li><p>policy：<span class="math inline">\(\pi(a | s)\)</span></p></li>
 </ul></li>
 <li>Markov property（马尔可夫性质）
 <ul>
@@ -436,6 +438,300 @@ s_0) = p(r_{t+1} | a_{t+1}, s_t)\)</span></li>
 </ul></li>
 </ul>
 <h3 id="三.-贝尔曼公式">三. 贝尔曼公式</h3>
+<h4 id="引入">引入</h4>
+<p>前面我们学到了<code>return</code>这个概念，<code>return</code>其实就是起点到最终一路上的reward之和。那么记忆话的思想，我们可以给每个state定义一个return，不妨叫做<span
+class="math inline">\(v_i\)</span>。在grid-world例子里，每个格子都有自己的<span
+class="math inline">\(v\)</span>。</p>
+<p><img src="4.png" style="zoom:67%;" /></p>
+对于上图，很容易可以写出下列的递推式： <span class="math display">\[
+\begin{cases}
+    &amp;v_1 = r_1 + \gamma v_2 \\
+    &amp;v_2 = r_2 + \gamma v_3 \\
+    &amp;v_3 = r_3 + \gamma v_4 \\
+    &amp;v_4 = r_4 + \gamma v_1 \\
+\end{cases}
+\]</span> 不妨写成矩阵形式： $$ v = r +
+<span class="math display">\[\begin{bmatrix} 0 &amp; 1 &amp; 0 &amp; 0
+\\ 0 &amp; 0 &amp; 1 &amp; 0 \\ 0 &amp; 0 &amp; 0 &amp; 1 \\ 1 &amp; 0
+&amp; 0 &amp; 0\end{bmatrix}\]</span>
+<p>v \</p>
+<p>(I - P)v = r $$ 若<span class="math inline">\((I - \gamma
+P)\)</span>可逆，则可求出<span class="math inline">\(v\)</span>。</p>
+<p>上面的公式其实就是贝尔曼公式，只不过是非常简单的对于确定性问题的bellman
+equation.</p>
+<h4 id="state-value">state value</h4>
+<p>回顾一下单步转移的过程： <span class="math display">\[
+S_t \xrightarrow{A_t} R_{t+1}, S_{t+1}
+\]</span></p>
+<ul>
+<li><span class="math inline">\(S_t\)</span>：当前的状态</li>
+<li><span class="math inline">\(A_t\)</span>：当前采取的action</li>
+<li><span class="math inline">\(R_{t+1}\)</span>：在<span
+class="math inline">\(S_t\)</span>采取<span
+class="math inline">\(A_t\)</span>后获得的reward。这里写<span
+class="math inline">\(R_t\)</span>也行，但是习惯写为<span
+class="math inline">\(R_{t+1}\)</span>。</li>
+<li><span class="math inline">\(S_{t+1}\)</span>：下一步的状态</li>
+<li>Note：这里的<span class="math inline">\(S_t, R_{t},
+A_t\)</span>均为随机变量</li>
+</ul>
+<p>再回顾一下MDP里的Probability distribution：</p>
+<ul>
+<li><span class="math inline">\(S_t \to A_t\)</span>由<span
+class="math inline">\(\pi(A_t = a | S_t = s)\)</span>决定</li>
+<li><span class="math inline">\(S_t, A_t \to R_{t+1}\)</span>由<span
+class="math inline">\(p(R_{t+1} = r | S_t = s, A_t =
+a)\)</span>决定</li>
+<li><span class="math inline">\(S_t, A_t \to S_{t+1}\)</span>由<span
+class="math inline">\(p(S_{t+1}=s&#39; | S_t = s, A_t =
+a)\)</span>决定</li>
+</ul>
+<p>再回顾一下"引入"里<span
+class="math inline">\(v_i\)</span>里的概念，这里我们给它一个具体的符号：<span
+class="math inline">\(G_t\)</span></p>
+<ul>
+<li>对于一个<span class="math inline">\(S_t\)</span>，其discounted
+return，即<span class="math inline">\(G_t := R_{t+1} + \gamma R_{t+2} +
+\gamma^2 R_{t+3} + \cdots\)</span></li>
+<li><span
+class="math inline">\(G_t\)</span>也是一个随机变量。因为因为policy的随机性，以及<span
+class="math inline">\(R_{t}\)</span>同为随机变量。</li>
+</ul>
+<p>现在，可以引出state value的定义了。</p>
+<p>state value就是某个状态的discounted
+return的期望值，用数学符号表示就是：<span class="math inline">\(v_\pi(s)
+= \mathbb{E}(G_t | S_t = s)\)</span></p>
+<p>Hummm，state
+value是个很好的衡量工具，它能告诉我一个state的期望discounted
+return是多少，这样就可以衡量一个state是否具有价值了。</p>
+<p>那它跟return有什么区别？return是针对一个确定性problem来说的，但是state
+value套了概率与期望。</p>
+<p><img src="5.png" style="zoom:50%;" /></p>
+<p>上面是一个state value的例子，三个图代表三种policy。每种policy下<span
+class="math inline">\(s_1\)</span>的state value计算如上。</p>
+<h4 id="bellman-equation-derivation">Bellman equation: Derivation</h4>
+<p>贝尔曼公式用一句话来概括，就是它描述了不同state value之间的关系。</p>
+<p>下面我们来推导一下贝尔曼公式： <span class="math display">\[
+\begin{align*}
+    v_\pi(s)&amp;=\mathbb{E}(G_t | S_t = s) \\
+            &amp;=\mathbb{E}(R_{t+1} + \gamma G_{t+1} | S_t = s) \\
+            &amp;=\mathbb{E}(R_{t+1} | S_t = s) +
+\gamma\mathbb{E}(G_{t+1} | S_t = s)
+\end{align*}
+\]</span> 先分析第一项： <span class="math display">\[
+\begin{align*}
+    \mathbb{E}(R_{t+1} | S_t = s) &amp;= \sum_{a} \left( \pi(a |
+s)\left( \sum_{r}p(r | s, a)r \right) \right)
+\end{align*}
+\]</span> 上面推导的思路就是你的<span
+class="math inline">\(R_{t+1}\)</span>是依赖于<span
+class="math inline">\(S_t, A_t\)</span>的，所以先把<span
+class="math inline">\(A_t\)</span>搞出来，然后有了<span
+class="math inline">\(a, s\)</span>后，再把<span
+class="math inline">\(r\)</span>搞出来</p>
+<p>再分析第二项： <span class="math display">\[
+\begin{align*}
+    \mathbb{E}(G_{t+1} | S_t = s) &amp;= \sum_{s&#39;}\left( p(s&#39; |
+s)\mathbb{E}(G_{t+1} | S_{t+1}=s&#39;) \right) \\
+    &amp;=\sum_{s&#39;}\left( p(s&#39; | s)v_\pi(s&#39;)\right) \\
+    &amp;=\sum_{s&#39;}\left( v_\pi(s&#39;) \cdot \sum_{a}\left( \pi(a |
+s)p(s&#39; | s, a) \right) \right)
+\end{align*}
+\]</span> 上面的推导思路就是首先你要走到<span
+class="math inline">\(s&#39;\)</span>，然后<span
+class="math inline">\(p(s&#39;|s)\)</span>又可以展开，即先要有<span
+class="math inline">\(a\)</span>，才能基于<span class="math inline">\(s,
+a\)</span>走到<span class="math inline">\(s&#39;\)</span></p>
+<p>第二项其实还可以这样推导： <span class="math display">\[
+\begin{align*}
+    \mathbb{E}(G_{t+1} | S_t = s) &amp;= \sum_{a}\left( \pi(a|s) \cdot
+\sum_{s&#39;}\left( p(s&#39;|s,a) \cdot \mathbb{E}(G_{t+1} |
+S_{t+1}=s&#39;) \right) \right) \\
+    &amp;=\sum_{a}\left( \pi(a|s) \cdot \sum_{s&#39;}\left(
+p(s&#39;|s,a) \cdot v_\pi(s&#39;) \right) \right)
+\end{align*}
+\]</span> 上面的思路是首先要有<span
+class="math inline">\(a\)</span>，这样才可以走到某个<span
+class="math inline">\(s&#39;\)</span></p>
+<p>那么合并，即可得到： <span class="math display">\[
+\begin{align*}
+v_\pi(s) &amp;= \sum_{a} \left( \pi(a | s)\left( \sum_{r}p(r | s, a)r
+\right) \right) + \gamma \sum_{a}\left( \pi(a|s) \cdot
+\sum_{s&#39;}\left( p(s&#39;|s,a) \cdot v_\pi(s&#39;) \right) \right) \\
+    &amp;=\sum_{a}\left( \pi(a|s)\left[ \sum_{r}p(r|s,a)r + \gamma
+\sum_{s&#39;}p(s&#39;|s,a)v_\pi(s&#39;) \right] \right), \quad s \in
+\mathcal{S}.
+\end{align*}
+\]</span> 上面就是<strong>贝尔曼公式</strong>。</p>
+<p>推导出来后我们来直观理解下这个式子，首先，当前state的state
+value是多少呢？</p>
+<p>因为state
+value是期望，所以就要考虑到所有策略，每个策略会有一个value，所以state
+value就是： <span class="math display">\[
+\sum_{a}(\pi(a|s) \cdot \text{value})
+\]</span>
+那么value是多少呢？用记忆化的思想，就是当前这一步的reward期望，加上<span
+class="math inline">\(\gamma\)</span>乘后续的reward期望。</p>
+<p>当前这一步的reward期望就是： <span class="math display">\[
+\sum_{r}(p(r|s,a)r)
+\]</span> 后续的reward期望是多少呢？其实就是下一步的state
+value，那么就要确定下一步的<span
+class="math inline">\(s&#39;\)</span>，所以后续的reward期望就是： <span
+class="math display">\[
+\sum_{s&#39;}(p(s&#39;|s,a)v_\pi(s&#39;))
+\]</span> Interesting，right？</p>
+<p>观察bellman equation，可以发现<span
+class="math inline">\(v_\pi(s)\)</span>由三个东西决定：<span
+class="math inline">\(\pi(a|s), p(r|s,a), p(s&#39;|s,a)\)</span></p>
+<p>这仨恰好是MDP里的probability
+distribution，这就是为什么MDP框架里要抽象出这仨，因为它们很关键。</p>
+<h4 id="bellman-equation-matrix-vector-form">Bellman equation:
+Matrix-vector form</h4>
+<p>上一个小节我们已经求出了bellman equation： <span
+class="math display">\[
+v_\pi(s) = \sum_{a}\pi(a|s)\left[ \sum_{r}p(r|s,a)r +
+\gamma\sum_{s&#39;}p(s&#39;|s,a)v_\pi(s&#39;) \right]
+\]</span>
+这是易于理解的，但是做算法/求解的时候，我们需要将其写为矩阵形式。</p>
+<p>首先可以把<span
+class="math inline">\(\sum_{a}\pi(a|s)\)</span>乘进去，得到 <span
+class="math display">\[
+v_\pi(s) = r_\pi(s) + \gamma \sum_{s&#39;}p_\pi(s&#39; | s)v_\pi(s&#39;)
+\\
+r_\pi(s) := \sum_{a}\pi(a|s)\sum_{r}p(r|s,a)r, \quad\quad
+p_\pi(s&#39;|s) := \sum_{a}\pi(a|s)p(s&#39;|s,a)
+\]</span></p>
+<ul>
+<li><span
+class="math inline">\(r_\pi(s)\)</span>表示在当前state走一步所能得到的reward的期望</li>
+<li><span class="math inline">\(p_\pi(s&#39;|s)\)</span>表示在当前<span
+class="math inline">\(s\)</span>走到下一步状态<span
+class="math inline">\(s&#39;\)</span>的概率</li>
+</ul>
+<p>Suppose the states could be indexed as <span
+class="math inline">\(s_i~(i=1,2,\cdots,n)\)</span></p>
+<p>For state <span class="math inline">\(s_i\)</span>, the Bellman
+equation is <span class="math display">\[
+v_\pi(s_i) = r_\pi(s_i) + \gamma \sum_{s_j}p_\pi(s_j | s_i)v_\pi(s_j).
+\]</span> Then, put all these equations for all the states together and
+rewrite to a matrix-vector form: <span class="math display">\[
+v_\pi = r_\pi + \gamma P_\pi v_\pi,
+\]</span> where</p>
+<ul>
+<li><span class="math inline">\(v_\pi = \left[ v_\pi(s_1), \cdots,
+v_\pi(s_n) \right]^\mathrm{T} \in \mathbb{R}^n\)</span></li>
+<li><span class="math inline">\(r_\pi = \left[ r_\pi(s_1), \cdots,
+r_\pi(s_n) \right]^\mathrm{T} \in \mathbb{R}^n\)</span></li>
+<li><span class="math inline">\(P_\pi \in \mathbb{R}^{n \times
+n}\)</span>, where <span class="math inline">\([P_\pi]_{ij} = p_\pi(s_j
+| s_i)\)</span></li>
+</ul>
+<p>熟悉的感觉right？回到了推第一篇论文时候的感觉。</p>
+<p>上面的实际意义很好理解，就是一个状态的state
+value等于走一步的reward期望，加上<span
+class="math inline">\(\gamma\)</span>乘<span
+class="math inline">\(\sum\)</span>(走到第j个点的概率 <span
+class="math inline">\(\cdot\)</span> 第j个点出发的state value)</p>
+<p><span class="math inline">\(v_\pi\)</span>就是state values，<span
+class="math inline">\(r_\pi\)</span>叫当前期望reward们，<span
+class="math inline">\(P_\pi\)</span>叫状态转移矩阵</p>
+<p>下面是一个展开形式的矩阵形式：</p>
+<p><img src="6.png" style="zoom: 67%;" /></p>
+<p>所以只要确定了MDP里的probability distribution：<span
+class="math inline">\(\pi(a|s), p(r|s,a),
+p(s&#39;|s,a)\)</span>，我们就可求出<span class="math inline">\(r_\pi,
+P_\pi\)</span>，则可以用算出<span
+class="math inline">\(v_\pi\)</span></p>
+<p>来看一个例子：</p>
+<p><img src="7.png" style="zoom: 50%;" /></p>
+<p>OK继续，如果用线代的方法求<span
+class="math inline">\(v_\pi\)</span>，需要算矩阵的逆，这个计算量是很大的，所以通常我们用迭代法来求state-values：</p>
+<p>We have <span class="math inline">\(v_{k+1} = r_\pi + \gamma P_\pi
+v_k\)</span>，we can show that <span class="math inline">\(v_k \to v_\pi
+= (I - \gamma P_\pi)^{-1}r_\pi, k \to \infty.\)</span></p>
+<blockquote>
+<p>Proof：</p>
+<p>因为<span
+class="math inline">\(P_\pi\)</span>是一个马尔可夫矩阵，所以收敛性是显然可证的。</p>
+<p>先列出已有的条件：</p>
+<p>递推式：<span class="math inline">\(v_{k+1} = r_\pi + \gamma P_\pi
+v_k \quad (1)\)</span></p>
+<p>bellman equation：<span class="math inline">\(v_\pi = r_\pi + \gamma
+P_\pi r_\pi \quad (2)\)</span></p>
+<p>令<span class="math inline">\(\delta_k = v_k -
+v_\pi\)</span>，则<span class="math inline">\(v_k = \delta_k + v_\pi
+\quad (3)\)</span></p>
+<p>将(3)代入(1)，得：<span class="math inline">\(\delta_{k+1} + v_\pi =
+r_\pi + \gamma P_\pi(\delta_k + v_\pi)\)</span></p>
+<p><span class="math inline">\(\therefore \delta_{k+1} = -v_\pi + (r_\pi
++ \gamma P_\pi v_\pi) + \gamma P_\pi \delta_k\)</span></p>
+<p>将(2)代入上式，得：<span class="math inline">\(\delta_{k+1} = \gamma
+P_\pi \delta_k\)</span></p>
+<p><span class="math inline">\(\therefore \delta_k = \gamma^k P_\pi^k
+\delta_0, k \to \infty\)</span></p>
+<p>因为<span
+class="math inline">\(P_\pi\)</span>是马尔可夫矩阵，所有其幂次同样是马尔可夫矩阵，所以其每个元素均<span
+class="math inline">\(\in [0, 1]\)</span>，又<span
+class="math inline">\(0 &lt; \gamma &lt; 1\)</span>，所以<span
+class="math inline">\(\gamma^k P_\pi^k, k \to
+\infty\)</span>是一个零矩阵，所以<span class="math inline">\(\delta_k =
+\textbf{0}, k \to \infty\)</span></p>
+<p>证毕</p>
+</blockquote>
+<p>OK！现在我们知道了bellman equation的矩阵形式，并通过迭代法算出了state
+values。那么state values有什么用呢？</p>
+<p>答案：用来评估我们的策略表现是否优秀。</p>
+<p>来看下面这个例子：</p>
+<p><img src="8.png" /></p>
+<p>上图有三个子图，每个子图对应一种policy。图1的policy是很好的按计划走到target
+cell，图2的policy是一直往右走，图3的policy是随机生成的。</p>
+<p>人眼可以知道，图1的policy最好，图3的policy很一般，图2的policy很差。</p>
+<p>通过确定policy，也就是<span
+class="math inline">\(\pi(a|s)\)</span>，通常<span
+class="math inline">\(p(s&#39;|s,a),
+p(r|s,a)\)</span>是模型已知的，那么就可以通过bellman equation算出state
+values。已标注在图上。</p>
+<p>可以发现，图1的state values都是正数而且比较大，图2的state
+values都是负的，图3的state values有正有负。</p>
+<p>所以从state values，我们就可以看出一个policy好不好。</p>
+<h4 id="action-value">Action value</h4>
+<p>action value和state value的区别是什么？</p>
+<ul>
+<li>state value：从一个state出发，所得到的average discounted return</li>
+<li>action value：从一个state出发，执行一个action后，所得到的average
+discounted return
+<ul>
+<li>符号：<span class="math inline">\(q_\pi(s, a) = \mathbb{E}(G_t | S_t
+= s, A_t = a)\)</span></li>
+</ul></li>
+</ul>
+<p>state value与action value的联系： <span class="math display">\[
+v_\pi(s) = \sum_{a}\pi(a|s)q_\pi(s, a)
+\]</span> 上式与bellman equation中<span
+class="math inline">\(v_\pi(s)\)</span>表达式对比，可发现： <span
+class="math display">\[
+q_\pi(s, a) = \sum_{r}p(r|s, a)r + \gamma \sum_{s&#39;}p(s&#39; | s,
+a)v_\pi(s&#39;)
+\]</span> 所以当我们计算出state values后，可以通过上式来算出action
+values</p>
+<h4 id="总结">总结</h4>
+<p>这一章最重要的概念就是state value和action value。</p>
+<p>state value就是从一个state出发，所得到的average discounted
+return；action
+value就是从一个state出发，执行一个action后，所得到的average discounted
+return。</p>
+<p>想求解state values需通过bellman
+equation，通常为了节约时间开销选用迭代法求解state values。</p>
+<p>state values有什么用呢？</p>
+<p>可以评估policy是好是坏。为什么这么说呢，因为bellman
+equation本质就是通过MDP里Probability distribution的<span
+class="math inline">\(\pi(a|s), p(r|s,a),
+p(s&#39;|s,a)\)</span>求出<span
+class="math inline">\(v_i\)</span>-s。</p>
+<p>而通常<span class="math inline">\(p(r|s,a),
+p(s&#39;|s,a)\)</span>是已知的（即模型已知），所以<span
+class="math inline">\(v_i\)</span>-s就可以反映出<span
+class="math inline">\(\pi(a|s)\)</span>（即policy）表现如何。</p>
 
     </div>
 
@@ -518,7 +814,8 @@ s_0) = p(r_{t+1} | a_{t+1}, s_t)\)</span></li>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">一. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-mdp"><span class="nav-text">二. MDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%B4%9D%E5%B0%94%E6%9B%BC%E5%85%AC%E5%BC%8F"><span class="nav-text">三. 贝尔曼公式</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">一. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-mdp"><span class="nav-text">二. MDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%B4%9D%E5%B0%94%E6%9B%BC%E5%85%AC%E5%BC%8F"><span class="nav-text">三. 贝尔曼公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#state-value"><span class="nav-text">state value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bellman-equation-derivation"><span class="nav-text">Bellman equation: Derivation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bellman-equation-matrix-vector-form"><span class="nav-text">Bellman equation:
+Matrix-vector form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#action-value"><span class="nav-text">Action value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
