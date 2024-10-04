@@ -26,16 +26,16 @@
     var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="复数、复化解一阶常系数线性ODE、">
+  <meta name="description" content="复数、复化解一阶常系数线性ODE、二阶常系数齐次线性ODE、二阶齐次线性ODE相关理论、二阶非齐次线性ODE相关理论">
 <meta property="og:type" content="article">
 <meta property="og:title" content="微分方程2">
 <meta property="og:url" content="http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="复数、复化解一阶常系数线性ODE、">
+<meta property="og:description" content="复数、复化解一阶常系数线性ODE、二阶常系数齐次线性ODE、二阶齐次线性ODE相关理论、二阶非齐次线性ODE相关理论">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/1.png">
 <meta property="article:published_time" content="2024-10-02T07:17:35.000Z">
-<meta property="article:modified_time" content="2024-10-04T06:13:41.089Z">
+<meta property="article:modified_time" content="2024-10-04T15:52:49.915Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/1.png">
@@ -234,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-04 14:13:41" itemprop="dateModified" datetime="2024-10-04T14:13:41+08:00">2024-10-04</time>
+                <time title="修改时间：2024-10-04 23:52:49" itemprop="dateModified" datetime="2024-10-04T23:52:49+08:00">2024-10-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -267,7 +267,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.7k</span>
+              <span>8.2k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
@@ -286,7 +286,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>复数、复化解一阶常系数线性ODE、</p>
+        <p>复数、复化解一阶常系数线性ODE、二阶常系数齐次线性ODE、二阶齐次线性ODE相关理论、二阶非齐次线性ODE相关理论</p>
 <span id="more"></span>
 <hr />
 <h3 id="一.-复数和复指数">一. 复数和复指数</h3>
@@ -625,9 +625,38 @@ class="math inline">\(x\)</span>，这样即得到<span
 class="math inline">\(y_2 = xe^{rx}\)</span></p>
 <p>所以通解为：<span class="math inline">\(y = c_1e^{rx} +
 c_2xe^{rx}\)</span></p>
-<h3 id="四.-二阶齐次线性ode">四. 二阶齐次线性ODE</h3>
+<h3 id="四.-二阶齐次线性ode相关理论">四. 二阶齐次线性ODE相关理论</h3>
 <p>本节讨论的方程形如：<span class="math inline">\(y&#39;&#39; +
 p(x)y&#39; + q(x)y = 0\)</span></p>
+<p>这节课教授介绍了为什么二阶齐次线性ODE的通解是<span
+class="math inline">\(c_1y_1 +
+c_2y_2\)</span>，证明过程我这里就略了。</p>
+<p>以及还提到了对通解的正交化。</p>
+<p>什么意思呢？就是当你求出俩通解<span
+class="math inline">\(y\)</span>后，可以令<span
+class="math inline">\(y(0) = 1, y&#39;(0) =
+0\)</span>，解出一个特解，记为<span
+class="math inline">\(Y_1\)</span>；然后再令<span
+class="math inline">\(y(0) = 0, y&#39;(0) =
+1\)</span>，解出一个特解，记为<span
+class="math inline">\(Y_2\)</span>。</p>
+<p>那么<span class="math inline">\(Y_1,
+Y_2\)</span>就是正交的，通解可以重新写为<span class="math inline">\(y =
+c_1Y_1 + c_2Y_2\)</span></p>
+<p>这样有什么好处呢？</p>
+<p>当你给出一个初始条件<span class="math inline">\(y(0) = a, y&#39;(0) =
+b\)</span>时，那么解就是<span class="math inline">\(aY_1 +
+bY_2\)</span></p>
+<p>除了正交化，教授还讲了一个存在和唯一性定理：</p>
+<blockquote>
+<p>存在和唯一性定理：</p>
+<p>对于二阶齐次线性ODE：<span class="math inline">\(y&#39;&#39; +
+p(x)y&#39; + q(x)y = 0\)</span>，若<span class="math inline">\(p,
+q\)</span>对<span
+class="math inline">\(x\)</span>连续，则当给定一组初始条件时，有且仅有一个解。</p>
+</blockquote>
+<h3 id="五.-二阶非齐次线性ode相关理论">五.
+二阶非齐次线性ODE相关理论</h3>
 
     </div>
 
@@ -714,7 +743,8 @@ p(x)y&#39; + q(x)y = 0\)</span></p>
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%A4%8D%E6%95%B0%E5%92%8C%E5%A4%8D%E6%8C%87%E6%95%B0"><span class="nav-text">一. 复数和复指数</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E5%A4%8D%E5%8C%96%E8%A7%A3%E5%B8%A6%E4%B8%89%E8%A7%92%E5%87%BD%E6%95%B0%E7%9A%84%E4%B8%80%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E7%BA%BF%E6%80%A7ode"><span class="nav-text">二.
-复化解带三角函数的一阶常系数线性ODE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7ode"><span class="nav-text">三. 二阶常系数齐次线性ODE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E4%BA%8C%E9%98%B6%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7ode"><span class="nav-text">四. 二阶齐次线性ODE</span></a></li></ol></div>
+复化解带三角函数的一阶常系数线性ODE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E4%BA%8C%E9%98%B6%E5%B8%B8%E7%B3%BB%E6%95%B0%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7ode"><span class="nav-text">三. 二阶常系数齐次线性ODE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E4%BA%8C%E9%98%B6%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7ode%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA"><span class="nav-text">四. 二阶齐次线性ODE相关理论</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%94.-%E4%BA%8C%E9%98%B6%E9%9D%9E%E9%BD%90%E6%AC%A1%E7%BA%BF%E6%80%A7ode%E7%9B%B8%E5%85%B3%E7%90%86%E8%AE%BA"><span class="nav-text">五.
+二阶非齐次线性ODE相关理论</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
