@@ -41,8 +41,11 @@
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/6.png">
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/7.png">
 <meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/8.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/9.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/10.png">
+<meta property="og:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/11.png">
 <meta property="article:published_time" content="2024-10-03T14:35:02.000Z">
-<meta property="article:modified_time" content="2024-10-05T15:40:06.267Z">
+<meta property="article:modified_time" content="2024-10-05T17:17:24.671Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/1.png">
@@ -241,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-05 23:40:06" itemprop="dateModified" datetime="2024-10-05T23:40:06+08:00">2024-10-05</time>
+                <time title="修改时间：2024-10-06 01:17:24" itemprop="dateModified" datetime="2024-10-06T01:17:24+08:00">2024-10-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,14 +273,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>11k</span>
+              <span>15k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>10 分钟</span>
+              <span>13 分钟</span>
             </span>
 
         </div>
@@ -787,9 +790,230 @@ class="math inline">\(\pi_2\)</span>.</p>
 class="math inline">\(\pi\)</span>.</p>
 <p>那么我就要提出许多问题了：</p>
 <ol type="1">
-<li>最优policy <span class="math inline">\(\pi^*\)</span>是否存在</li>
-<li></li>
+<li>最优策略 <span class="math inline">\(\pi^*\)</span>是否存在？</li>
+<li>最优策略是否unique？</li>
+<li>最优策略是stochastic的还是deterministic的？</li>
+<li>如何得到最优策略</li>
 </ol>
+<p>不急，慢慢来，这些问题都会得到解决。</p>
+<p>我先给出bellman optimality equation： <span class="math display">\[
+\begin{align*}
+v(s) &amp;= \max_{\pi} \sum_{a} \pi(a|s) \left( \sum_{r}p(r|s,a)r +
+\gamma\sum_{s&#39;}p(s&#39;|s,a)v(s&#39;) \right) \\
+&amp;= \max_{\pi} \sum_{a} \pi(a|s) q(s,a)
+\end{align*}
+\]</span> 上面的式子其实就是bellman
+equation发现没？但是有两点不同，第一，符号由<span
+class="math inline">\(v_\pi(s)\)</span>改为<span
+class="math inline">\(v(s)\)</span>了；第二，前面加了个<span
+class="math inline">\(max_\pi\)</span>前缀。</p>
+<p>第一点不同，其实没什么原因，因为前人愿意。</p>
+<p>第二点不同，你需要理解<span
+class="math inline">\(max_{\pi}(\cdots)\)</span>的意思。它意思就是说你的<span
+class="math inline">\(\pi\)</span>随便取，然后给我搞出<span
+class="math inline">\(\cdots\)</span>最大就行。</p>
+<p>所以<span class="math inline">\(v(s) =
+max_{\pi}\sum_{a}\pi(a|s)q(s,a)\)</span>这一个式子应该这样理解：</p>
+<p>就是首先你得找到一个<span
+class="math inline">\(\pi\)</span>，使得右边这一坨<span
+class="math inline">\(\sum_{a} \pi(a|s)
+q(s,a)\)</span>最大，也就是最大化<span
+class="math inline">\(v(s)\)</span>。而非常巧的是，你找到的这个<span
+class="math inline">\(\pi\)</span>，它刚好是一个最优policy。因为根据前面最优policy的定义：<span
+class="math inline">\(v_{\pi^*}(s) \ge
+v_\pi(s)\)</span>，此时我们的<span
+class="math inline">\(v(s)\)</span>已经是最大了，所以此时的policy就是最优的。</p>
+<p>上面的BOE可以写为矩阵形式： <span class="math display">\[
+v = \max_{\pi}(r_\pi + \gamma P_\pi v)
+\]</span> （<span class="math inline">\(r_\pi + \gamma P_\pi
+v\)</span>是一个向量，给其套一个<span
+class="math inline">\(\max_{\pi}\)</span>的意思是给其每一个分量都套一个<span
+class="math inline">\(\max_{\pi}\)</span>）</p>
+<p>不妨令<span class="math inline">\(f(v) = max_\pi(r_\pi + \gamma P_\pi
+v)\)</span></p>
+<p>那么BOE就可写成： <span class="math display">\[
+v = f(v)
+\]</span></p>
+<blockquote>
+<p>补充三个数学小知识：</p>
+<ol type="1">
+<li>The definition of fixed point：
+<ul>
+<li><span class="math inline">\(x \in X\)</span> is a fixed point of
+<span class="math inline">\(f\)</span>: <span class="math inline">\(X
+\to X\)</span> if <span class="math inline">\(f(x)=x\)</span></li>
+</ul></li>
+<li>Contraction mapping：
+<ul>
+<li><span class="math inline">\(f\)</span> is a contraction mapping if
+<span class="math inline">\(\| f(x_1) - f(x_2) \| \le \gamma \| x_1 -
+x_2 \|\)</span>, where <span class="math inline">\(\gamma \in (0,
+1)\)</span>.</li>
+</ul></li>
+<li>Contraction Mapping Theorem：
+<ul>
+<li>For any equation that has the form of <span
+class="math inline">\(x=f(x)\)</span>, if <span
+class="math inline">\(f\)</span> is a contraction mapping, then:
+<ul>
+<li>Existence: there exists a fixed point <span
+class="math inline">\(x^*\)</span> satisfying <span
+class="math inline">\(f(x^*)=x^*\)</span></li>
+<li>Uniqueness: The fixed point <span class="math inline">\(x^*\)</span>
+is unique.</li>
+<li>Algorithm: Consider a sequence <span
+class="math inline">\(\{x_k\}\)</span> where <span
+class="math inline">\(x_{k+1}=f(x_k)\)</span>, then <span
+class="math inline">\(x_k \to x^*\)</span> as <span
+class="math inline">\(k \to \infty\)</span>. Moreover, the convergence
+rate is exponentially fast.</li>
+</ul></li>
+</ul></li>
+</ol>
+</blockquote>
+<p>OK，我们其实可以证明出<span
+class="math inline">\(f(v)\)</span>是一个contraction
+mapping（证明见书），那么通过contraction mapping
+theorem，我们就可以知道，它必然存在不动点解，而且通过迭代法迭代出的<span
+class="math inline">\(v^*\)</span>就是不动点解（即收敛），且不动点唯一。</p>
+<p>那么现在就剩两个问题了：</p>
+<ol type="1">
+<li><span class="math inline">\(f(v)\)</span>如何求解，即<span
+class="math inline">\(\max_{\pi}(r_\pi + \gamma P_\pi
+v)\)</span>如何求解，进一步说，即<span class="math inline">\(\max_{\pi}
+\sum_{a} \pi(a|s) q(s,a)\)</span>如何求解？</li>
+<li>如何证明这个unique不动点解<span
+class="math inline">\(v^*\)</span>就是最优的？</li>
+</ol>
+<p>先解决第二个问题，可以由下面这个Theorem解决：</p>
+<blockquote>
+<p>Policy optimality theorem：</p>
+<p>Suppose that <span class="math inline">\(v^*\)</span> is the unique
+solution to <span class="math inline">\(v = \max_\pi(r_\pi + \gamma
+P_\pi v)\)</span>, and <span class="math inline">\(v_\pi\)</span> is the
+state value function satisfying <span class="math inline">\(v_\pi =
+r_\pi + \gamma P_\pi v_\pi\)</span> for any given policy <span
+class="math inline">\(\pi\)</span>, then: <span
+class="math inline">\(v^* \ge v_\pi, \forall \pi\)</span></p>
+<p>Proof:</p>
+<p>见书</p>
+</blockquote>
+<p>那么只剩一个问题了，<span class="math inline">\(\max_{\pi} \sum_{a}
+\pi(a|s) q(s,a)\)</span>如何求？</p>
+<p>因为我是要用迭代法求<span class="math inline">\(v =
+f(v)\)</span>的，所以初始的state values: <span
+class="math inline">\(v_0\)</span>我是已知的。所以相当于初始的action
+values: <span class="math inline">\(q_0\)</span>我是已知的，将<span
+class="math inline">\(\sum_{a} \pi(a|s) q(s,a)\)</span>展开：<span
+class="math inline">\(\pi(a_1|s)q_0(s,a_1) + \pi(a_2|s)q_0(s,a_2) +
+\cdots\)</span>。</p>
+<p>显然要使上面那一坨最大，我就要使最大那个q值最大的action: <span
+class="math inline">\(a&#39;\)</span>，让其权重分配为1: <span
+class="math inline">\(\pi(a&#39;|s)=1\)</span>。其余权重都为0即可。</p>
+<p>那么这样就求出了<span class="math inline">\(\max_{\pi} \sum_{a}
+\pi(a|s) q(s,a)\)</span>，问题解决。</p>
+<p>至此，我们已经可以通过BOE：<span class="math inline">\(v =
+f(v)\)</span>，求出最优state value: <span
+class="math inline">\(v^*\)</span>以及对应的最优policy: <span
+class="math inline">\(\pi^*\)</span>，算法如下：</p>
+<ol type="1">
+<li>设定好<span class="math inline">\(\gamma\)</span>，<span
+class="math inline">\(r\)</span>，<span
+class="math inline">\(p(r|s,a)\)</span>，<span
+class="math inline">\(p(s&#39;|s,a)\)</span></li>
+<li>随意取一个<span class="math inline">\(v_0\)</span>，然后通过<span
+class="math inline">\(q_\pi(s, a) = \sum_{r}p(r|s, a)r + \gamma
+\sum_{s&#39;}p(s&#39; | s, a)v_\pi(s&#39;)\)</span>算出对应的<span
+class="math inline">\(q_0\)</span></li>
+<li>For each state <span class="math inline">\(s_i\)</span>, at time
+<span class="math inline">\(k\)</span>：
+<ul>
+<li>算出<span class="math inline">\(q_{k}(s_i, a)\)</span></li>
+<li>Find the <span class="math inline">\(a_k^*(s_i)\)</span>, s.t, <span
+class="math inline">\(q_k(s_i, a_k^*(s_i))\)</span>最大</li>
+<li><span class="math inline">\(\pi_{k+1}(a|s_i)=\begin{cases} 1 \quad
+a=a_k^*(s_i) \\ 0 \quad a \ne a_k^*(s_i) \end{cases}\)</span></li>
+<li><span class="math inline">\(v_{k+1}(s_i) =
+\sum_{a}\pi_{k+1}(a|s)q_k(s,a)\)</span></li>
+</ul></li>
+</ol>
+<p>这一小节的内容非常非常重要，
+对后续做数值仿真以及理解RL的基本思想很有意义。其实不难理解，静下心，多看几遍。</p>
+<p>至此我们可以回答开头的那几个问题：</p>
+<ol type="1">
+<li>最优policy当然存在。因为根据fixed point theorem，我们知道<span
+class="math inline">\(v^*\)</span>存在且唯一，那么其对应的policy就是<span
+class="math inline">\(\pi^*\)</span></li>
+<li>不一定唯一。我们只能保证<span
+class="math inline">\(v^*\)</span>存在且唯一，但是其对应的policy不一定唯一。因为初始<span
+class="math inline">\(v_0\)</span>会不同</li>
+<li>根据我们的algorithm，显然<span
+class="math inline">\(\pi^*\)</span>是deterministic的</li>
+<li>根据上面给出的algorithm，即可得到最优策略</li>
+</ol>
+<h4 id="gamma-r的选择"><span class="math inline">\(\gamma,
+r\)</span>的选择</h4>
+<p>通过前面的所学，我们知道我们需要确定好<span
+class="math inline">\(\gamma\)</span>, <span
+class="math inline">\(r\)</span>, <span
+class="math inline">\(p(r|s,a)\)</span>, <span
+class="math inline">\(p(s&#39;|s,a)\)</span>, <span
+class="math inline">\(v_0\)</span>，即可通过BOE求解出<span
+class="math inline">\(v^*, \pi^*\)</span></p>
+<p><span class="math inline">\(v_0\)</span>是随便设定的，不用管；<span
+class="math inline">\(p(r|s,a)\)</span>, <span
+class="math inline">\(p(s&#39;|s,a)\)</span>通常是先验已知的，所以也不用管。</p>
+<p>所以关键就是<span class="math inline">\(\gamma,
+r\)</span>这俩参数的选择会给我们的<span class="math inline">\(v_*,
+\pi^*\)</span>带来什么样的影响。</p>
+<p><img src="9.png" style="zoom:67%;" /></p>
+<p>看上面这个参数设置，算出来的<span
+class="math inline">\(\pi^*\)</span>左图，<span
+class="math inline">\(v^*\)</span>右图。可以发现，对于红色的几个点，它们都选择穿过forbidden到达target
+cell。这是因为<span
+class="math inline">\(\gamma\)</span>的取值比较大，policy会比较远视。不会太计较短期的得失，而是考虑长期的回报。</p>
+<p><img src="10.png" style="zoom:67%;" /></p>
+<p>看上面这个参数设置，<span
+class="math inline">\(\gamma\)</span>变小了，所以policy会比较计较近处的得失，所以会绕过forbidden
+cell。</p>
+<p><img src="11.png" style="zoom:67%;" /></p>
+<p>再来看这个图，它的参数设置与第一幅图一样，但是把forbidden的惩罚增加了。这样同样可以达到绕过forbidden
+cell的效果。</p>
+<p>这里补充一个知识，就是<span
+class="math inline">\(r\)</span>如果统一进行线性变化：<span
+class="math inline">\(r&#39; = ar +
+b\)</span>，其余条件不变的情况下，<span
+class="math inline">\(\pi^*\)</span>是不会有任何改变的。具体证明见书。</p>
+<h4 id="总结-1">总结</h4>
+<p>这一节所说的BOE就是在bellman equation前套了个<span
+class="math inline">\(\max_\pi\)</span></p>
+<p>最重要的是要掌握fixed point theorem + Policy optimality
+theorem，这样就知道了为啥通过迭代即可算出来最优<span
+class="math inline">\(v^*, \pi^*\)</span>了</p>
+<p>然后还需要掌握迭代算法的流程：</p>
+<ol type="1">
+<li>设定好<span class="math inline">\(\gamma\)</span>，<span
+class="math inline">\(r\)</span>，<span
+class="math inline">\(p(r|s,a)\)</span>，<span
+class="math inline">\(p(s&#39;|s,a)\)</span></li>
+<li>随意取一个<span class="math inline">\(v_0\)</span>，然后通过<span
+class="math inline">\(q_\pi(s, a) = \sum_{r}p(r|s, a)r + \gamma
+\sum_{s&#39;}p(s&#39; | s, a)v_\pi(s&#39;)\)</span>算出对应的<span
+class="math inline">\(q_0\)</span></li>
+<li>For each state <span class="math inline">\(s_i\)</span>, at time
+<span class="math inline">\(k\)</span>：
+<ul>
+<li>算出<span class="math inline">\(q_{k}(s_i, a)\)</span></li>
+<li>Find the <span class="math inline">\(a_k^*(s_i)\)</span>, s.t, <span
+class="math inline">\(q_k(s_i, a_k^*(s_i))\)</span>最大</li>
+<li><span class="math inline">\(\pi_{k+1}(a|s_i)=\begin{cases} 1 \quad
+a=a_k^*(s_i) \\ 0 \quad a \ne a_k^*(s_i) \end{cases}\)</span></li>
+<li><span class="math inline">\(v_{k+1}(s_i) =
+\sum_{a}\pi_{k+1}(a|s)q_k(s,a)\)</span></li>
+</ul></li>
+</ol>
+<p>最后，要知道参数<span class="math inline">\(\gamma,
+r\)</span>的选择会对policy产生什么样的影响。</p>
 
     </div>
 
@@ -876,7 +1100,8 @@ class="math inline">\(\pi\)</span>.</p>
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%9F%BA%E6%9C%AC%E6%A6%82%E5%BF%B5"><span class="nav-text">一. 基本概念</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-mdp"><span class="nav-text">二. MDP</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%89.-%E8%B4%9D%E5%B0%94%E6%9B%BC%E5%85%AC%E5%BC%8F"><span class="nav-text">三. 贝尔曼公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#state-value"><span class="nav-text">state value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bellman-equation-derivation"><span class="nav-text">Bellman equation: Derivation</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#bellman-equation-matrix-vector-form"><span class="nav-text">Bellman equation:
-Matrix-vector form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#action-value"><span class="nav-text">Action value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E8%B4%9D%E5%B0%94%E6%9B%BC%E6%9C%80%E4%BC%98%E5%85%AC%E5%BC%8F"><span class="nav-text">四. 贝尔曼最优公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5-1"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boe"><span class="nav-text">BOE</span></a></li></ol></li></ol></div>
+Matrix-vector form</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#action-value"><span class="nav-text">Action value</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9B%9B.-%E8%B4%9D%E5%B0%94%E6%9B%BC%E6%9C%80%E4%BC%98%E5%85%AC%E5%BC%8F"><span class="nav-text">四. 贝尔曼最优公式</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5-1"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#boe"><span class="nav-text">BOE</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#gamma-r%E7%9A%84%E9%80%89%E6%8B%A9"><span class="nav-text">\(\gamma,
+r\)的选择</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93-1"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
