@@ -26,22 +26,22 @@
     var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。">
+  <meta name="description" content="值&#x2F;策略迭代算法、">
 <meta property="og:type" content="article">
-<meta property="og:title" content="3. 几种重要的凸集-下">
-<meta property="og:url" content="http://error666.top/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/index.html">
+<meta property="og:title" content="强化学习2">
+<meta property="og:url" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。">
+<meta property="og:description" content="值&#x2F;策略迭代算法、">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="http://error666.top/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/1.jpg">
-<meta property="og:image" content="http://error666.top/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/2.jpg">
-<meta property="article:published_time" content="2023-10-05T06:30:39.000Z">
-<meta property="article:modified_time" content="2024-09-11T10:57:29.561Z">
+<meta property="og:image" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/1.png">
+<meta property="og:image" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/2.png">
+<meta property="article:published_time" content="2024-10-05T18:11:53.000Z">
+<meta property="article:modified_time" content="2024-10-06T18:49:45.239Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://error666.top/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/1.jpg">
+<meta name="twitter:image" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/1.png">
 
-<link rel="canonical" href="http://error666.top/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/">
+<link rel="canonical" href="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/">
 
 
 <script id="page-configurations">
@@ -54,7 +54,7 @@
   };
 </script>
 
-  <title>3. 几种重要的凸集-下 | Error_666</title>
+  <title>强化学习2 | Error_666</title>
   
 
 
@@ -205,7 +205,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="http://error666.top/2023/10/05/3-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8B/">
+    <link itemprop="mainEntityOfPage" href="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.png">
@@ -218,7 +218,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          3. 几种重要的凸集-下
+          强化学习2
         </h1>
 
         <div class="post-meta">
@@ -228,14 +228,14 @@
               </span>
               <span class="post-meta-item-text">发表于</span>
 
-              <time title="创建时间：2023-10-05 14:30:39" itemprop="dateCreated datePublished" datetime="2023-10-05T14:30:39+08:00">2023-10-05</time>
+              <time title="创建时间：2024-10-06 02:11:53" itemprop="dateCreated datePublished" datetime="2024-10-06T02:11:53+08:00">2024-10-06</time>
             </span>
               <span class="post-meta-item">
                 <span class="post-meta-item-icon">
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-09-11 18:57:29" itemprop="dateModified" datetime="2024-09-11T18:57:29+08:00">2024-09-11</time>
+                <time title="修改时间：2024-10-07 02:49:45" itemprop="dateModified" datetime="2024-10-07T02:49:45+08:00">2024-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -243,15 +243,11 @@
               </span>
               <span class="post-meta-item-text">分类于</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/4-%E5%A4%A7%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">4. 大学</span></a>
+                  <a href="/categories/1-%E7%A7%91%E7%A0%94/" itemprop="url" rel="index"><span itemprop="name">1. 科研</span></a>
                 </span>
                   ，
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/" itemprop="url" rel="index"><span itemprop="name">数学</span></a>
-                </span>
-                  ，
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%87%B8%E4%BC%98%E5%8C%96/" itemprop="url" rel="index"><span itemprop="name">凸优化</span></a>
+                  <a href="/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" itemprop="url" rel="index"><span itemprop="name">强化学习</span></a>
                 </span>
             </span>
 
@@ -268,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>48</span>
+              <span>5.9k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>5 分钟</span>
             </span>
 
         </div>
@@ -287,10 +283,189 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>介绍了多面体、单纯形、多面体与单纯形的关系、对称矩阵集合、对称半正定矩阵集合、对称正定矩阵集合。</p>
+        <p>值/策略迭代算法、</p>
 <span id="more"></span>
-<p><img src="1.jpg" /></p>
-<p><img src="2.jpg" /></p>
+<h3 id="一.-值策略迭代算法">一. 值/策略迭代算法</h3>
+<h4 id="值迭代算法">值迭代算法</h4>
+<p>其实在BOE那一章的结尾我已经给出了值迭代算法的流程了：</p>
+<ol type="1">
+<li>设定好<span class="math inline">\(\gamma\)</span>，<span
+class="math inline">\(r\)</span>，<span
+class="math inline">\(p(r|s,a)\)</span>，<span
+class="math inline">\(p(s&#39;|s,a)\)</span></li>
+<li>随意取一个<span class="math inline">\(v_0\)</span>，然后通过<span
+class="math inline">\(q_\pi(s, a) = \sum_{r}p(r|s, a)r + \gamma
+\sum_{s&#39;}p(s&#39; | s, a)v_\pi(s&#39;)\)</span>算出对应的<span
+class="math inline">\(q_0\)</span></li>
+<li>For each state <span class="math inline">\(s_i\)</span>, at time
+<span class="math inline">\(k\)</span>：
+<ul>
+<li>算出<span class="math inline">\(q_{k}(s_i, a)\)</span></li>
+<li>Find the <span class="math inline">\(a_k^*(s_i)\)</span>, s.t, <span
+class="math inline">\(q_k(s_i, a_k^*(s_i))\)</span>最大</li>
+<li><span class="math inline">\(\pi_{k+1}(a|s_i)=\begin{cases} 1 \quad
+a=a_k^*(s_i) \\ 0 \quad a \ne a_k^*(s_i) \end{cases}\)</span></li>
+<li><span class="math inline">\(v_{k+1}(s_i) =
+\sum_{a}\pi_{k+1}(a|s)q_k(s,a)\)</span></li>
+</ul></li>
+</ol>
+<p>现在，用正式的语言描述这个algorithm： <span class="math display">\[
+\begin{align*}
+&amp;\text{\textbf{Initialization: } The probability model $p(r|s,a)$
+and $p(s&#39;|s,a)$ for all $(s,a)$ are known. Initial guess $v_0$.} \\
+&amp;\text{At time $k$, do} \\
+&amp;\quad\quad \text{For every state $s \in \mathcal{S}$, do} \\
+&amp;\quad\quad\quad\quad \text{q-value: $q_k(s,a)=\sum_{r}p(r|s,a)r +
+\gamma \sum_{s&#39;}p(s&#39;|s,a)v_k(s&#39;)$} \\
+&amp;\quad\quad \text{Maximum action value: $a_k^*(s) =
+\text{argmax}_{a}q_k(a,s)$} \\
+&amp;\quad\quad \text{Policy update: $\pi_{k+1}(a|s)=1$ if $a=a_k^*(s)$,
+and $\pi_{k+1}(a|s)=0$ otherwise} \\
+&amp;\quad\quad \text{Value update: $v_{k+1}=q_k(a_k^*(s), s)$}
+\end{align*}
+\]</span></p>
+<h4 id="策略迭代算法">策略迭代算法</h4>
+<p>思想就是首先先初始化一个策略，然后先得到该策略下的state
+value（即Policy evaluation, PE），然后得到state
+value后就可以算出对应的action value，然后选择action
+value最大的action，即优化当前policy（Policy
+improvement），得到新的policy。依次类推下去，最终即可得到<span
+class="math inline">\(\pi^*, v^*\)</span>。</p>
+<p>用正式的语言描述这个algorithm： <span class="math display">\[
+\begin{align*}
+&amp;\text{\textbf{Initialization: } The probability model $p(r|s,a)$
+and $p(s&#39;|s,a)$ for all $(s,a)$ are known. Initial guess $\pi_0$.}
+\\
+&amp;\text{At time $k$, do} \\
+&amp;\quad\quad \text{Policy evaluation:} \\
+&amp;\quad\quad \text{Initialization: an arbitrary initial guess
+$v_{\pi_k}^{(0)}$} \\
+&amp;\quad\quad \text{While $v_{\pi_k}^{(j)}$ has not converged, for the
+$j$th iteration, do} \\
+&amp;\quad\quad\quad\quad \text{For every state $s \in \mathcal{S}$, do}
+\\
+&amp;\quad\quad\quad\quad\quad\quad v_{\pi_k}^{(j)}(s) =
+\sum_{a}\pi_k(a|s)\left[ \sum_{r}p(r|s,a)r +
+\gamma\sum_{s&#39;}p(s&#39;|s,a)v_{\pi_k}^{(j)}(s&#39;) \right] \\
+&amp;\quad\quad \text{Policy improvement:} \\
+&amp;\quad\quad \text{For every state $s \in \mathcal{S}$, do} \\
+&amp;\quad\quad\quad\quad q_{\pi_k}(s,a) = \sum_{r}p(r|s,a)r +
+\gamma\sum_{s&#39;}p(s&#39;|s,a)v_{\pi_k}(s&#39;) \\
+&amp;\quad\quad a_k^*(s) = \text{argmax}_{a}q_{\pi_k}(s,a) \\
+&amp;\quad\quad \text{$\pi_{k+1}(a|s) = 1$ if $a = a_k^*(s)$, and
+$\pi_{k+1}(a|s)=0$ otherwise}
+\end{align*}
+\]</span></p>
+<h4 id="两者比较">两者比较</h4>
+<p>值迭代算法是从一个初始state value开始，有了state
+value，就可以算出action value，进而得出当前最优策略，然后去更新state
+value，依次类推。</p>
+<p>策略迭代算法是从一个初始policy开始，然后通过迭代算法求出当前policy下的最优state
+value，然后再通过state value得到action
+value，进而更新当前最优策略。依次类推。</p>
+<p>可以发现，不同点就在于，同样是得到一个policy，值迭代是立马用其代入bellman-equation算出迭代一次后的state
+value。而策略迭代是代入bellman-equation迭代很多次算出的state
+value。所以直观上来说，策略迭代的收敛次数会更少，但是单次计算量会更大。</p>
+<p><img src="1.png" style="zoom:50%;" /></p>
+<h3 id="二.-蒙特卡洛">二. 蒙特卡洛</h3>
+<h4 id="引入">引入</h4>
+<p>前面的值/策略迭代算法都是model-based
+RL，蒙特卡洛是我们接触到的第一个model-free的方法。</p>
+<p>model不知道的时候怎么办呢？蒙特卡洛其实就是大量采样，用样本的分布来估计model的分布。</p>
+<p>蒙特卡洛，Monte Carlo，MC。</p>
+<h4 id="mc-basic">MC Basic</h4>
+<p>MC
+Basic算法其实就跟policy迭代算法一样，只不过把policy迭代算法里的model-based部分，即计算<span
+class="math inline">\(v_{\pi_k},
+q_{\pi_k}\)</span>的部分，换成了依靠采样直接算出基于一个策略<span
+class="math inline">\(\pi_{k}\)</span>的<span
+class="math inline">\(q_{\pi_k}\)</span>。第二步policy
+improvement就一样了。</p>
+<p>原本policy迭代算法里求<span
+class="math inline">\(q_{\pi_k}\)</span>是依赖于这个公式：<span
+class="math inline">\(q_{\pi_k}(s,a)=\sum_{r}p(r|s,a)r +
+\gamma\sum_{s&#39;}p(s&#39;|s,a)v_{\pi_k}(s&#39;)\)</span></p>
+<p>但是MC Basic算<span
+class="math inline">\(q_{\pi_k}\)</span>是依赖于它的原始定义：<span
+class="math inline">\(q_{\pi_k}(s,a)=\mathbb{E}(G_t | S_t = s, A_t =
+a)\)</span></p>
+<p>即对于state-action pairs, 通过大量采样估计出所有的<span
+class="math inline">\(q_{\pi_k}(s,a)\)</span>，然后再进行policy
+improvement。</p>
+<p>用数学语言来描述如下： <span class="math display">\[
+\begin{align*}
+&amp;\text{\textbf{Initialization: } Initial guess $\pi_0$.} \\
+&amp;\text{At time $k$, do} \\
+&amp;\quad\quad \text{For every state $s \in \mathcal{S}$, do} \\
+&amp;\quad\quad\quad\quad \text{For every action $a \in \mathcal{A}(s)$,
+do} \\
+&amp;\quad\quad\quad\quad\quad\quad \text{Collect sufficiently many
+episodes starting from $(s,a)$ following $\pi_k$} \\
+&amp;\quad\quad\quad\quad\quad\quad \text{$q_{\pi_k}(s,a)=$ average
+return of all the episodes starting from $(s,a)$} \\
+&amp;\quad\quad\quad\quad \text{Policy improvement step:} \\
+&amp;\quad\quad\quad\quad a_k^*(s) = \text{argmax}_{a}q_{\pi_k}(s,a) \\
+&amp;\quad\quad\quad\quad \text{$\pi_{k+1}(a|s)=1$ if $a=a_k^*()s$, and
+$\pi_{k+1}(a|s)=0$ otherwise}
+\end{align*}
+\]</span> 很简单，right？</p>
+<p>为啥这里要用episode这个词而非trajectory这个词呢？因为trajectory可能是无限的，而采样是离散的，所以通常我们设置一个采样长度上限，那么每采样一条trajectory其实就是有限的，也叫一条episode。</p>
+<h4 id="mc-exploring-starts">MC Exploring Starts</h4>
+<p>MC Exploring Starts其实就是对MC Basic算法的一个时间复杂度优化。</p>
+<p>MC Basic是对每一个<span class="math inline">\((s,a)\)</span>
+pair都采样很多episode来估计其<span class="math inline">\(q_{\pi_k}(s,
+a)\)</span>，采样的途中可能会路过很多其余的<span
+class="math inline">\((s&#39;,a&#39;)\)</span>
+pair，其实采样出来的return也可以用来估计它们的action
+value。下面这个图就可以很好的解释了MC Basic的数据浪费：</p>
+<p><img src="2.png" style="zoom:50%;" /></p>
+<p>看第一条episode，在MC
+Basic算法里那么一长条episode，我们只用它来估计了<span
+class="math inline">\((s_1, a_2)\)</span>的action
+value。但其实，还可以用来估计<span class="math inline">\((s_2, a_4),
+\cdots\)</span>的action value，它们的return之间只差了一个<span
+class="math inline">\(\gamma\)</span>和reward。</p>
+<p>所以MC Exploring
+Starts就是抓住了这点进行优化，就是类似记忆化搜索的思想 +
+dp填表法的思想。它的具体思想如下：</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span> T;                <span class="comment">// episode的长度</span></span><br><span class="line"><span class="type">int</span> q_sum[][];        <span class="comment">// (s,a)的action value的总和</span></span><br><span class="line"><span class="type">int</span> q_cnt[][];        <span class="comment">// (s,a)的action value的采样次数</span></span><br><span class="line"><span class="type">int</span> q[][];            <span class="comment">// (s,a)的action value</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> (<span class="number">1</span>) &#123;</span><br><span class="line">   <span class="keyword">if</span> (如果不想再迭代了) <span class="keyword">break</span>;</span><br><span class="line">   <span class="keyword">else</span> 确定起点(s0, a0)，按照当前policy生成一条长度为T的episode，将episode路上的(si, ai, ri)存到vector: path中</span><br><span class="line">       </span><br><span class="line">   <span class="type">int</span> G = <span class="number">0</span>;    <span class="comment">// episode的return</span></span><br><span class="line">   <span class="keyword">for</span> (<span class="type">int</span> i = path.<span class="built_in">size</span>() - <span class="number">1</span>; i &gt;= <span class="number">0</span>; i--) &#123;</span><br><span class="line">       G = gamma * G + path[i].r;</span><br><span class="line">       q_sum[s][a] += G;</span><br><span class="line">       q_cnt[s][a] += <span class="number">1</span>;</span><br><span class="line">       </span><br><span class="line">       q[s][a] = q_sum[s][a] / q_cnt[s][a];</span><br><span class="line">       更新<span class="built_in">pi</span>(a|s)</span><br><span class="line">   &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>用数学语言描述如下： <span class="math display">\[
+\begin{align*}
+&amp;\text{\textbf{Initialization: } Initial policy $\pi_0(a|s)$ and
+initial value $q(s,a)$ for all $(s,a)$.} \\
+&amp;\quad\quad\quad\quad\quad\quad\quad~\text{Returns(s,a) = 0 and
+Num(s,a) = 0 for all $(s,a)$.} \\
+&amp;\text{For each episode, do} \\
+&amp;\quad\quad \text{Episode generation: Select a starting state-action
+pair $(s_0, a_0)$}  \\
+&amp;\quad\quad \text{and ensure that all pairs can be possibly selected
+(this is the exploring-starts condition).} \\
+&amp;\quad\quad \text{Following the current policy, generate an episode
+of length $T$: $s_0, a_0, r_1, \cdots, s_{T-1}, a_{T-1}, r_T$.} \\
+&amp;\quad\quad \text{Initialization for each episode: $g \gets 0$} \\
+&amp;\quad\quad \text{For each step of the episode, $t = T - 1, T - 2,
+\cdots, 0, $ do} \\
+&amp;\quad\quad\quad\quad g \gets \gamma g + r_{t+1} \\
+&amp;\quad\quad\quad\quad \text{Returns($s_t, a_t$) $\gets$
+Returns($s_t, a_t$) + $g$} \\
+&amp;\quad\quad\quad\quad \text{Policy evaluation:} \\
+&amp;\quad\quad\quad\quad q(s_t, a_t) \gets \text{Returns($s_t, a_t$) /
+Num($s_t,a_t$)} \\
+&amp;\quad\quad\quad\quad \text{Policy improvement:} \\
+&amp;\quad\quad\quad\quad \text{$\pi(a|s_t)=1$ if $a =
+\text{argmax}_aq(s_t, a)$ and $\pi(a|s_t)=0$ otherwise}
+\end{align*}
+\]</span> 最后我们来看看这个“Exploring
+Starts”是什么意思。Exploring我个人理解就是由于是dp填表法，所以episode就需要自己去生成，也就是exploring的过程。Starts是因为此时的算法不是像MC
+Basic样每个state-action
+pair都去强制估计了，所以为了尽量确保每个state-action都被估计到，每个episode的起点的选法就很有讲究，最好每个state-action都被作为起点选择一次（当然这就退化为MC
+Basic了）</p>
+<h4 id="mc-varepsilon-greedy">MC <span
+class="math inline">\(\varepsilon\)</span>-Greedy</h4>
+<p>MC Exploring Starts算法很好，但是它不能保证每个state-action
+pair都被估计到，所以选多少个episode，每个episode的起点是啥就很有讲究。可能起点选少了直接导致效果不好，选多了又速度慢。</p>
+<p>为了解决上述问题，MC <span
+class="math inline">\(\varepsilon\)</span>-Greedy 算法应运而生。</p>
 
     </div>
 
@@ -306,13 +481,10 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2023/10/05/2-%E5%87%A0%E7%A7%8D%E9%87%8D%E8%A6%81%E7%9A%84%E5%87%B8%E9%9B%86-%E4%B8%8A/" rel="prev" title="2. 几种重要的凸集-上">
-      <i class="fa fa-chevron-left"></i> 2. 几种重要的凸集-上
+    <a href="/2024/10/05/%E5%8A%A8%E6%89%8B%E5%AD%A6%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/" rel="prev" title="动手学强化学习">
+      <i class="fa fa-chevron-left"></i> 动手学强化学习
     </a></div>
-      <div class="post-nav-item">
-    <a href="/2023/10/06/%E6%95%B0%E5%AD%97%E9%80%BB%E8%BE%91%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/" rel="next" title="数字逻辑自学笔记">
-      数字逻辑自学笔记 <i class="fa fa-chevron-right"></i>
-    </a></div>
+      <div class="post-nav-item"></div>
     </div>
       </footer>
     
@@ -376,6 +548,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%80%BC%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">一. 值&#x2F;策略迭代算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%BC%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">值迭代算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">策略迭代算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E6%AF%94%E8%BE%83"><span class="nav-text">两者比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B"><span class="nav-text">二. 蒙特卡洛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-basic"><span class="nav-text">MC Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-exploring-starts"><span class="nav-text">MC Exploring Starts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-varepsilon-greedy"><span class="nav-text">MC \(\varepsilon\)-Greedy</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
