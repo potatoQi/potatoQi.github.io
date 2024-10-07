@@ -461,7 +461,7 @@
   </url>
   
   <url>
-    <loc>http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Matlab/</loc>
+    <loc>http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -469,6 +469,13 @@
   
   <url>
     <loc>http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Linux/</loc>
+    <lastmod>2024-10-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.2</priority>
+  </url>
+  
+  <url>
+    <loc>http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Matlab/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
@@ -490,13 +497,6 @@
   
   <url>
     <loc>http://error666.top/categories/1-%E7%A7%91%E7%A0%94/LLM/</loc>
-    <lastmod>2024-10-07</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.2</priority>
-  </url>
-  
-  <url>
-    <loc>http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/</loc>
     <lastmod>2024-10-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.2</priority>
