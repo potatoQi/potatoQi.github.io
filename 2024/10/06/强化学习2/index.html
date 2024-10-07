@@ -36,7 +36,7 @@
 <meta property="og:image" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/1.png">
 <meta property="og:image" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/2.png">
 <meta property="article:published_time" content="2024-10-05T18:11:53.000Z">
-<meta property="article:modified_time" content="2024-10-06T18:55:43.921Z">
+<meta property="article:modified_time" content="2024-10-07T06:35:33.992Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/1.png">
@@ -235,7 +235,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-07 02:55:43" itemprop="dateModified" datetime="2024-10-07T02:55:43+08:00">2024-10-07</time>
+                <time title="修改时间：2024-10-07 14:35:33" itemprop="dateModified" datetime="2024-10-07T14:35:33+08:00">2024-10-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -264,14 +264,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>5.9k</span>
+              <span>8.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>5 分钟</span>
+              <span>8 分钟</span>
             </span>
 
         </div>
@@ -465,6 +465,75 @@ class="math inline">\(\varepsilon\)</span>-Greedy</h4>
 pair都被估计到，所以选多少个episode，每个episode的起点是啥就很有讲究。可能起点选少了直接导致效果不好，选多了又速度慢。</p>
 <p>为了解决上述问题，MC <span
 class="math inline">\(\varepsilon\)</span>-Greedy 算法应运而生。</p>
+<p><span class="math inline">\(\varepsilon\)</span>-Greedy与MC Exploring
+Starts的区别就在Policy improvement这一步，MC Exploring
+Starts在这一步是直接将最大的action
+value对应的action的概率设为1其余为0，但是<span
+class="math inline">\(\varepsilon\)</span>-Greedy是最大的action
+value对应的action概率设为<span class="math inline">\(1 -
+\varepsilon\)</span>，其余的action概率设为<span
+class="math inline">\(\varepsilon\)</span>。</p>
+<p>这样的好处就是不需要对全部的state-action
+pair都作为起点生成episode，只要生成一些episode（起点随便），并且只要保证这条episode的长度T很长，那你在就几乎可以路过所有state-action
+pairs，从而估计它们。就不需要从很多不同的起点开始了。</p>
+<p>坏处就是通过<span
+class="math inline">\(\varepsilon\)</span>-Greedy得到的policy并不是最优的，因为它始终带着探索的概率。所以通常我们的做法是：</p>
+<p>初始化policy为<span
+class="math inline">\(\varepsilon\)</span>策略，进行多次episode，每次的episode的<span
+class="math inline">\(\varepsilon\)</span>递减。这样就可以保证前面的episode随机性很强，从而可以覆盖到大多数state-action
+pair，但是毕竟我们是要求最优解的，所以后期的episode的<span
+class="math inline">\(\varepsilon\)</span>就得减小。最后，在通过<span
+class="math inline">\(\varepsilon\)</span>-Greedy得到一个policy后，还是要将其转为确定性的策略（即不带概率的）。</p>
+<p><span
+class="math inline">\(\varepsilon\)</span>-Greedy这个算法的目的就是为了避免要进行多次全部state-action
+pair起点选择，仅此而已。它是如何做到的？尝试不是最优的策略，通过尝试不是最优的策略，从而尽可能的，覆盖所有的state-action
+paris。所以从原理上，这个算法就是会降低准确率。但是它也很具有实际意义，因为你想啊，你在仿真中设计的算法是要用到实际环境中去的。你的机器人通常就从安全的起点出发开始探索，如果你要让它从全部的state-action开始，那显然不现实。例如深海作业，你都是让robot从浅水区开始，然后让它自己去探索，尽可能覆盖所有state-action
+pairs。你总不可能让它从深海区开始吧，因为你人类到不了深海区。</p>
+<p>下面是用数学描述： <span class="math display">\[
+\begin{align*}
+&amp;\textbf{Initialization: } \text{Initial policy $\pi_0(a|s)$ and
+initial value $q(s,a)$ for all $(s,a)$. Returns(s,a)=0 and Num(s,a)=0}
+\\
+&amp;\text{for all $(s,a)$. $\varepsilon \in (0, 1]$} \\
+&amp;\text{For each episode, do} \\
+&amp;\quad\quad \text{Episode generation: Select a starting state-action
+pair $(s_0, a_0)$. Following the current policy,} \\
+&amp;\quad\quad \text{generate an episode of length $T: s_0, a_0, r_1,
+\cdots, s_{T-1}, a_{T-1}, r_T$.} \\
+&amp;\quad\quad \text{Initialization for each episode: $g \gets 0$} \\
+&amp;\quad\quad \text{For each step of the episode, $t = T-1, T-2,
+\cdots, 0,$ do} \\
+&amp;\quad\quad\quad\quad g \gets \gamma g + r_{t+1} \\
+&amp;\quad\quad\quad\quad \text{Returns($s_t, a_t$) $\gets$
+Returns($s_t, a_t$) + $g$} \\
+&amp;\quad\quad\quad\quad \text{Num($s_t, a_t$) $\gets$ Num($s_t, a_t$)
++ 1} \\
+&amp;\quad\quad\quad\quad \text{Policy evaluation:} \\
+&amp;\quad\quad\quad\quad q(s_t, a_t) \gets \text{Returns($s_t, a_t$) /
+Num($s_t, a_t$)} \\
+&amp;\quad\quad\quad\quad \text{Let } a^* = \text{argmax}_a q(s_t, a)
+\text{ and} \\
+&amp;\quad\quad\quad\quad\quad\quad \pi(a|s_t) = \begin{cases}1 -
+\frac{|\mathcal{A}(s_t)|-1}{|\mathcal{A}|}\varepsilon, \quad a = a^* \\
+\frac{1}{|\mathcal{A}(s_t)|}\varepsilon, \quad a \ne a^* \end{cases}
+\end{align*}
+\]</span> 个人觉得，<span
+class="math inline">\(\varepsilon\)</span>-Greedy的探索性与收敛性是严重矛盾的，因为明明已经通过采样得到state-action
+value值了，只需要一直不断的更新deterministic的策略，就可以收敛了。但是<span
+class="math inline">\(\varepsilon\)</span>-Greedy为了探索性，会将"探索"这个元素，加入进自己的"策略"里。所以，就像一个明知道最优解的人，在做事情的时候，仍然小概率选择不是最优的东西。所以，<span
+class="math inline">\(\varepsilon\)</span>-Greedy
+这个算法收敛性，有些靠天。</p>
+<h4 id="总结">总结</h4>
+<p>我们从model-based的算法（值/策略迭代算法）开始说起，model-based算法的收敛性和最优性都是有保证的，在"强化学习1"中有提到证明。</p>
+<p>随后我们进入了model-free算法，此时我们只能依靠采样来估计<span
+class="math inline">\(p(s,a)\)</span>，所以MC
+Basic只要采样数量无限大，那么其准确性和收敛性也是可以得到保证的。</p>
+<p>但是MC Basic效率太慢了，为此MC Exploring
+Starts应运而生，运用了记忆化的思想加速了收敛。只要保证每个action-pair都被大量采样到，该算法也能保证准确性和收敛性。</p>
+<p>但是问题就是为了保证“每个action-pair都被大量采样到”，MC Exploring
+Starts就需要从不同的action-pair起点去生成episode进行采样。而现实环境中这是有难度的，例如你不能让机器人从深海区开始，一般都是从浅水区开始。</p>
+<p>所以MC <span
+class="math inline">\(\varepsilon\)</span>-Greedy算法应运而生，增加了"探索"机制，从而不必使每一个action-pair都要作为起点去生成episode进行采样。但是因为探索是直接加到policy里，所以该算法的准确率会下降，甚至收敛都不一定。不过这对未来的算法具有启发意义。</p>
 
     </div>
 
@@ -547,7 +616,7 @@ class="math inline">\(\varepsilon\)</span>-Greedy 算法应运而生。</p>
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%80%BC%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">一. 值&#x2F;策略迭代算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%BC%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">值迭代算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">策略迭代算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E6%AF%94%E8%BE%83"><span class="nav-text">两者比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B"><span class="nav-text">二. 蒙特卡洛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-basic"><span class="nav-text">MC Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-exploring-starts"><span class="nav-text">MC Exploring Starts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-varepsilon-greedy"><span class="nav-text">MC \(\varepsilon\)-Greedy</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%80.-%E5%80%BC%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">一. 值&#x2F;策略迭代算法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%80%BC%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">值迭代算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E8%BF%AD%E4%BB%A3%E7%AE%97%E6%B3%95"><span class="nav-text">策略迭代算法</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%A4%E8%80%85%E6%AF%94%E8%BE%83"><span class="nav-text">两者比较</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BA%8C.-%E8%92%99%E7%89%B9%E5%8D%A1%E6%B4%9B"><span class="nav-text">二. 蒙特卡洛</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-basic"><span class="nav-text">MC Basic</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-exploring-starts"><span class="nav-text">MC Exploring Starts</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#mc-varepsilon-greedy"><span class="nav-text">MC \(\varepsilon\)-Greedy</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-text">总结</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
