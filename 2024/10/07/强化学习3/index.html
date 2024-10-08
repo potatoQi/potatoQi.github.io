@@ -34,7 +34,7 @@
 <meta property="og:description" content="值函数近似、策略梯度方法、Actor-Critic方法">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2024-10-07T15:30:16.000Z">
-<meta property="article:modified_time" content="2024-10-07T15:31:13.820Z">
+<meta property="article:modified_time" content="2024-10-08T16:08:44.313Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
 
@@ -224,10 +224,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">发表于</span>
-              
 
-              <time title="创建时间：2024-10-07 23:30:16 / 修改时间：23:31:13" itemprop="dateCreated datePublished" datetime="2024-10-07T23:30:16+08:00">2024-10-07</time>
+              <time title="创建时间：2024-10-07 23:30:16" itemprop="dateCreated datePublished" datetime="2024-10-07T23:30:16+08:00">2024-10-07</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2024-10-09 00:08:44" itemprop="dateModified" datetime="2024-10-09T00:08:44+08:00">2024-10-09</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -255,14 +261,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>30</span>
+              <span>4.4k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>1 分钟</span>
+              <span>4 分钟</span>
             </span>
 
         </div>
@@ -276,7 +282,162 @@
       
         <p>值函数近似、策略梯度方法、Actor-Critic方法</p>
 <span id="more"></span>
-<p>123</p>
+<h3 id="值函数近似">值函数近似</h3>
+<h4 id="引入">引入</h4>
+<p>上一章介绍了时序差分方法，也就是model-free下求state/action
+value/optimal action value的迭代法。</p>
+<p>其思路是在MC Exploring
+Starts上演变过来的，即完全的记忆化。既然使用了记忆化，那么就有记忆化数组，即tabular。</p>
+<p>这一章的值函数近似不是基于tabular，而是基于函数。这是有实际意义的，比如action
+value是连续的时候，离散化后用tabular存就很有可能存不下，所以我们需要一个连续的算法。</p>
+<p>从另一个方面考虑，假如state-action
+pair太多太多，那么我很难把全部的state-action
+pair都估计到，那么假如我们有一个函数，那么无论你状态有多少个，因为我是表达式，所以随便给一个状态我都能代入表达式估计出来。</p>
+<p>想到啥了吗？用函数拟合任意一个散点图，是的，神经网络最喜欢干这件事了。</p>
+<p>Interesting, right？</p>
+<h4 id="目标函数">目标函数</h4>
+<p>我们的目标就是通过拟合的方法估计<span
+class="math inline">\(v_\pi(s)\)</span>嘛，所以<span
+class="math inline">\(v_\pi(s)\)</span>是真实的值，我们拟合的函数是<span
+class="math inline">\(\hat{v}(s, w)\)</span>。</p>
+<p>注意这是个函数哦，<span
+class="math inline">\(s\)</span>是自变量，<span
+class="math inline">\(w\)</span>是参数。</p>
+<p>显然我们的优化函数为： <span class="math display">\[
+J(w) = \mathbb{E}[(v_\pi(S) - \hat{v}(S, w))^2]
+\]</span> 显然，我们希望<span
+class="math inline">\(J(w)\)</span>尽可能小。</p>
+<p>这个优化函数是标准形式，但实际计算的时候我们需要将里面的随机变量和期望替换为样本。</p>
+<h4 id="优化算法和函数设计">优化算法和函数设计</h4>
+<p>前面我们有了目标函数，那么现在我们就来minimize <span
+class="math inline">\(J(w)\)</span>.</p>
+<p>来计算下<span class="math inline">\(J(w)\)</span>的导数： <span
+class="math display">\[
+\begin{align*}
+\nabla J(w) &amp;= \nabla \mathbb{E}[(v_\pi(S) - \hat v(S, w))^2] \\
+            &amp;= \mathbb{E}[\nabla (v_\pi(S) - \hat v(S, w))^2] \\
+            &amp;= 2\mathbb{E}[(v_\pi(S) - \hat v(S, w))(-\nabla_w \hat
+v(S, w))] \\
+            &amp;= -2\mathbb{E}[(v_\pi(S) - \hat v(S, w))\nabla_w \hat
+v(S, w)]
+\end{align*}
+\]</span> 当然，用SGD即可，那么迭代式为： <span class="math display">\[
+w_{t+1} = w_t + \alpha_t(v_\pi(s_t) - \hat v(s_t, w_t))\nabla_w \hat
+v(s_t, w_t)
+\]</span> 可以看出，上面这个迭代式是没法用的。因为<span
+class="math inline">\(v_\pi(s_t)\)</span>我们不知道啊。</p>
+<p>所以可以结合MC或者TD algorithm，这里我就结合TD
+algorithm其中的迭代式： <span class="math display">\[
+v_{t+1}(s_t) = v_t(s_t) - \alpha_t(s_t)[v_t(s_t) - [r_{t+1} + \gamma
+v_t(s_{t+1})]]
+\]</span> 那么上面的迭代式可以改写为： <span class="math display">\[
+w_{t+1} = w_t + \alpha_t(r_{t+1} + \gamma \hat v(s_{t+1}, w_t) - \hat
+v(s_t, w_t)) \cdot \nabla_w \hat v(s_t, w_t)
+\]</span> 那么我们可以得到TD + 值函数近似算法： <span
+class="math display">\[
+\begin{align*}
+&amp;\textbf{Initialization: } \text{A function $\hat v(s, w)$ that is a
+differentiable in $w$. Initial parameter $w_0$.} \\
+&amp;\text{For each episode generated following the polticy $\pi$, do}
+\\
+&amp;\quad\quad \text{For each step $(s_t, r_{t+1}, s_{t+1})$, do} \\
+&amp;\quad\quad\quad\quad w_{t+1} = w_t + \alpha_t[r_{t+1} + \gamma \hat
+v(s_{t+1}, w_t) - \hat v(s_t, w_t)] \cdot \nabla_w \hat v(s_t, w_t)
+\end{align*}
+\]</span> 简洁而优美。</p>
+<p>好了，就剩一件事了。<span class="math inline">\(\hat v(s,
+w)\)</span>这个函数如何设计？</p>
+<p>一般现在有两种设计方案，第一种是设计为线性的，第二种是用神经网络去拟合。</p>
+<p>先来看第一种：</p>
+<p><span class="math inline">\(\hat v(s, w) =
+\phi(s)^\mathrm{T}w\)</span>，其中<span
+class="math inline">\(\phi\)</span>是特征<span
+class="math inline">\(s\)</span>的特征向量。</p>
+<p>如何理解呢？就是你对于一个状态的value，看你想用什么特征来描述它，假设你用特征<span
+class="math inline">\(a_1, a_2, a_3, 1\)</span>来描述一个状态<span
+class="math inline">\(s\)</span>，那么其特征向量就为<span
+class="math inline">\([a_1, a_2, a_3,
+1]^{\mathrm{T}}\)</span>，那么函数就为：<span class="math inline">\(\hat
+v(s,w) = a_1w_1 + a_2w_2 + a_3w_3 + w_4\)</span>。</p>
+<p>所以这种方法的关键就是选好特征很关键。举个例子，比如想描述某人某时刻的state，那么特征就可以选择：身高、体重、性别。</p>
+<p>再来看第二种：略，神经网络没啥数学推导，这里没必要再展开。</p>
+<p>相同的，我们还可以得到Sarsa + 值函数近似算法： <span
+class="math display">\[
+w_{t+1} = w_t + \alpha_t[r_{t+1} + \gamma \hat q(s_{t+1}, a_{t+1}, w_t)
+- \hat q(s_t, a_t, w_t)] \cdot \nabla_w \hat q(s_t, a_t, w_t)
+\]</span> 相同的，我们还可以得到Q-learning + 值函数近似算法： <span
+class="math display">\[
+w_{t+1} = w_t + \alpha_t[r_{t+1} + \gamma \max_{a \in
+\mathcal{A(s_{t+1})}} \hat q(s_{t+1}, a, w_t) - \hat q(s_t, a_t, w_t)]
+\cdot \nabla_w \hat q(s_t, a_t, w_t)
+\]</span></p>
+<h4 id="deep-q-learning">Deep Q-learning</h4>
+<p>Deep Q-learning，也可以叫deep Q-network，DQN。</p>
+<p>Deep Q-learning就是在Q-learning + 值函数近似的基础上，<span
+class="math inline">\(\hat q(s_t, a_t,
+w_t)\)</span>用神经网络去算的一个算法。</p>
+<p>回顾一下一下optimal bellman equation：</p>
+<p><span class="math display">\[
+q(s,a) = \mathbb{E}\left[ R_{t+1} + \gamma \max_{a \in
+\mathcal{A}(S_{t+1})} q(S_{t+1}, a) | S_t = s, A_t = a \right], \forall
+s, a
+\]</span> 其实Q-learning本质就是在用迭代法使得<span
+class="math inline">\(q_t(s_t, a_t) \to r_{t+1} + \gamma \max_{a \in
+\mathcal{A}} q_t(s_t,a)\)</span></p>
+<p>当用神经网络来拟合action
+values时，它与Q-learning一样，本质是在minimize这个函数： <span
+class="math display">\[
+J(w) = \mathbb{E}\left[ (R + \gamma \max_{a \in \mathcal{A}(S&#39;)}
+\hat q(S&#39;, a, w) - \hat q(S, A, w))^2 \right]
+\]</span> 但是<span class="math inline">\(J(w)\)</span>这个函数对<span
+class="math inline">\(w\)</span>的梯度很难求，因为第二项和第三项都包含了<span
+class="math inline">\(w\)</span>。所以这里原文作者用了一个trick。就是设置了两个<span
+class="math inline">\(w\)</span>，一个叫<span
+class="math inline">\(w\)</span>，一个叫<span
+class="math inline">\(w_T\)</span>。<span
+class="math inline">\(w\)</span>是持续更新的，<span
+class="math inline">\(w_T\)</span>是各种一段时间更新一次的。那么，loss函数可以写为下面这种形式：
+<span class="math display">\[
+J(w) = \mathbb{E}\left[ (R + \gamma \max_{a \in \mathcal{A}(S&#39;)}
+\hat q(S&#39;, a, w_\mathrm{T}) - \hat q(S, A, w))^2 \right]
+\]</span> 这样的话，<span
+class="math inline">\(w_\mathrm{T}\)</span>就是个常数，那么<span
+class="math inline">\(\nabla_w J(w)\)</span>就可以写出来了： <span
+class="math display">\[
+\nabla_w J(w) = -2 \mathbb{E}\left[ (R + \gamma \max_{a \in
+\mathcal{A}(S&#39;)} \hat q(S&#39;, a, w_\mathrm{T}) - \hat q(S, A, w))
+\cdot \nabla_w \hat q(S, A, w) \right]
+\]</span>
+然后既然都用神经网络了，那么全部的思路都转换为深度学习。现在有了目标函数，梯度，就差数据了。</p>
+<p>这里的数据就是很多<span class="math inline">\((s, a, r,
+s&#39;)\)</span> pairs。</p>
+<p>那么可以写出下列算法： <span class="math display">\[
+\begin{align*}
+&amp;\text{Store the experience samples generated by $\pi_b$ in a replay
+buffer $\mathcal{B} = \{(s,a,r,s&#39;)\}$} \\
+&amp;\quad\quad \text{For each iteration, do} \\
+&amp;\quad\quad\quad\quad \text{Uniformly draw a mini-batch of samples
+from $\mathcal{B}$} \\
+&amp;\quad\quad\quad\quad \text{For each sample $(s,a,r,s&#39;)$,
+calculate the target values as $y_{\mathrm{T}} = r + \gamma \max_{a \in
+\mathcal{A}(s&#39;)}\hat q(s&#39;,a,w_{\mathrm{T}})$, where} \\
+&amp;\quad\quad\quad\quad \text{$w_\mathrm{T}$ is the parameter of the
+target network} \\
+&amp;\quad\quad\quad\quad \text{Update the main network to minimize
+$(y_\mathrm{T} - \hat q(s,a,w))^2$ using the mini-batch
+$\{(s,a,y_\mathrm{T})\}$} \\
+&amp;\quad\quad \text{Set $w_\mathrm{T} = w$ every $C$ iterations}
+\end{align*}
+\]</span> 思考累了？换种角度重新看看DQN，会发现很简单。</p>
+<p>首先，它有很多样本，每个样本会得到一个输出<span
+class="math inline">\(y_\mathrm{T}\)</span>（通过optimal bellman
+equation得到的输出），我们的目的，就是让我们的网络<span
+class="math inline">\(\hat q(s,a,w)\)</span>（其中<span
+class="math inline">\(s,a\)</span>是输入，<span
+class="math inline">\(w\)</span>是模型参数）尽可能拟合所以样本的<span
+class="math inline">\(y_\mathrm{T}\)</span>。
+所以就是个简单的深度学习问题。</p>
+<h3 id="策略梯度方法">策略梯度方法</h3>
 
     </div>
 
@@ -359,6 +520,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0%E8%BF%91%E4%BC%BC"><span class="nav-text">值函数近似</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">优化算法和函数设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deep-q-learning"><span class="nav-text">Deep Q-learning</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6%E6%96%B9%E6%B3%95"><span class="nav-text">策略梯度方法</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
