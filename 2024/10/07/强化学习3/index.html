@@ -26,17 +26,19 @@
     var CONFIG = {"hostname":"error666.top","root":"/","scheme":"Gemini","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"manual","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.json"};
   </script>
 
-  <meta name="description" content="值函数近似、策略梯度方法、Actor-Critic方法">
+  <meta name="description" content="值函数近似(DQN)、策略梯度方法(REINFORCE)、Actor-Critic方法">
 <meta property="og:type" content="article">
 <meta property="og:title" content="强化学习3">
 <meta property="og:url" content="http://error666.top/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/index.html">
 <meta property="og:site_name" content="Error_666">
-<meta property="og:description" content="值函数近似、策略梯度方法、Actor-Critic方法">
+<meta property="og:description" content="值函数近似(DQN)、策略梯度方法(REINFORCE)、Actor-Critic方法">
 <meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://error666.top/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/1.png">
 <meta property="article:published_time" content="2024-10-07T15:30:16.000Z">
-<meta property="article:modified_time" content="2024-10-08T17:59:58.171Z">
+<meta property="article:modified_time" content="2024-10-10T12:06:01.760Z">
 <meta property="article:author" content="Error_666">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://error666.top/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/1.png">
 
 <link rel="canonical" href="http://error666.top/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/">
 
@@ -232,7 +234,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-10-09 01:59:58" itemprop="dateModified" datetime="2024-10-09T01:59:58+08:00">2024-10-09</time>
+                <time title="修改时间：2024-10-10 20:06:01" itemprop="dateModified" datetime="2024-10-10T20:06:01+08:00">2024-10-10</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,14 +263,14 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>4.5k</span>
+              <span>7.8k</span>
             </span>
             <span class="post-meta-item" title="阅读时长">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
                 <span class="post-meta-item-text">阅读时长 &asymp;</span>
-              <span>4 分钟</span>
+              <span>7 分钟</span>
             </span>
 
         </div>
@@ -280,7 +282,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>值函数近似、策略梯度方法、Actor-Critic方法</p>
+        <p>值函数近似(DQN)、策略梯度方法(REINFORCE)、Actor-Critic方法</p>
 <span id="more"></span>
 <h3 id="值函数近似">值函数近似</h3>
 <h4 id="引入">引入</h4>
@@ -439,7 +441,115 @@ class="math inline">\(w\)</span>是模型参数）尽可能拟合所以样本的
 class="math inline">\(y_\mathrm{T}\)</span>。
 所以就是个简单的深度学习问题。</p>
 <h3 id="策略梯度方法">策略梯度方法</h3>
-<p>待学</p>
+<h4 id="引入-1">引入</h4>
+<p>其实就是用连续函数去直接拟合policy，而非像以前那样关注中间量state
+values、action values。</p>
+<p>具体来说，即通常用神经网络去拟合一个函数<span
+class="math inline">\(\pi(a | s, \theta)\)</span>，其中<span
+class="math inline">\(\theta\)</span>是网络参数。</p>
+<p>那如何评价我们拟合的这个<span class="math inline">\(\pi(a | s,
+\theta)\)</span>是否好坏呢？</p>
+<p>所以我们需要一个指标<span
+class="math inline">\(J(\theta)\)</span>，我们的任务，就是通过大量经验(样本)，去训练拟合这些样本，从而改变<span
+class="math inline">\(\theta\)</span>，去maximize这个指标。</p>
+<p>Interesting，越来越像深度学习的感觉了。</p>
+<p>回顾一下，RL从MDP开始，MDP就是建立在标准的数学动态规划、矩阵论、概率论上的数学框架。解决RL问题就是在解决这个数学框架。求解方法有迭代法或者直接解方程。</p>
+<p>后面因为概率很难提前获得，也就是我们通常不能开“上帝视角”，所以解数学框架的时候会缺失一些信息。因此我们通过大量采样来近似模拟这些信息，进行解题。这就诞生MC系列算法、时序差分系列算法。</p>
+<p>再后来，我们的视角逐渐不再放在最底层的MDP框架公式中，而是在借助MDP框架的关键定义和公式上，试图直接利用数学，拟合出最佳的state
+values / action values / optimal policy。这就是Deep
+Q-learning、REINFORCE、Actor-Critic。</p>
+<p>未来，至少在短期内可以预见的是，RL将于DL深度结合，且大量的DL技巧将会被运用到RL中来。</p>
+<p>未来RL会走出一条什么样的路，我们不知道。但是，万一哪天RL突破了“RL”的定义和边界，我想，会是件令人激动的事。</p>
+<h4 id="目标函数-1">目标函数</h4>
+<p>也就是引入中说到的<span
+class="math inline">\(J(\theta)\)</span>是啥？</p>
+<p>有两大类metrics，第一类是average state value，就是state
+values的加权平均。记作<span
+class="math inline">\(\bar{v}_\pi\)</span></p>
+<p>第二类是average reward，就是<span
+class="math inline">\(r_\pi(s)\)</span>的加权平均。记作<span
+class="math inline">\(\bar{r}_\pi\)</span></p>
+<p>似乎这两个metrics，前一个更加远视，后一个更加近视（因为考虑的是immediate
+expected reward），但其实，对这两个指标做优化是等价的，因为在<span
+class="math inline">\(\gamma &lt; 1\)</span>的时候，满足：<span
+class="math inline">\(\bar{r}_\pi = (1 - \gamma)\bar{v}_\pi\)</span></p>
+<p>average state value, <span
+class="math inline">\(\bar{v}_\pi\)</span>，可写为： <span
+class="math display">\[
+\bar{v}_\pi = \sum_{s}d_\pi(s)v_\pi(s) = \mathbb{E}\left[
+\sum_{t=0}^{\infty}\gamma^t R_{t+1} \right]
+\]</span> 第一个定义就是本身的定义，<span
+class="math inline">\(d_\pi(s)\)</span>是不同state的权重。</p>
+<p>第二个定义不太直观，我来推导一下： <span class="math display">\[
+\mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^{t}R_{t+1}\right]
+=\sum_{s\in\mathcal{S}}d(s)\mathbb{E}\left[\sum_{t=0}^{\infty}\gamma^{t}R_{t+1}|S_{0}=s\right]=\sum_{s\in\mathcal{S}}d(s)v_{\pi}(s)
+\]</span> average reward, <span
+class="math inline">\(\bar{r}_\pi\)</span>，可写为： <span
+class="math display">\[
+\bar{r}_\pi = \sum_{s}d_\pi(s)r_\pi(s) = \lim_{n \to
+\infty}\frac{1}{n}\mathbb{E}(\sum_{t=1}^{n}R_t)
+\]</span> 第一个定义就是本身的定义，第二个定义很好理解，<span
+class="math inline">\(\bar{r}_\pi\)</span>表达的就是所有immediate
+expected reward的期望，那么你把所有所有的<span
+class="math inline">\(R_t\)</span>求平均就是<span
+class="math inline">\(\bar{r}_\pi\)</span>了。</p>
+<h4 id="梯度计算">梯度计算</h4>
+<p>直接给出结论，详细证明去书里看： <span class="math display">\[
+\nabla_\theta\bar{r}_\pi\simeq\sum_sd_\pi(s)\sum_a\nabla_\theta\pi(a|s,\theta)q_\pi(s,a),\\\nabla_\theta\bar{v}_\pi=\frac1{1-\gamma}\nabla_\theta\bar{r}_\pi
+\]</span> 当<span class="math inline">\(\gamma &lt; 1\)</span>时<span
+class="math inline">\(\nabla_\theta
+\bar{r}_\pi\)</span>是约等于右边那一坨，当<span
+class="math inline">\(\gamma = 1\)</span>时是严格等于。<span
+class="math inline">\(\gamma &lt; 1\)</span>时第二个式子成立。</p>
+<p>但是上面那个式子还可以进行化简：</p>
+<p>不妨对<span class="math inline">\(\ln \pi(a|s,
+\theta)\)</span>求导，<span class="math inline">\(\nabla_\theta \ln
+\pi(a|s, \theta) = \frac{1}{\pi(a|s, \theta)} \cdot \nabla_\theta
+\pi(a|s, \theta)\)</span></p>
+<p><span class="math inline">\(\therefore \nabla_\theta \pi(a|s, \theta)
+= \pi(a|s, \theta)\nabla_\theta\ln\pi(a|s, \theta)\)</span></p>
+<p>带回上面的式子，得：<span class="math inline">\(\nabla_\theta
+\bar{r}_\pi = \sum_{s}d_\pi(s)\sum_{a}\pi(a|s,
+\theta)\nabla_\theta\ln\pi(a|s, \theta)q_\pi(s, a)\)</span></p>
+<p>那么就可以把<span
+class="math inline">\(\sum\)</span>写为期望的方式：<span
+class="math inline">\(\nabla_\pi \bar{r}_\pi = \mathbb{E}_{\mathcal{S}
+\sim d, \mathcal{A} \sim \pi}\left[ \nabla_\theta\ln\pi(A|S, \theta)
+\cdot q_\pi(S, A) \right]\)</span></p>
+<p>这样有什么好处呢？相当于我们只需要有state action
+pairs的样本，就可以去拟合<span
+class="math inline">\(\nabla_\pi\bar{r}_\pi\)</span>了，相比于前面求和的形式，训练简直不要简单太多。很牛的idea。</p>
+<p>但是既然你取了<span
+class="math inline">\(\ln\)</span>，那么就要保证<span
+class="math inline">\(\pi(a|s, \theta) &gt;
+0\)</span>，所以对于神经网络的话，在最后一层就要做一个softmax：</p>
+<p><img src="1.png" style="zoom:67%;" /></p>
+<p>就行了，但是这样搞的话，policy就具有探索性了需要注意。</p>
+<p>所以我们的为了更新matrics的梯度上升就可以这么写，用SGD： <span
+class="math display">\[
+\theta_{t+1} = \theta_t + \alpha\nabla_\theta\ln\pi(a_t|s_t,
+\theta_t)q_\pi(s_t,a_t)
+\]</span> 但上面这个式子目前还用不了，因为<span
+class="math inline">\(q_\pi(s_t,
+a_t)\)</span>我们不知道。所以用MC系列或者TD系列呗，如果你用MC去拟合<span
+class="math inline">\(q_\pi(s_t,
+a_t)\)</span>，那么你就得到了REINFORCE算法，表示如下： <span
+class="math display">\[
+\begin{align*}
+&amp;\textbf{Initialization: }\text{A parameterized function $\pi(a|s,
+\theta)$} \\
+&amp;\text{At time $k$, do} \\
+&amp;\quad\quad \text{Select $s_0$ and generate an episode following
+$\pi(\theta_k)$. Suppose the episode is $\{s_0, a_0, r_1, \cdots,
+s_{T-1}, a_{T_1}, r_T\}$.} \\
+&amp;\quad\quad \text{For $t = 0,1,\cdots, T-1$, do} \\
+&amp;\quad\quad\quad\quad q_t(s_t, a_t) = \sum_{k=t+1}^{T}\gamma^{k - t
+- 1}r_k \\
+&amp;\quad\quad\quad\quad \theta_{t+1} = \theta_t +
+\alpha\nabla_\theta\ln\pi(a_t|s_t, \theta_t)q_t(s_t, a_t)
+\end{align*}
+\]</span></p>
+<h3 id="actor-critic">Actor-Critic</h3>
 
     </div>
 
@@ -525,7 +635,7 @@ class="math inline">\(y_\mathrm{T}\)</span>。
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0%E8%BF%91%E4%BC%BC"><span class="nav-text">值函数近似</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">优化算法和函数设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deep-q-learning"><span class="nav-text">Deep Q-learning</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6%E6%96%B9%E6%B3%95"><span class="nav-text">策略梯度方法</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%80%BC%E5%87%BD%E6%95%B0%E8%BF%91%E4%BC%BC"><span class="nav-text">值函数近似</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0"><span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BC%98%E5%8C%96%E7%AE%97%E6%B3%95%E5%92%8C%E5%87%BD%E6%95%B0%E8%AE%BE%E8%AE%A1"><span class="nav-text">优化算法和函数设计</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#deep-q-learning"><span class="nav-text">Deep Q-learning</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AD%96%E7%95%A5%E6%A2%AF%E5%BA%A6%E6%96%B9%E6%B3%95"><span class="nav-text">策略梯度方法</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%BC%95%E5%85%A5-1"><span class="nav-text">引入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E7%9B%AE%E6%A0%87%E5%87%BD%E6%95%B0-1"><span class="nav-text">目标函数</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A2%AF%E5%BA%A6%E8%AE%A1%E7%AE%97"><span class="nav-text">梯度计算</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#actor-critic"><span class="nav-text">Actor-Critic</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
