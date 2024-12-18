@@ -6,7 +6,7 @@
   <link href="http://error666.top/atom.xml" rel="self"/>
   
   <link href="http://error666.top/"/>
-  <updated>2024-10-09T13:04:34.441Z</updated>
+  <updated>2024-12-18T17:28:23.056Z</updated>
   <id>http://error666.top/</id>
   
   <author>
@@ -15,6 +15,67 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>暂停更新</title>
+    <link href="http://error666.top/2024/12/19/%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0/"/>
+    <id>http://error666.top/2024/12/19/%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0/</id>
+    <published>2024-12-18T17:17:21.000Z</published>
+    <updated>2024-12-18T17:28:23.056Z</updated>
+    
+    <content type="html"><![CDATA[<p>暂停更新的意思是，大幅降低更新频率了，可能偶尔兴致来了会再写点东西。</p><span id="more"></span><p>这个博客搭建于 2023-10-1 ，现在是2024/12/19 ，陪伴了我一年多了。</p><p>当初搭建这个博客的目的，就是为了记录我学习的过程，也方便大家一起交流。从现在来看，我当初的目的已经达到了。这一年里，我学到了很多东西，也或许，找到了我以后想要研究的方向。</p><p>从最开始 Vs Code的配置，到各种工具（anaconda、latex、chatgpt4、matlab、origin），再到大学各种专业课的自学笔记，以及穿插着我科研的一些笔记和系统数学知识的补充，最后是近期对于RL的一些学习。当把自己的成长路径记录下来的时候，就会发现，“噢，原来我已经收获了这么多东西”。这是件令人愉快的事情。</p><p>校内课程的专业课差不多结束了，所以接下来我将会去探索一下 Deep RL领域。肯定也会写一些总结思考笔记什么的，不过那就是在我本地的笔记库了。大家方向不同，兴趣不同，也就没必要将具体细分方向的笔记放上来献丑了。这个博客，更像一个初入计算机领域的学生写的一个笔记本吧。</p><p>一年之后该域名 error666.top我将不再续费，如需访问，请访问：potatoQi.github.io</p><p>最后，还是那句老话，也是最重要的，祝愿自己和各位，身体健康，学业顺利！</p>]]></content>
+    
+    
+    <summary type="html">&lt;p&gt;暂停更新的意思是，大幅降低更新频率了，可能偶尔兴致来了会再写点东西。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="杂项" scheme="http://error666.top/categories/%E6%9D%82%E9%A1%B9/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>软件工程自学笔记</title>
+    <link href="http://error666.top/2024/12/19/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://error666.top/2024/12/19/%E8%BD%AF%E4%BB%B6%E5%B7%A5%E7%A8%8B%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-12-18T17:07:36.000Z</published>
+    <updated>2024-12-18T17:07:36.608Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>机器学习自学笔记</title>
+    <link href="http://error666.top/2024/12/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://error666.top/2024/12/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <published>2024-12-18T17:07:27.000Z</published>
+    <updated>2024-12-18T17:07:27.247Z</updated>
+    
+    <content type="html"><![CDATA[]]></content>
+    
+    
+      
+      
+    <summary type="html">
+</summary>
+      
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>RL代码学习框架</title>
@@ -382,66 +443,6 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     <category term="2. 技能栈" scheme="http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/"/>
     
     <category term="Matlab" scheme="http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Matlab/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>各种工具使用手册</title>
-    <link href="http://error666.top/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
-    <id>http://error666.top/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</id>
-    <published>2024-04-24T16:28:29.000Z</published>
-    <updated>2024-06-30T18:22:44.700Z</updated>
-    
-    <content type="html"><![CDATA[<p>工具能大大提升效率。所以掌握有必要掌握一些常用工具。</p><span id="more"></span><h3 id="一.-chatgpt">一. ChatGPT</h3><h4 id="如何订阅gpt4-plus">如何订阅GPT4 PLUS？</h4><ol type="1"><li>去<a href="https://chat.openai.com/">官网链接(openai.com)</a>注册一个OpenAI账号并登录（建议通过Google邮箱注册）</li><li>注册过程中，需要用到手机号验证，使用<ahref="https://sms-activate.org/cn">SMS-Activate</a>解决</li><li>1、2步完成后，就可以使用ChatGPT服务了，但是只能使用3.5而且有次数限制。点击升级，会看到一个支付界面，界面里要填银行卡相关信息。银行卡只能使用美国的。所以在<ahref="https://www.fomepay.com/">FOMEPay</a>上购买一张虚拟美国银行卡，往里充钱。然后将卡号信息填到刚才的界面中即可。</li><li>充值成功，可正常使用ChatGPT4</li></ol><p>（注意，充值过程尽量要全程使用美国IP的梯子！）</p><h4 id="如何使用">如何使用？</h4><p>想怎么用怎么用，推荐几个插件：</p><ol type="1"><li>WebPilot：帮助ChatGPT联网搜索信息</li><li>Wolfram：科学计算，图标绘制</li><li>Tutory：可以帮你制定任意领域的学习路线</li><li>Ai Tool Hunt：找插件的插件</li><li>MixerBox Scholar：可以访问一些学术资源</li></ol><hr /><h3 id="二.-vs-code">二. VS Code</h3><p>VS Code作为最常用的IDE，掌握其使用方法以及相关插件十分必要。</p><p>而且这玩意还可以通过Github同步配置，所以配置一次，永久享用。</p><p>而且VS Code里有终端，于是写项目配合git使用很方便。</p><h4 id="快捷键">快捷键</h4><ul><li>ctrl + ,：设置</li><li>ctrl + shift + p：命令面板</li><li>ctrl + p：最近文件列表</li><li>ctrl + j：切出下面板（用来在代码和终端输入间跳转）</li><li>ctrl + b：隐藏/显示目录</li><li>ctrl + shift + n：新建vscode窗口</li><li>ctrl + 1/2/3：分屏/不同分屏中跳转</li><li>ctrl + alt + right/left：将文件移动到不同分屏中</li><li>alt + ijkl/[]：上下左右/HOME,END（自己改的键）</li><li>alt + up/down：行移动</li></ul><h4 id="插件">插件</h4><h5 id="code-runner">code runner</h5><ul><li>ctrl + alt + n：编译运行程序</li><li>ctrl + c：退出当前命令（死循环时退出运行）</li></ul><h5 id="wsl">WSL</h5><ul><li>直接在本地vscode登入进wsl子系统中的vscode</li><li>或者在wsl中输入code .进入vscode界面</li></ul><h5 id="git-graph">Git Graph</h5><ul><li>装了之后，直接在vscode中就可以查看提交/分支状态</li><li>可以查看每次commit的id/author/date/parents/与上一次commit的不同之处<ul><li>查看与任意一次commit的不同之处：先点一个，再按住ctrl点另一个</li></ul></li></ul><h5 id="todo-tree">Todo Tree</h5><ul><li>TODO表示待办，FIXME表示写了一半还没写完，BUG表示这段程序有问题，HACK表示这段程序可以优化，NOTE表示想法</li><li>这个插件除了方便写注释，还可以充当打标签的作用</li></ul><h5 id="bookmarks">Bookmarks</h5><ul><li>打标签，当程序很长的时候，用鼠标跳转很不方便，用书签跳转就很快。</li></ul><h5 id="jupyter">Jupyter</h5><ul><li>无需安装jupyter notebook即可在vscode实现相同功能</li><li>Esc + M：markdown模式</li><li>Esc + Y：代码模式</li><li>ctrl + enter：运行</li><li>Esc + D, D：删除该单元</li><li>Esc + B：在下方添加一个单元</li><li>Esc + A：在上方添加一个单元</li><li>Esc + L：显示行号</li></ul><h5 id="draw.io-integration">Draw.io Integration</h5><ul><li>画流程图</li></ul><hr /><h3 id="三.-sai2">三. SAI2</h3><p>SAI2的最最最基本使用（我不玩板绘）。主要用来方便授课。</p><p>因为最近接了一个线上一对一的算法家教，所以买了一块数位板（高漫1060pro）方便授课，然后下了个SAI2。</p><p>首先改板子的映射区，这个型号的板子对我来说太大了，手移动距离太多很累。所以把板子工作区域改小。记得去官方下驱动。</p><p>然后是改板子的快捷键，我板子的快捷键从上到下分别是：（对应着SAI2里的功能）</p><ul><li>选中、剪切</li><li>复制、粘贴</li><li>画笔、橡皮</li><li>ctrl、shift</li><li>文字、ESC</li><li>合并图层、画面居中</li></ul><p>所以设置好快捷键后，基本上只需要打开SAI2，然后在板子上操作就好了。不怎么需要去SAI2里操作了。</p><p>说一下SAI2的操作逻辑，首先是文字，每次输入文字SAI2都会新建一个图层，所以在输入完文字后要按ESC+ 合并图层，才能将文字和原本内容合并到同一图层中。</p><p>然后是粘贴，在你选中、复制、粘贴后，粘贴的内容会新开一个图层。所以需要按住ctrl移动到恰当位置后，按下合并图层，才能实现粘贴的内容和原内容在同一图层中。</p><p>最后是操作时遇到的一些问题：</p><ol type="1"><li>为什么切换到画笔后，写不出东西？<ul><li>可能是因为你选中了某个区域，没有取消就切换到画笔模式了。所以可以先按剪切后，再切换到画笔模式即可正常工作。</li></ul></li></ol><hr /><h3 id="四.-adobe-illustrator">四. Adobe illustrator</h3><p>通俗的理解，Adobeillustrator就是针对于矢量图的画图工具。发英文期刊/会议，配图格式经常要求是矢量图且质量比较高。所以matplotlib/Matlab+ Adobe illustrator + MathType就足以制作论文的配图。</p><h4 id="界面">界面</h4><ul><li>视图 -&gt; 标尺：打开标尺</li><li>右键标尺：选择标尺单位</li><li>视图 -&gt; 智能参考线：打开自动吸附功能</li><li>文件 -&gt; 存储：即保存，格式有eps等</li><li>文件 -&gt; 导出：即导出，格式有jpg/png等</li><li>文件 -&gt; 置入：插入图片到该画板</li><li>窗口 -&gt; 描边：里面有更多关于描边的参数（例如画箭头/虚线）</li></ul><h4 id="操作">操作</h4><ul><li>鼠标中键：移动</li><li>alt + 滚轮：放大/缩小</li><li>双击对象：对象进入隔离模式，防止操作时误操作到其它对象</li></ul><h4 id="工具栏">工具栏</h4><ul><li>空心箭头（普通选择）<ul><li>单击对象：用于选择然后移动/放大/缩小/旋转<ul><li>右键：编组/取消编组</li></ul></li><li>按住ctrl：显示所有锚点，点击锚点可编辑锚点</li><li>按shift + 单击其它对象：可多选其它对象</li><li>按alt + 拖动：可复制一份对象出来</li></ul></li><li>形状工具<ul><li>右键可以选择画不同的形状，按住shift可画标准化图形</li><li>矩形、椭圆、多边形、星形、直线</li></ul></li></ul><h4 id="属性图层库">属性/图层/库</h4><ul><li>属性：调节对象的属性，比如改变位置/设置颜色/填充</li></ul><h3 id="五.-origin">五. Origin</h3><p>画图神器。我觉得比matlab那一套方便多了，图形化的操作更加容易上手，不会把时间浪费在很多无意义的细节上。</p><p>Origin的组织结构：项目(.opju) -&gt; 文件夹 -&gt;book(数据)/graph(图)</p><p>对于book，使用内置python编程导入数据（菜单栏 -&gt; 连接 -&gt;.py），下面是一个导入的例子：</p><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">wks = op.new_sheet()</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(n):</span><br><span class="line">    wks.from_list(i * <span class="number">2</span>, ans_x[i])</span><br><span class="line">    wks.from_list(i * <span class="number">2</span> + <span class="number">1</span>, ans_y[i])</span><br></pre></td></tr></table></figure><p>对于graph，其组织结构为：画布 -&gt; 图层(坐标轴) -&gt; 点/线。</p><p>上面是简单概念介绍，下面将对操作细节进行更多的阐述：</p><ol type="1"><li>A + 鼠标拖拽滚轮：实现页面的移动 + 放大/缩小</li><li>右上角有抗锯齿功能</li><li>最后画完图后，菜单栏 -&gt; 格式 -&gt;调整页面至图层大小，可以把白边裁掉。<ul><li>建议对于宽度选择边界为5，对于高度选择紧凑</li></ul></li><li>画风格类似的图时，可以使用复制风格功能</li><li>画子图时，建议先把每一张图画好，再使用“菜单栏 -&gt; 图 -&gt;合并图表”完成子图绘制</li></ol>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;工具能大大提升效率。所以掌握有必要掌握一些常用工具。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="杂项" scheme="http://error666.top/categories/%E6%9D%82%E9%A1%B9/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>计算机组成原理实验笔记</title>
-    <link href="http://error666.top/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
-    <id>http://error666.top/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
-    <published>2024-03-28T13:12:34.000Z</published>
-    <updated>2024-09-03T18:13:21.444Z</updated>
-    
-    <content type="html"><![CDATA[<p>用Verilog实现一个简易RISC-V指令集CPU软核。</p><p>本次实验是重庆大学2022级弘深计算机拔尖班计算机组成原理的实验项目。</p><span id="more"></span><h3 id="一.-想说的话">一. 想说的话</h3><p>在开始做实验之前，首先要对CPU的物理结构和数据是如何在regfile,data_memory, instr_memory、alu中传输的有比较清晰的认知。建议观看视频: <ahref="https://www.bilibili.com/video/BV1wi4y157D3?p=1">从0到1设计一台计算机</a>，掌握理论知识。</p><p>在看完视频后，可以先跟着这个<ahref="https://www.bilibili.com/video/BV1pK4y1C7es?p=1&amp;vd_source=ca9a71bb3c1806ce48ae27d95e4e8bd0">教你写一个简单的CPU</a>视频，实现一个简单的MIPS指令集CPU软核，掌握实践知识。不用完全写对，跟着写一遍知道各个模块是如何互相运作的即可。因为视频中没有测试文件测试各个模块，都是一口气写下来的。所以最终版仿真是跑不起来的，因为存在诸多bug。</p><p>然后，最好在系统学习完一遍计组的理论知识（尤其是流水线冒险）后，再去写RISC-V指令集的软核。或者边学边做也行。我就是在全部写完后，才去学的计组理论知识，所以写出来的软核在冒险那一块是存在几个bug的，已经懒得调了。到时候下半年参加龙芯杯的时候反正也要再一个cpu，把这个遗憾留到龙芯杯解决就是了。</p><h3 id="二.-思路">二. 思路</h3><p>有啥思路？拿到设计图干就完事了，把线连好就行了，没啥难度。</p><p>代码已开源：<ahref="https://github.com/potatoQi/RISCV_CPU_Chongqing-University-Computer-Organization-Principles-Course-Project">RISCV_CPU(ChongqingUniversity Computer Organization Principles Course Project)</a></p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;用Verilog实现一个简易RISC-V指令集CPU软核。&lt;/p&gt;
-&lt;p&gt;本次实验是重庆大学2022级弘深计算机拔尖班计算机组成原理的实验项目。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
-    
-    <category term="计算机专业课" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>2024华为软件精英挑战赛游记</title>
-    <link href="http://error666.top/2024/03/24/2024%E5%8D%8E%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    <id>http://error666.top/2024/03/24/2024%E5%8D%8E%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
-    <published>2024-03-24T03:44:25.000Z</published>
-    <updated>2024-03-29T17:51:52.018Z</updated>
-    
-    <content type="html"><![CDATA[<p>初赛正式赛35名，遗憾离场，略微可惜。</p><span id="more"></span><h3 id="第一周">第一周</h3><p>参加这个比赛也是心血来潮。一方面想着现在已经大二了，保研之前要丰富一下自己的简历，另一方面我还从没参加过企业举办的大型赛事，而且去看了下历年的题目，都是用算法去解决实际问题，对我来说蛮有吸引力。所以拉上我们班一位同学就去参加了。（比赛要求三个人所以去网上又找了一个重邮研二的）</p><p>报了名之后就没管了，一直到赛题发布的那一天。</p><p>第一眼看到赛题感觉有点难蚌，我之前去看了22、23年的华为软挑真题，认为23年既然已经考过这种控制机器人移动做任务的题目，那么24年考这个的概率就不大了。24考的题应该更接近于22年这种调度问题。没成想，24年居然还是机器人移动（当然也是包括调度问题的）。</p><p>第一天，看了看题目，下午和队友在线上开了个会，每个人分别讲了讲自己对赛题的理解。大致确定下了本题核心任务：调度+ 控制。</p><p>调度即为考虑机器人搬哪些货物，去哪个泊位；船去哪个泊位，什么时候回家，什么时候转运。调度问题为了简单起见，都是选择的编码难度最容易的调度方式。即机器人选最贵的物品，机器人选有船要来且最近的泊位，船满了就走先不考虑转运情况。</p><p>控制即操控机器人在最短时间内走到目标点。因为地图数据规模不大，所以我们选用每一步每一个机器人bfs一遍的策略。</p><p>晚上，我根据上面的思路，写了一个文字框架以及如何维护关键参数的思路：</p><p><img src="1.png" /></p><p>写完框架后就摆烂了几天，主要那几天刚好事特别多... ...</p><p>最后在周末的时候，拉着我同学，花了大概2个多小时，一起对着上面的文字框架实现了一个基本的代码框架。并确定好了分工，他负责最短路算法以及机器人的运动，我负责船以及泊位的调度部分。</p><p>（P.S.考虑到因为第三个队友跟我们不在同一个学校，不方便同时维护一份代码，所以让他根据自己想法写一个版本，无需受我写的文字框架的约束。兵分两路策略。）</p><h3 id="第二周">第二周</h3><p>到了比赛第二个星期，首先星期一星期二熬大夜把我负责的部分写完了。然后周末同学把他负责的那一部分也写完了。可是不能跑，机器人跑了几百帧就卡死了。于是周末的两个晚上，继续熬大夜，修复代码中的小BUG。最后成功让代码跑起来了，第一次有分。</p><p><img src="2.png" /></p><p>跑出分说明代码框架已经没问题了，但是仍然存在跑了几百帧后几个机器人撞一块再也不动的情况。说明碰撞部分还是存在BUG。</p><p>于是我改变了原先解决碰撞的策略，在原先只有等待机制的情况下，引入失控机制：</p><ol type="1"><li>俩机器人即将碰撞时，其中一个机器人进行等待模式，另一个机器人继续动</li><li>俩机器人若在同一个地方死锁，其中一个机器人进入等待模式，另一个机器人进入失控模式</li><li>等待模式的机器人原地不动，失控模式的机器人乱走</li></ol><p>最后解决了碰撞问题，确定了我们组的baseline代码，8w分。</p><p><img src="3.png" /></p><h3 id="第三周">第三周</h3><p>最忙的一周。几乎每天都熬到3、4点。主要问题就是优化baseline。其实优化之处还是非常多的。我按照我们的代码版本顺序来讲讲每个版本优化了哪些地方吧。</p><ul><li><p>v1.0</p><ul><li>baseline版本</li></ul></li><li><p>v2.0</p><ul><li>机器人挑选物品由原先的挑最贵的，变为挑val（物品价值） /dis（机器人与物品的最短距离）最大的</li><li>机器人由原先的锁定泊位，改为了锁定泊位的具体坐标</li></ul></li><li><p>v3.0</p><ul><li><p>我同学想出了一个“革命性”的优化，不用每一步都对每个机器人求最短路，只需在机器人每次改变目标点时或者碰撞后求一个最短路就好了。将时间由原先的几乎一半时间都掉帧，优化到了几乎不掉帧</p></li><li><p>完善了失控机制，原地等待wait_max_tim帧后同样进入失控状态，解决死锁</p></li><li><p>调整了失控策略，由原先的4个方向顺序去搜变为4个方向随机数去走，避免来回踱步</p></li><li><p>新增更换目标机制，若机器人road_tim帧内没到达目标，则会更换目标，解决死锁</p></li></ul></li><li><p>v3.5</p><ul><li>规范了v3.0的代码风格和缩进</li><li>略微调整了参数</li></ul></li><li><p>v4.0</p><ul><li>初始时令每个机器人去到离他自己最近的泊位，将十个机器人分配到十个泊位上，避免陷入局部最优解</li><li>改变了机器人确定目标泊位的策略：由原先的去已blocked的最近泊位改为去最近的泊位</li><li>增加了船转运的功能，如果超过最低容量且一定时间内没装载，则去别的泊位装货</li></ul></li><li><p>v5.0</p><ul><li>每个泊位里新增了一个队列q，可以统计泊位上的货物情况</li><li>优化了船挑选目标泊位的策略，由原先的去最大价值泊位变成去能取到最大价值的泊位</li></ul></li><li><p>v6.0</p><ul><li>增加了泊位聚类功能，可设置距离阈值控制聚类范围（这是个负优化，悲）</li><li>增加了船排队功能，可设置每个泊位最多等待船数</li></ul></li></ul><p>当写完这7个版本的代码后，还剩2天就正式赛了。此时的代码在练习赛排行榜处于44名。于是剩下两天试图继续优化代码，可是我们写了很多优化最后都是负优化并无很大提升。于是最后一天用ChatGpt写了一个python调参程序开始炼丹。</p><h3 id="正式赛">正式赛</h3><p>正式赛在第三周的周六。上午队友交了一发13名。后面大家陆陆续续起床了，排名就被刷到20多名了。正式赛这一天我们继续改了改泊位的调度思路，可是没啥正优化。最后排名被刷到30名。最后几个小时没有啥思路了，于是对着两个地图开始炼丹。最后交了几发提升了几千分，封榜前，排名上升到了29名（笑。</p><p>周天晚8点多去看了看晋级名单，35名。看来差一点。</p><p><img src="4.png" /></p><h3 id="后记">后记</h3><p>第一次参加软挑，然后蛮有收获的。首先，第一次维护那么长（臭）的代码，接近1k行代码。极大了提高了我编码和debug能力。其次让我知道了面向对象的重要性。下次再写这种大型项目最好用面向对象。其次，团队之间的合作也是非常重要的，就像这次比赛有两个突破性的难点都是我同学大佬想出来的。</p><p>最后，希望大家身体健康，学业顺利！</p>]]></content>
-    
-    
-    <summary type="html">&lt;p&gt;初赛正式赛35名，遗憾离场，略微可惜。&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="3. 竞赛" scheme="http://error666.top/categories/3-%E7%AB%9E%E8%B5%9B/"/>
     
     
   </entry>
