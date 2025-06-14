@@ -3,11 +3,11 @@
   <title>Error_666</title>
   
   
-  <link href="http://error666.top/atom.xml" rel="self"/>
+  <link href="http://potatoqi.github.io/atom.xml" rel="self"/>
   
-  <link href="http://error666.top/"/>
+  <link href="http://potatoqi.github.io/"/>
   <updated>2025-06-11T15:23:54.157Z</updated>
-  <id>http://error666.top/</id>
+  <id>http://potatoqi.github.io/</id>
   
   <author>
     <name>Error_666</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>暂停更新</title>
-    <link href="http://error666.top/2024/12/19/%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0/"/>
-    <id>http://error666.top/2024/12/19/%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0/</id>
+    <link href="http://potatoqi.github.io/2024/12/19/%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0/"/>
+    <id>http://potatoqi.github.io/2024/12/19/%E6%9A%82%E5%81%9C%E6%9B%B4%E6%96%B0/</id>
     <published>2024-12-18T17:17:21.000Z</published>
     <updated>2025-06-11T15:23:54.157Z</updated>
     
@@ -30,15 +30,15 @@
     
     
     
-    <category term="杂项" scheme="http://error666.top/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="http://potatoqi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
   
   <entry>
     <title>机器学习自学笔记</title>
-    <link href="http://error666.top/2024/12/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://error666.top/2024/12/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://potatoqi.github.io/2024/12/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://potatoqi.github.io/2024/12/19/%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
     <published>2024-12-18T17:07:27.000Z</published>
     <updated>2024-12-31T17:16:40.283Z</updated>
     
@@ -49,17 +49,17 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="计算机专业课" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    <category term="计算机专业课" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>RL代码学习框架</title>
-    <link href="http://error666.top/2024/10/09/RL%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
-    <id>http://error666.top/2024/10/09/RL%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</id>
+    <link href="http://potatoqi.github.io/2024/10/09/RL%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/"/>
+    <id>http://potatoqi.github.io/2024/10/09/RL%E4%BB%A3%E7%A0%81%E5%AD%A6%E4%B9%A0%E6%A1%86%E6%9E%B6/</id>
     <published>2024-10-08T18:07:09.000Z</published>
     <updated>2024-10-09T13:04:34.441Z</updated>
     
@@ -70,17 +70,17 @@
     
     
     
-    <category term="1. 科研" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/"/>
+    <category term="1. 科研" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/"/>
     
-    <category term="强化学习" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    <category term="强化学习" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>强化学习3</title>
-    <link href="http://error666.top/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/"/>
-    <id>http://error666.top/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/</id>
+    <link href="http://potatoqi.github.io/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/"/>
+    <id>http://potatoqi.github.io/2024/10/07/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A03/</id>
     <published>2024-10-07T15:30:16.000Z</published>
     <updated>2024-10-10T16:40:37.837Z</updated>
     
@@ -91,17 +91,17 @@
     
     
     
-    <category term="1. 科研" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/"/>
+    <category term="1. 科研" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/"/>
     
-    <category term="强化学习" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    <category term="强化学习" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>强化学习2</title>
-    <link href="http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/"/>
-    <id>http://error666.top/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/</id>
+    <link href="http://potatoqi.github.io/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/"/>
+    <id>http://potatoqi.github.io/2024/10/06/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A02/</id>
     <published>2024-10-05T18:11:53.000Z</published>
     <updated>2024-10-10T16:10:36.626Z</updated>
     
@@ -112,17 +112,17 @@
     
     
     
-    <category term="1. 科研" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/"/>
+    <category term="1. 科研" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/"/>
     
-    <category term="强化学习" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    <category term="强化学习" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>强化学习1</title>
-    <link href="http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/"/>
-    <id>http://error666.top/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/</id>
+    <link href="http://potatoqi.github.io/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/"/>
+    <id>http://potatoqi.github.io/2024/10/03/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A01/</id>
     <published>2024-10-03T14:35:02.000Z</published>
     <updated>2024-10-05T17:22:49.659Z</updated>
     
@@ -133,17 +133,17 @@
     
     
     
-    <category term="1. 科研" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/"/>
+    <category term="1. 科研" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/"/>
     
-    <category term="强化学习" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
+    <category term="强化学习" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/%E5%BC%BA%E5%8C%96%E5%AD%A6%E4%B9%A0/"/>
     
     
   </entry>
   
   <entry>
     <title>微分方程2</title>
-    <link href="http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/"/>
-    <id>http://error666.top/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/</id>
+    <link href="http://potatoqi.github.io/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/"/>
+    <id>http://potatoqi.github.io/2024/10/02/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B2/</id>
     <published>2024-10-02T07:17:35.000Z</published>
     <updated>2024-10-04T15:52:49.915Z</updated>
     
@@ -154,19 +154,19 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="数学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="微分方程" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+    <category term="微分方程" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
     
     
   </entry>
   
   <entry>
     <title>微分方程1</title>
-    <link href="http://error666.top/2024/09/18/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B1/"/>
-    <id>http://error666.top/2024/09/18/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B1/</id>
+    <link href="http://potatoqi.github.io/2024/09/18/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B1/"/>
+    <id>http://potatoqi.github.io/2024/09/18/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B1/</id>
     <published>2024-09-18T10:05:34.000Z</published>
     <updated>2024-10-02T07:17:10.580Z</updated>
     
@@ -177,19 +177,19 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="数学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="微分方程" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
+    <category term="微分方程" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E5%BE%AE%E5%88%86%E6%96%B9%E7%A8%8B/"/>
     
     
   </entry>
   
   <entry>
     <title>线性代数4</title>
-    <link href="http://error666.top/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/"/>
-    <id>http://error666.top/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/</id>
+    <link href="http://potatoqi.github.io/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/"/>
+    <id>http://potatoqi.github.io/2024/09/15/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B04/</id>
     <published>2024-09-15T15:26:20.000Z</published>
     <updated>2024-09-16T15:45:43.936Z</updated>
     
@@ -200,19 +200,19 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="数学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="线性代数" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    <category term="线性代数" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>线性代数3</title>
-    <link href="http://error666.top/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/"/>
-    <id>http://error666.top/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/</id>
+    <link href="http://potatoqi.github.io/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/"/>
+    <id>http://potatoqi.github.io/2024/09/14/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B03/</id>
     <published>2024-09-14T15:31:27.000Z</published>
     <updated>2024-09-16T15:11:39.326Z</updated>
     
@@ -223,19 +223,19 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="数学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="线性代数" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    <category term="线性代数" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>线性代数2</title>
-    <link href="http://error666.top/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/"/>
-    <id>http://error666.top/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/</id>
+    <link href="http://potatoqi.github.io/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/"/>
+    <id>http://potatoqi.github.io/2024/09/12/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B02/</id>
     <published>2024-09-12T13:56:55.000Z</published>
     <updated>2024-10-04T13:33:17.253Z</updated>
     
@@ -246,19 +246,19 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="数学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="线性代数" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    <category term="线性代数" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>线性代数1</title>
-    <link href="http://error666.top/2024/09/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/"/>
-    <id>http://error666.top/2024/09/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/</id>
+    <link href="http://potatoqi.github.io/2024/09/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/"/>
+    <id>http://potatoqi.github.io/2024/09/11/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B01/</id>
     <published>2024-09-11T10:58:18.000Z</published>
     <updated>2024-09-17T15:27:41.582Z</updated>
     
@@ -270,19 +270,19 @@
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="数学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
+    <category term="数学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/"/>
     
-    <category term="线性代数" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    <category term="线性代数" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E6%95%B0%E5%AD%A6/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
     
     
   </entry>
   
   <entry>
     <title>2024数学建模国赛游记</title>
-    <link href="http://error666.top/2024/09/09/2024%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    <id>http://error666.top/2024/09/09/2024%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
+    <link href="http://potatoqi.github.io/2024/09/09/2024%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://potatoqi.github.io/2024/09/09/2024%E6%95%B0%E5%AD%A6%E5%BB%BA%E6%A8%A1%E5%9B%BD%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
     <published>2024-09-08T16:18:30.000Z</published>
     <updated>2025-02-25T13:26:35.470Z</updated>
     
@@ -293,15 +293,15 @@
     
     
     
-    <category term="3. 竞赛" scheme="http://error666.top/categories/3-%E7%AB%9E%E8%B5%9B/"/>
+    <category term="3. 竞赛" scheme="http://potatoqi.github.io/categories/3-%E7%AB%9E%E8%B5%9B/"/>
     
     
   </entry>
   
   <entry>
     <title>transformers、llama3学习</title>
-    <link href="http://error666.top/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/"/>
-    <id>http://error666.top/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/</id>
+    <link href="http://potatoqi.github.io/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/"/>
+    <id>http://potatoqi.github.io/2024/07/20/transformers%E3%80%81llama3%E5%AD%A6%E4%B9%A0/</id>
     <published>2024-07-19T18:26:55.000Z</published>
     <updated>2024-10-04T14:36:06.061Z</updated>
     
@@ -313,17 +313,17 @@
     
     
     
-    <category term="1. 科研" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/"/>
+    <category term="1. 科研" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/"/>
     
-    <category term="LLM" scheme="http://error666.top/categories/1-%E7%A7%91%E7%A0%94/LLM/"/>
+    <category term="LLM" scheme="http://potatoqi.github.io/categories/1-%E7%A7%91%E7%A0%94/LLM/"/>
     
     
   </entry>
   
   <entry>
     <title>计算机网络自学笔记</title>
-    <link href="http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
-    <id>http://error666.top/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://potatoqi.github.io/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    <id>http://potatoqi.github.io/2024/06/22/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BD%91%E7%BB%9C%E8%87%AA%E5%AD%A6%E7%AC%94%E8%AE%B0/</id>
     <published>2024-06-22T12:20:35.000Z</published>
     <updated>2024-12-31T17:27:05.271Z</updated>
     
@@ -335,17 +335,17 @@ href=&quot;https://www.bilibili.com/video/BV1c4411d7jb?p=4&amp;amp;spm_id_from=p
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="计算机专业课" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    <category term="计算机专业课" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>2024算法竞赛游记</title>
-    <link href="http://error666.top/2024/06/22/2024%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    <id>http://error666.top/2024/06/22/2024%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
+    <link href="http://potatoqi.github.io/2024/06/22/2024%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://potatoqi.github.io/2024/06/22/2024%E7%AE%97%E6%B3%95%E7%AB%9E%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
     <published>2024-06-21T16:49:09.000Z</published>
     <updated>2024-12-03T16:04:47.366Z</updated>
     
@@ -356,15 +356,15 @@ href=&quot;https://www.bilibili.com/video/BV1c4411d7jb?p=4&amp;amp;spm_id_from=p
     
     
     
-    <category term="3. 竞赛" scheme="http://error666.top/categories/3-%E7%AB%9E%E8%B5%9B/"/>
+    <category term="3. 竞赛" scheme="http://potatoqi.github.io/categories/3-%E7%AB%9E%E8%B5%9B/"/>
     
     
   </entry>
   
   <entry>
     <title>Matlab基础</title>
-    <link href="http://error666.top/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/"/>
-    <id>http://error666.top/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/</id>
+    <link href="http://potatoqi.github.io/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/"/>
+    <id>http://potatoqi.github.io/2024/04/25/Matlab%E5%9F%BA%E7%A1%80/</id>
     <published>2024-04-24T16:53:52.000Z</published>
     <updated>2024-04-26T15:45:27.353Z</updated>
     
@@ -376,17 +376,17 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     
     
     
-    <category term="2. 技能栈" scheme="http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/"/>
+    <category term="2. 技能栈" scheme="http://potatoqi.github.io/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/"/>
     
-    <category term="Matlab" scheme="http://error666.top/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Matlab/"/>
+    <category term="Matlab" scheme="http://potatoqi.github.io/categories/2-%E6%8A%80%E8%83%BD%E6%A0%88/Matlab/"/>
     
     
   </entry>
   
   <entry>
     <title>各种工具使用手册</title>
-    <link href="http://error666.top/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
-    <id>http://error666.top/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</id>
+    <link href="http://potatoqi.github.io/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/"/>
+    <id>http://potatoqi.github.io/2024/04/25/%E5%90%84%E7%A7%8D%E5%B7%A5%E5%85%B7%E4%BD%BF%E7%94%A8%E6%89%8B%E5%86%8C/</id>
     <published>2024-04-24T16:28:29.000Z</published>
     <updated>2024-12-15T08:42:55.353Z</updated>
     
@@ -397,15 +397,15 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     
     
     
-    <category term="杂项" scheme="http://error666.top/categories/%E6%9D%82%E9%A1%B9/"/>
+    <category term="杂项" scheme="http://potatoqi.github.io/categories/%E6%9D%82%E9%A1%B9/"/>
     
     
   </entry>
   
   <entry>
     <title>计算机组成原理实验笔记</title>
-    <link href="http://error666.top/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
-    <id>http://error666.top/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
+    <link href="http://potatoqi.github.io/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/"/>
+    <id>http://potatoqi.github.io/2024/03/28/%E8%AE%A1%E7%AE%97%E6%9C%BA%E7%BB%84%E6%88%90%E5%8E%9F%E7%90%86%E5%AE%9E%E9%AA%8C%E7%AC%94%E8%AE%B0/</id>
     <published>2024-03-28T13:12:34.000Z</published>
     <updated>2024-09-03T18:13:21.444Z</updated>
     
@@ -417,17 +417,17 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     
     
     
-    <category term="4. 大学" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/"/>
+    <category term="4. 大学" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/"/>
     
-    <category term="计算机专业课" scheme="http://error666.top/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
+    <category term="计算机专业课" scheme="http://potatoqi.github.io/categories/4-%E5%A4%A7%E5%AD%A6/%E8%AE%A1%E7%AE%97%E6%9C%BA%E4%B8%93%E4%B8%9A%E8%AF%BE/"/>
     
     
   </entry>
   
   <entry>
     <title>2024华为软件精英挑战赛游记</title>
-    <link href="http://error666.top/2024/03/24/2024%E5%8D%8E%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
-    <id>http://error666.top/2024/03/24/2024%E5%8D%8E%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
+    <link href="http://potatoqi.github.io/2024/03/24/2024%E5%8D%8E%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%B5%9B%E6%B8%B8%E8%AE%B0/"/>
+    <id>http://potatoqi.github.io/2024/03/24/2024%E5%8D%8E%E4%B8%BA%E8%BD%AF%E4%BB%B6%E7%B2%BE%E8%8B%B1%E6%8C%91%E6%88%98%E8%B5%9B%E6%B8%B8%E8%AE%B0/</id>
     <published>2024-03-24T03:44:25.000Z</published>
     <updated>2024-03-29T17:51:52.018Z</updated>
     
@@ -438,7 +438,7 @@ FigureBest绘制出来的图片非常精美。科研绘图时会用到，所以�
     
     
     
-    <category term="3. 竞赛" scheme="http://error666.top/categories/3-%E7%AB%9E%E8%B5%9B/"/>
+    <category term="3. 竞赛" scheme="http://potatoqi.github.io/categories/3-%E7%AB%9E%E8%B5%9B/"/>
     
     
   </entry>
